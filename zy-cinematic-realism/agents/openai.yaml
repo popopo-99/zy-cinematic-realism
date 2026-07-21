@@ -1,4 +1,4 @@
 interface:
-  display_name: "ZY Cinematic Realism"
-  short_description: "Turn scene ideas into cinematic prompts"
-  default_prompt: "Use $zy-cinematic-realism to turn my scene idea into a restrained cinematic still prompt."
+  display_name: "造梦师 · Cinematic Realism"
+  short_description: "把简单画面想法变成真实可信的电影单帧 Prompt 工作流"
+  default_prompt: "Use $zy-cinematic-realism to turn my scene idea into a restrained, physically believable cinematic frame prompt."

@@ -1,14 +1,49 @@
-# ZY Cinematic Realism Skill
+# 造梦师
 
-> **别再只往 Prompt 里塞 `cinematic`。先让故事发生。**
+## AI时代电影视觉指南 · v1.0
 
-把一句简单的画面想法，变成具有叙事瞬间、真实空间、明确摄影机位置、可信光源和克制胶片质感的英文 AIGC Prompt。
+**DREAM DIRECTOR — A Cinematic Visual Guide for the AI Era**
 
-`一句话想法` → `找到故事瞬间` → `架好摄影机` → `建立真实光源` → `Final Prompt + Avoid`
+> 先让画面成为故事中的一个真实瞬间，再考虑它使用什么镜头和胶片。
 
 ![两个侦探在失败后的夜班公交车上沉默而坐](docs/images/hero-night-bus.png)
 
-<p align="center"><em>真正起作用的不是“两个侦探坐公交车”，而是“一次失败以后，他们隔着几排座位沉默地回去”。</em></p>
+<p align="center">
+  <strong>一个用于生成真实电影单帧 Prompt 的 ChatGPT / Codex Skill</strong>
+</p>
+
+<p align="center">
+  不是一包“万能电影词”，而是一套从故事、人物、空间、摄影机、光线到胶片质感的完整视觉工作流。
+</p>
+
+## 下载公开版
+
+### 造梦师：AI时代电影视觉指南 v1.0
+
+**[前往 Releases 下载最新安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)**
+
+下载 `zy-cinematic-realism-v1.0.0.zip`。压缩包顶层直接包含完整的 `zy-cinematic-realism/` 文件夹，可以安装到支持 Agent Skills 的环境中。
+
+不熟悉 GitHub 的用户，也可以点击仓库右上角的 **Code → Download ZIP**。请注意：仓库根目录是教程和展示页；仓库内部的 `zy-cinematic-realism/` 才是 Skill 本体。
+
+## 它到底是什么？
+
+Skill 不是一个新的 AI 模型，也不是需要重新训练的插件。
+
+它是一套可以反复交给 AI 使用的工作流程。安装以后，当你要求 AI 生成电影感画面、降低 AI 感、设计摄影机位置或建立真实光线时，AI 会按照这套固定方法完成任务。
+
+你可以把它理解为：
+
+- AI 模型是摄影团队
+- 你的想法是故事梗概
+- 这套 Skill 是导演与摄影指导的工作手册
+- 最终输出是可以交给生图或生视频模型的完整 Prompt
+
+它会按照以下顺序工作：
+
+`故事瞬间 → 人物行为 → 真实空间 → 摄影机位置 → 光线来源 → 胶片质感 → 场景专属 Avoid`
+
+对外品牌是 **造梦师 / DREAM DIRECTOR**；为保持现有安装路径、自动触发和显式调用兼容，技术名称始终是 `zy-cinematic-realism`。
 
 ## 这不是一包“万能电影词”
 
@@ -26,15 +61,23 @@
 
 ## 60 秒上手
 
-### 1. 给 AI 一个想法
+### 1. 完全不懂摄影，也能这样输入
 
-你不需要会写专业摄影参数。最少告诉它这 5 件事：
+```text
+请使用 $zy-cinematic-realism，把下面的想法转换成像真实电影中途被截取的一帧：
+
+[输入一句画面想法]
+
+请降低 AI 感，不要人物海报、概念图、游戏渲染和没有来源的电影灯光。
+```
+
+你不需要先学会专业摄影参数。最少告诉它这 5 件事：
 
 ```text
 谁 + 在哪里 + 刚刚发生了什么 + 此刻的小动作 + 最不想要什么
 ```
 
-直接复制这个例子到 Codex：
+### 2. 试试这个完整例子
 
 ```text
 请使用 $zy-cinematic-realism：
@@ -47,7 +90,7 @@
 
 如果你只写了一句话也没关系，Skill 会补全缺失的故事、场景、摄影机和光线逻辑；只有会明显改变创作方向的信息，它才会向你确认。
 
-### 2. 看懂 Skill 的输出
+### 3. 看懂 Skill 的输出
 
 它默认给你三部分：
 
@@ -79,14 +122,14 @@ symmetry, clean modern bus, artificial rim light, excessive lens flare, HDR, CGI
 
 </details>
 
-### 3. 把结果交给生图模型
+### 4. 把结果交给生图模型
 
 - 复制 `Final Prompt` 到你常用的生图或生视频模型。
 - 模型有单独的 Negative Prompt 输入框，就把 `Avoid` 放进去。
 - 没有负面词输入框，就把 `Avoid` 保留在 Final Prompt 结尾。
 - 第一张图不是终点。先看故事、机位和光线是否正确，再决定要不要改焦段或胶片。
 
-### 4. 不满意时，用一句话纠偏
+### 5. 不满意时，用一句话纠偏
 
 不要每次推倒重写。直接告诉 Skill 哪里仍然“像 AI”：
 
@@ -140,7 +183,7 @@ Skill 不只是在同一个构图上换滤镜。它会帮你判断，故事里�
 
 > **不要只说“两名拳手激烈搏斗”。要说清楚这是第几回合、重拳命中的前后哪一秒、摄影机隔着什么看见他们，以及动作模糊应该保留多少。**
 
-## 万能输入卡片
+## 完整输入卡片
 
 第一次使用时，可以直接复制这张卡片。填不完也没关系：
 
@@ -151,75 +194,158 @@ Skill 不只是在同一个构图上换滤镜。它会帮你判断，故事里�
 时间与地点：
 人物：
 刚刚发生了什么：
-此刻的动作：
-情绪（克制一点）：
+此刻的小动作：
+情绪：
 希望的观察位置：
 最不想出现的效果：
 
-请输出：画面理解、完整英文 Final Prompt、当前场景专属 Avoid。
-```
-
-更偷懒的版本只有一句：
-
-```text
-请使用 $zy-cinematic-realism，把“[你的想法]”写成像真实电影中途被截取的一帧，降低 AI 感。
+请输出：
+1. 画面理解
+2. 完整英文 Final Prompt
+3. 当前场景专属 Avoid
 ```
 
 ## 安装到 Codex
 
-### 方法一：下载 ZIP
+OpenAI 当前文档说明，Codex 会从用户级 `$HOME/.agents/skills` 与项目级 `.agents/skills` 目录发现 Skill；也可以让内置的 `$skill-installer` 从其他 GitHub 仓库安装。详见 [OpenAI：Build skills](https://learn.chatgpt.com/docs/build-skills)。
 
-1. 点击仓库右上角的 **Code → Download ZIP**。
-2. 解压后找到仓库里的 `zy-cinematic-realism` 文件夹。
-3. 将这个完整文件夹复制到：
+### 方法一：让 Codex 从 GitHub 安装
 
-```text
-%USERPROFILE%\.codex\skills\zy-cinematic-realism
-```
-
-4. 重新打开 Codex，然后用上面的示例测试。
-
-### 方法二：Git 克隆
-
-```bash
-git clone https://github.com/popopo-99/zy-cinematic-realism.git
-```
-
-克隆后，同样只需要把仓库中的 `zy-cinematic-realism/` 复制到个人 Skills 目录。
-
-安装后，除了显式写 `$zy-cinematic-realism`，遇到“电影感 Prompt”“降低 AI 感”“电影单帧”“摄影机位置”“真实光源”等任务时也可以自动触发。
-
-## 不安装也能用吗？
-
-可以。打开 [`zy-cinematic-realism/SKILL.md`](zy-cinematic-realism/SKILL.md)，把内容和你的场景想法一起发给支持长文本提示的 AI。
-
-安装版的优势是：不用每次复制整份规则，并且 AI 可以按需读取模板、检查表和案例。
-
-## 仓库里有什么
+在 Codex 中输入：
 
 ```text
-zy-cinematic-realism/
-├── SKILL.md                      # 主工作流
-├── agents/
-│   └── openai.yaml              # Skill 元数据
-├── assets/
-│   └── basic-prompt-template.md  # 可复用模板
-└── references/
-    ├── camera-and-light.md       # 摄影机与真实光源
-    ├── cinematic-principles.md   # 电影感原则
-    ├── examples.md               # 完整案例
-    ├── negative-prompts.md       # 场景化负面词
-    └── quality-checklist.md      # 生成前自检
+请使用 $skill-installer，从下面的 GitHub 仓库安装 zy-cinematic-realism：
+https://github.com/popopo-99/zy-cinematic-realism
 ```
 
-仓库根目录的 `README.md` 是你正在看的教程；`zy-cinematic-realism/` 才是可以安装的 Skill 本体。
+如果当前 Codex 界面提供 Skills 安装或本地导入入口，也可以选择 Release 下载的 ZIP，或解压后的 `zy-cinematic-realism` 文件夹。不同产品界面的入口可能不同。
+
+### 方法二：手动安装
+
+从 [Releases](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) 下载并解压，将完整的 `zy-cinematic-realism` 文件夹复制到用户级 Skills 目录。
+
+**Windows**
+
+```text
+%USERPROFILE%\.agents\skills\zy-cinematic-realism
+```
+
+**macOS / Linux**
+
+```text
+$HOME/.agents/skills/zy-cinematic-realism
+```
+
+也可以只在某个项目中安装：
+
+```text
+项目目录/.agents/skills/zy-cinematic-realism
+```
+
+Codex 通常会自动发现变更；如果没有出现，请重新启动 Codex。安装后输入：
+
+```text
+请使用 $zy-cinematic-realism，把“两个侦探在审讯失败后坐夜班公交车回警局”转换成真实电影单帧 Prompt。
+```
+
+## 在 ChatGPT 中使用
+
+### 有 Skills 安装入口
+
+根据 OpenAI 当前说明，Personal Skills 通常面向 ChatGPT Business、Enterprise、Healthcare 和 Edu 用户，实际可用性还会受到工作区设置和权限影响。不要假设所有 ChatGPT 账户都已经开放此功能。详见 [OpenAI：Skills in ChatGPT](https://help.openai.com/en/articles/20001066)。
+
+如果你的账户或工作区已经开放 Skills：
+
+1. 在侧边栏打开 **Plugins / 插件**。
+2. 在 Plugin Directory 中进入 **Skills**。
+3. 选择 **Create**，再选择 **Upload from your computer**。
+4. 上传 Release 中的 `zy-cinematic-realism-v1.0.0.zip`。
+5. 扫描和安装完成后，输入 `$zy-cinematic-realism`，或直接描述电影感 Prompt 任务。
+
+Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会自动跨这些界面同步。
+
+### 没有 Skills 入口
+
+仍然可以直接使用：
+
+1. 打开 [`zy-cinematic-realism/SKILL.md`](zy-cinematic-realism/SKILL.md)。
+2. 将文件内容复制到新的 AI 对话。
+3. 在后面附上自己的画面想法。
+4. 要求 AI 按照该工作流输出 `Final Prompt` 和 `Avoid`。
+
+这种方式不需要 Codex，也不需要安装插件，只是每次可能需要重新提供规则。
+
+## 仓库与安装包结构
+
+仓库根目录是品牌说明、教程、授权与发布记录；`zy-cinematic-realism/` 才是可安装的 Skill 本体。
+
+```text
+zy-cinematic-realism/                 # GitHub 仓库根目录
+├── README.md                          # 当前教程与展示页
+├── CHANGELOG.md                       # 版本记录
+├── LICENSE                            # CC BY-NC 4.0
+├── RELEASE_NOTES.md                   # v1.0.0 发布说明
+├── docs/
+│   └── images/                        # 作品示例图
+└── zy-cinematic-realism/              # 可安装 Skill 本体
+    ├── SKILL.md
+    ├── agents/
+    │   └── openai.yaml
+    ├── assets/
+    │   └── basic-prompt-template.md
+    └── references/
+        ├── camera-and-light.md
+        ├── cinematic-principles.md
+        ├── examples.md
+        ├── negative-prompts.md
+        └── quality-checklist.md
+```
+
+Release 安装包的正确结构只有一层顶级 Skill 文件夹：
+
+```text
+zy-cinematic-realism-v1.0.0.zip
+└── zy-cinematic-realism/
+    ├── SKILL.md
+    ├── agents/
+    ├── assets/
+    └── references/
+```
+
+## 使用与授权
+
+《造梦师：AI时代电影视觉指南 v1.0》采用 [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE)（CC BY-NC 4.0）授权。
+
+你可以：
+
+- 用于个人学习和非商业创作
+- 根据自己的项目修改工作流
+- 在保留署名、许可证和来源的情况下分享改编版本
+
+你不可以：
+
+- 将本 Skill 或轻微修改版本重新打包售卖
+- 删除作者与来源信息后冒充原创发布
+- 未经授权放入付费课程、会员资源、提示词合集或商业产品
+
+转载请注明：
+
+```text
+作者：ZY / popopo-99
+项目：造梦师：AI时代电影视觉指南
+仓库：https://github.com/popopo-99/zy-cinematic-realism
+许可证：CC BY-NC 4.0
+```
+
+商业合作或授权请联系：
+
+- 抖音：2053586074
+- 邮箱：zhang.yanpo@foxmail.com
+
+Skill 生成的具体 Prompt 和用户据此创作的作品，不自动归项目作者所有；用户仍需遵守其所使用 AI 平台的规则和适用法律。
 
 ## 最后只记住一句话
 
-> **先让画面成为故事中的一个真实瞬间，再考虑它使用什么镜头和胶片。祝你玩的开心**
+> **先让画面成为故事中的一个真实瞬间，再考虑它使用什么镜头和胶片。祝你玩得开心。**
 
 示例图由作者使用 AIGC 创作，用于展示这套工作流追求的叙事与摄影方向。
-有效联系作者方式：
-抖音账号：2053586074
-邮箱合作交个朋友：zhang.yanpo@foxmail.com
-

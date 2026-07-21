@@ -1,9 +1,11 @@
 ---
 name: zy-cinematic-realism
-description: Turn brief scene ideas into production-ready English prompts for restrained, physically believable cinematic stills or video keyframes. Use when users ask for 电影感 or cinematic AIGC prompts, want to reduce the artificial AI look, need a story beat, camera position, composition, motivated lighting, film texture, and scene-specific negative prompts, or want an existing visual prompt diagnosed and rewritten as a believable movie frame.
+description: Turn brief scene ideas into production-ready English prompts for restrained, physically believable cinematic stills or video keyframes. This skill is publicly presented as 造梦师：AI时代电影视觉指南. Use when users ask for 电影感 or cinematic AIGC prompts, want to reduce the artificial AI look, need a story beat, camera position, composition, motivated lighting, film texture, and scene-specific negative prompts, or want an existing visual prompt diagnosed and rewritten as a believable movie frame.
 ---
 
-# ZY Cinematic Realism
+# 造梦师 · ZY Cinematic Realism
+
+Public edition: 《造梦师：AI时代电影视觉指南 v1.0》
 
 Transform a simple idea into a frame that feels observed inside an ongoing story. Build narrative, physical space, camera logic, and motivated light before adding lens or film terminology.
 
