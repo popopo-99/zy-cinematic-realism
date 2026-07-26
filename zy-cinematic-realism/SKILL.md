@@ -5,7 +5,7 @@ description: Turn brief scene ideas into production-ready English prompts for re
 
 # 造梦师 · ZY Cinematic Realism
 
-Public edition: 《造梦师：AI时代电影视觉指南 v1.0》
+Public edition: 《造梦师：AI时代电影视觉指南 v1.1》
 
 Transform a simple idea into a frame that feels observed inside an ongoing story. Build narrative, physical space, camera logic, and motivated light before adding lens or film terminology.
 

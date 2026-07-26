@@ -1,53 +1,26 @@
 # Changelog
 
-## [1.3.0] - Unreleased
-
-### Changed
-
-- Director requests now default to the strongest `iconic` behavior.
-- The public label for the default strongest mode is `强烈`.
-- Explicit director names are preserved by default.
-- Iconic prompts include two or three representative film anchors.
-- Removed model-facing anti-imitation language that weakened director recognition.
-- Director profiles now provide stronger model-facing visual anchors.
-- User story facts remain fixed unless the user explicitly requests a film-scene recreation.
-
-## [1.2.0] - Unreleased
+## [1.1.0] - 2026-07-26
 
 ### Added
 
-- Added `iconic` director strength.
-- Added `anti-ai-cleanup.md`.
-- Added director signature override rules for strong and iconic modes.
+- Added the Director Lens Library with twelve director references and director routing.
+- Added explicit director-name and two-to-three representative-film anchors for strong director recognition.
+- Added Anti-AI Cleanup, selective legibility guidance, and director signature overrides.
+- Added six evidence-room comparison images and a complete comparison case page.
+- Added name-free compatibility behavior when a platform or user requires it.
 
 ### Changed
 
-- Strengthened director differentiation logic in `SKILL.md`.
-- Strengthened `director-routing.md`.
-- Upgraded four director profiles: Ozu, Kurosawa, Fincher, and Malick.
-- Improved guidance for avoiding polished AI imagery.
+- Director requests now default to the strongest `iconic` behavior, publicly labeled `强烈`.
+- Director names are preserved by default; iconic prompts include two or three representative films and scene-specific visual grammar.
+- Removed default `photorealistic` quality-badge wording and strengthened material realism, uneven exposure, and selective readability.
+- Strengthened director differentiation, visual-center reselection, and model-facing anchors.
 
 ### Preserved
 
-- Existing cinematic realism core workflow.
-- Existing installation paths and skill name.
-- Existing README structure.
-
-## [1.1.0] - Unreleased
-
-### Added
-
-- Added the optional Director Lens Library Beta.
-- Added twelve director method references.
-- Added director routing and three reference-strength levels.
-- Added support for one primary and one optional secondary director.
-- Added a compact director guide and representative works to the README.
-
-### Preserved
-
-- Existing cinematic realism workflow.
-- Existing output contract.
-- Existing installation paths and skill name.
+- Existing cinematic realism workflow and output contract.
+- Existing installation paths, technical skill name, folder name, and `$zy-cinematic-realism` invocation.
 
 ## v1.0.0 — Public Edition
 
