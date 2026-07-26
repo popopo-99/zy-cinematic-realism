@@ -30,6 +30,9 @@ Transform a simple idea into a frame that feels observed inside an ongoing story
 - Read [references/camera-and-light.md](references/camera-and-light.md) when selecting camera placement, focal behavior, aspect ratio, or motivated light.
 - Read [references/negative-prompts.md](references/negative-prompts.md) before composing the Avoid section.
 - Read [references/examples.md](references/examples.md) only when calibration through examples would improve the result.
+- Read [references/director-routing.md](references/director-routing.md) only when the user explicitly names a director, requests a director method, asks to compare director directions, or asks for a director recommendation. Then use [references/directors/index.md](references/directors/index.md) to read the matching reference.
+- For a single named director, read director-routing.md, the index, and exactly one matching director reference. For a requested comparison or recommendation, read only the two or three candidate references needed. For an explicit mix, read no more than the primary and secondary director references.
+- Do not load the Director Lens Library when no director reference is requested. Use one director by default; use one primary and one secondary director only when the user explicitly asks to mix them.
 - Use [assets/basic-prompt-template.md](assets/basic-prompt-template.md) as the output scaffold; replace every placeholder and remove unused lines.
 
 ## Output Contract
@@ -52,3 +55,6 @@ If the user requests only a prompt, omit the interpretation and return `Final Pr
 - Do not invent decorative rim lights, neon, fog, lens flare, or shallow depth of field without a physical reason.
 - Do not force damage, dirt, occlusion, or imperfection into every frame. Use them only when the location and story support them.
 - Avoid poster, fashion editorial, game render, concept-art, and commercial-advertising logic unless explicitly requested.
+- Director references are optional and must not override the user's era, place, character, event, weather, or composition requirements.
+- Translate a director method into observable story, action, camera, light, and spatial decisions; preserve physical plausibility and motivated light.
+- Do not put director names, film titles, `in the style of`, or `directed by` in the Final Prompt by default.

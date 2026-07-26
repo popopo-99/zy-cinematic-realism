@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.1.0] - Unreleased
+
+### Added
+
+- Added the optional Director Lens Library Beta.
+- Added twelve director method references.
+- Added director routing and three reference-strength levels.
+- Added support for one primary and one optional secondary director.
+- Added a compact director guide and representative works to the README.
+
+### Preserved
+
+- Existing cinematic realism workflow.
+- Existing output contract.
+- Existing installation paths and skill name.
+
 ## v1.0.0 — Public Edition
 
 《造梦师：AI时代电影视觉指南》首次公开版本。
