@@ -27,6 +27,18 @@ Hospitals, schools, military or corporate systems, formal interiors.
 - Sterile sci-fi.
 - Emotionless mannequins.
 
+## Model-Facing Style Anchor
+
+- Explicit director token: Stanley Kubrick
+- Representative film anchors: *2001: A Space Odyssey*, *The Shining*, *Barry Lyndon*
+- Strong visual grammar: deliberate wide or normal-lens perspective and controlled geometry; ritualized blocking against psychologically pressurized architecture; cool observational distance; formal, motivated light logic; restrained, exact color; measured depth and focus; clean but materially credible capture; visual order held against human instability.
+- Do not reduce to: automatic symmetry, corridors, extreme wide angles, red bathrooms, or a copied one-point perspective.
+- Prompt insertion: Director reference: Stanley Kubrick, with broad visual reference points in *2001: A Space Odyssey*, *The Shining*, and *Barry Lyndon*. Use controlled geometry, ritualized blocking, psychologically pressurized architecture, cool observational distance, deliberate lens perspective, formal light logic, and tension between visual order and human instability. Avoid reducing the result to automatic symmetry or corridor imagery.
+
+## Default Iconic Anchor
+
+Director and visual reference: Stanley Kubrick, drawing strongly from the visual language associated with 2001: A Space Odyssey, The Shining, and Barry Lyndon. Reselect the visual center around human instability held inside deliberate geometry: use controlled wide or normal-lens perspective, ritualized blocking against pressurized architecture, cool observational distance, formal motivated light, restrained exact color, measured depth, and clean but materially credible capture. Let order and scale dominate the frame without reducing it to automatic symmetry or corridor imagery.
+
 ## Scene Translation
 - story beat: a trainee waits outside a review room.
 - character action: she aligns a folder, then stops.

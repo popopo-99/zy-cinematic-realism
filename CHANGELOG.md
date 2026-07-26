@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.3.0] - Unreleased
+
+### Changed
+
+- Director requests now default to the strongest `iconic` behavior.
+- The public label for the default strongest mode is `强烈`.
+- Explicit director names are preserved by default.
+- Iconic prompts include two or three representative film anchors.
+- Removed model-facing anti-imitation language that weakened director recognition.
+- Director profiles now provide stronger model-facing visual anchors.
+- User story facts remain fixed unless the user explicitly requests a film-scene recreation.
+
+## [1.2.0] - Unreleased
+
+### Added
+
+- Added `iconic` director strength.
+- Added `anti-ai-cleanup.md`.
+- Added director signature override rules for strong and iconic modes.
+
+### Changed
+
+- Strengthened director differentiation logic in `SKILL.md`.
+- Strengthened `director-routing.md`.
+- Upgraded four director profiles: Ozu, Kurosawa, Fincher, and Malick.
+- Improved guidance for avoiding polished AI imagery.
+
+### Preserved
+
+- Existing cinematic realism core workflow.
+- Existing installation paths and skill name.
+- Existing README structure.
+
 ## [1.1.0] - Unreleased
 
 ### Added
