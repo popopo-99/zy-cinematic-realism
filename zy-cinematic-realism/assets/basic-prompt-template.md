@@ -18,6 +18,10 @@ This moment occurs after [immediate previous event] and before [implied next dir
 
 The location feels physically used: [two to four causal details tied to age, weather, occupation, or the recent event].
 
+[When a director is named:]
+Director and visual reference: [standard English director name], drawing strongly from the visual language associated with [representative film 1], [representative film 2], and [representative film 3].
+Signature visual language: [scene-specific translation of the director's recognizable story beat, visual center, blocking, camera axis, lens behavior, movement, light, contrast, color, depth of field, and capture texture].
+
 Foreground: [natural boundary, obstruction, reflection, or empty foreground].
 Midground: [primary action and spatial relationship].
 Background: [continuing activity, architecture, weather, or consequence].
@@ -36,3 +40,5 @@ The frame feels like [narrative position and emotional aftertaste].
 ```
 
 Return a separate `Avoid` list with 10-20 scene-specific terms.
+
+When no director is named, delete the entire director block. When a director is named, do not delete it: fill both sentences with the director's name, two or three representative films, and a concrete scene-specific style translation. Never fill the block with a director name alone.

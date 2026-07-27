@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.2] - Unreleased
+
+### Changed
+
+- All supported named-director requests now use mandatory strong / iconic behavior.
+- Removed lower-strength behavior for supported director names.
+- Every named-director Final Prompt now explicitly includes the director's English name, representative films, and corresponding signature visual language.
+- Updated the base prompt template and README examples to reflect mandatory strong director behavior.
+
 ## [1.1.1] - 2026-07-27
 
 ### Added

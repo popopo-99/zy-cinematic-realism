@@ -45,25 +45,44 @@ Transform a simple idea into a frame that feels observed inside an ongoing story
 
 ## Director and Anti-AI Checks
 
-When a director reference uses strength `strong` or `iconic`, its signature image grammar must visibly affect at least six of these nine dimensions: story beat, character blocking, camera height, camera distance or lens behavior, movement grammar, light and contrast, color behavior, depth-of-field strategy, and texture or capture character. If the result remains interchangeable with the baseline after removing the name, rebuild it.
+For every named supported director, its signature image grammar must visibly affect at least six of these ten dimensions: specific story moment, visual center, character blocking, camera axis, shot scale or lens behavior, movement or stillness grammar, light and contrast, color response, depth of field and focus, and capture texture. If the result remains interchangeable with the baseline after removing the name, rebuild it.
 
-When strength is `strong` or `iconic`, do not preserve the baseline shot design by default. Preserve the user's fixed story facts, but allow the director method to reselect the exact temporal beat, visual center, information hierarchy, subject scale, and spatial relationship.
+Do not preserve the baseline shot design by default for a named supported director. Preserve the user's fixed story facts, but let the director method reselect the exact temporal beat, visual center, information hierarchy, subject scale, spatial relationship, and physical witness position.
 
-A director variation fails differentiation when it preserves the same dominant action, focal object relationship, camera axis, and lighting hierarchy as the baseline while changing only crop, focal depth, color, or descriptive language. For `iconic`, fundamentally reselect at least three of the following rather than lightly adjusting them: exact moment before, during, or after the stated action; dominant narrative subject; camera axis and physical witness position; subject scale and completeness; primary light hierarchy; information completeness; movement versus stillness; depth and focus behavior.
+A director variation fails differentiation when it preserves the same dominant action, focal object relationship, camera axis, and lighting hierarchy as the baseline while changing only crop, focal depth, color, or descriptive language. Fundamentally reselect at least three of the following: exact moment before, during, or after the stated action; dominant narrative subject; camera axis and physical witness position; subject scale and completeness; primary light hierarchy; information completeness; movement versus stillness; depth and focus behavior.
 
 Fixed facts must remain present in the scene, but not every fixed fact must be fully visible, equally sharp, or placed at the compositional center.
 
 Before answering, check that surfaces are not waxy or plastic, not every object is equally legible, shadows and falloff retain natural dead areas, and wear looks lived-in rather than designed. Keep the scene physically believable.
 
-## Explicit Director Style Anchors
+## Mandatory Strong Director Mode
 
-When the user names a director without a strength, default to `iconic`, publicly labeled `强烈`. Treat legacy `strong` input as `iconic`. Lower strength only when the user explicitly asks for a light reference, restraint, one borrowed method, no obvious director effect, a name-free prompt, or a platform that does not allow director names. When no director is named, keep the original cinematic realism workflow and do not add director or film anchors.
+For every director listed in [references/directors/index.md](references/directors/index.md), any named-director request must use the strongest `iconic` behavior, publicly labeled `强烈`.
 
-For `subtle`, the Final Prompt may include only the director name and no film anchors; translate only a few visual dimensions. For `clear`, include the standard English director name and optionally one or two representative films; the director must visibly affect story beat, camera, light, and composition. For `iconic` / `强烈`, include the standard English director name and two or three representative films; its image grammar must lead exact story beat, visual center, blocking, camera axis, focal behavior, movement grammar, light and contrast, color response, depth of field, and capture texture.
+Treat all of the following as aliases for the same strongest behavior:
 
-For every named-director request, names and film anchors are model-facing signals, not a replacement for scene-specific visual grammar. Put the anchor immediately after grounded scene facts and before detailed camera design; do not append it as an unrelated ending. Preserve the user's original characters, event, era, and location unless the user explicitly asks to recreate a particular film scene.
+- `subtle`
+- `clear`
+- `strong`
+- `iconic`
+- `轻微`
+- `明确`
+- `强烈`
 
-When a user explicitly requests a name-free prompt, says that their platform does not allow director names, or asks for a compatibility version, omit names and titles. Otherwise, output one anchored version rather than two competing variants.
+Do not lower the director effect merely because the user writes `明确` or `轻微`. Once a supported director is named, the director's strongest recognizable image grammar must lead the result. When no supported director is named, keep the original cinematic realism workflow and do not add director or film anchors.
+
+For every named-director Final Prompt, immediately after the grounded scene facts and before detailed camera design, include these two consecutive sentences:
+
+```text
+Director and visual reference: [standard English director name], drawing strongly from the visual language associated with [representative film 1], [representative film 2], and [representative film 3].
+Signature visual language: [scene-specific translation of the director's recognizable story priority, visual center, blocking, camera axis, lens behavior, movement grammar, lighting, contrast, color response, depth of field, and capture texture in this exact scene].
+```
+
+Use two or three representative films. The signature sentence may be fluent rather than mechanical, but it must not omit the standard English director name, representative films, recognizable visual language, or its concrete translation into the current scene. Never use only `in the style of [director]`, or a director name without the corresponding style translation.
+
+Names and film anchors are model-facing signals, not a replacement for scene-specific visual grammar. The director version must materially reselect and express at least six of the ten dimensions in the Director and Anti-AI Checks; it cannot merely change color, shallow depth of field, a push-in, a crop, the director name, or film titles. Preserve the user's original characters, event, era, and location unless the user explicitly asks to recreate a particular film scene.
+
+Only omit the director name and film titles when the user explicitly requests a name-free prompt or explicitly says that their platform does not allow director names. Even then, use the matching director's strongest internal image grammar. Otherwise, output one anchored version rather than competing variants.
 
 ## Output Contract
 
