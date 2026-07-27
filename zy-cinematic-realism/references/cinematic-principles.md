@@ -1,3 +1,8 @@
+<!--
+Copyright (c) 2026 ZY / popopo-99
+SPDX-License-Identifier: CC-BY-NC-4.0
+-->
+
 # Cinematic Principles
 
 ## 1. Start with story

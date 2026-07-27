@@ -1,3 +1,8 @@
+<!--
+Copyright (c) 2026 ZY / popopo-99
+SPDX-License-Identifier: CC-BY-NC-4.0
+-->
+
 # Negative Prompt Selection
 
 Select only likely failure modes for the current scene. Use approximately 10-20 concise terms.

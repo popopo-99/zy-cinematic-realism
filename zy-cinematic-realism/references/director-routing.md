@@ -1,3 +1,8 @@
+<!--
+Copyright (c) 2026 ZY / popopo-99
+SPDX-License-Identifier: CC-BY-NC-4.0
+-->
+
 # Director Lens Library
 
 ## When to use

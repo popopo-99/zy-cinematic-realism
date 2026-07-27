@@ -412,6 +412,8 @@ zy-cinematic-realism/                 # GitHub 仓库根目录
 │   └── images/                        # 作品示例图
 └── zy-cinematic-realism/              # 可安装 Skill 本体
     ├── SKILL.md
+    ├── LICENSE
+    ├── NOTICE.md
     ├── agents/
     │   └── openai.yaml
     ├── assets/
@@ -430,10 +432,23 @@ Release 安装包的正确结构只有一层顶级 Skill 文件夹：
 zy-cinematic-realism-v1.1.0.zip
 └── zy-cinematic-realism/
     ├── SKILL.md
+    ├── LICENSE
+    ├── NOTICE.md
     ├── agents/
     ├── assets/
     └── references/
 ```
+
+## Copyright and License
+
+The Skill source files include copyright notices.
+The distributable Skill package contains its own license file.
+
+Copyright:
+ZY / popopo-99
+
+License:
+CC BY-NC 4.0
 
 ## 使用与授权
 
