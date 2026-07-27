@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.1] - 2026-07-27
+
+### Added
+
+- Added file-level copyright notices and SPDX identifiers.
+- Added LICENSE and NOTICE.md to the distributable Skill package.
+- Added canonical source attribution to SKILL.md.
+- Added copyright notices to core reference and template files.
+
+### Preserved
+
+- No changes to the cinematic workflow, output contract, director behavior, installation path, or skill name.
+
 ## [1.1.0] - 2026-07-26
 
 ### Added

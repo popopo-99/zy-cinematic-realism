@@ -22,7 +22,7 @@
 
 **[前往 Releases 下载最新安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)**
 
-下载 `zy-cinematic-realism-v1.1.0.zip`。压缩包顶层直接包含完整的 `zy-cinematic-realism/` 文件夹，可以安装到支持 Agent Skills 的环境中。
+下载 `zy-cinematic-realism-v1.1.1.zip`。压缩包顶层直接包含完整的 `zy-cinematic-realism/` 文件夹，可以安装到支持 Agent Skills 的环境中。
 
 > v1.1 加入导演镜头库。指定导演后默认使用“强烈”模式，通过导演姓名、代表作品和场景专属影像语法，让不同导演真正重新决定这一镜在看什么。
 
@@ -382,7 +382,7 @@ Codex 通常会自动发现变更；如果没有出现，请重新启动 Codex�
 1. 在侧边栏打开 **Plugins / 插件**。
 2. 在 Plugin Directory 中进入 **Skills**。
 3. 选择 **Create**，再选择 **Upload from your computer**。
-4. 上传 Release 中的 `zy-cinematic-realism-v1.1.0.zip`。
+4. 上传 Release 中的 `zy-cinematic-realism-v1.1.1.zip`。
 5. 扫描和安装完成后，输入 `$zy-cinematic-realism`，或直接描述电影感 Prompt 任务。
 
 Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会自动跨这些界面同步。
@@ -429,7 +429,7 @@ zy-cinematic-realism/                 # GitHub 仓库根目录
 Release 安装包的正确结构只有一层顶级 Skill 文件夹：
 
 ```text
-zy-cinematic-realism-v1.1.0.zip
+zy-cinematic-realism-v1.1.1.zip
 └── zy-cinematic-realism/
     ├── SKILL.md
     ├── LICENSE
