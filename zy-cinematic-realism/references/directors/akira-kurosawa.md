@@ -3,61 +3,62 @@
 ## Identity
 - Chinese name: 黑泽明
 - Region: Japan
-- Representative works: *Seven Samurai*, *Rashomon*, *High and Low*
-- Best suited for: conflict, weather, group action, moral pressure.
+- Representative works: *Seven Samurai*, *High and Low*, *Rashomon*
+- Best suited for: moral decisions under pressure, weather-driven conflict, ensemble action.
 
-## Core Logic
-Make forces visible: wind, rain, traffic, bodies, and competing directions turn conflict into spatial action.
+## Core Dramatic Logic
+Choose the instant when a decision becomes physical. Wind, rain, doors, terrain, traffic, and bodies turn moral pressure into opposed or converging movement rather than decorative atmosphere.
 
-## Story and Character
-Choose decisions made under pressure. Emotion appears in a body committing, retreating, or holding a line among others.
+## Light and Contrast Fingerprint
+- Source hierarchy: let hard daylight, storm-dark sky, fire, windows, or practical interiors expose the action axis before individual beauty.
+- Shadow and contrast: use forceful local contrast and blocked zones; groups cross alternating readable and unreadable planes.
+- Highlights and visibility: wet cloth, faces turning into weather, and hard edges may catch brief highlights while inactive space stays dark.
+- Reject: ornamental lightning, universal rim light, glossy storm spectacle, or soft beauty keys that detach bodies from weather.
 
-## Camera and Space
-Stage clear depth, action axes, and directional movement; groups should alter the frame rather than stand as a lineup. A steady witness position may yield to motivated motion.
+## Color and Exposure Fingerprint
+- Palette and saturation: derive color from soil, timber, cloth, foliage, smoke, and weather; saturation intensifies only when materials become wet or sun-struck.
+- Skin and midtones: keep skin responsive to wind, rain, dust, and practical sources, never isolated by cosmetic warmth.
+- Blacks, whites, exposure: protect bright sky or flame, allow dense black barriers, and keep midtones muscular rather than HDR-open.
+- Reject: blanket desaturation, samurai sepia, monochrome imitation, or teal-orange action grading.
 
-## Light and Color
-Use weather, hard daylight, practical interiors, or real contrast. Do not add theatrical storm effects without cause.
+## Lens and Camera Fingerprint
+- Distance and lens: favor wide or medium-wide depth-aware views for group force; use longer lenses only to compress an opposing line or isolate a decision.
+- Height and position: stand at a plausible working height beside the action axis, sometimes low enough for terrain or bodies to push through the frame.
+- Movement and focus: pan, track, or reframe only when direction changes; preserve multiple active planes and tolerate physical motion blur.
+- Witness role: an alert battlefield or civic witness, not a floating spectacle camera; reject weightless crane display and random handheld chaos.
 
-## Best Use Cases
-Arguments in public, pursuit, community response, duty against self-interest.
+## Composition and Spatial Fingerprint
+- Visual center: place the decisive body or directional collision off-center within a larger field of forces.
+- Layers and obstruction: activate foreground, middle ground, and background with weather, architecture, crowds, or thresholds.
+- Blocking and geometry: use opposed diagonals, converging paths, changing group shapes, and clear escape or pressure routes.
+- Information control: reveal enough geography to understand consequence while hiding inactive faces and dead zones inside weather or structure.
+
+## Blocking and Story Translation
+- Moment: select the breath before commitment or the instant a group direction breaks.
+- Character action: make one body hold, retreat, carry, signal, or cross against another force.
+- Visual center: privilege the decision and its physical consequence over facial display.
+- Blocking: give at least two planes different movement vectors.
+- Environment: make wind, rain, doors, terrain, or traffic alter balance and timing.
+
+## Capture Texture
+Retain wet weight, wind-tugged cloth, dust, imperfect motion, and hard material response. Texture must record force and consequence, not add a generic grit layer.
 
 ## Common Misreadings
-- Random rain or wind.
-- Adding weather without changing anyone's behavior.
-- Empty heroic poses.
-- Chaotic crowd placement.
-- Faux period spectacle.
+- Adding rain without changing blocking or behavior.
+- Treating every scene as samurai spectacle.
+- Using chaotic crowds without readable action axes.
+- Freezing actors in heroic poses.
+- Converting forceful contrast into crushed, colorless murk.
 
-## Signature Overrides
-
-When strength is `strong` or `iconic`, enforce the following differences:
-
-- Story beat bias: choose a decision made under immediate, material pressure.
-- Blocking pattern: give people opposed or converging directions; at least two spatial layers must contain action.
-- Camera height: use a physically motivated standing, waist, or low working height that reveals the action axis.
-- Camera distance / lens behavior: favor a wider, depth-aware view that lets bodies and environment push against one another.
-- Movement grammar: use a purposeful pan, track, or reframing only when action changes direction.
-- Light and contrast: let hard weather, practical interiors, or blocked daylight create stronger but believable contrast.
-- Color behavior: keep weather and material color specific, not desaturated spectacle.
-- Depth-of-field strategy: preserve multiple active planes when group pressure matters.
-- Texture / capture character: retain movement, wet or wind-affected material, and readable physical force without grit overlays.
-- Environment participation: wind, doors, windows, curtains, traffic, or rain must alter timing, balance, or choices.
+## Nearest-Neighbor Contrast
+Unlike Zhang Yimou, Kurosawa lets weather and multi-directional bodies disrupt graphic order: harder irregular shadow fields, material color rather than emblematic chromatic masses, a responsive witness camera rather than ceremonial display, and deep action layers rather than choreographed color geometry.
 
 ## Model-Facing Style Anchor
-
-- Explicit director token: Akira Kurosawa
-- Representative film anchors: *Seven Samurai*, *High and Low*, *Rashomon*
-- Strong visual grammar: physically motivated wide or medium-wide depth-aware camera; decisive blocking across foreground, middle ground, and background; clear action axes and changing group directions; weather, doors, and architecture exert visible force; hard or practical contrast; specific material color rather than spectacle desaturation; multi-plane focus; tactile motion and consequences; decisions under pressure.
-- Do not reduce to: samurai, swords, black and white, rain spectacle, or heroic poses.
-- Prompt insertion: Director reference: Akira Kurosawa, with broad visual reference points in *Seven Samurai*, *High and Low*, and *Rashomon*. Let weather, architecture, bodies, and directional movement create visible dramatic pressure; organize foreground, midground, and background as active layers; use decisive blocking, strong action axes, forceful spatial depth, and clear physical consequences.
+Use decisive multi-plane action, opposed movement, weather and architecture as physical forces, hard motivated contrast, material-specific color, a depth-aware witness position, and a moral choice made visible through blocking. Do not substitute swords, black-and-white imagery, or rain spectacle.
 
 ## Default Iconic Anchor
-
-Director and visual reference: Akira Kurosawa, drawing strongly from the visual language associated with Seven Samurai, High and Low, and Rashomon. Reselect the scene at a decision under physical pressure: use a depth-aware wide or medium-wide camera, opposed or converging blocking across active foreground, middle ground, and background, a forceful action axis, weather or architecture that changes bodies and timing, hard motivated contrast, specific material color, multi-plane focus, and captured movement with real consequences. Keep wet, wind-affected, or worn surfaces physical rather than stylized grit.
+Reselect the scene at a decision under immediate physical pressure; stage opposed or converging movement across active depth, place a plausible camera beside the action axis, let weather or architecture alter timing, use hard motivated contrast and material color, and preserve tactile consequence without heroic tableau.
 
 ## Scene Translation
-- story beat: a family must carry the last box before a service lift shuts down.
-- character action: one person holds a wind-driven door while two others cross in opposing directions.
-- camera position: wide side view that keeps the doorway, moving box, and waiting figure in separate depths.
-- lighting: storm-dark daylight and practical corridor light, with pressure in the contrast rather than spectacle.
-- avoid: superhero tableau, decorative lightning, samurai imagery, weightless action.
+- Scene: a family must move the final box before a service lift closes during a storm.
+- Translation: one person holds a wind-driven door as two others cross in opposing depths; a wide side witness keeps door, load, and waiting figure active under storm-dark daylight and corridor practicals.

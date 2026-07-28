@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.2.0] - Unreleased
+
+### Added
+
+- Director Four-Axis Visual Fingerprint System.
+- Expanded Chinese, Asian, European, and American director library from 12 to 38 directors.
+- Director recommendation matrix for selective two-to-three-candidate routing.
+- Nearest-neighbor director contrast rules.
+- Stronger Chinese, English, surname, abbreviation, and alternate-spelling aliases.
+- Lightweight director-library and Markdown-link validation.
+
+### Changed
+
+- Named-director prompts now require explicit lighting, color/exposure, lens/camera, and composition/spatial signatures.
+- Director differentiation validation now checks structural changes instead of descriptive wording.
+- Director index reorganized by region for faster selective loading.
+- Named-director outputs must reselect at least three viewing decisions and pass name-removal and nearest-neighbor checks.
+
+### Fixed
+
+- Reduced director outputs that differed only through color grading, lens labels, film grain, crop, or atmosphere words.
+- Prevented the Director Signature Block from being moved to the prompt ending as decorative style text.
+
 ## [1.1.2] - 2026-07-27
 
 ### Changed

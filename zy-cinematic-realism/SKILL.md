@@ -12,7 +12,7 @@ Source: https://github.com/popopo-99/zy-cinematic-realism
 
 # 造梦师 · ZY Cinematic Realism
 
-Public edition: 《造梦师：AI时代电影视觉指南 v1.1》
+Public edition: 《造梦师：AI时代电影视觉指南 v1.2.0》
 
 Transform a simple idea into a frame that feels observed inside an ongoing story. Build narrative, physical space, camera logic, and motivated light before adding lens or film terminology.
 
@@ -39,19 +39,29 @@ Transform a simple idea into a frame that feels observed inside an ongoing story
 - Read [references/anti-ai-cleanup.md](references/anti-ai-cleanup.md) before finalizing every output. It is a global cleanup layer, not a substitute for director rules.
 - Read [references/examples.md](references/examples.md) only when calibration through examples would improve the result.
 - Read [references/director-routing.md](references/director-routing.md) only when the user explicitly names a director, requests a director method, asks to compare director directions, or asks for a director recommendation. Then use [references/directors/index.md](references/directors/index.md) to read the matching reference.
+- For a recommendation request, read [references/directors/recommendation-matrix.md](references/directors/recommendation-matrix.md), select two or three candidates, and load only their matching director references.
 - For a single named director, read director-routing.md, the index, and exactly one matching director reference. For a requested comparison or recommendation, read only the two or three candidate references needed. For an explicit mix, read no more than the primary and secondary director references.
-- Do not load the Director Lens Library when no director reference is requested. Use one director by default; use one primary and one secondary director only when the user explicitly asks to mix them.
+- Do not load the Director Four-Axis Library when no director reference is requested. Use one director by default; use one primary and one secondary director only when the user explicitly asks to mix them.
 - Use [assets/basic-prompt-template.md](assets/basic-prompt-template.md) as the output scaffold; replace every placeholder and remove unused lines.
 
 ## Director and Anti-AI Checks
 
-For every named supported director, its signature image grammar must visibly affect at least six of these ten dimensions: specific story moment, visual center, character blocking, camera axis, shot scale or lens behavior, movement or stillness grammar, light and contrast, color response, depth of field and focus, and capture texture. If the result remains interchangeable with the baseline after removing the name, rebuild it.
+For every named supported director, translate all four axes into concrete decisions for the current scene:
 
-Do not preserve the baseline shot design by default for a named supported director. Preserve the user's fixed story facts, but let the director method reselect the exact temporal beat, visual center, information hierarchy, subject scale, spatial relationship, and physical witness position.
+1. `Lighting and contrast` — name the motivated source hierarchy, shadow distribution, highlight behavior, contrast shape, and intentionally unreadable dark areas.
+2. `Color and exposure` — name the source-based color relationship, saturation cause, skin response, black/white/midtone behavior, and any permitted cast or exposure drift.
+3. `Lens and camera` — name the physical witness position, observation distance, lens behavior, height, focus/depth strategy, and conditions for stillness or movement.
+4. `Composition and spatial logic` — name the visual center, subject scale, negative space, obstruction, architecture, blocking, information hierarchy, and what remains hidden.
 
-A director variation fails differentiation when it preserves the same dominant action, focal object relationship, camera axis, and lighting hierarchy as the baseline while changing only crop, focal depth, color, or descriptive language. Fundamentally reselect at least three of the following: exact moment before, during, or after the stated action; dominant narrative subject; camera axis and physical witness position; subject scale and completeness; primary light hierarchy; information completeness; movement versus stillness; depth and focus behavior.
+All four axes are mandatory. If any axis is missing, rewrite the Final Prompt.
 
-Fixed facts must remain present in the scene, but not every fixed fact must be fully visible, equally sharp, or placed at the compositional center.
+Do not preserve the baseline shot design by default. Preserve the user's fixed era, place, characters, event, weather, and restrictions, but require structural change in at least three axes. Changing only a director name, film title, focal-length number, shallow depth of field, warm/cool grade, grain, atmosphere adjective, or crop is not structural change.
+
+Reselect at least three of these five viewing decisions: the moment before/during/after the action; the primary visual center; the camera's physical witness position; the subject's scale and completeness; whether environment, person, or object controls the frame.
+
+After drafting, remove the director name and film titles mentally. If the lighting, color/exposure, lens/camera, and composition/space no longer reveal a distinct method, rewrite. Compare against the `Nearest-Neighbor Contrast` in the selected director reference and rebuild any axis that collapses into the neighboring method.
+
+Fixed facts must remain present, but not every fixed fact must be fully visible, equally sharp, or placed at the compositional center.
 
 Before answering, check that surfaces are not waxy or plastic, not every object is equally legible, shadows and falloff retain natural dead areas, and wear looks lived-in rather than designed. Keep the scene physically believable.
 
@@ -71,16 +81,23 @@ Treat all of the following as aliases for the same strongest behavior:
 
 Do not lower the director effect merely because the user writes `明确` or `轻微`. Once a supported director is named, the director's strongest recognizable image grammar must lead the result. When no supported director is named, keep the original cinematic realism workflow and do not add director or film anchors.
 
-For every named-director Final Prompt, immediately after the grounded scene facts and before detailed camera design, include these two consecutive sentences:
+For every named-director Final Prompt, immediately after the grounded scene facts and before detailed camera design, include this uninterrupted `Director Signature Block`:
 
 ```text
 Director and visual reference: [standard English director name], drawing strongly from the visual language associated with [representative film 1], [representative film 2], and [representative film 3].
-Signature visual language: [scene-specific translation of the director's recognizable story priority, visual center, blocking, camera axis, lens behavior, movement grammar, lighting, contrast, color response, depth of field, and capture texture in this exact scene].
+
+Lighting and contrast signature: [scene-specific source hierarchy, shadow distribution, contrast, highlights, and protected dark areas].
+
+Color and exposure signature: [scene-specific source color, saturation cause, skin response, midtones, black/white points, and permitted cast or exposure behavior].
+
+Lens and camera signature: [scene-specific observation distance, physical camera position and height, lens behavior, focus/depth strategy, and motivated movement or stillness].
+
+Composition and spatial signature: [scene-specific visual center, subject scale, negative space, obstruction, architecture, blocking, information hierarchy, and hidden information].
 ```
 
-Use two or three representative films. The signature sentence may be fluent rather than mechanical, but it must not omit the standard English director name, representative films, recognizable visual language, or its concrete translation into the current scene. Never use only `in the style of [director]`, or a director name without the corresponding style translation.
+Keep these five labeled lines consecutive; do not move them to the end as decoration. Use two or three representative films. Every signature line must translate the selected director reference into the current scene rather than copy an abstract library description. Never use only `in the style of [director]`, or a director name without all four scene-specific signatures.
 
-Names and film anchors are model-facing signals, not a replacement for scene-specific visual grammar. The director version must materially reselect and express at least six of the ten dimensions in the Director and Anti-AI Checks; it cannot merely change color, shallow depth of field, a push-in, a crop, the director name, or film titles. Preserve the user's original characters, event, era, and location unless the user explicitly asks to recreate a particular film scene.
+Names and film anchors are model-facing signals, not a replacement for scene-specific visual grammar. Preserve the user's original characters, event, era, and location unless the user explicitly asks to recreate a particular film scene. Do not copy a shot, set piece, character design, or composition from any representative film.
 
 Only omit the director name and film titles when the user explicitly requests a name-free prompt or explicitly says that their platform does not allow director names. Even then, use the matching director's strongest internal image grammar. Otherwise, output one anchored version rather than competing variants.
 
@@ -105,6 +122,6 @@ If the user requests only a prompt, omit the interpretation and return `Final Pr
 - Do not invent decorative rim lights, neon, fog, lens flare, or shallow depth of field without a physical reason.
 - Do not force damage, dirt, occlusion, or imperfection into every frame. Use them only when the location and story support them.
 - Avoid poster, fashion editorial, game render, concept-art, and commercial-advertising logic unless explicitly requested.
-- Director references are optional and must not override the user's era, place, character, event, weather, or composition requirements.
+- Director references are optional and must not override the user's era, place, character, event, weather, or explicit composition requirements.
 - Translate a director method into observable story, action, camera, light, and spatial decisions; preserve physical plausibility and motivated light.
 - Do not use `in the style of` or `directed by` as a substitute for a scene-specific director translation.

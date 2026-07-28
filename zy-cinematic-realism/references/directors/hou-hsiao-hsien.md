@@ -6,42 +6,59 @@
 - Representative works: *A City of Sadness*, *Millennium Mambo*, *The Assassin*
 - Best suited for: duration, historical residue, layered everyday space.
 
-## Core Logic
-Allow time to remain in the frame. A distant, patient observation lets ordinary activity and background life share the story.
+## Core Dramatic Logic
+Let time remain in the frame. A conversation, meal, transition, or household task continues across layers while the central feeling is only partly available.
 
-## Story and Character
-Choose transitions, waiting, household movement, or a conversation partly lost in its surroundings. Underplay emotion.
+## Light and Contrast Fingerprint
+- Source hierarchy: accept daylight, room practicals, street spill, or atmospheric exterior light already present in the location.
+- Shadow and contrast: keep contrast restrained but spatially varied as thresholds and distance absorb light.
+- Highlights and visibility: light the room's duration rather than a protagonist; figures may recede behind curtains, smoke from real activity, or doorways.
+- Reject: ornamental haze, portrait keys, theatrical shafts, or uniform low-contrast prettiness.
 
-## Camera and Space
-Favor a stable, longer observation through multiple planes; doors, windows, and furniture can divide the scene naturally. Do not use distance as emptiness.
+## Color and Exposure Fingerprint
+- Palette and saturation: use muted material color and period-specific surfaces; allow one source or costume color to persist without dominating.
+- Skin and midtones: let skin share the room's ambient or practical response, sometimes softened by distance.
+- Blacks, whites, exposure: preserve quiet midtones, dense threshold blacks, and gentle highlight roll-off without faded-memory grading.
+- Reject: museum sepia, cyan nostalgia, decorative desaturation, or luxurious historical color.
 
-## Light and Color
-Use daylight, practical rooms, and atmospheric conditions that belong to the location. Avoid ornamental smoke.
+## Lens and Camera Fingerprint
+- Distance and lens: use sustained medium-long or distant normal-to-long observation that keeps multiple planes active.
+- Height and position: place the camera in an adjacent room, across a courtyard, or behind a threshold at a stable human height.
+- Movement and focus: remain still or move minimally; favor middle-to-deep spatial focus and let action drift in and out of legibility.
+- Witness role: a patient resident who cannot control events; reject empty surveillance distance and explanatory coverage.
 
-## Best Use Cases
-Family history, neighbourhood routine, inherited places, quiet historical pressure.
+## Composition and Spatial Fingerprint
+- Visual center: distribute attention across ongoing activity rather than isolate a declarative gesture.
+- Layers and obstruction: organize rooms, doors, windows, furniture, fabric, and partial bodies as inhabited depth.
+- Blocking and geometry: let people enter, leave, sit, serve, and speak across planes without facing the camera.
+- Information control: important dialogue or action may be partly obscured while environment and duration remain readable.
+
+## Blocking and Story Translation
+- Moment: choose a transition or ordinary activity continuing after news arrives.
+- Character action: clear bowls, cross a doorway, wait, or attend to work while emotion remains indirect.
+- Visual center: let several modest actions compete with the nominal subject.
+- Blocking: distribute people across thresholds and depth.
+- Environment: keep background life moving at its own pace.
+
+## Capture Texture
+Use quiet unforced capture, stable spatial focus, material air, and exposure that belongs to the location. Texture records duration and distance, not prestige stillness.
 
 ## Common Misreadings
-- Empty wide shot.
-- Artificial mist.
-- Frozen actors.
-- Museum-period styling.
+- Treating a distant shot as empty.
+- Freezing actors in a museum tableau.
+- Adding artificial mist for atmosphere.
+- Making historical space ornamental.
+- Using long takes without layered activity.
+
+## Nearest-Neighbor Contrast
+Unlike Tsai Ming-liang, Hou fills duration with layered social life: light and color circulate through inhabited rooms, the camera observes several planes rather than isolating a body in architectural vacancy, and composition hides information through ongoing activity rather than severe stillness and absence.
 
 ## Model-Facing Style Anchor
-
-- Explicit director token: Hou Hsiao-hsien
-- Representative film anchors: *A City of Sadness*, *Millennium Mambo*, *The Assassin*
-- Strong visual grammar: sustained medium-long or distant observational camera; layered rooms, thresholds, and partial obstructions; people absorbed into multi-plane everyday duration rather than arranged for emphasis; restrained movement; available or practical light with muted material color; middle-to-deep spatial focus; quiet, unforced capture; time passing through environment as much as plot.
-- Do not reduce to: empty long takes, remote figures with nothing happening, historical costume, or decorative stillness.
-- Prompt insertion: Director reference: Hou Hsiao-hsien, with broad visual reference points in *A City of Sadness*, *Millennium Mambo*, and *The Assassin*. Use sustained observational distance, layered rooms and thresholds, actions unfolding across multiple planes, restrained camera intervention, environmental duration, and characters partially absorbed into everyday space.
+Use sustained observational distance, layered rooms and thresholds, restrained source-based light, muted material color, middle-to-deep focus, partial information, and everyday actions unfolding on several planes while time passes through the environment.
 
 ## Default Iconic Anchor
-
-Director and visual reference: Hou Hsiao-hsien, drawing strongly from the visual language associated with A City of Sadness, Millennium Mambo, and The Assassin. Reselect the visual center away from a declarative gesture and toward duration unfolding through layered rooms, thresholds, and partially obscured bodies; use a sustained medium-long witness, restrained camera intervention, middle-to-deep focus, available or practical material light, muted color, and quiet capture texture. Let the environment keep acting while characters are absorbed into everyday space instead of isolating them for emphasis.
+Reselect away from a declarative gesture toward duration shared by layered rooms; hold a stable medium-long witness through thresholds, let several modest actions continue, keep light and color location-bound, and allow the nominal subject to remain partly absorbed or obscured.
 
 ## Scene Translation
-- story beat: a family dinner continues after difficult news.
-- character action: one person clears bowls while another stays seated.
-- camera position: from the next room through a half-open door.
-- lighting: weak evening window light and dining fixture.
-- avoid: staged tableau, theatrical fog, explanatory close-ups.
+- Scene: a family dinner continues after difficult news.
+- Translation: one person clears bowls while another stays seated and a third crosses the rear room; a stable view from the next room keeps all three planes active under weak window light and a dining fixture.

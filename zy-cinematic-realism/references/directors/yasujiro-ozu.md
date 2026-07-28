@@ -4,60 +4,61 @@
 - Chinese name: 小津安二郎
 - Region: Japan
 - Representative works: *Tokyo Story*, *Late Spring*, *An Autumn Afternoon*
-- Best suited for: family routine, domestic change, quiet aftermath.
+- Best suited for: family routine, domestic transition, quiet aftermath.
 
-## Core Logic
-Let ordinary space carry what people cannot say. A small break in routine matters more than an expressive performance.
+## Core Dramatic Logic
+Choose the small domestic action after a change has already occurred. Silence, routine, and an unused place carry more weight than declaration or expressive performance.
 
-## Story and Character
-Choose tea after a visit, a suitcase by a wall, or an unfinished household task. Use silence, posture, and absence.
+## Light and Contrast Fingerprint
+- Source hierarchy: let windows, ceiling fixtures, table lamps, and reflected household light illuminate the room before singling out a face.
+- Shadow and contrast: keep contrast gentle and planar, with calm falloff into corners and under furniture.
+- Highlights and visibility: ceramic, wood, paper, and skin receive modest highlights; an empty area remains readable but not spotlighted.
+- Reject: theatrical backlight, hard noir slashes, sentimental glow, or dramatic pools isolating a speaker.
 
-## Camera and Space
-Use a low, calm, locked-off viewpoint with architectural planes, modest depth, and room for an unoccupied domestic area. Do not force symmetrical perfection or imitation compositions.
+## Color and Exposure Fingerprint
+- Palette and saturation: use familiar wood, painted walls, fabric, food, and daylight as quiet color blocks without a nostalgic wash.
+- Skin and midtones: hold skin in stable domestic midtones that share the room's source color.
+- Blacks, whites, exposure: retain soft blacks, protected window whites, and broad middle values; avoid lifted pastel haze.
+- Reject: sepia memory filters, candy domestic color, aggressive cool-warm splits, or faded-film shorthand.
 
-## Light and Color
-Keep domestic sources readable: window daylight, ceiling fixtures, a table lamp. Color serves familiar materials.
+## Lens and Camera Fingerprint
+- Distance and lens: use a normal-lens medium or medium-wide observation that preserves furniture and room continuity.
+- Height and position: place the locked camera distinctly low but physically possible, aligned with seated domestic life rather than mechanically imitating tatami height.
+- Movement and focus: remain still by default; use middle-to-deep focus and move only when the witness must relocate between rooms.
+- Witness role: a patient family presence, not surveillance or an expressive participant; reject push-ins, roaming intimacy, and showy shallow focus.
 
-## Best Use Cases
-Parents and adult children, meals, departures, aging homes.
+## Composition and Spatial Fingerprint
+- Visual center: allow a quiet action and an unoccupied place to share importance.
+- Layers and obstruction: use doorways, furniture edges, shelves, and adjoining rooms as stable planes rather than decorative frames.
+- Blocking and geometry: separate people through ordinary household distances, seated axes, and unfinished arrangements.
+- Information control: show routine clearly while withholding emotional explanation; absence may occupy more space than a face.
+
+## Blocking and Story Translation
+- Moment: choose the task immediately after departure, news, or a visit.
+- Character action: return a cup, fold cloth, clear one place, or pause beside a packed object.
+- Visual center: divide attention between the action and meaningful empty space.
+- Blocking: keep people restrained and separated by furniture or thresholds.
+- Environment: let the room preserve the missing person's trace.
+
+## Capture Texture
+Use quiet exposure, matte domestic surfaces, stable focus, and natural shadow falloff. Texture should feel lived with, never lacquered, quaint, or artificially aged.
 
 ## Common Misreadings
-- Dollhouse symmetry.
-- Mandatory tatami-level framing in every room.
-- Empty rooms with no narrative trace.
-- Sentimental crying.
-- Exoticized domestic décor.
+- Enforcing perfect symmetry in every room.
+- Copying a tatami-level setup without spatial reason.
+- Showing empty rooms with no narrative trace.
+- Replacing restraint with sentimental crying.
+- Exoticizing Japanese décor or adding nostalgic film wash.
 
-## Signature Overrides
-
-When strength is `strong` or `iconic`, enforce the following differences:
-
-- Story beat bias: choose an ordinary task just after a family change, not the declaration itself.
-- Blocking pattern: separate people by furniture, thresholds, or quiet distance; let an empty place speak.
-- Camera height: distinctly low but physically placeable in the room, never a copied set-up.
-- Camera distance / lens behavior: medium or medium-wide observation with deep or middle-deep readable space; avoid showy blur.
-- Movement grammar: locked-off by default; move only for a practical relocation of the witness.
-- Light and contrast: flatly credible domestic window and practical light, with gentle contrast rather than drama.
-- Color behavior: familiar wood, paint, fabric, and daylight relationships; no nostalgic wash.
-- Depth-of-field strategy: retain spatial continuity over isolated faces.
-- Texture / capture character: quiet exposure, matte domestic surfaces, and natural shadow falloff.
-- Environment participation: an empty room, doorway, chair, or unfinished household arrangement carries the emotional residue.
+## Nearest-Neighbor Contrast
+Unlike Hirokazu Kore-eda, Ozu is lower, more locked, more planar, and more formally separated: gentler stable light, quieter material color, normal-lens room continuity, and meaningful empty geometry rather than mobile eye-level observation amid overlapping family behavior.
 
 ## Model-Facing Style Anchor
-
-- Explicit director token: Yasujiro Ozu
-- Representative film anchors: *Tokyo Story*, *Late Spring*, *An Autumn Afternoon*
-- Strong visual grammar: low, stable normal-lens observation; restrained domestic blocking through thresholds, furniture, and meaningful empty space; middle-to-deep focus; readable window and practical household light with gentle contrast; familiar wood, paint, and fabric color; quiet matte capture; the emotional aftermath of ordinary routine rather than declaration.
-- Do not reduce to: tatami-height imitation, absolute symmetry, empty rooms without trace, or exoticized domestic decor.
-- Prompt insertion: Director reference: Yasujiro Ozu, with broad visual reference points in *Tokyo Story*, *Late Spring*, and *An Autumn Afternoon*. Use a low, stable observational camera, restrained domestic geometry, middle-to-deep focus, modest practical light, quiet everyday actions, emotional aftermath, and meaningful unoccupied space. Avoid rigid symmetry or mechanical tatami-height imitation.
+Use a low stable normal-lens witness, restrained domestic blocking through furniture and thresholds, meaningful unoccupied space, middle-to-deep focus, modest source-based household light, familiar material color, and emotional aftermath expressed through routine.
 
 ## Default Iconic Anchor
-
-Director and visual reference: Yasujiro Ozu, drawing strongly from the visual language associated with Tokyo Story, Late Spring, and An Autumn Afternoon. Reselect the frame for the quiet aftermath of an ordinary domestic action: a low stable normal-lens witness observes restrained blocking through furniture, thresholds, and meaningful empty space, with middle-to-deep focus, modest window and practical light, familiar wood, paint, and fabric color, gentle contrast, and matte capture. Let human distance and an unused part of the room carry the visual center without rigid symmetry.
+Reselect the quiet action after a family change; observe from a low physically placeable position, keep furniture and adjoining rooms continuous, let an unused area share the visual center, and use gentle domestic light, calm midtones, matte materials, and no expressive camera move.
 
 ## Scene Translation
-- story beat: after packing is finished, a parent returns a child's cup to an otherwise empty shelf.
-- character action: another family member waits by the doorway instead of interrupting.
-- camera position: low and still across the room, with an unused place at the table left visible.
-- lighting: late window light and one dim practical lamp; no dramatic key.
-- avoid: staged symmetry, melodrama, beauty blur, glossy domestic styling.
+- Scene: packing is finished before an adult child leaves home.
+- Translation: a parent returns the child's cup to an otherwise empty shelf while another waits at the doorway; a low locked normal-lens view keeps the unused table place readable under late window light and one dim practical.

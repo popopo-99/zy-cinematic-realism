@@ -3,45 +3,62 @@
 ## Identity
 - Chinese name: 丹尼斯·维伦纽瓦
 - Region: Canada
-- Representative works: *Sicario*, *Arrival*, *Blade Runner 2049*
-- Best suited for: environmental scale, silence, oppressive negative space.
+- Representative works: *Prisoners*, *Sicario*, *Arrival*
+- Best suited for: oppressive environments, silence, institutional scale, solitary duty.
 
-## Core Logic
-Let a large, consequential environment alter a person’s behavior. Silence and distance become pressure, not empty atmosphere.
+## Core Dramatic Logic
+Choose approach, waiting, or aftermath in which an environment or system outweighs the person. Silence and distance become pressure rather than empty atmosphere.
 
-## Story and Character
-Choose approach, waiting, or the aftermath of a revelation. Keep the person’s task specific and their scale meaningful.
+## Light and Contrast Fingerprint
+- Source hierarchy: use overcast sky, severe daylight, industrial fixtures, practical interiors, or distant exterior spill.
+- Shadow and contrast: build weighty broad contrast with large unreadable zones and restrained local detail.
+- Highlights and visibility: a doorway, horizon, work lamp, or pale sky may hold the strongest value while the person remains comparatively subdued.
+- Reject: heroic edge light, decorative smoke, glossy sci-fi illumination, or bright faces detached from the environment.
 
-## Camera and Space
-Use negative space, horizon, thresholds, and massive structures where the location justifies them. The camera observes rather than celebrates scale.
+## Color and Exposure Fingerprint
+- Palette and saturation: derive restrained color from concrete, dust, weather, industrial paint, uniforms, and source temperature.
+- Skin and midtones: let skin absorb the same severe environment, often slightly muted or underexposed.
+- Blacks, whites, exposure: permit dense blacks, heavy midtones, protected skies, and limited highlight range without orange fog.
+- Reject: orange-teal grading, desert-haze presets, low-saturation as a complete style, or monochrome futurism.
 
-## Light and Color
-Use weather, industrial sources, daylight, or interior practical light. Color must arise from material and atmosphere.
+## Lens and Camera Fingerprint
+- Distance and lens: favor measured wide or medium-wide observation; use compression to make institutional barriers feel inescapable, not glamorous.
+- Height and position: stand at a threshold, long aisle, perimeter, or distant room edge with a physically defensible view.
+- Movement and focus: remain patient, track slowly when approach matters, and use middle-to-deep contextual focus.
+- Witness role: a controlled observer kept outside the system, not an urgent participant; reject spectacle flyovers and restless coverage.
 
-## Best Use Cases
-Borderlands, infrastructure, harsh interiors, first contact, solitary duty.
+## Composition and Spatial Fingerprint
+- Visual center: make the stalled or solitary figure subordinate to severe space.
+- Layers and obstruction: use architecture, horizon, vehicles, barriers, or foreground mass to create pressure.
+- Blocking and geometry: sparse bodies occupy widely separated zones, often with a threshold or system between them.
+- Information control: reveal scale and consequence while withholding what lies beyond a door, border, or institution.
+
+## Blocking and Story Translation
+- Moment: choose waiting before entry or stillness after a revelation.
+- Character action: listen, approach, stop, or hold position against a larger space.
+- Visual center: let the environment or system dominate.
+- Blocking: keep figures sparse and separated.
+- Environment: make architecture, weather, or infrastructure determine behavior.
+
+## Capture Texture
+Use dense unglamorous material response, patient exposure, weathered surfaces, and controlled depth. Texture should carry weight without haze, polish, or science-fiction spectacle.
 
 ## Common Misreadings
-- Orange-and-teal grading.
-- Generic monumental sci-fi.
-- Smoke without source.
-- Tiny hero silhouette posing.
+- Applying orange fog to every scene.
+- Making a tiny heroic silhouette pose.
+- Adding smoke without a source.
+- Treating monumental scale as generic science fiction.
+- Using low saturation without spatial pressure.
+
+## Nearest-Neighbor Contrast
+Unlike David Fincher, Villeneuve withholds procedural detail through scale: broader source fields, heavier restrained color, measured wide observation, and sparse negative space dwarf the person, while Fincher uses precise low illumination, controlled neutral color, compressed information nodes, and readable procedural chains.
 
 ## Model-Facing Style Anchor
-
-- Explicit director token: Denis Villeneuve
-- Representative film anchors: *Prisoners*, *Sicario*, *Arrival*
-- Strong visual grammar: measured wide or medium-wide framing that makes a person small against severe architecture or environment; sparse, disciplined blocking; patient silence and negative space; weighty practical or overcast light; restrained, material-based color; controlled deep-to-middle focus; dense, unglamorous capture texture; a solitary figure confronting a system or space larger than themselves.
-- Do not reduce to: desert haze, orange fog, anonymous silhouettes, low saturation, or science-fiction spectacle.
-- Prompt insertion: Director reference: Denis Villeneuve, with broad visual reference points in *Prisoners*, *Sicario*, and *Arrival*. Use oppressive environmental scale, controlled negative space, patient silence, severe spatial relationships, restrained color, weighty practical light, and a solitary figure confronting a system or space larger than themselves. Avoid generic desert haze, orange fog, or science-fiction spectacle.
+Use severe environmental scale, broad motivated contrast, restrained material color, measured wide observation, sparse blocking, controlled negative space, contextual focus, and a solitary figure confronting a system larger than themselves.
 
 ## Default Iconic Anchor
-
-Director and visual reference: Denis Villeneuve, drawing strongly from the visual language associated with Prisoners, Sicario, and Arrival. Reselect the visual center around a solitary figure stalled against severe environment or institution: use measured wide or medium-wide scale, controlled negative space, sparse blocking, patient silence, weighty practical or overcast light, restrained material color, controlled middle-to-deep focus, and dense unglamorous capture texture. Let the room or system outweigh the figure without desert haze, orange fog, or science-fiction spectacle.
+Reselect the visual center around a person stalled against environment or institution; observe from a measured threshold, let large dark or pale masses dominate, keep color source-bound and focus contextual, and preserve silence without haze or heroic posing.
 
 ## Scene Translation
-- story beat: a technician crosses an empty terminal after an alarm stops.
-- character action: she listens beside a sealed service door.
-- camera position: distant through the terminal’s structural frame.
-- lighting: overcast exterior spill and emergency fixtures.
-- avoid: heroic silhouette, neon sci-fi, theatrical haze.
+- Scene: a technician crosses a terminal after an alarm stops.
+- Translation: she pauses beside a sealed service door at the far end of a long structural aisle; dark foreground machinery and pale exterior spill outweigh her small figure under failing emergency fixtures.

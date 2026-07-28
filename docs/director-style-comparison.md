@@ -1,8 +1,8 @@
-# 同一个证据室，六种导演视角
+# v1.2.0：同一个证据室，六种导演视角
 
 ## 测试说明
 
-这组六图固定同一个故事、人物、年代、地点和证据线索，只改变导演参考。无导演版本使用基础 cinematic realism；导演版本不填写强度，以验证指定导演时默认按“强烈”模式执行。每组保留一名侦探、员工卡、幻灯机、黑白监控投影和1980年代纽约警局证据室，并应用真实机位、真实光源与 Anti-AI Cleanup。
+这组六图固定同一个故事、人物、年代、地点和证据线索，只改变导演参考。无导演版本使用基础 cinematic realism；导演版本不填写强度，以验证指定导演时默认按“强烈”模式执行。v1.2.0 将原有综合风格句拆分为连续的光影反差、色彩曝光、镜头机位、构图空间四轴签名。每组保留一名侦探、员工卡、幻灯机、黑白监控投影和1980年代纽约警局证据室，并应用真实机位、真实光源与 Anti-AI Cleanup。
 
 ## 固定故事
 
@@ -61,7 +61,13 @@ A grounded 16:9 observed live-action frame in a borrowed Manhattan police eviden
 
 Director and visual reference: Wong Kar-wai, drawing strongly from the visual language associated with In the Mood for Love, Chungking Express, and Fallen Angels.
 
-Reselect the visual center around an incomplete private encounter between the detective, his reflection in scratched filing-cabinet glass, and the projected face interrupted by paper edges. Use an obstructed side view through a half-open doorway and reflective metal, compressed proximity with the card held just off the projection rather than perfectly aligned, selective motion smear from a slight turn, split focus between the reflected eye and the card, stale fluorescent green mixed with projector white and faint corridor sodium spill, muted burgundy paper tabs and dead grey metal. Let the room feel fragmented and delayed, with only the reflected profile and the card edge fully readable; keep secondary evidence, coffee, boxes, and cabinets incomplete in shadow and soft distance, with matte surfaces and no glossy neon treatment.
+Lighting and contrast signature: stale ceiling fluorescents, projector white, and faint corridor sodium spill create broken local pools across scratched metal; the reflected profile and card edge receive intermittent highlights while secondary evidence falls into dense, incomplete shadow.
+
+Color and exposure signature: fluorescent green, projector-neutral white, muted burgundy paper tabs, tired skin, and dead grey metal contaminate one another through real sources; clipped practicals and partial underexposure are allowed without a global neon wash.
+
+Lens and camera signature: observe from an obstructed side position behind a half-open doorway with compressed proximity, selective motion smear from a slight turn, and split focus between the reflected eye and card rather than perfect card-to-projection alignment.
+
+Composition and spatial signature: make the incomplete encounter among detective, reflection, and interrupted projected face the visual center; reflective metal, paper edges, doorway, coffee, boxes, and cabinets fracture the room, leaving only one emotional fragment fully readable.
 ```
 
 ### Avoid
@@ -93,7 +99,13 @@ A grounded 16:9 observed live-action frame in a borrowed Manhattan police eviden
 
 Director and visual reference: Stanley Kubrick, drawing strongly from the visual language associated with 2001: A Space Odyssey, The Shining, and Barry Lyndon.
 
-Reselect the visual center around the detective held inside a deliberate institutional geometry: filing cabinets, ceiling fluorescents, the evidence wall, and the projector table establish formal planes while his checking gesture introduces human instability. Use a measured normal-to-wide lens from a cool, physically possible witness position, ritualized blocking with the detective offset against a strict wall grid, controlled middle-deep focus, practical fluorescent light with a hard projector patch, restrained neutral color, precise shadow boundaries, and clean but unglamorous capture texture. Keep the employee card and projected face readable but subordinate to the ordered room; let coffee, boxes, tape, and secondary papers fall into dry, unflattering tonal areas.
+Lighting and contrast signature: ceiling fluorescents and a hard projector patch establish formal, repeated light planes with precise shadow boundaries; no beauty key separates the detective from the institutional room.
+
+Color and exposure signature: restrained neutral paper, dead metal, faded paint, and tired skin stay inside disciplined midtones, with practical whites protected and coffee, boxes, and tape left in dry, unflattering tonal areas.
+
+Lens and camera signature: use a measured normal-to-wide lens from a physically possible position aligned with the room's governing axis, controlled middle-deep focus, and no casual movement.
+
+Composition and spatial signature: filing cabinets, ceiling fixtures, evidence wall, and projector table establish deliberate geometry; the detective remains offset against the grid, and his imperfect checking gesture becomes the single human break in order.
 ```
 
 ### Avoid
@@ -125,7 +137,13 @@ A grounded 16:9 observed live-action frame in a borrowed Manhattan police eviden
 
 Director and visual reference: Denis Villeneuve, drawing strongly from the visual language associated with Prisoners, Sicario, and Arrival.
 
-Reselect the visual center around the detective’s small stalled figure against the severe scale of the borrowed institution. Use a measured wide camera down a long aisle, with dark filing cabinets occupying a heavy foreground plane and the projected face reduced to a distant functional light patch. Keep the detective’s card gesture understandable but not central; use sparse blocking, controlled negative space, patient stillness, weighty failing fluorescents and projector white, restrained grey-brown material color, middle-to-deep contextual focus, dense unglamorous texture, and real darkness where the practical light does not reach. The system of cabinets, paper, and locked evidence should outweigh the individual without haze or spectacle.
+Lighting and contrast signature: weighty failing fluorescents and distant projector white form broad severe value fields, while the long aisle and cabinet recesses retain real unreadable darkness.
+
+Color and exposure signature: restrained grey-brown paper, paint, metal, and tired skin remain muted by the institution; protected practical whites and heavy midtones replace orange haze or science-fiction color.
+
+Lens and camera signature: observe with a measured wide camera from the far aisle, patient stillness, and middle-to-deep contextual focus; the card gesture remains understandable but never receives a procedural close-up.
+
+Composition and spatial signature: dark filing cabinets form a heavy foreground mass, the detective becomes a small stalled figure, and the projected face shrinks to a distant functional patch; negative space and locked evidence systems outweigh the individual.
 ```
 
 ### Avoid
@@ -157,7 +175,13 @@ A grounded 16:9 observed live-action frame in a borrowed Manhattan police eviden
 
 Director and visual reference: David Fincher, drawing strongly from the visual language associated with Se7en, Zodiac, and The Social Network.
 
-Organize the room through exact procedural information hierarchy: the employee card, projected face, typed time markers, taped photographs, file surfaces, and the detective’s checking hand form a controlled chain of visual evidence. Use precise physically plausible camera placement at the evidence-room threshold, restrained movement, disciplined focus that connects card, hand, and projection while leaving secondary boxes and cabinets incomplete, low illumination with high narrative readability, neutral-to-cool material response, controlled shadow detail, matte paper, tired skin, and clean spatial causality without glossy crime-drama polish.
+Lighting and contrast signature: threshold fluorescents and projector light keep card, checking hand, typed time marker, and projected face readable inside low illumination; secondary boxes and cabinets enter controlled shadow.
+
+Color and exposure signature: neutral-to-cool paper, tired skin, dull wall paint, and dead metal retain disciplined midtones, contained whites, and controlled blacks without a yellow-green cast.
+
+Lens and camera signature: use exact physically plausible medium placement at the evidence-room threshold, restrained movement, and disciplined contextual focus linking card, hand, and projection.
+
+Composition and spatial signature: arrange employee card, typed time markers, taped photographs, file surfaces, and checking gesture as a causal evidence chain; suppress secondary clutter so the information hierarchy remains precise rather than uniformly sharp.
 ```
 
 ### Avoid
@@ -189,7 +213,13 @@ A grounded 16:9 observed live-action frame in a borrowed Manhattan police eviden
 
 Director and visual reference: Terrence Malick, drawing strongly from the visual language associated with Days of Heaven, The Thin Red Line, and The Tree of Life.
 
-Let bodily duration and tactile interruption outrank procedural clarity: the detective has just shifted his card below its perfect comparison position while staying at the evidence wall, and a curled typed-paper edge catches his sleeve as he takes one human step through the projector beam. Use a nearby physically possible 24-28mm camera drifting behind and to the side of his shoulder; partial body, uneven paper, and masking tape fracture the projected face. Let focus breathe from sleeve and paper edge toward the projection, with the card remaining visible near the frame edge rather than ideal. Mix dead fluorescent contamination with projector white, leave dull skin, matte paper, dead metal, incomplete evidence, cold coffee, and unresolved corners in uneven exposure, and retain captured texture instead of polished beauty.
+Lighting and contrast signature: dead fluorescent contamination and projector white cross the moving shoulder unevenly; skin becomes dull, some projection whites clip, and unresolved corners remain genuinely dark.
+
+Color and exposure signature: tired skin, matte paper, dead metal, cold coffee, and uneven wall color keep unattractive material neutrals; exposure breathes as the body crosses the beam without a golden or prestige-grey wash.
+
+Lens and camera signature: use a nearby physically possible 24–28mm spatial feeling one step behind and beside the shoulder, with a short human drift and focus breathing from sleeve and curled paper toward the broken projection.
+
+Composition and spatial signature: the lowered card stays near the edge, partial body, uneven paper, and tape fracture the projected face, and one tactile sleeve-paper contact outranks complete evidence readability.
 ```
 
 ### Avoid

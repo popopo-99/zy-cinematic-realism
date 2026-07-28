@@ -20,7 +20,14 @@ The location feels physically used: [two to four causal details tied to age, wea
 
 [When a director is named:]
 Director and visual reference: [standard English director name], drawing strongly from the visual language associated with [representative film 1], [representative film 2], and [representative film 3].
-Signature visual language: [scene-specific translation of the director's recognizable story beat, visual center, blocking, camera axis, lens behavior, movement, light, contrast, color, depth of field, and capture texture].
+
+Lighting and contrast signature: [scene-specific motivated source hierarchy, shadow distribution, contrast, highlight behavior, and protected dark areas].
+
+Color and exposure signature: [scene-specific source color relationship, saturation cause, skin response, midtones, black/white points, and permitted cast or exposure behavior].
+
+Lens and camera signature: [scene-specific observation distance, physical witness position and height, lens behavior, focus/depth strategy, and motivated movement or stillness].
+
+Composition and spatial signature: [scene-specific visual center, subject scale, negative space, obstruction, architecture, blocking, information hierarchy, and hidden information].
 
 Foreground: [natural boundary, obstruction, reflection, or empty foreground].
 Midground: [primary action and spatial relationship].
@@ -41,4 +48,4 @@ The frame feels like [narrative position and emotional aftertaste].
 
 Return a separate `Avoid` list with 10-20 scene-specific terms.
 
-When no director is named, delete the entire director block. When a director is named, do not delete it: fill both sentences with the director's name, two or three representative films, and a concrete scene-specific style translation. Never fill the block with a director name alone.
+When no director is named, delete the entire director block. When a director is named, do not delete or separate it: fill the director line and all four signatures with concrete scene-specific decisions. Never fill the block with a director name alone or abstract library prose.

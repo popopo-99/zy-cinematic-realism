@@ -3,45 +3,62 @@
 ## Identity
 - Chinese name: 杨德昌
 - Region: Taiwan
-- Representative works: *Yi Yi*, *A Brighter Summer Day*, *Taipei Story*
-- Best suited for: modern cities, social networks, architecture, cool observation.
+- Representative works: *Yi Yi*, *A Brighter Summer Day*, *The Terrorizers*
+- Best suited for: urban systems, family networks, architecture, cool social observation.
 
-## Core Logic
-Show private uncertainty within systems larger than the character: offices, family networks, roads, windows, and changing city blocks.
+## Core Dramatic Logic
+Choose a small private decision whose consequences travel through family, work, school, and city systems. Architecture reveals connections people do not state.
 
-## Story and Character
-Choose a small decision with social consequences. Characters reveal themselves through interrupted conversation and attention directed elsewhere.
+## Light and Contrast Fingerprint
+- Source hierarchy: use office fluorescents, apartment practicals, street spill, storefronts, and window daylight as found.
+- Shadow and contrast: favor moderate practical contrast separated by panes, rooms, and time of day rather than expressive darkness.
+- Highlights and visibility: glass and screens may reflect relationships, but faces and rooms retain ordinary exposure hierarchy.
+- Reject: glossy corporate keys, noir slashes, theatrical isolation, or reflections lit only for beauty.
 
-## Camera and Space
-Use architecture, glass, corridors, and room divisions to hold several relationships at once. Keep the camera composed but not diagrammatic.
+## Color and Exposure Fingerprint
+- Palette and saturation: keep concrete, glass, paint, fluorescent interiors, traffic, and household objects truthful and restrained.
+- Skin and midtones: let skin sit naturally inside cool urban or warm domestic sources without cosmetic correction.
+- Blacks, whites, exposure: preserve neutral midtones, believable window brightness, and modest black separation; do not flatten the city into blue.
+- Reject: sterile cyan grading, retro nostalgia, high-saturation signage, or an all-grey modernist filter.
 
-## Light and Color
-Use business, street, apartment, and window light as found. Keep color truthful to concrete, glass, and fluorescent interiors.
+## Lens and Camera Fingerprint
+- Distance and lens: use lucid medium or medium-long normal-to-slightly-long observation with enough context for social relationships.
+- Height and position: stand at a neighboring workstation, across a street, behind glass, or within an adjoining room at ordinary eye level.
+- Movement and focus: favor stillness or restrained reframing; keep contextual focus so several relationship nodes remain readable.
+- Witness role: a clear-minded urban observer, not a detached security camera; reject dramatic push-ins and decorative handheld intimacy.
 
-## Best Use Cases
-Family friction, office life, adolescence, urban transitions.
+## Composition and Spatial Fingerprint
+- Visual center: locate a relationship across architecture rather than center a face.
+- Layers and obstruction: use windows, corridors, partitions, reflections, roads, and rooms to divide and reconnect people.
+- Blocking and geometry: hold several social positions in one frame, often at different depths or separated by a structural line.
+- Information control: reveal systems and parallel lives while withholding a single emotional explanation.
+
+## Blocking and Story Translation
+- Moment: choose a private hesitation inside a public or family system.
+- Character action: delay a call, watch another room, leave a seat, or continue work after conversation stops.
+- Visual center: privilege the connection or division between people.
+- Blocking: distribute relationships across architectural boundaries.
+- Environment: let city flow, office routine, or family traffic continue.
+
+## Capture Texture
+Use clean but unshowy live-action capture, truthful urban exposure, contextual focus, and matte everyday surfaces. Avoid sterile perfection and decorative glass polish.
 
 ## Common Misreadings
-- Sterile modernism.
-- Perfect geometry.
-- Empty cityscapes.
-- Emotionless acting.
+- Treating modern architecture as sterile spectacle.
+- Making every frame perfectly geometric.
+- Emptying the city of social activity.
+- Directing actors as emotionally blank.
+- Using reflections without a relationship function.
+
+## Nearest-Neighbor Contrast
+Unlike Jia Zhangke, Yang maps simultaneous social relationships through lucid architecture: cleaner practical contrast, neutral urban color, composed medium distance, and cross-room information networks rather than provincial-industrial duration, rough ambient light, patient lateral observation, and bodies dwarfed by historical transition.
 
 ## Model-Facing Style Anchor
-
-- Explicit director token: Edward Yang
-- Representative film anchors: *Yi Yi*, *A Brighter Summer Day*, *The Terrorizers*
-- Strong visual grammar: lucid medium or medium-long observational camera; architecture, windows, corridors, and reflections divide and connect bodies; layered social information across rooms and streets; restrained blocking and camera intervention; neutral-to-cool urban material color; practical contrast; selective but contextual focus; clean, unshowy capture; relationships shaped by larger city systems.
-- Do not reduce to: office glass, cold-blue cities, corporate interiors, or reflections used as empty decoration.
-- Prompt insertion: Director reference: Edward Yang, with broad visual reference points in *Yi Yi*, *A Brighter Summer Day*, and *The Terrorizers*. Use architecture, windows, corridors, reflections, and urban systems to divide and connect relationships; maintain a lucid observational distance, layered social information, restrained color, and emotionally precise spatial separation.
+Use lucid medium-distance observation, architecture and glass that divide and connect relationships, layered social information, ordinary practical contrast, truthful urban color, contextual focus, and a private hesitation embedded in a larger city system.
 
 ## Default Iconic Anchor
-
-Director and visual reference: Edward Yang, drawing strongly from the visual language associated with Yi Yi, A Brighter Summer Day, and The Terrorizers. Reselect the visual center around a relationship divided and connected by architecture: use a lucid medium or medium-long witness through windows, corridors, or reflections, layered social information across rooms, restrained blocking, neutral-to-cool material color, practical contrast, and contextual focus. Keep people emotionally precise but spatially separated by the larger urban system, with clean unshowy capture rather than decorative glass.
+Reselect the visual center as a relationship carried across windows, corridors, or rooms; hold a lucid eye-level witness with contextual focus, keep practical urban color and moderate contrast, and let several social nodes remain visible without turning architecture into a diagram.
 
 ## Scene Translation
-- story beat: an employee delays calling home after a meeting.
-- character action: he watches his reflection in the office glass.
-- camera position: from a neighbouring empty workstation.
-- lighting: office fluorescents fading against blue evening windows.
-- avoid: corporate ad, perfect symmetry, glossy skyline.
+- Scene: an employee delays calling home after a meeting.
+- Translation: he watches the family contact reflected in an unlit phone beside office glass; a neighboring workstation view keeps another meeting ending in the rear room under fluorescents and blue evening windows.

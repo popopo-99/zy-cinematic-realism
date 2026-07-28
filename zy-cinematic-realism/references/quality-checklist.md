@@ -21,6 +21,9 @@ Before responding, confirm every applicable item:
 - [ ] The Avoid list is relevant, concise, and non-contradictory.
 - [ ] Period, wardrobe, vehicles, architecture, signage, and props are consistent.
 - [ ] No required user fact or restriction was silently changed.
+- [ ] A named-director prompt contains the uninterrupted Director Signature Block with all four scene-specific axes.
+- [ ] At least three axes structurally differ from the undirected baseline, and at least three viewing decisions were reselected.
+- [ ] Removing director names and film titles still leaves a distinct visual method that does not collapse into the nearest-neighbor director.
 - [ ] The output contains no placeholders or hidden reasoning.
 
 If the frame reads like an advertisement, poster, fashion portrait, concept sheet, or game render, rewrite the subject scale, action, camera placement, and light logic before adding more style words.
