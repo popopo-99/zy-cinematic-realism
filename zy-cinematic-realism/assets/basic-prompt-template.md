@@ -3,49 +3,30 @@ Copyright (c) 2026 ZY / popopo-99
 SPDX-License-Identifier: CC-BY-NC-4.0
 -->
 
-# Basic Cinematic Prompt Template
+# Model-Neutral Scene Master Scaffold
 
-Replace every bracketed field and delete unused lines.
+Use this only as a drafting order. Replace each instruction with scene-specific prose, omit irrelevant lines, and compile the result through the selected model adapter. Never expose the scaffold labels unless they improve the requested output.
 
 ```text
-A frame from a [era, place, and film genre], captured with restrained cinematic realism.
+Grounded scene: establish era, place, time, weather, and the fixed event.
 
-[Specific time, weather, and physical location.]
+Story beat: identify what just happened, the concrete current action, and the implied next event.
 
-[Character identity and concrete action.]
+Character identity and blocking: describe who is present, where each person is, what each person is physically doing, and how objects occupy their hands or attention.
 
-This moment occurs after [immediate previous event] and before [implied next direction]. Emotion is expressed through [posture, distance, gaze, silence, or object handling], not a posed expression.
+Environment and topology: establish usable entrances, exits, surfaces, routes, causal traces of use, and the relationship between foreground, midground, and background.
 
-The location feels physically used: [two to four causal details tied to age, weather, occupation, or the recent event].
+Visual center: state what the eye discovers first and what remains secondary, hidden, or unresolved.
 
-[When a director is named:]
-Director and visual reference: [standard English director name], drawing strongly from the visual language associated with [representative film 1], [representative film 2], and [representative film 3].
+Camera witness position: place a real camera at a specific location and height; define observation distance, subject scale, focal behavior, boundary or obstruction, and movement only when motivated.
 
-Lighting and contrast signature: [scene-specific motivated source hierarchy, shadow distribution, contrast, highlight behavior, and protected dark areas].
+Source light map: name the primary source, limited secondary sources, protected shadow zones, highlight surfaces, exposure behavior, and resulting color relationship.
 
-Color and exposure signature: [scene-specific source color relationship, saturation cause, skin response, midtones, black/white points, and permitted cast or exposure behavior].
+Material behavior: describe how the important surfaces respond to weight, moisture, age, movement, contact, and the mapped sources.
 
-Lens and camera signature: [scene-specific observation distance, physical witness position and height, lens behavior, focus/depth strategy, and motivated movement or stillness].
+Capture behavior: add only a few compatible traits such as natural exposure, soft highlight roll-off, plausible motion blur, focus imperfection, restrained grain, or source-bound halation.
 
-Composition and spatial signature: [scene-specific visual center, subject scale, negative space, obstruction, architecture, blocking, information hierarchy, and hidden information].
-
-Foreground: [natural boundary, obstruction, reflection, or empty foreground].
-Midground: [primary action and spatial relationship].
-Background: [continuing activity, architecture, weather, or consequence].
-
-The camera observes from [physical position] at [height and shot distance], using [focal behavior or focal length when useful]. [Movement behavior.] The composition places [subject relationship], with [negative space, asymmetry, or environmental scale] supporting the story.
-
-[Aspect ratio when requested.]
-
-Primary light source: [real source, direction, and quality].
-Secondary light source: [real source and its limited effect].
-[Shadow, highlight, and restrained color relationship.]
-
-Natural exposure, [two to five compatible capture traits].
-
-The frame feels like [narrative position and emotional aftertaste].
+Delivery: preserve the requested aspect ratio, visible text, reference-image roles, restrictions, and likely scene-specific failure modes.
 ```
 
-Return a separate `Avoid` list with 10-20 scene-specific terms.
-
-When no director is named, delete the entire director block. When a director is named, do not delete or separate it: fill the director line and all four signatures with concrete scene-specific decisions. Never fill the block with a director name alone or abstract library prose.
+For a named supported director, apply the Director Four-Axis block from `references/director-routing.md` after the grounded facts and before detailed camera design. For a model-neutral result, keep exclusions as direct visual constraints. For a target model, let its adapter determine whether exclusions are integrated, separated, or expressed through native syntax.

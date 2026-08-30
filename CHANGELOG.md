@@ -1,6 +1,48 @@
 # Changelog
 
+## [2.0.0] - 2026-08-30
+
+### Added
+
+- Scene Master canonical representation for locking character, story moment, action, scene, camera, composition, light, props, time, weather, and constraints.
+- Model Router for task-aware adapter recommendations.
+- Model Capability Matrix for comparing model-facing compilation needs without permanent rankings.
+- Model Compiler architecture.
+- Four native adapters: GPT Image 2, Midjourney, Seedream 5.0 Pro, and Nano Banana.
+- Transcode Lock for changing model syntax without changing scene logic.
+- Multi-model Pack for compiling one Scene Master into several native prompts.
+- Prompt Check for pre-generation conflict, vagueness, and physical-plausibility checks.
+- Prompt Doctor / Result Repair for diagnosis-first, variable-scoped corrections.
+- Continuity Bible for locking identity, wardrobe, props, locations, and light across a sequence.
+- Shot Delta for expressing only the controlled change from the continuity base.
+- One Variable Remix for changing one declared decision while preserving all other locks.
+- Creative Shuffle for bounded creative alternatives.
+- 16 style cards and 8 cinematography cards that alter executable visual decisions.
+- A 14-case manual regression suite covering routing, compilation, continuity, repair, remix, and creative grammar.
+
+### Changed
+
+- Replaced the single Final Prompt pipeline with `Scene Master → Creative Grammar → Model Compiler → Result Repair`.
+- Reorganized the README around v2 product capabilities while retaining the established cinematic methodology and examples.
+- Expanded output contracts to support model-neutral planning, native model prompts, continuity packs, checks, and repairs.
+- Made scene invariants explicit during transcoding and multi-model compilation.
+
+### Preserved
+
+- The 38-director library and Director Four-Axis Visual Fingerprint System.
+- Story-first cinema principles, physically plausible camera placement, motivated light, and anti-AI cleanup.
+- Technical skill name `zy-cinematic-realism`, folder name, and `$zy-cinematic-realism` invocation.
+
+### Fixed
+
+- Reduced scene drift when moving one visual direction between models.
+- Reduced full-prompt rewrites when only camera, blocking, light, or another local variable needs repair.
+- Reduced continuity drift caused by repeating complete prompts without a shared base lock.
+- Clarified the difference between model-native syntax changes and protected scene logic.
+
 ## [1.2.0] - Unreleased
+
+Development work folded into v2.0.0; not released separately.
 
 ### Added
 

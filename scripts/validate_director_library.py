@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the v1.2 director library and local Markdown links."""
+"""Validate the v2.0 director library and local Markdown links."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SKILL_ROOT = REPO_ROOT / "zy-cinematic-realism"
 DIRECTOR_ROOT = SKILL_ROOT / "references" / "directors"
 INDEX_PATH = DIRECTOR_ROOT / "index.md"
-EXPECTED_VERSION = "1.2.0"
+EXPECTED_VERSION = "2.0.0"
 
 REQUIRED_SECTIONS = (
     "Identity",
@@ -158,16 +158,21 @@ def validate_signature_and_versions(errors: list[str]) -> None:
         encoding="utf-8"
     )
 
+    routing_path = SKILL_ROOT / "references" / "director-routing.md"
     for field in SIGNATURE_FIELDS:
-        for path, text in (
-            (SKILL_ROOT / "SKILL.md", skill_text),
-            (SKILL_ROOT / "references" / "director-routing.md", routing_text),
-            (SKILL_ROOT / "assets" / "basic-prompt-template.md", template_text),
-        ):
-            if field not in text:
-                errors.append(
-                    f"{path.relative_to(REPO_ROOT)}: missing Director Signature Block field '{field}'."
-                )
+        if field not in routing_text:
+            errors.append(
+                f"{routing_path.relative_to(REPO_ROOT)}: missing Director Signature Block field '{field}'."
+            )
+
+    for path, text in (
+        (SKILL_ROOT / "SKILL.md", skill_text),
+        (SKILL_ROOT / "assets" / "basic-prompt-template.md", template_text),
+    ):
+        if "Director Four-Axis" not in text:
+            errors.append(
+                f"{path.relative_to(REPO_ROOT)}: missing Director Four-Axis routing reference."
+            )
 
     version_checks = (
         (REPO_ROOT / "README.md", f"v{EXPECTED_VERSION}"),

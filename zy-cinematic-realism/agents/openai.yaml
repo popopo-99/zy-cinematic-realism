@@ -1,4 +1,4 @@
 interface:
   display_name: "造梦师 · Cinematic Realism"
-  short_description: "把简单画面想法变成真实可信的电影单帧 Prompt 工作流"
-  default_prompt: "Use $zy-cinematic-realism to turn my scene idea into a restrained, physically believable cinematic frame prompt."
+  short_description: "电影感 Prompt 编译、多模型转译、连续组图、视觉诊断与修复"
+  default_prompt: "Use $zy-cinematic-realism to build a grounded Scene Master and compile it into a model-native cinematic image prompt."

@@ -1,6 +1,6 @@
 ---
 name: zy-cinematic-realism
-description: Turn brief scene ideas into production-ready English prompts for restrained, physically believable cinematic stills or video keyframes. This skill is publicly presented as 造梦师：AI时代电影视觉指南. Use when users ask for 电影感 or cinematic AIGC prompts, want to reduce the artificial AI look, need a story beat, camera position, composition, motivated lighting, film texture, and scene-specific negative prompts, or want an existing visual prompt diagnosed and rewritten as a believable movie frame.
+description: Compile scene ideas or existing visual prompts into restrained, physically believable cinematic image prompts for GPT Image 2, Midjourney, Seedream 5.0 Pro, Nano Banana, or a model-neutral workflow. Use for cinematic AIGC creation, model routing or transcoding, continuity packs, prompt diagnosis, result repair, director/style/cinematography methods, one-variable remixes, and grounded creative shuffles.
 ---
 
 <!--
@@ -12,116 +12,108 @@ Source: https://github.com/popopo-99/zy-cinematic-realism
 
 # 造梦师 · ZY Cinematic Realism
 
-Public edition: 《造梦师：AI时代电影视觉指南 v1.2.0》
+Public edition: 《造梦师：AI时代电影视觉指南 v2.0.0》.
 
-Transform a simple idea into a frame that feels observed inside an ongoing story. Build narrative, physical space, camera logic, and motivated light before adding lens or film terminology.
+Build every result in this order:
 
-## Workflow
+`Scene Master → Creative Grammar → Model Compiler → Result Repair`
 
-1. Parse the user's fixed facts: era, place, characters, event, mood, time, weather, aspect ratio, model, and restrictions.
-2. Preserve supplied facts. Infer ordinary production details when they are missing. Ask one concise question only when a missing choice would materially change the result; otherwise proceed with restrained defaults.
-3. Identify the emotional subject beneath the literal subject. State what happened immediately before the frame and what may happen next.
-4. Select a specific story beat. Prefer anticipation, waiting, aftermath, departure, private observation, or interrupted routine over a heroic climax unless the user requests one.
-5. Give each character a small, concrete action. Express emotion through posture, distance, gaze, handling of objects, and silence. Do not direct characters to pose for the camera.
-6. Build a usable physical location with foreground, midground, background, age, weather or air, wear, and two to four story-relevant traces of use.
-7. Place the camera somewhere a real camera could be. Specify height, distance or shot size, focal length only when useful, and one justified obstruction, reflection, or spatial boundary when appropriate.
-8. Compose observationally. Use off-center placement, negative space, partial occlusion, asymmetry, and environmental scale only when they support the story.
-9. Motivate every important light source from the location. Describe primary source, secondary source, shadow placement, highlight placement, and a restrained color relationship.
-10. Add capture texture last: natural exposure, soft highlight roll-off, believable grain, restrained halation, lens falloff, focus imperfection, or motion blur. Use only effects supported by the scene.
-11. Select 10-20 scene-specific Avoid terms. Remove generic terms that do not address a likely failure mode.
-12. Run the final quality check in [references/quality-checklist.md](references/quality-checklist.md). Rewrite any weak section before answering.
+First decide what the image is, then how it is witnessed, and only then how to express it to a target model. One Scene Master may compile into multiple native model prompts.
+
+## Mode Selection
+
+Infer the mode from the request. Do not print a menu.
+
+- **Create** — build a new cinematic scene and compile it for one target model.
+- **Model Router** — recommend a model when the user is unsure.
+- **Transcode** — preserve an existing scene while changing model-native expression.
+- **Multi-model Pack** — compile one locked Scene Master for several models.
+- **Continuity** — create a Continuity Bible, shot list, and controlled Shot Deltas.
+- **Repair** — diagnose a generated result and produce a model-native repair instruction.
+- **Prompt Check** — inspect an existing prompt without rewriting unless requested.
+- **Director / Style / Cinematography** — apply a selected visual grammar.
+- **Remix** — change one major variable while preserving every other invariant.
+- **Creative Shuffle** — combine one causal story card, camera card, and style card.
+
+## Target Model Gate
+
+When the user wants a prompt ready for generation and the target model is unknown, ask only:
+
+> 你准备在哪个模型里生成：GPT Image 2、Midjourney、Seedream 5.0 Pro、Nano Banana，还是其他？
+
+Ask once only when the choice materially changes prompt structure. Do not ask when the user already named a model or the active conversation establishes it. If the user says to proceed, skip questions, use a model-neutral Scene Master prompt, and mention model-specific transcoding only when extra explanation is allowed.
+
+If the user requests prompt-only output, return only the prompt requested: no interpretation, menu, follow-up, or unrelated adapter question.
+
+## Scene Master Invariants
+
+Build or recover the Scene Master before applying style or model syntax. Preserve all user-fixed facts. A model adapter may change structure, order, density, native syntax, exclusions, reference-image wording, parameter form, or edit-instruction form. It may not silently change:
+
+- character identity, scene, time, weather, story beat, or current action;
+- visual center, camera witness position, spatial layers, or composition logic;
+- primary light sources, core props, aspect ratio, or explicit restrictions.
+
+For Transcode and Multi-model Pack, apply a Transcode Lock before writing any target prompt. `MODEL SYNTAX MAY CHANGE. SCENE LOGIC MAY NOT.`
+
+## Core Create Workflow
+
+1. Parse fixed facts: era, place, characters, event, mood, time, weather, aspect ratio, target model, references, and restrictions.
+2. Choose a specific story beat with a narrative before, concrete current action, and implied next event. Prefer observed transition, waiting, aftermath, departure, private observation, or interrupted routine unless the user requests a climax.
+3. Give each character physical blocking and a small action. Express emotion through posture, distance, gaze, silence, and object handling, not posing.
+4. Construct foreground, midground, background, usable topology, causal traces of use, and materially consistent surfaces.
+5. Place the camera at a physically possible witness position. Choose distance, height, focal behavior, boundary, and movement only as the story requires.
+6. Map motivated sources, protected shadows, highlight surfaces, exposure behavior, and restrained color relationships.
+7. Apply only the requested creative grammar. Do not let a card or director overwrite fixed facts.
+8. Compile through the selected model adapter. Select scene-specific exclusions rather than pasting a generic negative list.
+9. Apply anti-AI cleanup and run the quality checklist before answering.
 
 ## Reference Routing
 
-- Read [references/cinematic-principles.md](references/cinematic-principles.md) when building or diagnosing story, environment, and composition.
-- Read [references/camera-and-light.md](references/camera-and-light.md) when selecting camera placement, focal behavior, aspect ratio, or motivated light.
-- Read [references/negative-prompts.md](references/negative-prompts.md) before composing the Avoid section.
-- Read [references/anti-ai-cleanup.md](references/anti-ai-cleanup.md) before finalizing every output. It is a global cleanup layer, not a substitute for director rules.
-- Read [references/examples.md](references/examples.md) only when calibration through examples would improve the result.
-- Read [references/director-routing.md](references/director-routing.md) only when the user explicitly names a director, requests a director method, asks to compare director directions, or asks for a director recommendation. Then use [references/directors/index.md](references/directors/index.md) to read the matching reference.
-- For a recommendation request, read [references/directors/recommendation-matrix.md](references/directors/recommendation-matrix.md), select two or three candidates, and load only their matching director references.
-- For a single named director, read director-routing.md, the index, and exactly one matching director reference. For a requested comparison or recommendation, read only the two or three candidate references needed. For an explicit mix, read no more than the primary and secondary director references.
-- Do not load the Director Four-Axis Library when no director reference is requested. Use one director by default; use one primary and one secondary director only when the user explicitly asks to mix them.
-- Use [assets/basic-prompt-template.md](assets/basic-prompt-template.md) as the output scaffold; replace every placeholder and remove unused lines.
+Load only the branch required for the active mode.
 
-## Director and Anti-AI Checks
+- **Create:** [cinematic-principles.md](references/cinematic-principles.md), [camera-and-light.md](references/camera-and-light.md), [anti-ai-cleanup.md](references/anti-ai-cleanup.md), [model-routing.md](references/model-routing.md), the selected adapter, and [quality-checklist.md](references/quality-checklist.md). Read [negative-prompts.md](references/negative-prompts.md) when exclusions are needed.
+- **Model Router:** [model-routing.md](references/model-routing.md) and [model-capability-matrix.md](references/model-capability-matrix.md).
+- **Transcode / Multi-model Pack:** [prompt-compiler.md](references/prompt-compiler.md), [model-routing.md](references/model-routing.md), and only the source and target adapters needed.
+- **Prompt Check:** [prompt-check.md](references/prompt-check.md), the target adapter when known, and [anti-ai-cleanup.md](references/anti-ai-cleanup.md) when cinematic realism is relevant.
+- **Continuity:** [continuity-cards.md](references/continuity-cards.md), [prompt-compiler.md](references/prompt-compiler.md), and the target adapter.
+- **Repair:** [result-repair.md](references/result-repair.md), the target adapter, and [continuity-cards.md](references/continuity-cards.md) for a series.
+- **Director:** [director-routing.md](references/director-routing.md), [directors/index.md](references/directors/index.md), and one matching director file. For recommendations, also read [directors/recommendation-matrix.md](references/directors/recommendation-matrix.md) and load only two or three candidates.
+- **Style:** [creative-cards.md](references/creative-cards.md) and [style-cards.md](references/style-cards.md).
+- **Cinematography:** [cinematography-cards.md](references/cinematography-cards.md).
+- **Remix:** [remix.md](references/remix.md), [prompt-compiler.md](references/prompt-compiler.md), and the target adapter.
+- **Creative Shuffle:** [creative-shuffle.md](references/creative-shuffle.md), [style-cards.md](references/style-cards.md), and [cinematography-cards.md](references/cinematography-cards.md) when useful.
+- **Examples:** read [examples.md](references/examples.md) only when calibration is genuinely useful.
+- **Scaffold:** use [basic-prompt-template.md](assets/basic-prompt-template.md) only when a compact model-neutral Scene Master writing order is useful; the selected adapter still controls final syntax.
 
-For every named supported director, translate all four axes into concrete decisions for the current scene:
+Model adapters:
 
-1. `Lighting and contrast` — name the motivated source hierarchy, shadow distribution, highlight behavior, contrast shape, and intentionally unreadable dark areas.
-2. `Color and exposure` — name the source-based color relationship, saturation cause, skin response, black/white/midtone behavior, and any permitted cast or exposure drift.
-3. `Lens and camera` — name the physical witness position, observation distance, lens behavior, height, focus/depth strategy, and conditions for stillness or movement.
-4. `Composition and spatial logic` — name the visual center, subject scale, negative space, obstruction, architecture, blocking, information hierarchy, and what remains hidden.
+- [GPT Image 2](references/models/gpt-image-2.md)
+- [Midjourney](references/models/midjourney.md)
+- [Seedream 5.0 Pro](references/models/seedream-5-pro.md)
+- [Nano Banana family](references/models/nano-banana.md)
 
-All four axes are mandatory. If any axis is missing, rewrite the Final Prompt.
+## Director Compatibility
 
-Do not preserve the baseline shot design by default. Preserve the user's fixed era, place, characters, event, weather, and restrictions, but require structural change in at least three axes. Changing only a director name, film title, focal-length number, shallow depth of field, warm/cool grade, grain, atmosphere adjective, or crop is not structural change.
+Preserve the existing Director Four-Axis system. Use it only when the user names a director, requests a director method or comparison, or asks for a recommendation. Supported named directors remain mandatory strong/iconic mode. Follow `director-routing.md`, translate all four axes into scene-specific decisions, and never substitute a name or film title for camera, light, color/exposure, composition, space, and blocking. Do not copy a specific film shot.
 
-Reselect at least three of these five viewing decisions: the moment before/during/after the action; the primary visual center; the camera's physical witness position; the subject's scale and completeness; whether environment, person, or object controls the frame.
+## Output Contracts
 
-After drafting, remove the director name and film titles mentally. If the lighting, color/exposure, lens/camera, and composition/space no longer reveal a distinct method, rewrite. Compare against the `Nearest-Neighbor Contrast` in the selected director reference and rebuild any axis that collapses into the neighboring method.
+- **Create:** `画面理解` → `[Target Model] Prompt` → target-native constraints or settings only when useful.
+- **Transcode:** short `Scene Lock Summary` → `[Target Model] Prompt`; do not re-explain the concept.
+- **Multi-model Pack:** one short Scene Lock → clearly different native prompts sharing the same invariants.
+- **Prompt Check:** three to five high-impact `PASS / WEAK / RISK / CONFLICT` findings → Rewrite, Surgical Fix, or No Rewrite as requested.
+- **Repair:** dominant failures → `CHANGE ONLY` → `PRESERVE EXACTLY` → target-native repair prompt.
+- **Continuity:** Continuity Bible → Shot List → Shot Deltas → model-native prompts.
+- **Remix:** Preserved → Changed axis → New Prompt.
+- **Shuffle:** Combination → Story Card → Camera Card → Style Card → Final Prompt.
 
-Fixed facts must remain present, but not every fixed fact must be fully visible, equally sharp, or placed at the compositional center.
-
-Before answering, check that surfaces are not waxy or plastic, not every object is equally legible, shadows and falloff retain natural dead areas, and wear looks lived-in rather than designed. Keep the scene physically believable.
-
-## Mandatory Strong Director Mode
-
-For every director listed in [references/directors/index.md](references/directors/index.md), any named-director request must use the strongest `iconic` behavior, publicly labeled `强烈`.
-
-Treat all of the following as aliases for the same strongest behavior:
-
-- `subtle`
-- `clear`
-- `strong`
-- `iconic`
-- `轻微`
-- `明确`
-- `强烈`
-
-Do not lower the director effect merely because the user writes `明确` or `轻微`. Once a supported director is named, the director's strongest recognizable image grammar must lead the result. When no supported director is named, keep the original cinematic realism workflow and do not add director or film anchors.
-
-For every named-director Final Prompt, immediately after the grounded scene facts and before detailed camera design, include this uninterrupted `Director Signature Block`:
-
-```text
-Director and visual reference: [standard English director name], drawing strongly from the visual language associated with [representative film 1], [representative film 2], and [representative film 3].
-
-Lighting and contrast signature: [scene-specific source hierarchy, shadow distribution, contrast, highlights, and protected dark areas].
-
-Color and exposure signature: [scene-specific source color, saturation cause, skin response, midtones, black/white points, and permitted cast or exposure behavior].
-
-Lens and camera signature: [scene-specific observation distance, physical camera position and height, lens behavior, focus/depth strategy, and motivated movement or stillness].
-
-Composition and spatial signature: [scene-specific visual center, subject scale, negative space, obstruction, architecture, blocking, information hierarchy, and hidden information].
-```
-
-Keep these five labeled lines consecutive; do not move them to the end as decoration. Use two or three representative films. Every signature line must translate the selected director reference into the current scene rather than copy an abstract library description. Never use only `in the style of [director]`, or a director name without all four scene-specific signatures.
-
-Names and film anchors are model-facing signals, not a replacement for scene-specific visual grammar. Preserve the user's original characters, event, era, and location unless the user explicitly asks to recreate a particular film scene. Do not copy a shot, set piece, character design, or composition from any representative film.
-
-Only omit the director name and film titles when the user explicitly requests a name-free prompt or explicitly says that their platform does not allow director names. Even then, use the matching director's strongest internal image grammar. Otherwise, output one anchored version rather than competing variants.
-
-## Output Contract
-
-Default to the following order:
-
-1. `画面理解` - a concise Chinese summary of the story beat and key production choices. Use the user's language instead when it is clearly preferred.
-2. `Final Prompt` - one complete, fluent English prompt. Integrate concrete scene information instead of listing abstract praise words.
-3. `Avoid` - a compact English, comma-separated negative prompt tailored to the scene.
-
-Do not expose hidden reasoning. Do not leave placeholders. Do not repeat the user's brief verbatim as the entire result.
-
-If the user requests only a prompt, omit the interpretation and return `Final Prompt` plus `Avoid`. If a target model is named, adapt syntax and length without changing the scene logic. If the user supplies an existing prompt, briefly identify its strongest failure modes, then provide a complete rewrite.
+Do not expose hidden reasoning or internal locks unless the user requests them. Do not leave placeholders.
 
 ## Non-Negotiable Rules
 
-- Make the frame work after removing words such as `cinematic`, `35mm`, `Kodak`, `ARRI`, `anamorphic`, and `film grain`.
-- Do not use `photorealistic` as a default quality badge. Prefer an observed live-action frame, a grounded film frame, or a physically believable captured moment; retain `photorealistic` when the user explicitly requests it.
-- Prefer specific nouns and observable actions over `masterpiece`, `epic`, `stunning`, `award-winning`, `8K`, or `highly detailed`.
-- Keep period, weather, wardrobe, architecture, props, light, and capture medium internally consistent.
-- Do not invent decorative rim lights, neon, fog, lens flare, or shallow depth of field without a physical reason.
-- Do not force damage, dirt, occlusion, or imperfection into every frame. Use them only when the location and story support them.
-- Avoid poster, fashion editorial, game render, concept-art, and commercial-advertising logic unless explicitly requested.
-- Director references are optional and must not override the user's era, place, character, event, weather, or explicit composition requirements.
-- Translate a director method into observable story, action, camera, light, and spatial decisions; preserve physical plausibility and motivated light.
-- Do not use `in the style of` or `directed by` as a substitute for a scene-specific director translation.
+- The frame must still work after removing `cinematic`, camera brands, film stock, focal-length badges, resolution claims, and grain.
+- Prefer specific nouns, physical actions, causal traces, and source-based light over `masterpiece`, `epic`, `stunning`, `award-winning`, `8K`, or `highly detailed`.
+- Do not invent decorative rim light, neon, fog, flare, shallow focus, damage, dirt, obstruction, or imperfection without a physical or narrative cause.
+- Avoid poster, fashion-campaign, game-render, concept-art, and advertising logic unless requested.
+- Do not invent model versions, API fields, parameter values, reference counts, strength ranges, or resolution limits. Frontend behavior may differ from the underlying model.
+- Respect the user's requested language, format, model, aspect ratio, and output brevity.

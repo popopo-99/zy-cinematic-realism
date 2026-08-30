@@ -1,153 +1,160 @@
 # 造梦师
 
-## AI时代电影视觉指南 · v1.2.0
+## AI时代电影视觉指南 · v2.0.0
 
-**DREAM DIRECTOR v1.2.0 — Director Four-Axis Visual Fingerprint System**
+**DREAM DIRECTOR v2.0 — Model Compiler Edition**
 
-> 先让画面成为故事中的一个真实瞬间，再考虑它使用什么镜头和胶片。
+> 先建立一个稳定的视觉方案，再把它翻译成不同模型最容易理解的语言。
 
 ![两个侦探在失败后的夜班公交车上沉默而坐](docs/images/hero-night-bus.png)
 
 <p align="center">
-  <strong>一个用于生成真实电影单帧 Prompt 的 ChatGPT / Codex Skill</strong>
+  <strong>从一条 Prompt，到完整视觉方案。</strong>
 </p>
 
 <p align="center">
-  不是一包“万能电影词”，而是一套从故事、人物、空间、摄影机、光线到胶片质感的完整视觉工作流。
+  <strong>One Scene Master. Different models. Native prompts.</strong>
 </p>
 
-## 当前版本
+造梦师不是新的生图模型，也不是一包“万能电影词”。它是一套给 ChatGPT / Codex 使用的电影视觉工作流：先锁定人物、故事瞬间、动作、场景、机位、构图、光线、道具、时间、天气与限制，再为目标模型编译原生 Prompt。
 
-### 造梦师：AI时代电影视觉指南 v1.2.0
+`Scene Master → Creative Grammar → Model Compiler → Result Repair`
 
-当前仓库源码已升级到 `v1.2.0`。本版本先以 `Unreleased` 状态提交，尚未创建正式 GitHub Release；需要立即使用时，可通过仓库右上角 **Code → Download ZIP** 下载源码，并安装其中的 `zy-cinematic-realism/` 文件夹。
+对外品牌是 **造梦师 / DREAM DIRECTOR**；为保持安装路径、自动触发和显式调用兼容，技术名称始终是 `zy-cinematic-realism`，调用名始终是 `$zy-cinematic-realism`。
 
-**[前往 Releases 查看已发布安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)**
+**[下载最新 Release](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)**
 
-> v1.2.0 把导演库从“姓名 + 代表作 + 综合风格句”升级为 38 位导演的四轴视觉指纹：光影反差、色彩曝光、镜头机位、构图空间分别形成当前场景专属的可执行指令。
+## v2.0.0：从 Final Prompt 到 Model Compiler
 
-> 指定已支持导演后仍然默认按“强烈”执行；故事事实、真实空间、动机光与物理可成立的摄影机位置继续优先，也不会复制任何具体电影画面。
+旧工作流是：
 
-不熟悉 GitHub 的用户，也可以点击仓库右上角的 **Code → Download ZIP**。请注意：仓库根目录是教程和展示页；仓库内部的 `zy-cinematic-realism/` 才是 Skill 本体。
+`Idea → Skill → Final Prompt`
 
-## 它到底是什么？
+v2.0.0 变成：
 
-Skill 不是一个新的 AI 模型，也不是需要重新训练的插件。
+`Idea → Scene Master → Creative Grammar → Model Compiler → GPT Image 2 / Midjourney / Seedream 5.0 Pro / Nano Banana`
 
-它是一套可以反复交给 AI 使用的工作流程。安装以后，当你要求 AI 生成电影感画面、降低 AI 感、设计摄影机位置或建立真实光线时，AI 会按照这套固定方法完成任务。
+`Scene Master` 是唯一事实源。它先锁定画面设计，再由 `Creative Grammar` 决定风格、摄影与调度，最后交给不同 `Model Compiler` 翻译。转码时可以改变句法、信息密度、参数位置和编辑措辞，但不能偷偷改变人物、动作、地点、光线或叙事关系。
 
-你可以把它理解为：
+```text
+MODEL SYNTAX MAY CHANGE.
+SCENE LOGIC MAY NOT.
+```
 
-- AI 模型是摄影团队
-- 你的想法是故事梗概
-- 这套 Skill 是导演与摄影指导的工作手册
-- 最终输出是可以交给生图或生视频模型的完整 Prompt
+**模型语言可以改变，画面设计不能偷偷改变。**
 
-它会按照以下顺序工作：
+## 十个核心功能
 
-`故事瞬间 → 人物行为 → 真实空间 → 摄影机位置 → 光线来源 → 胶片质感 → 场景专属 Avoid`
+- **Create** — 从一句想法建立 Scene Master，并编译为目标模型的原生 Prompt。例：`雨夜便利店里，一个女人握着热咖啡，不看镜头。`
+- **Model Router** — 根据任务类型推荐更合适的适配路径。例：`我要先生成角色定妆，再连续修改道具，用哪个模型流程？`
+- **Model Compiler** — 把同一个视觉方案翻译成某个模型更容易执行的表达。例：`把 Scene Master 编译为 Midjourney。`
+- **Transcode** — 在保持场景事实不变的前提下换模型语言。例：`把这条 GPT Image 2 Prompt 转成 Seedream 5.0 Pro。`
+- **Multi-model Pack** — 一次输出多种模型的原生版本。例：`同一场景同时给我四模型版本。`
+- **Continuity Bible** — 锁定跨镜头人物、服装、道具、地点与光线。例：`做 8 镜下班女骑士连续组图。`
+- **Prompt Check** — 生成前检查冲突、空泛和物理不成立的描述。例：`检查这条 Prompt 为什么可能做成海报。`
+- **Prompt Doctor** — 根据失败结果只修真正出问题的变量。例：`人物太像商业广告，只修机位、姿态和光线层级。`
+- **One Variable Remix** — 锁住全部核心事实，只改变一个变量。例：`只把观察位置从正面改到门外。`
+- **Creative Shuffle** — 在可控边界内重新组合风格、摄影与调度。例：`给我三个克制、可落地的创意方向。`
 
-对外品牌是 **造梦师 / DREAM DIRECTOR**；为保持现有安装路径、自动触发和显式调用兼容，技术名称始终是 `zy-cinematic-realism`。
+## 同一个 Scene Master，四种模型会发生什么？
 
-## 这不是一包“万能电影词”
+下面四张结果使用同一套核心视觉约束：黑马、银色盔甲人物、海岸、海浪与冷色写实环境。区别只在模型适配器与模型自身的解释方式；它们不是同一张图，也不承诺像素级一致。
 
-很多所谓电影感 Prompt，删掉 `35mm / Kodak / anamorphic / film grain` 后，就只剩下“一个人站在一个很有氛围的地方”。
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/images/v2/model-compiler-gpt-image-2.webp" alt="GPT Image 2 对黑马、银色盔甲人物与海岸 Scene Master 的解释" width="100%">
+      <br><strong>GPT Image 2</strong>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/images/v2/model-compiler-midjourney.webp" alt="Midjourney 对黑马、银色盔甲人物与海岸 Scene Master 的解释" width="100%">
+      <br><strong>Midjourney</strong>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/images/v2/model-compiler-seedream-5-pro.webp" alt="Seedream 5.0 Pro 对黑马、银色盔甲人物与海岸 Scene Master 的解释" width="100%">
+      <br><strong>Seedream 5.0 Pro</strong>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/images/v2/model-compiler-nano-banana.webp" alt="Nano Banana 对黑马、银色盔甲人物与海岸 Scene Master 的解释" width="100%">
+      <br><strong>Nano Banana</strong>
+    </td>
+  </tr>
+</table>
 
-这套 Skill 会先替你解决更重要的问题：
+```text
+Same Scene Master.
+Different native prompts.
+Different model interpretations.
+```
 
-- **故事**：这一刻之前发生了什么？之后还会发生什么？
-- **人物**：角色在做什么小动作，而不是摆什么姿势？
-- **空间**：雨水、磨损、杂物和旧物怎样参与叙事？
-- **摄影机**：观众到底站在哪里看？隔着门、玻璃、座椅还是人群？
-- **光线**：光来自窗户、路灯、荧光灯，还是场景里真的存在的灯？
+## Model Router 与四个原生适配器
 
-摄影参数最后才加入。它们负责强化画面，不负责替代故事。
+| 目标模型 | 编译重点 |
+|---|---|
+| GPT Image 2 | 结构清晰的自然语言视觉说明与编辑说明 |
+| Midjourney | 高密度视觉语言与模型原生参数位置 |
+| Seedream 5.0 Pro | 明确的空间、主体关系与视觉 brief |
+| Nano Banana | 直接、适合多轮编辑的任务措辞 |
+
+Router 是任务启发式工具，不是永久排名，也不宣称某个模型“最好”。模型能力和界面会变化；场景逻辑仍由 Scene Master 负责。
 
 ## 60 秒上手
 
-### 1. 完全不懂摄影，也能这样输入
+### 1. 一句话创建并选择模型
 
 ```text
-请使用 $zy-cinematic-realism，把下面的想法转换成像真实电影中途被截取的一帧：
-
-[输入一句画面想法]
-
-请降低 AI 感，不要人物海报、概念图、游戏渲染和没有来源的电影灯光。
+请使用 $zy-cinematic-realism：
+雨夜便利店里，一个刚下班的女人双手握着热咖啡，不看镜头。
+先告诉我适合的模型路径，再为 Midjourney 编译原生 Prompt。
+不要广告摆拍、直视镜头和没有来源的轮廓光。
 ```
 
-你不需要先学会专业摄影参数。最少告诉它这 5 件事：
+Skill 会先整理 Scene Master，再输出 Midjourney 原生表达。你不需要提前懂摄影参数，最少只要提供：
 
 ```text
 谁 + 在哪里 + 刚刚发生了什么 + 此刻的小动作 + 最不想要什么
 ```
 
-### 2. 试试这个完整例子
+### 2. 转码、多模型、修复与 Remix
 
 ```text
-请使用 $zy-cinematic-realism：
+Transcode：保持女人、便利店、雨夜、热咖啡和不看镜头不变，转成 GPT Image 2。
 
-1980 年代纽约，一次重要审讯失败后的深夜。
-两个性格完全不同的侦探坐夜班公交车回警局，隔着几排座位，没有交谈。
-一个看着窗外的雨，另一个盯着空座位。
-不要人物海报感，不要英雄姿势，要像真实犯罪电影中段被偶然截取的一帧。
+Multi-model Pack：同一个 Scene Master，同时输出四个模型的原生版本。
+
+Prompt Doctor：结果太像咖啡广告。只修机位、人物姿态和光线层级，不改身份、服装、咖啡与地点。
+
+One Variable Remix：只把摄影机从店内正面改到雨棚外隔着玻璃观察，其余完全锁定。
 ```
 
-如果你只写了一句话也没关系，Skill 会补全缺失的故事、场景、摄影机和光线逻辑；只有会明显改变创作方向的信息，它才会向你确认。
+## 连续性：Base Lock + Shot Delta
 
-### 3. 看懂 Skill 的输出
+例如要做 8 镜“都市女骑士下班”组图，先用 `Continuity Bible` 锁定角色脸、银色通勤盔甲、旧帆布包、折叠长枪、车站与冷暖光源。每一镜都由同一份 `Base Lock` 加一条有限的 `Shot Delta` 生成：只描述该镜新增的动作、机位或时间变化。
 
-它默认给你三部分：
+这能减少脸、服装、道具、地点和光线在镜头之间漂移；它不承诺模型输出完全相同，而是让变化有据可查。
 
-1. **画面理解**：用几句话确认它选中了哪个故事瞬间。
-2. **Final Prompt**：可直接交给生图或生视频模型的完整英文提示词。
-3. **Avoid**：针对当前场景的负面约束，不是机械复制的一长串词。
+## Prompt Doctor：修图，不推倒重写
 
-<details>
-<summary><strong>展开看一个缩短版输出</strong></summary>
+如果结果太像商业广告，问题通常不在“电影感词”太少，而在摄影机太正、人物摆拍、主辅光没有层级。Prompt Doctor 会先诊断，再输出局部修复指令：
 
 ```text
-A restrained frame from a 1980s New York crime drama.
-
-Late at night, inside a nearly empty city bus moving through a rain-soaked neighborhood.
-Two detectives sit several rows apart after an important interrogation has failed. Neither
-speaks. One watches the city dissolve through rain and window reflections; the other stares
-past an empty seat, his wet coat still buttoned.
-
-The camera observes from the last row at seated eye level, partially blocked by worn seat
-backs and metal handrails. Both characters remain small and off-center inside the bus.
-
-Available practical light only: aged green fluorescent tubes overhead and intermittent warm
-streetlights passing through wet windows. Natural exposure, muted color response, visible
-35mm grain, subtle halation and slight vibration from the moving vehicle.
-
-Avoid: promotional poster composition, hero pose, characters looking at camera, perfect
-symmetry, clean modern bus, artificial rim light, excessive lens flare, HDR, CGI appearance.
+CHANGE ONLY: camera position, posing, and light hierarchy.
+PRESERVE EXACTLY: identity, wardrobe, car, and location.
 ```
 
-</details>
+修复不是重新创作。角色身份、服装、汽车和地点继续来自原 Scene Master，只有被点名的变量允许改变。
 
-### 4. 把结果交给生图模型
+## Creative Grammar：不是滤镜，而是可执行决策
 
-- 复制 `Final Prompt` 到你常用的生图或生视频模型。
-- 模型有单独的 Negative Prompt 输入框，就把 `Avoid` 放进去。
-- 没有负面词输入框，就把 `Avoid` 保留在 Final Prompt 结尾。
-- 第一张图不是终点。先看故事、机位和光线是否正确，再决定要不要改焦段或胶片。
+v2.0.0 保留 38 位导演的四轴视觉指纹，并新增 16 张风格卡与 8 张摄影卡。它们会实际改变光线、曝光、摄影机、空间、调度与视觉中心，而不是只附加一个风格标签。
 
-### 5. 不满意时，用一句话纠偏
+- 风格卡可选择冷峻写实、潮湿黑色电影、静默日常、制度压迫等受控方向。
+- 摄影卡可选择门框外观察、近距离被遮挡、远景负空间、程序性固定机位等观看方式。
+- 导演参考继续作用于光影反差、色彩曝光、镜头机位与构图空间，不复制任何具体电影画面。
 
-不要每次推倒重写。直接告诉 Skill 哪里仍然“像 AI”：
-
-```text
-人物太像海报：让摄影机退到公交车后排，用座椅遮挡，人物缩小并偏离中心。
-
-灯光太假：删除轮廓光，只保留车内旧荧光灯和窗外经过的橙色路灯。
-
-环境太干净：加入磨损座椅、旧广告、地面雨水和被遗忘的报纸，但不要堆无关物品。
-
-画面没有故事：改成冲突结束后的沉默，不要选择角色正面对峙的高潮时刻。
-```
-
-这一步通常比继续添加 `masterpiece / epic / 8K` 更有效。
+摄影参数最后才加入。它们负责强化一个已经成立的故事瞬间，不负责替代故事。
 
 ## 从一条故事里，选择不同的“那一刻”
 
@@ -240,7 +247,7 @@ Skill 不只是在同一个构图上换滤镜。它会帮你判断，故事里�
 
 ## 同一个故事，不同导演会看见什么？
 
-这组压力测试固定同一个故事、人物、年代、地点和证据线索，只改变导演参考。v1.2.0 继续保留这些结构性差异，并把每个导演方向强制拆成光影反差、色彩曝光、镜头机位、构图空间四条连续签名，减少模型把差异压缩回一个综合风格句的风险。
+这组压力测试固定同一个故事、人物、年代、地点和证据线索，只改变导演参考。v2.0.0 继续保留这些结构性差异，并把每个导演方向强制拆成光影反差、色彩曝光、镜头机位、构图空间四条连续签名，减少模型把差异压缩回一个综合风格句的风险。
 
 这里的差异不是给同一张图更换滤镜，而是让不同导演重新决定“这一镜到底在看什么”。
 
@@ -325,11 +332,12 @@ Skill 不只是在同一个构图上换滤镜。它会帮你判断，故事里�
 情绪：
 希望的观察位置：
 最不想出现的效果：
+目标模型（不确定可留空）：
 
 请输出：
-1. 画面理解
-2. 完整英文 Final Prompt
-3. 当前场景专属 Avoid
+1. Scene Master
+2. 目标模型原生 Prompt
+3. 当前场景专属约束与 Avoid
 ```
 
 ## 安装到 Codex
@@ -386,7 +394,7 @@ Codex 通常会自动发现变更；如果没有出现，请重新启动 Codex�
 1. 在侧边栏打开 **Plugins / 插件**。
 2. 在 Plugin Directory 中进入 **Skills**。
 3. 选择 **Create**，再选择 **Upload from your computer**。
-4. 正式 v1.2.0 Release 发布后，上传其中的 `zy-cinematic-realism-v1.2.0.zip`；当前可上传从源码下载并重新压缩的 `zy-cinematic-realism/` 文件夹。
+4. 上传最新 Release 中的 `zy-cinematic-realism-v2.0.0.zip`。
 5. 扫描和安装完成后，输入 `$zy-cinematic-realism`，或直接描述电影感 Prompt 任务。
 
 Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会自动跨这些界面同步。
@@ -411,11 +419,11 @@ zy-cinematic-realism/                 # GitHub 仓库根目录
 ├── README.md                          # 当前教程与展示页
 ├── CHANGELOG.md                       # 版本记录
 ├── LICENSE                            # CC BY-NC 4.0
-├── RELEASE_NOTES.md                   # v1.0.0 发布说明
+├── RELEASE_NOTES.md                   # v2.0.0 发布说明
 ├── docs/
 │   └── images/                        # 作品示例图
 ├── scripts/
-│   └── validate_director_library.py   # v1.2 导演库与 Markdown 链接校验
+│   └── validate_director_library.py   # 导演库与 Markdown 链接校验
 └── zy-cinematic-realism/              # 可安装 Skill 本体
     ├── SKILL.md
     ├── LICENSE
@@ -424,29 +432,45 @@ zy-cinematic-realism/                 # GitHub 仓库根目录
     │   └── openai.yaml
     ├── assets/
     │   └── basic-prompt-template.md
-    └── references/
+    ├── references/
         ├── camera-and-light.md
         ├── cinematic-principles.md
+        ├── model-routing.md
+        ├── model-capability-matrix.md
+        ├── prompt-compiler.md
+        ├── prompt-check.md
+        ├── result-repair.md
+        ├── continuity-cards.md
+        ├── style-cards.md
+        ├── cinematography-cards.md
         ├── examples.md
         ├── director-routing.md
         ├── directors/
         │   ├── index.md
         │   └── recommendation-matrix.md
         ├── negative-prompts.md
+        ├── models/
+        │   ├── gpt-image-2.md
+        │   ├── midjourney.md
+        │   ├── seedream-5-pro.md
+        │   └── nano-banana.md
         └── quality-checklist.md
+    └── tests/
+        └── manual-regression.md
 ```
 
-未来 v1.2.0 Release 安装包的正确结构只有一层顶级 Skill 文件夹：
+v2.0.0 Release 安装包只有一层顶级 Skill 文件夹：
 
 ```text
-zy-cinematic-realism-v1.2.0.zip
+zy-cinematic-realism-v2.0.0.zip
 └── zy-cinematic-realism/
     ├── SKILL.md
     ├── LICENSE
     ├── NOTICE.md
     ├── agents/
     ├── assets/
-    └── references/
+    ├── references/
+    └── tests/
 ```
 
 ## Copyright and License
@@ -462,7 +486,7 @@ CC BY-NC 4.0
 
 ## 使用与授权
 
-《造梦师：AI时代电影视觉指南 v1.2.0》采用 [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE)（CC BY-NC 4.0）授权。
+《造梦师：AI时代电影视觉指南 v2.0.0》采用 [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE)（CC BY-NC 4.0）授权。
 
 你可以：
 
