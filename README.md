@@ -1,3 +1,5 @@
+**中文** | [English](README_EN.md)
+
 # 造梦师
 
 ## AI时代电影视觉指南 · v2.0.0
@@ -417,6 +419,7 @@ Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会
 ```text
 zy-cinematic-realism/                 # GitHub 仓库根目录
 ├── README.md                          # 当前教程与展示页
+├── README_EN.md                       # English guide and showcase
 ├── CHANGELOG.md                       # 版本记录
 ├── LICENSE                            # CC BY-NC 4.0
 ├── RELEASE_NOTES.md                   # v2.0.0 发布说明
