@@ -512,7 +512,7 @@ zy-cinematic-realism-v2.1.0.zip
 | 稚           | 空合造物设计   | yokimi. | 吃饭不留证据   |
 | Annie\@0830 | Domodaji | 意式刘     | 艾丽Elle   |
 | 小萌兔短剧       | Vincent  | 0425\*  | OPfilm   |
-| 浮帧AI导演      | 小小超人     | 暗室      | Chovy    |
+| 浮帧AI导演      | 小小超人     | 像素暗室      | Chovy    |
 | 摄影师小野          
 
 > 名单展示的是朋友们本人确认可以公开使用的名字、昵称或代号。\
