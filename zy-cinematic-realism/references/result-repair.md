@@ -39,7 +39,7 @@ When the story beat, visual center, blocking, topology, or camera position is wr
 ## Adapter Rules
 
 - GPT Image 2, Seedream, and Nano Banana repair instructions may emphasize explicit preserve/change boundaries when the active tool supports image editing.
-- Midjourney repair must match the actual workflow. Use Editor/Vary Region/Retexture language only when the user is using those tools; do not imply that an ordinary prompt provides deterministic local editing.
+- Midjourney V8.2 repair must first choose between prompt regeneration and the current Edit Model. Rebuild through an ordinary prompt when scene structure failed; use a supplied image/reference and, when relevant, an Editor selection for targeted inpainting, outpainting, perspective change, or recombination. Do not route the current default through legacy Omni Reference, Character Reference, or the separate Retexture workflow, and do not imply that prompt-only remix provides deterministic local preservation.
 - For a series, load `continuity-cards.md` and protect the Continuity Bible before repairing a shot.
 
 Compile every repair through the target adapter. Do not invent an editing control that the user's frontend has not established.

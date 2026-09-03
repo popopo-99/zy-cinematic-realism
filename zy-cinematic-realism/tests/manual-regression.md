@@ -19,7 +19,7 @@ Run each test in a fresh conversation unless the setup says otherwise. Confirm r
 
 **User:** `给 Midjourney。`
 
-**Expected:** Uses a compact Midjourney-native visual prompt. Any supported parameters appear at the end. Does not output GPT-style production-brief sections or ask for the model again.
+**Expected:** Routes to the Midjourney V8.2 adapter. Uses a concise, natural, relational visual prompt; supported request-relevant parameters appear at the end. Does not emit V6/V7 legacy syntax, mechanically append `--v 8.2`, output GPT-style production-brief sections, or ask for the model again.
 
 ## Test 03 — Quick Model-Neutral
 
@@ -102,3 +102,87 @@ Run each test in a fresh conversation unless the setup says otherwise. Confirm r
 **User:** `只给我 Seedream Prompt。`
 
 **Expected:** Returns only a Seedream-native prompt. No interpretation, menu, follow-up, or target-model question.
+
+## Midjourney V8.2 Adapter Regression
+
+### Test 15 — Default Version
+
+**User:** `给 Midjourney。`
+
+**Expected:** Routes to the Midjourney V8.2 adapter. Does not produce V6, V6.1, or V7 legacy syntax by default. Because V8.2 is the current default, does not require `--v 8.2` unless the delivery context needs an explicit version lock.
+
+### Test 16 — GPT Image 2 to Midjourney V8.2 Transcode
+
+**Setup:** Supply this GPT Image 2 production brief:
+
+```text
+Create a vertical 2:3 image set outside a convenience store just after rain at 3 a.m. A woman stands beside the glass entrance, head lowered as she lights a cigarette. The camera observes her candidly from behind a parked car at street level; the car occupies the lower foreground, she remains the midground visual center, and stocked shelves recede behind the glass. The store's white fluorescent ceiling lights are the only dominant source, spilling through the door onto wet pavement and catching small reflections on the car roof. Keep the street otherwise dim and ordinary. No neon, cyberpunk treatment, fantasy architecture, centered hero pose, or advertising polish.
+```
+
+**User:** `转成 Midjourney。`
+
+**Expected:** Reconstructs a Scene Master and Transcode Lock, then compiles directly through the V8.2 adapter. Preserves the woman, 3 a.m., recent rain, convenience store, behind-car witness position, head-lowered cigarette-lighting action, white fluorescent source light, foreground car, background shelves, ordinary dark street, restrictions, and 2:3 ratio. Uses a concise natural visual description, removes GPT production headings, keeps parameters at the end, uses `--ar 2:3`, and adds no unsupported or irrelevant parameters.
+
+### Test 17 — Raw Decision
+
+**Setup:** Supply a locked cinematic scene and camera position.
+
+**User:** `我要尽量严格执行这个电影机位，不要 Midjourney 自动美化太多。`
+
+**Expected:** May add `--raw` at the parameter end because the request prioritizes adherence and reduced automatic styling. Does not claim Raw guarantees exact execution.
+
+### Test 18 — No Automatic Raw
+
+**Setup:** Supply the same locked scene.
+
+**User:** `给我几个更有视觉惊喜的方向。`
+
+**Expected:** Does not mechanically force `--raw`. Keeps locked scene facts while allowing broader V8.2 aesthetic interpretation; it does not silently redesign the scene.
+
+### Test 19 — Edit Model Routing
+
+**Setup:** User supplies an image containing the person to preserve.
+
+**User:** `人物不变，只把背景改成凌晨便利店。`
+
+**Expected:** Routes to the V8.2 Edit Model strategy with the supplied image/reference and explicit preserve/change boundaries. Does not pretend a normal Imagine prompt can perfectly preserve identity, and does not default to Omni Reference, Character Reference, or the separate Retexture workflow.
+
+### Test 20 — Style Reference Role
+
+**Setup:** User supplies a usable style reference image and a separate character reference for an Edit Model task.
+
+**User:** `人物按角色参考，画面质感按风格参考。`
+
+**Expected:** Uses the character image as an Edit Model Reference and the style image only as a Style Reference. Does not claim Style Reference locks the character, and does not invent reference weights or codes.
+
+### Test 21 — No Fabricated Reference
+
+**User:** `用参考图保持人物。`
+
+**Expected:** When no usable image or URL is actually available, does not fabricate a URL, `--sref` code, image weight, style weight, seed, reference identifier, or personalization profile. Requests the missing image or gives a clearly limited text-only fallback.
+
+### Test 22 — Seed Is Not Identity
+
+**User:** `用同一个 seed 保持8张图的人物完全一致。`
+
+**Expected:** Does not treat seed as a character ID or continuity lock. Uses a Continuity Bible plus Base Lock and Shot Delta, routes usable supplied images through the current reference/Edit Model workflow, and describes seed only as an optional experimental control.
+
+### Test 23 — Aspect Ratio Lock and SD / HD
+
+**Setup:** Source Scene Master ratio is `2:3`.
+
+**User:** `转成 Midjourney。`
+
+**Expected:** Outputs `--ar 2:3` at the end with no silent change to 9:16. If a locked extreme ratio conflicts with the selected SD or HD limit, reports the incompatibility instead of modifying the ratio.
+
+### Test 24 — Visible Text
+
+**User:** `凌晨便利店门牌上必须出现短字“OPEN”，构图不变，给 Midjourney。`
+
+**Expected:** Keeps the composition and places the short visible text in double quotation marks. Does not promise exact complex typography and does not add unrelated text-generation parameters.
+
+### Test 25 — Explicit Legacy Version
+
+**User:** `按 Midjourney V7 输出。`
+
+**Expected:** Treats V7 as an explicit legacy target, checks its compatible reference and parameter workflow, and does not silently relabel V8.2 Edit Model behavior as V7. An unqualified follow-up request returns to V8.2 only if the user changes or clears the established legacy target.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the v2.0 director library and local Markdown links."""
+"""Validate the current director library and local Markdown links."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SKILL_ROOT = REPO_ROOT / "zy-cinematic-realism"
 DIRECTOR_ROOT = SKILL_ROOT / "references" / "directors"
 INDEX_PATH = DIRECTOR_ROOT / "index.md"
-EXPECTED_VERSION = "2.0.0"
+EXPECTED_VERSION = "2.1.0"
 
 REQUIRED_SECTIONS = (
     "Identity",
@@ -176,7 +176,7 @@ def validate_signature_and_versions(errors: list[str]) -> None:
 
     version_checks = (
         (REPO_ROOT / "README.md", f"v{EXPECTED_VERSION}"),
-        (REPO_ROOT / "CHANGELOG.md", f"[{EXPECTED_VERSION}]"),
+        (REPO_ROOT / "CHANGELOG.md", f"v{EXPECTED_VERSION}"),
         (SKILL_ROOT / "SKILL.md", f"v{EXPECTED_VERSION}"),
     )
     for path, token in version_checks:

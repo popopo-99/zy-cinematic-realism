@@ -2,9 +2,9 @@
 
 # 造梦师
 
-## AI时代电影视觉指南 · v2.0.0
+## AI时代电影视觉指南 · v2.1.0
 
-**DREAM DIRECTOR v2.0 — Model Compiler Edition**
+**DREAM DIRECTOR v2.1 — Midjourney V8.2 Adapter Migration**
 
 > 先建立一个稳定的视觉方案，再把它翻译成不同模型最容易理解的语言。
 
@@ -25,6 +25,10 @@
 对外品牌是 **造梦师 / DREAM DIRECTOR**；为保持安装路径、自动触发和显式调用兼容，技术名称始终是 `zy-cinematic-realism`，调用名始终是 `$zy-cinematic-realism`。
 
 **[下载最新 Release](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)**
+
+### v2.1.0 — Midjourney V8.2 Adapter Migration
+
+Midjourney 编译现已全面迁移到 V8.2 能力基线，并更新 Prompt 编译、Edit Model 路由、参考图策略、参数处理与 Transcode 行为。
 
 ## v2.0.0：从 Final Prompt 到 Model Compiler
 
@@ -96,11 +100,13 @@ Different model interpretations.
 | 目标模型 | 编译重点 |
 |---|---|
 | GPT Image 2 | 结构清晰的自然语言视觉说明与编辑说明 |
-| Midjourney | 高密度视觉语言与模型原生参数位置 |
+| Midjourney V8.2 | 自然、紧凑、关系明确的视觉描述；参数按需置于末尾 |
 | Seedream 5.0 Pro | 明确的空间、主体关系与视觉 brief |
 | Nano Banana | 直接、适合多轮编辑的任务措辞 |
 
 Router 是任务启发式工具，不是永久排名，也不宣称某个模型“最好”。模型能力和界面会变化；场景逻辑仍由 Scene Master 负责。
+
+Midjourney Adapter 已更新至当前 V8.2：默认保留自然视觉关系，区分 Imagine 与 Edit Model，并按任务需要选择参数，而不是套用旧版本固定后缀。
 
 ## 60 秒上手
 
@@ -396,7 +402,7 @@ Codex 通常会自动发现变更；如果没有出现，请重新启动 Codex�
 1. 在侧边栏打开 **Plugins / 插件**。
 2. 在 Plugin Directory 中进入 **Skills**。
 3. 选择 **Create**，再选择 **Upload from your computer**。
-4. 上传最新 Release 中的 `zy-cinematic-realism-v2.0.0.zip`。
+4. 上传最新 Release 中的 `zy-cinematic-realism-v2.1.0.zip`。
 5. 扫描和安装完成后，输入 `$zy-cinematic-realism`，或直接描述电影感 Prompt 任务。
 
 Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会自动跨这些界面同步。
@@ -422,7 +428,7 @@ zy-cinematic-realism/                 # GitHub 仓库根目录
 ├── README_EN.md                       # English guide and showcase
 ├── CHANGELOG.md                       # 版本记录
 ├── LICENSE                            # CC BY-NC 4.0
-├── RELEASE_NOTES.md                   # v2.0.0 发布说明
+├── RELEASE_NOTES.md                   # v2.1.0 发布说明
 ├── docs/
 │   └── images/                        # 作品示例图
 ├── scripts/
@@ -462,10 +468,10 @@ zy-cinematic-realism/                 # GitHub 仓库根目录
         └── manual-regression.md
 ```
 
-v2.0.0 Release 安装包只有一层顶级 Skill 文件夹：
+v2.1.0 Release 安装包只有一层顶级 Skill 文件夹：
 
 ```text
-zy-cinematic-realism-v2.0.0.zip
+zy-cinematic-realism-v2.1.0.zip
 └── zy-cinematic-realism/
     ├── SKILL.md
     ├── LICENSE
@@ -525,7 +531,7 @@ CC BY-NC 4.0
 
 ## 使用与授权
 
-《造梦师：AI时代电影视觉指南 v2.0.0》采用 [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE)（CC BY-NC 4.0）授权。
+《造梦师：AI时代电影视觉指南 v2.1.0》采用 [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE)（CC BY-NC 4.0）授权。
 
 你可以：
 

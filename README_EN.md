@@ -2,9 +2,9 @@
 
 # Dream Director
 
-## A Cinematic Visual Guide for the AI Era · v2.0.0
+## A Cinematic Visual Guide for the AI Era · v2.1.0
 
-**DREAM DIRECTOR v2.0 — Model Compiler Edition**
+**DREAM DIRECTOR v2.1 — Midjourney V8.2 Adapter Migration**
 
 > Build one stable visual plan first. Then translate it into the language each model understands best.
 
@@ -25,6 +25,10 @@ Dream Director is not a new image model or a bag of universal “cinematic” ke
 The public brand is **造梦师 / DREAM DIRECTOR**. To preserve installation paths, automatic triggering, and explicit invocation, the technical name remains `zy-cinematic-realism`, and the invocation remains `$zy-cinematic-realism`.
 
 **[Download the latest release](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)**
+
+### v2.1.0 — Midjourney V8.2 Adapter Migration
+
+Midjourney compilation now uses V8.2 as its capability baseline, with updated prompt compilation, Edit Model routing, reference-image strategy, parameter handling, and Transcode behavior.
 
 ## v2.0.0: From Final Prompt to Model Compiler
 
@@ -96,11 +100,13 @@ Different model interpretations.
 | Target model | Compilation focus |
 |---|---|
 | GPT Image 2 | Structured natural-language visual and editing instructions |
-| Midjourney | Dense visual language with native parameters in the appropriate position |
+| Midjourney V8.2 | Concise, natural visual relationships with request-relevant parameters at the end |
 | Seedream 5.0 Pro | Explicit spatial and subject relationships presented as a visual brief |
 | Nano Banana | Direct, task-oriented language suited to iterative editing |
 
 The Router is a task heuristic, not a permanent ranking, and it does not claim that one model is “best.” Model capabilities and interfaces change; the Scene Master remains responsible for scene logic.
+
+The Midjourney adapter now targets the current V8.2 by default, preserves natural visual relationships, distinguishes Imagine from the Edit Model, and selects parameters by need instead of applying a legacy suffix template.
 
 ## Get Started in 60 Seconds
 
@@ -403,7 +409,7 @@ If Skills are available in your account or workspace:
 1. Open **Plugins** in the sidebar.
 2. Open **Skills** in the Plugin Directory.
 3. Choose **Create**, then **Upload from your computer**.
-4. Upload `zy-cinematic-realism-v2.0.0.zip` from the latest Release.
+4. Upload `zy-cinematic-realism-v2.1.0.zip` from the latest Release.
 5. After scanning and installation finish, enter `$zy-cinematic-realism` or describe a cinematic prompt task directly.
 
 Personal Skills currently need to be added separately in desktop and web/mobile interfaces; they do not automatically synchronize across those interfaces.
@@ -429,7 +435,7 @@ zy-cinematic-realism/                 # GitHub repository root
 ├── README_EN.md                       # English guide and showcase
 ├── CHANGELOG.md                       # Version history
 ├── LICENSE                            # CC BY-NC 4.0
-├── RELEASE_NOTES.md                   # v2.0.0 release notes
+├── RELEASE_NOTES.md                   # v2.1.0 release notes
 ├── docs/
 │   └── images/                        # Visual examples
 ├── scripts/
@@ -469,10 +475,10 @@ zy-cinematic-realism/                 # GitHub repository root
         └── manual-regression.md
 ```
 
-The v2.0.0 Release package has exactly one top-level Skill folder:
+The v2.1.0 Release package has exactly one top-level Skill folder:
 
 ```text
-zy-cinematic-realism-v2.0.0.zip
+zy-cinematic-realism-v2.1.0.zip
 └── zy-cinematic-realism/
     ├── SKILL.md
     ├── LICENSE
@@ -497,7 +503,7 @@ CC BY-NC 4.0
 
 ## Use and Licensing
 
-*Dream Director: A Cinematic Visual Guide for the AI Era v2.0.0* is licensed under [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE) (CC BY-NC 4.0).
+*Dream Director: A Cinematic Visual Guide for the AI Era v2.1.0* is licensed under [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE) (CC BY-NC 4.0).
 
 You may:
 

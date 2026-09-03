@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.1.0
+
+### Midjourney V8.2 Adapter Migration
+
+- Updated the default Midjourney compilation target to V8.2.
+- Reworked Midjourney prompt compilation for current V8.2 prompt understanding.
+- Added V8.2-native Imagine / Edit Model routing.
+- Updated Image Prompt, Style Reference, Edit Model Reference, Moodboard, and Personalization strategies.
+- Added need-driven Raw, Stylize, version, seed, text, and aspect-ratio handling.
+- Removed legacy V6/V7 assumptions from the default Midjourney path.
+- Improved Midjourney Transcode so source prompts rebuild through Scene Master before V8.2 compilation.
+- Added dedicated Midjourney V8.2 regression tests.
+
 ## [2.0.0] - 2026-08-30
 
 ### Added

@@ -12,7 +12,7 @@ Source: https://github.com/popopo-99/zy-cinematic-realism
 
 # 造梦师 · ZY Cinematic Realism
 
-Public edition: 《造梦师：AI时代电影视觉指南 v2.0.0》.
+Public edition: 《造梦师：AI时代电影视觉指南 v2.1.0》.
 
 Build every result in this order:
 
@@ -44,6 +44,8 @@ When the user wants a prompt ready for generation and the target model is unknow
 Ask once only when the choice materially changes prompt structure. Do not ask when the user already named a model or the active conversation establishes it. If the user says to proceed, skip questions, use a model-neutral Scene Master prompt, and mention model-specific transcoding only when extra explanation is allowed.
 
 If the user requests prompt-only output, return only the prompt requested: no interpretation, menu, follow-up, or unrelated adapter question.
+
+Unqualified `Midjourney` or `MJ` routes to the current Midjourney V8.2 adapter. Treat an explicitly requested V6, V6.1, or V7 target as legacy and verify its compatibility rather than silently applying V8.2 behavior.
 
 ## Scene Master Invariants
 
@@ -88,7 +90,7 @@ Load only the branch required for the active mode.
 Model adapters:
 
 - [GPT Image 2](references/models/gpt-image-2.md)
-- [Midjourney](references/models/midjourney.md)
+- [Midjourney V8.2](references/models/midjourney.md)
 - [Seedream 5.0 Pro](references/models/seedream-5-pro.md)
 - [Nano Banana family](references/models/nano-banana.md)
 

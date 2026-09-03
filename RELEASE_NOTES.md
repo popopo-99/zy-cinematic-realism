@@ -1,69 +1,116 @@
-# 造梦师 v2.0.0
+# 造梦师 v2.1.0
 
-## Model Compiler Edition
+## Midjourney V8.2 Adapter Migration
 
-**同一个画面，不同模型，说不同的语言。**
+**Midjourney Adapter 正式迁移至 V8.2 能力基线。**
 
-很多创作者已经遇到同一个问题：一条在某个模型里有效的 Prompt，换到另一个模型后，人物关系、空间、光线甚至故事时刻都会悄悄变化。原因不只是模型能力不同，也在于每个模型接收和组织视觉指令的方式不同。
+本次发布不是把旧版本参数机械改成 `--v 8.2`，也不是一次简单的版本号替换。v2.1.0 重新核对当前 Midjourney 官方能力，并升级 Model Compiler、Transcode、参考图与编辑工作流，同时继续以 Scene Master 作为唯一事实源。
 
-v2.0.0 不再把最终 Prompt 当作唯一成果。它先建立一个稳定的 `Scene Master`，锁定人物、故事瞬间、动作、场景、机位、构图、光线、道具、时间、天气与限制，再把这套视觉方案编译成目标模型更容易执行的原生表达。
+`MODEL SYNTAX MAY CHANGE. SCENE LOGIC MAY NOT.`
 
-`Scene Master → Creative Grammar → Model Compiler → Result Repair`
+## Midjourney V8.2
 
-模型语言可以改变，画面设计不能偷偷改变。
+当用户只写：
 
-## Model Router
+```text
+Midjourney
+MJ
+编译成 Midjourney
+```
 
-不知道从哪个模型开始时，Router 会根据任务是首次生成、精确编辑、多轮修改、转码还是连续镜头，建议适配路径。它是启发式建议，不是永久排名。
+现在都会默认进入当前 **Midjourney V8.2 Adapter**。除非用户明确指定 legacy target，默认路径不会回退到 V6、V6.1 或 V7。
 
-## Four Native Model Adapters
+V8.2 当前已经是 Midjourney 默认模型，因此 Adapter 的版本基线与 Prompt 中是否显式出现 `--v 8.2` 被视为两件事。只有完整 Discord Prompt、显式版本锁定或避免版本漂移时，才需要考虑附加版本参数。
 
-本版内置四条原生编译路径：
+## 更自然的 Prompt Compiler
 
-- **GPT Image 2**：结构清晰的自然语言视觉说明与编辑说明。
-- **Midjourney**：高密度视觉语言与模型原生参数位置。
-- **Seedream 5.0 Pro**：明确的空间、主体关系与视觉 brief。
-- **Nano Banana**：直接、适合多轮编辑的任务措辞。
+Midjourney Prompt 不再被理解成旧式 keyword soup，也不会靠 `masterpiece`、`8K`、`ultra detailed` 或 `award-winning` 等质量形容词堆出“电影感”。
 
-同一个 Scene Master 会得到不同的原生 Prompt，也会得到不同的模型解释；这不是对“完全一致结果”的承诺。
+Scene Master 会优先保存：
 
-## Prompt Transcode
+- Story
+- Action
+- Camera
+- Composition
+- Light
+- Space
+- Material
+- Aspect Ratio
 
-Transcode Lock 允许你把现有 Prompt 或 Scene Master 转到另一个模型，同时明确哪些事实必须保持、哪些句法可以改变。角色、动作、地点、道具、光线与叙事关系不会因为换模型而被默认重写。
+同时继续保护人物身份、故事时刻、前中后景、视觉中心、观察位置、光源因果、时间、天气、道具与限制。只有这些事实被锁定后，才会压缩为简洁、具体、自然、关系明确的 V8.2 视觉表达。
 
-## Multi-model Pack
+## Imagine / Edit Model 分流
 
-一次请求即可得到同一 Scene Master 的四模型版本。它适合并行测试视觉方向，也便于看清差异来自模型解释，而不是来自四条互相漂移的 Prompt。
+普通生成与已有图片编辑现在明确分开：
 
-## Continuity Bible
+- **Imagine / generation**：用于新画面和不要求确定性保留的视觉探索。
+- **V8.2 Edit Model**：用于保留人物或物体、更换背景、局部修改、inpainting、outpainting、透视变化、多参考图组合与视觉重组。
 
-连续镜头先建立 `Base Lock`，锁定身份、服装、道具、地点与光线；每一镜只增加一条 `Shot Delta`。这种结构让脸、衣服、关键道具和空间变化都有依据，适合角色组图、分镜和多镜叙事。
+编辑请求不会再被强行改写成普通 `/imagine` Prompt，也不会承诺 prompt-only remix 可以像局部编辑一样确定性保留未修改区域。Omni Reference、Character Reference 和独立 Retexture 不再作为当前 V8.2 默认路径。
 
-## Prompt Check
+## Reference Strategy
 
-生成前先检查：是否有互相冲突的机位、没有来源的光、空泛风格词、过度拥挤的信息，或物理上无法同时成立的关系。Prompt Check 会指出问题并给出最小改动建议。
+v2.1.0 明确区分每类参考图的职责：
 
-## Prompt Doctor
+- **Image Prompt**：影响内容、构图与颜色关系。
+- **Style Reference**：影响风格、质感、色板、媒介与审美语言，不作为人物身份锁。
+- **Edit Model Reference**：用于把用户提供的人物、物体或场景带入编辑、组合与重构。
+- **Moodboard / Personalization**：提供更广义的用户审美方向，不锁定场景事实、构图或身份。
 
-结果失败时先诊断，再修复。若画面太像广告，Prompt Doctor 可以只调整摄影机位置、人物姿态和光线层级，同时精确保留角色身份、服装、车辆与地点；不再因为一个局部问题把整条 Prompt 推倒重写。
+Skill 不会自动虚构图片 URL、`--sref` code、参考权重、seed、profile 或 style code。
 
-## One Variable Remix
+## Smarter Parameters
 
-只改变一个声明变量，其余 Scene Master 全部锁定。例如只改变观察位置、天气或视觉中心，适合做可比较的 A/B 方向。
+Raw、Stylize、Seed、Version、Aspect Ratio、Visible Text 与其他 Midjourney 参数全部改为 **need-driven**：
 
-## Creative Shuffle
+- `--raw` 只在需要更严格的 Prompt 执行、较少自动美化或精确电影控制时考虑，不再是默认电影感后缀。
+- Stylize 根据 adherence 与 aesthetic interpretation 的目标决定；没有必要时不输出 `--s`，也不凭空编造数值。
+- `--seed` 只用于初始噪声控制、测试和实验，不作为人物身份、风格或连续性锁。
+- 可见短文字使用双引号表达，但不承诺复杂字体、长文本或精确排版绝对可靠。
+- Aspect Ratio 严格继承 Scene Master；例如 2:3 仍编译为 `--ar 2:3`，不会擅自变成 9:16。
+- 参数只出现在文本 Prompt 之后，且只加入当前 V8.2 明确支持并真正服务任务的控制项。
 
-Creative Shuffle 不是随机堆词，而是在叙事和物理边界内提供多个可落地方案。每个方向都会说明真正改变了哪些光线、曝光、摄影机、空间、调度与视觉中心。
+## Transcode
 
-## New Creative Grammar
+例如：
 
-v2.0.0 保留 38 位导演的四轴视觉指纹，并新增 16 张风格卡和 8 张摄影卡。导演、风格和摄影参考不只是标签，而会进入当前场景的光影反差、色彩曝光、镜头机位、构图空间与人物调度。
+```text
+GPT Image 2 → Midjourney
+```
+
+现在必须经过：
+
+```text
+Source Prompt → Scene Master → Transcode Lock → Midjourney V8.2 Adapter
+```
+
+它不再只是删除 GPT Image 2 的段落标题，再补几个 Midjourney 参数。Character、Scene、Story Beat、Action、Camera、Composition、Light、Props、Time、Weather、Aspect Ratio 与 Restrictions 会先锁定，再重新组织为 V8.2 原生表达，并在输出前检查 semantic drift。
+
+Seedream 或 Nano Banana 转到 Midjourney 时同样从 Scene Master 独立编译，不进行 Prompt-to-Prompt 连环翻译。
+
+## Regression Coverage
+
+新增专门的 Midjourney V8.2 回归测试，覆盖：
+
+- 默认 V8.2 路由与 legacy target 隔离
+- GPT Image 2 → Midjourney V8.2 Transcode
+- Raw 与非 Raw 决策
+- Edit Model 路由
+- Style Reference 职责
+- 禁止虚构参考数据
+- seed 与连续性边界
+- Aspect Ratio 与 SD / HD 限制
+- Visible Text
+
+## Special Thanks / 特别感谢
+
+README 正式加入长期保留的 Special Thanks / 特别感谢章节，记录参与测试、反馈、分享和支持「造梦师 / DREAM DIRECTOR」成长的朋友。
 
 ## Upgrade
 
-下载 `zy-cinematic-realism-v2.0.0.zip`，解压或导入其中唯一的顶级文件夹 `zy-cinematic-realism/`。
+下载 `zy-cinematic-realism-v2.1.0.zip`，解压或导入其中唯一的顶级文件夹 `zy-cinematic-realism/`。
 
-如果从 v1.x 升级，请用新文件夹完整替换旧的 `zy-cinematic-realism/`，不要同时安装多个同名副本。显式调用仍然是：
+如果从旧版本升级，请用新文件夹完整替换原有 `zy-cinematic-realism/`，不要同时安装多个同名副本。显式调用仍然是：
 
 ```text
 请使用 $zy-cinematic-realism
@@ -72,7 +119,3 @@ v2.0.0 保留 38 位导演的四轴视觉指纹，并新增 16 张风格卡和 8
 ## License
 
 项目继续采用 CC BY-NC 4.0。个人学习与非商业创作可免费使用；分享改编版本时请保留作者、许可证与仓库来源，未经许可不得重新打包售卖或用于商业产品。
-
-## Thanks
-
-感谢所有参与试用、比较不同模型结果、报告 Prompt 漂移和连续性问题的创作者。你们的反馈让 v2.0.0 从“一条更长的 Prompt”真正走向了一套可检查、可转码、可修复的视觉方案。

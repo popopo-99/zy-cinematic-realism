@@ -43,10 +43,12 @@ If the source is ambiguous, preserve the most direct reading. If two clauses con
 
 Native shapes:
 
-- **Midjourney:** dense visual clauses followed by supported native parameters.
+- **Midjourney V8.2:** concise, concrete natural visual description optimized for current V8.2 prompt understanding, preserving story, spatial, camera, light, material, and restriction relationships; append only request-relevant supported native parameters.
 - **GPT Image 2:** structured natural-language production brief with integrated constraints.
 - **Seedream 5.0 Pro:** clear spatial creative brief with explicit relationships and edit regions when supplied.
 - **Nano Banana:** direct conversational generation or editing instruction with explicit preserve/change language.
+
+For Midjourney, decide between ordinary Imagine/generation and the V8.2 Edit Model before compiling. An existing-image change, selected-area repair, perspective change with reference preservation, or multi-reference recombination is an Edit Model task, not merely a shorter Imagine prompt. Because V8.2 is the current default target, omit `--v 8.2` unless the user requests a Discord-complete or version-locked prompt, or the workflow must prevent version drift.
 
 ## Multi-model Pack
 

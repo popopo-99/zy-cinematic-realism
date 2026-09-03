@@ -22,7 +22,7 @@ Use one locked Scene Master and compile it into native model language. Model sel
 Supported adapters:
 
 - `GPT Image 2`, `GPT-Image-2`, `gpt-image-2` → [models/gpt-image-2.md](models/gpt-image-2.md)
-- `Midjourney`, `MJ` → [models/midjourney.md](models/midjourney.md)
+- `Midjourney`, `MJ`, `Midjourney V8`, `Midjourney V8.2`, `MJ V8.2` → [models/midjourney.md](models/midjourney.md), using V8.2 as the default target
 - `Seedream 5.0 Pro`, `Seedream`, `即梦` when the context clearly means this model → [models/seedream-5-pro.md](models/seedream-5-pro.md)
 - `Nano Banana`, `Nano Banana family`, or a named Gemini image member → [models/nano-banana.md](models/nano-banana.md)
 
@@ -31,7 +31,7 @@ For any other model, stay model-neutral unless reliable current documentation is
 ## Routing Heuristics
 
 - Prefer **GPT Image 2** for a structured production brief, high-fidelity image input, or conversational generation/editing in an OpenAI workflow.
-- Prefer **Midjourney** for prompt-led visual exploration and native parameterized iteration; precise local repair depends on the Midjourney Editor and its current frontend.
+- Prefer **Midjourney V8.2** for prompt-led visual exploration, native parameterized iteration, role-specific reference workflows, and current Edit Model generation or repair.
 - Prefer **Seedream 5.0 Pro** for spatially explicit creative briefs, multilingual or text-rich production, annotated/local editing, and multi-source composition when the available frontend exposes those controls.
 - Choose the **Nano Banana family** member according to the actual frontend/model: fast iteration, general multi-reference work, or precision production. Never treat all family members as identical.
 
@@ -42,3 +42,5 @@ These are heuristics, not a permanent ranking. Capabilities and frontends change
 An adapter may alter prompt order, clause density, exclusions, edit wording, reference-role syntax, and supported parameters. It must not alter character identity, scene, story beat, action, camera witness position, visual center, spatial layers, source lights, props, time, weather, aspect ratio, or explicit restrictions.
 
 For Transcode, first apply the lock in [prompt-compiler.md](prompt-compiler.md). If the source prompt contains a structural conflict, warn briefly that faithful transcoding will retain it. Preserve it by default; fix it only when the user asks for optimization.
+
+An explicit `V6`, `V6.1`, or `V7` request is a legacy Midjourney target. Route it deliberately, verify that version's documented feature and parameter compatibility, and do not present the current V8.2 Edit Model or reference workflow as equivalent. An unqualified Midjourney request must never fall back to a legacy target.
