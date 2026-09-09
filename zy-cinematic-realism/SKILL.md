@@ -1,6 +1,6 @@
 ---
 name: zy-cinematic-realism
-description: Compile scene ideas or existing visual prompts into restrained, physically believable cinematic image prompts for GPT Image 2, Midjourney, Seedream 5.0 Pro, Nano Banana, or a model-neutral workflow. Use for cinematic AIGC creation, model routing or transcoding, continuity packs, prompt diagnosis, result repair, director/style/cinematography methods, one-variable remixes, and grounded creative shuffles.
+description: Compile scene ideas or existing visual prompts into restrained, physically believable cinematic image prompts for ChatGPT Images 2.5 / GPT Image 2.5 (with GPT Image 2 legacy compatibility), Midjourney, Seedream 5.0 Pro, Nano Banana, or a model-neutral workflow. Use for cinematic AIGC creation, model routing or transcoding, continuity packs, prompt diagnosis, result repair, director/style/cinematography methods, one-variable remixes, and grounded creative shuffles.
 ---
 
 <!--
@@ -12,7 +12,7 @@ Source: https://github.com/popopo-99/zy-cinematic-realism
 
 # 造梦师 · ZY Cinematic Realism
 
-Public edition: 《造梦师：AI时代电影视觉指南 v2.1.0》.
+Public edition: 《造梦师：AI时代电影视觉指南 v2.1.1》.
 
 Build every result in this order:
 
@@ -39,11 +39,13 @@ Infer the mode from the request. Do not print a menu.
 
 When the user wants a prompt ready for generation and the target model is unknown, ask only:
 
-> 你准备在哪个模型里生成：GPT Image 2、Midjourney、Seedream 5.0 Pro、Nano Banana，还是其他？
+> 你准备在哪个模型里生成：GPT Image 2.5、Midjourney、Seedream 5.0 Pro、Nano Banana，还是其他？
 
 Ask once only when the choice materially changes prompt structure. Do not ask when the user already named a model or the active conversation establishes it. If the user says to proceed, skip questions, use a model-neutral Scene Master prompt, and mention model-specific transcoding only when extra explanation is allowed.
 
 If the user requests prompt-only output, return only the prompt requested: no interpretation, menu, follow-up, or unrelated adapter question.
+
+Generic `GPT Image`, `OpenAI image`, `ChatGPT 生图`, `GPT Image 2.5`, or `Images 2.5` requests use the ChatGPT Images 2.5-compatible adapter. Explicit `GPT Image 2`, `GPT-Image-2`, or `gpt-image-2` requests retain legacy compatibility. For migration, test validated prompts unchanged first; repair only evaluated failures. The Skill does not pin a ChatGPT / Codex image model or invoke an API model ID. Keep API details out of ordinary prompt output.
 
 Unqualified `Midjourney` or `MJ` routes to the current Midjourney V8.2 adapter. Treat an explicitly requested V6, V6.1, or V7 target as legacy and verify its compatibility rather than silently applying V8.2 behavior.
 
@@ -89,7 +91,7 @@ Load only the branch required for the active mode.
 
 Model adapters:
 
-- [GPT Image 2](references/models/gpt-image-2.md)
+- [ChatGPT Images 2.5 / GPT Image 2.5, plus GPT Image 2 legacy compatibility](references/models/gpt-image-2.md)
 - [Midjourney V8.2](references/models/midjourney.md)
 - [Seedream 5.0 Pro](references/models/seedream-5-pro.md)
 - [Nano Banana family](references/models/nano-banana.md)

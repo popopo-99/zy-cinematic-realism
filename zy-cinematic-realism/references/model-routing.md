@@ -21,7 +21,8 @@ Use one locked Scene Master and compile it into native model language. Model sel
 
 Supported adapters:
 
-- `GPT Image 2`, `GPT-Image-2`, `gpt-image-2` → [models/gpt-image-2.md](models/gpt-image-2.md)
+- `GPT Image`, `OpenAI image`, `ChatGPT 生图`, `ChatGPT Images 2.5`, `GPT Image 2.5`, `Images 2.5` → current [ChatGPT Images 2.5-compatible adapter](models/gpt-image-2.md)
+- Explicit `GPT Image 2`, `GPT-Image-2`, `gpt-image-2` → [the same adapter](models/gpt-image-2.md), retaining the requested legacy target or legacy-prompt compatibility task
 - `Midjourney`, `MJ`, `Midjourney V8`, `Midjourney V8.2`, `MJ V8.2` → [models/midjourney.md](models/midjourney.md), using V8.2 as the default target
 - `Seedream 5.0 Pro`, `Seedream`, `即梦` when the context clearly means this model → [models/seedream-5-pro.md](models/seedream-5-pro.md)
 - `Nano Banana`, `Nano Banana family`, or a named Gemini image member → [models/nano-banana.md](models/nano-banana.md)
@@ -30,12 +31,20 @@ For any other model, stay model-neutral unless reliable current documentation is
 
 ## Routing Heuristics
 
-- Prefer **GPT Image 2** for a structured production brief, high-fidelity image input, or conversational generation/editing in an OpenAI workflow.
+- Prefer **ChatGPT Images 2.5 / GPT Image 2.5** for a structured production brief, high-fidelity image input, or conversational generation/editing in an OpenAI workflow.
 - Prefer **Midjourney V8.2** for prompt-led visual exploration, native parameterized iteration, role-specific reference workflows, and current Edit Model generation or repair.
 - Prefer **Seedream 5.0 Pro** for spatially explicit creative briefs, multilingual or text-rich production, annotated/local editing, and multi-source composition when the available frontend exposes those controls.
 - Choose the **Nano Banana family** member according to the actual frontend/model: fast iteration, general multi-reference work, or precision production. Never treat all family members as identical.
 
 These are heuristics, not a permanent ranking. Capabilities and frontends change. Use `Strong`, `Good`, `Conditional`, `Limited`, or `Frontend-dependent`; never invent numerical scores.
+
+## OpenAI product / API routing
+
+Verified: 2026-09-09. Ordinary ChatGPT / Codex image prompts use the 2.5-compatible adapter without API details. The Skill does not force the underlying product model version.
+
+Only for API usage, recommend **GPT-Image-2.5 Flare** for fast, high-quality generation at volume, and consider **GPT-Image-2.5 Sunburst** when complex editing precision is the priority and longer generation time is acceptable. Start a validated GPT Image 2 migration unchanged on Flare; if quality is already insufficient for a complex task, evaluate Sunburst first. These recommendations require workflow evaluation, not a permanent model ranking. See the [adapter's official sources and migration rule](models/gpt-image-2.md).
+
+Do not add model IDs, quality fields, unsupported parameters, pricing, or endpoint syntax to an ordinary ChatGPT prompt. An explicit legacy OpenAI target remains legacy until the user changes it; a fresh generic OpenAI request defaults to 2.5 compatibility.
 
 ## Adapter Boundary
 

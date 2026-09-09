@@ -32,6 +32,8 @@ Before changing models, extract and lock:
 
 If the source is ambiguous, preserve the most direct reading. If two clauses conflict, state the single structural conflict briefly. Faithful conversion preserves it; optimization requires user intent or an explicit request to fix.
 
+For GPT Image 2 → GPT Image 2.5 migration, apply the [unchanged-prompt-first rule](models/gpt-image-2.md) before any reordering or expansion. Keep the validated prompt and references for the first comparison; use the compilation or repair pass only when requested or when evaluation identifies a specific failure. Scene Master facts stay locked.
+
 ## Compilation Pass
 
 1. Normalize the source into a Scene Master without adding a new concept.
@@ -44,7 +46,7 @@ If the source is ambiguous, preserve the most direct reading. If two clauses con
 Native shapes:
 
 - **Midjourney V8.2:** concise, concrete natural visual description optimized for current V8.2 prompt understanding, preserving story, spatial, camera, light, material, and restriction relationships; append only request-relevant supported native parameters.
-- **GPT Image 2:** structured natural-language production brief with integrated constraints.
+- **ChatGPT Images 2.5 / GPT Image 2.5:** structured natural-language production brief with integrated constraints; explicit GPT Image 2 targets retain legacy compatibility.
 - **Seedream 5.0 Pro:** clear spatial creative brief with explicit relationships and edit regions when supplied.
 - **Nano Banana:** direct conversational generation or editing instruction with explicit preserve/change language.
 
@@ -52,7 +54,7 @@ For Midjourney, decide between ordinary Imagine/generation and the V8.2 Edit Mod
 
 ## Multi-model Pack
 
-Build one Scene Master once. Compile each target independently; do not translate one target prompt into the next. The prompts should differ visibly in native shape while their locked facts remain identical.
+Build one Scene Master once. Compile each target independently; do not translate one target prompt into the next. The prompts should differ visibly in native shape while their locked facts remain identical. Always use `Scene Master → target-specific adapter`; never chain `GPT Image → Midjourney → Seedream` or any prompt-to-prompt translation. An unchanged OpenAI migration baseline does not require cosmetic differences.
 
 ## Output
 

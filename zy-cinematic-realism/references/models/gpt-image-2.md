@@ -3,12 +3,31 @@ Copyright (c) 2026 ZY / popopo-99
 SPDX-License-Identifier: CC-BY-NC-4.0
 -->
 
-# GPT Image 2 Adapter
+# GPT Image 2.5 Adapter
 
-- **Model:** GPT Image 2
-- **Aliases:** GPT-Image-2, `gpt-image-2`
-- **Verified date:** 2026-08-29
-- **Official basis:** [model page](https://developers.openai.com/api/docs/models/gpt-image-2) and [image generation guide](https://developers.openai.com/api/docs/guides/image-generation)
+- **Current baseline:** ChatGPT Images 2.5 / GPT-Image-2.5 family
+- **Current aliases:** GPT Image, OpenAI image, ChatGPT 生图, GPT Image 2.5, Images 2.5
+- **Legacy compatibility:** GPT Image 2, GPT-Image-2, `gpt-image-2`; keep this file path stable for existing links and installations.
+- **Verified date:** 2026-09-09
+- **Official basis:** [Introducing ChatGPT Images 2.5](https://openai.com/index/introducing-chatgpt-images-2-5/), [image prompting and migration](https://developers.openai.com/api/docs/guides/image-prompting), [image generation](https://developers.openai.com/api/docs/guides/image-generation), [Flare model](https://developers.openai.com/api/docs/models/gpt-image-2.5-flare), [Sunburst model](https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst), and [Images in ChatGPT](https://help.openai.com/en/articles/11084440-im).
+
+## Product and API boundary
+
+ChatGPT Images 2.5 is the product-facing baseline in ChatGPT / Codex. This Skill produces visual plans and prompts; installation does not select an underlying image model or call an API model ID.
+
+For API requests only, consider **GPT-Image-2.5 Flare** for fast, high-quality everyday generation and editing: it accepts text and image inputs and is the official default choice for most applications, with higher quality than GPT-Image-2 at substantially lower latency. Consider **GPT-Image-2.5 Sunburst**, currently described by OpenAI as its most capable image generation/editing model, when editing precision matters most in premium or production work; generation takes longer than Flare. These are dated task heuristics, not a permanent ranking. Do not emit API model IDs, quality fields, pricing, or endpoint syntax unless the user asks for API usage; verify supported parameters then.
+
+## Migration from GPT Image 2
+
+Test existing validated GPT Image 2 prompts unchanged on GPT Image 2.5 first. Do not rewrite a working prompt merely because the model version changed. Preserve the prompt, reference images, scene facts, aspect-ratio intent, and constraints for the first comparison whenever practical. For API comparisons, also hold supported request settings, dimensions, and output format constant; evaluate quality settings before rewriting prose.
+
+Only revise after evaluation identifies a specific failure: spatial misunderstanding, identity drift, unwanted beautification, incorrect edit scope, weak material response, constraint failure, or composition drift. Then repair only the failed variable, preserving successful facts. Inspect individual edits and the complete multi-turn sequence; improved preservation is not pixel-level determinism.
+
+Do not rewrite for the sake of version numbers. The existing compiler contract still applies: `MODEL SYNTAX MAY CHANGE. SCENE LOGIC MAY NOT.`
+
+## 2.5 capability update
+
+OpenAI reports sharper details, more natural lighting, richer textures, improved reference-subject fidelity, more precise edits, and better preservation across editing turns. Image generation is faster, with latency reduced by **up to 50% compared with Images 2.0**. The percentage concerns latency, not image quality; inspect actual results for the current task.
 
 ## Best for
 
@@ -16,7 +35,7 @@ Structured natural-language production briefs, high-quality image generation, im
 
 ## Prompt density
 
-Use complete, concrete sentences grouped by function. Keep one clear instruction per sentence or short paragraph. Dense visual clauses are acceptable only when their relationships remain explicit.
+Use complete, concrete sentences grouped by function. Keep one clear instruction per sentence or short paragraph. Dense visual clauses are acceptable only when their relationships remain explicit. No special 2.5 syntax is required: use readable natural language, concrete observable descriptions, explicit action, spatial relationships, camera position, source-based light, material response, and constraints. Sections may help complex tasks; JSON, tags, and fixed templates are optional. Do not introduce `masterpiece`, `8K`, `award-winning`, or `hyper detailed` as new quality rules.
 
 ## Prompt structure
 
@@ -34,11 +53,13 @@ Write a production brief that explains spatial and causal relationships. Prefer 
 
 ## Editing strategy
 
-Identify the source image and state `Change only` and `Preserve exactly` in observable terms. Make the changed region, new physical state, and required light/perspective integration explicit. Do not claim pixel-level determinism.
+Identify the source image and state `CHANGE ONLY` and `PRESERVE EXACTLY` in observable terms. Name the changed region and new physical state; preserve identity, geometry, requested composition, lighting relationships, and unaffected objects. Integrate the change with the existing light and perspective.
+
+Use **one meaningful variable per edit** across turns and repeat the critical preserve rules, using the previous accepted output as the next input. Closely related changes explicitly requested together may share one edit; do not expand scope to demonstrate capability. Follow Prompt Doctor, One Variable Remix, and the Continuity Bible. Inspect each result; do not claim pixel-level determinism.
 
 ## Reference-image strategy
 
-Assign each image one role: identity, wardrobe, object, location, composition, material, or light. When several images are present, name their roles and resolve conflicts in favor of user-declared priority. Do not invent API attachment fields in a prose prompt.
+Assign each image an explicit role or a clearly scoped combination: identity, wardrobe, object, location, composition, material, or light. When several images are present, name their roles and resolve conflicts in favor of user-declared priority. For example: Image A → identity; Image B → wardrobe; Image C → location; Image D → composition; Image E → material / light. These are brief-level roles, not API attachment parameters. Do not assume the model can infer each image's responsibility, and do not invent API attachment fields in a prose prompt.
 
 ## Text strategy
 

@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.1.1 — 2026-09-09
+
+### GPT Image 2.5 Compatibility Update
+
+- Migrated the OpenAI image adapter baseline to ChatGPT Images 2.5 while preserving GPT Image 2 legacy prompt compatibility and the existing adapter path.
+- Added unchanged-prompt-first migration evaluation; repair only specific observed failures.
+- Strengthened editing scope and preserve/change guidance, including multi-turn preservation.
+- Updated multi-reference role assignment and user-priority handling.
+- Documented GPT-Image-2.5 Flare / Sunburst API routing without exposing API details to ordinary ChatGPT / Codex prompt requests.
+- Refreshed the OpenAI Model Capability Matrix against official sources verified on 2026-09-09.
+- Updated regression coverage, current documentation, validation, and the v2.1.1 Skill package.
+- No Scene Master architecture changes; director, style, cinematography, other model adapters, and license remain unchanged.
+
 ## v2.1.0
 
 ### Midjourney V8.2 Adapter Migration

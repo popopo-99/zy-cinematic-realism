@@ -5,23 +5,23 @@ SPDX-License-Identifier: CC-BY-NC-4.0
 
 # Model Capability Matrix
 
-Verified: 2026-09-03. This is a routing heuristic based on current official product documentation, not a benchmark or permanent ranking. Frontend features may differ from underlying model capabilities.
+Verified: 2026-09-09 (OpenAI 2.5 refresh; other provider entries retain their 2026-09-03 basis). This is a routing heuristic based on current official product documentation, not a benchmark or permanent ranking. Frontend features may differ from underlying model capabilities.
 
-| Task axis | GPT Image 2 | Midjourney | Seedream 5.0 Pro | Nano Banana family |
+| Task axis | ChatGPT Images 2.5 / GPT Image 2.5 | Midjourney | Seedream 5.0 Pro | Nano Banana family |
 |---|---|---|---|---|
 | Natural-language instruction following | Strong | Good to Strong with concise, concrete relationships in V8.2 | Strong | Strong |
 | Cinematic single-image generation | Strong | Strong | Strong | Strong |
 | Stylistic exploration | Good | Strong | Good | Good |
-| Multi-reference handling | Good | Strong through V8.2 Edit Model with up to four supplied references | Strong / frontend-dependent | Model-dependent; Strong on current generalist/pro members |
-| Character or object continuity | Good with explicit locks and references | Conditional through Edit Model references plus explicit continuity locks; not seed | Good to Strong with references | Good to Strong; member and workflow dependent |
-| Iterative conversational editing | Strong | Good to Strong through V8.2 Edit Model; workflow dependent | Strong | Strong |
-| Local or region-specific editing | Good when editing tools expose it | Good to Strong through Editor inpainting and V8.2 Edit Model | Strong when spatial controls are exposed | Good to Strong; member and frontend dependent |
-| Spatial relationship control | Strong with explicit production-brief structure | Good when relational clauses survive compression | Strong | Strong |
+| Multi-reference handling | Strong with explicit roles and user priorities | Strong through V8.2 Edit Model with up to four supplied references | Strong / frontend-dependent | Model-dependent; Strong on current generalist/pro members |
+| Character or object continuity | Strong reference-subject preservation with explicit locks; inspect drift | Conditional through Edit Model references plus explicit continuity locks; not seed | Good to Strong with references | Good to Strong; member and workflow dependent |
+| Iterative conversational editing | Strong; improved preservation across turns, still inspect each edit | Good to Strong through V8.2 Edit Model; workflow dependent | Strong | Strong |
+| Local or region-specific editing | Strong precise editing with explicit change/preserve scope; tool-dependent | Good to Strong through Editor inpainting and V8.2 Edit Model | Strong when spatial controls are exposed | Good to Strong; member and frontend dependent |
+| Spatial relationship control | Strong with explicit structured scene relationships | Good when relational clauses survive compression | Strong | Strong |
 | Visible text and typography | Good | Conditional; short double-quoted text is preferred | Strong | Good to Strong; member dependent |
 | Layout, poster, or graphic design | Good | Good for exploration | Strong | Good to Strong; member dependent |
 | Prompt compression sensitivity | Low to moderate | Moderate; concise prompts help, but story/camera/light relations must remain explicit | Moderate | Low to moderate |
 | Parameterized control | API/frontend dependent | Strong native parameter workflow | Frontend-dependent | API/frontend dependent |
-| Fast exploration | Good | Strong | Good | Strong on speed-oriented members |
+| Fast exploration | Improved latency; API Flare favors speed | Strong | Good | Strong on speed-oriented members |
 | Multi-turn workflow | Strong | Frontend-dependent | Good to Strong | Strong |
 
 ## Selection Rules
@@ -30,6 +30,12 @@ Verified: 2026-09-03. This is a routing heuristic based on current official prod
 - Give one primary choice and optionally one backup. Do not call any model universally best.
 - Treat `Conditional` and `Frontend-dependent` as a prompt to verify the user's tool, not as a deficiency score.
 - Do not infer exact reference counts, resolution limits, strength ranges, or parameters from this matrix.
+
+## OpenAI 2.5 routing notes
+
+The current baseline emphasizes natural-language instructions, high-fidelity image inputs, reference-subject preservation, precise edits, and preservation across a multi-turn sequence. It still needs explicit reference roles, spatial relationships, and change/preserve constraints; no exact consistency guarantee follows from a `Strong` rating.
+
+ChatGPT / Codex users receive a visual brief, not an API configuration. For API tasks, Flare favors fast high-quality generation; Sunburst favors editing precision with longer generation time. Test validated GPT Image 2 prompts unchanged first and keep legacy compatibility. See the [OpenAI adapter](models/gpt-image-2.md) for migration, capability changes, and product/API boundaries.
 
 ## Midjourney V8.2 routing notes
 
@@ -42,7 +48,7 @@ Verified: 2026-09-03. This is a routing heuristic based on current official prod
 
 ## Official Basis
 
-- OpenAI: [GPT Image 2 model page](https://developers.openai.com/api/docs/models/gpt-image-2) and [image generation guide](https://developers.openai.com/api/docs/guides/image-generation)
+- OpenAI: [Images 2.5 announcement](https://openai.com/index/introducing-chatgpt-images-2-5/), [prompting / migration](https://developers.openai.com/api/docs/guides/image-prompting), [Flare](https://developers.openai.com/api/docs/models/gpt-image-2.5-flare), [Sunburst](https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst), and [Images in ChatGPT](https://help.openai.com/en/articles/11084440-im)
 - Midjourney: [Version](https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version), [Prompt Basics](https://docs.midjourney.com/hc/en-us/articles/32023408776205-Prompt-Basics), [Parameter List](https://docs.midjourney.com/hc/en-us/articles/32859204029709-Parameter-List), [Image Prompts](https://docs.midjourney.com/hc/en-us/articles/32040250122381-Image-Prompts), [Style Reference](https://docs.midjourney.com/hc/en-us/articles/32180011136653-Style-Reference), and [Edit Model](https://docs.midjourney.com/hc/en-us/articles/48495453462797-Edit-Model)
 - ByteDance Seed: [Seedream 5.0 Pro](https://seed.bytedance.com/en/seedream5_0_pro) and [official launch article](https://seed.bytedance.com/en/blog/beyond-generation-it-understands-design-introducing-seedream-5-0-pro)
 - Google: [Nano Banana image generation](https://ai.google.dev/gemini-api/docs/image-generation)

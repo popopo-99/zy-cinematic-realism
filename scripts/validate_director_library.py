@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SKILL_ROOT = REPO_ROOT / "zy-cinematic-realism"
 DIRECTOR_ROOT = SKILL_ROOT / "references" / "directors"
 INDEX_PATH = DIRECTOR_ROOT / "index.md"
-EXPECTED_VERSION = "2.1.0"
+EXPECTED_VERSION = "2.1.1"
 
 REQUIRED_SECTIONS = (
     "Identity",
@@ -176,14 +176,27 @@ def validate_signature_and_versions(errors: list[str]) -> None:
 
     version_checks = (
         (REPO_ROOT / "README.md", f"v{EXPECTED_VERSION}"),
+        (REPO_ROOT / "README_EN.md", f"v{EXPECTED_VERSION}"),
+        (REPO_ROOT / "RELEASE_NOTES.md", f"v{EXPECTED_VERSION}"),
         (REPO_ROOT / "CHANGELOG.md", f"v{EXPECTED_VERSION}"),
         (SKILL_ROOT / "SKILL.md", f"v{EXPECTED_VERSION}"),
     )
     for path, token in version_checks:
-        if token not in path.read_text(encoding="utf-8"):
+        text = path.read_text(encoding="utf-8")
+        current_version = re.search(r"\bv\d+\.\d+\.\d+\b", text)
+        if current_version is None or current_version.group() != token:
             errors.append(
-                f"{path.relative_to(REPO_ROOT)}: expected version token '{token}'."
+                f"{path.relative_to(REPO_ROOT)}: expected current version '{token}'."
             )
+
+    expected_zip = f"zy-cinematic-realism-v{EXPECTED_VERSION}.zip"
+    for name in ("README.md", "README_EN.md", "RELEASE_NOTES.md"):
+        text = (REPO_ROOT / name).read_text(encoding="utf-8")
+        if name == "RELEASE_NOTES.md":
+            text = text.split("## Previous release", 1)[0]
+        packages = re.findall(r"zy-cinematic-realism-v\d+\.\d+\.\d+\.zip", text)
+        if not packages or set(packages) != {expected_zip}:
+            errors.append(f"{name}: current package must be '{expected_zip}'.")
 
 
 def local_target(link: str, source: Path) -> Path | None:

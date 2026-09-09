@@ -36,9 +36,15 @@ PRESERVE EXACTLY:
 
 When the story beat, visual center, blocking, topology, or camera position is wrong, rebuild from the Scene Master. Do not stack corrective adjectives onto a failed structure. State what is being rebuilt and what successful facts remain locked.
 
+## OpenAI 2.5 edit scope
+
+Use the existing Surgical Repair contract: name the changed region and new physical state in `CHANGE ONLY`; protect identity, geometry, requested composition, lighting relationships, and unaffected objects in `PRESERVE EXACTLY`. Prefer **one meaningful variable per edit**. Closely related changes requested together may share an edit, but do not proactively widen the scope.
+
+Carry the previous accepted output into the next turn, restate the preserve rules, and inspect each result against the Continuity Bible / One Variable Remix locks. Improved multi-turn preservation does not guarantee unchanged pixels. During migration, test a validated GPT Image 2 prompt unchanged first and repair only an observed failure; see the [2.5 adapter and official basis](models/gpt-image-2.md).
+
 ## Adapter Rules
 
-- GPT Image 2, Seedream, and Nano Banana repair instructions may emphasize explicit preserve/change boundaries when the active tool supports image editing.
+- GPT Image 2.5 (and GPT Image 2 legacy), Seedream, and Nano Banana repair instructions may emphasize explicit preserve/change boundaries when the active tool supports image editing.
 - Midjourney V8.2 repair must first choose between prompt regeneration and the current Edit Model. Rebuild through an ordinary prompt when scene structure failed; use a supplied image/reference and, when relevant, an Editor selection for targeted inpainting, outpainting, perspective change, or recombination. Do not route the current default through legacy Omni Reference, Character Reference, or the separate Retexture workflow, and do not imply that prompt-only remix provides deterministic local preservation.
 - For a series, load `continuity-cards.md` and protect the Continuity Bible before repairing a shot.
 

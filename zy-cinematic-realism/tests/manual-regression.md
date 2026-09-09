@@ -29,13 +29,13 @@ Run each test in a fresh conversation unless the setup says otherwise. Confirm r
 
 **Expected:** Produces a model-neutral Scene Master prompt without blocking. It may briefly mention later transcoding only if prompt-only output was not requested.
 
-## Test 04 — GPT Image 2
+## Test 04 — Legacy GPT Image 2
 
 **Setup:** Supply a completed model-neutral or other-model prompt.
 
 **User:** `转成 GPT Image 2。`
 
-**Expected:** Scene facts do not change. Output becomes a structured natural-language production brief with constraints integrated into the prompt.
+**Expected:** Retains the explicit GPT Image 2 legacy target (also test `GPT-Image-2` and `gpt-image-2`). Scene facts do not change. Output uses a natural-language production brief with integrated constraints; it does not silently relabel the target as 2.5.
 
 ## Test 05 — Transcode Lock
 
@@ -47,7 +47,7 @@ Run each test in a fresh conversation unless the setup says otherwise. Confirm r
 
 ## Test 06 — Multi-model Pack
 
-**User:** `同一个画面分别输出 GPT Image 2、Midjourney、Seedream 5.0 Pro、Nano Banana Prompt。`
+**User:** `同一个画面分别输出 GPT Image 2.5、Midjourney、Seedream 5.0 Pro、Nano Banana Prompt。`
 
 **Expected:** Four prompts have visibly different native structures but share one Scene Master and identical invariants. No adapter syntax leaks into another prompt.
 
@@ -186,3 +186,67 @@ Create a vertical 2:3 image set outside a convenience store just after rain at 3
 **User:** `按 Midjourney V7 输出。`
 
 **Expected:** Treats V7 as an explicit legacy target, checks its compatible reference and parameter workflow, and does not silently relabel V8.2 Edit Model behavior as V7. An unqualified follow-up request returns to V8.2 only if the user changes or clears the established legacy target.
+
+## GPT Image 2.5 Compatibility Regression
+
+### Test 26 — GPT Image 2.5 default routing
+
+**Setup:** Supply a locked scene, with no established legacy target. Run each alias in a fresh conversation.
+
+**User:** `编译成 GPT Image。` Also test `OpenAI image`, `ChatGPT 生图`, `GPT Image 2.5`, and `Images 2.5`.
+
+**Expected:** Uses the current ChatGPT Images 2.5-compatible adapter at the unchanged `models/gpt-image-2.md` path. Does not ask which OpenAI version, require special syntax, invent API fields, or claim installation selects the underlying model.
+
+### Test 27 — Migration unchanged prompt
+
+**Setup:** Supply the validated GPT Image 2 brief from Test 16 with the same reference images and 2:3 aspect-ratio intent.
+
+**User:** `升级到 GPT Image 2.5，先比较效果。`
+
+**Expected:** Tests the exact prompt unchanged first, with the same references, scene facts, aspect-ratio intent, and constraints where practical. No reordering, beautification, new story, or automatic rewrite for the version number. Evaluates specific failures before changing prose; does not claim generated-image evaluation occurred when no images were generated. For API comparison, preserves supported settings and considers quality levels before rewriting.
+
+### Test 28 — Edit preserve/change
+
+**Setup:** OpenAI 2.5 editing; provide a car image with accepted geometry, camera, environment, and light.
+
+**User:** `只把汽车从黑色改成白色，其他不变。`
+
+**Expected:** `CHANGE ONLY` identifies the black painted body panels and their new white paint state. `PRESERVE EXACTLY` protects car identity, geometry, glass, tires, trim, viewpoint, framing, lighting relationships, background, and unaffected objects. White paint responds to the existing light; no new light sources or composition changes. No pixel-identical guarantee.
+
+### Test 29 — Multi-reference roles
+
+**Setup:** Provide A (identity), B (wardrobe), C (location), D (composition), and E (material/light), with conflicting clothing visible in A and B.
+
+**User:** `人物按 A，服装以 B 优先，地点按 C，构图按 D，材质和光线参考 E。`
+
+**Expected:** Assigns each supplied image its declared role, respects B's wardrobe priority, and does not infer one image controls everything. Does not invent reference data or attachment parameters. If a required role is ambiguous, identifies the conflict rather than silently choosing.
+
+### Test 30 — API routing
+
+**User A:** `需要大量快速 API generation，画质要达到现有 GPT Image 2 水平。`
+
+**Expected A:** Recommends evaluating GPT-Image-2.5 Flare first on the unchanged baseline.
+
+**User B:** `API 用于高精度复杂 editing，允许更长生成时间。`
+
+**Expected B:** Recommends evaluating GPT-Image-2.5 Sunburst for precision, explains the time tradeoff, and avoids a permanent ranking. Both routes verify current documentation before emitting requested API parameters.
+
+**User C:** `ChatGPT 生图，只给我汽车改白色的 Prompt。`
+
+**Expected C:** Only the edit prompt, without API model IDs, quality fields, pricing, endpoint syntax, or a claim that the Skill forces a model version.
+
+### Test 31 — Multi-turn preservation and related changes
+
+**Setup:** Continue Test 28 using its accepted output and continuity locks.
+
+**User:** `现在只让驾驶员侧车窗降下一半。`
+
+**Expected:** One meaningful variable per edit: window state changes; the white paint and all unaffected locks remain. Restates critical preserve rules and inspects the result. If the user instead requests two closely related window changes together, may perform both without inventing additional edits.
+
+### Test 32 — Repair only the evaluated migration failure
+
+**Setup:** After Test 27, the user reports composition drift but confirms identity, paint, materials, and source lights are correct.
+
+**User:** `只修构图漂移，其他已通过。`
+
+**Expected:** Repairs the failed composition variable from the locked Scene Master, preserves the successful facts, and does not add quality buzzwords or redesign the scene. Without result evidence, reports evaluation as pending rather than claiming a model-quality improvement.

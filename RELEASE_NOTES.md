@@ -1,3 +1,39 @@
+# 造梦师 v2.1.1
+
+## GPT Image 2.5 Compatibility Update
+
+**OpenAI Adapter 更新到 ChatGPT Images 2.5 能力基线。原有 Scene Master 不需要因为模型升级而推倒重来。**
+
+这是 v2.1 系列的兼容性补丁。Scene Master、Creative Grammar、Model Compiler、Prompt Doctor、Continuity Bible 与 Transcode 架构保持不变。
+
+`MODEL SYNTAX MAY CHANGE. SCENE LOGIC MAY NOT.`
+
+## 官方能力与迁移
+
+[OpenAI 2.5 发布说明](https://openai.com/index/introducing-chatgpt-images-2-5/)更新了细节保真、自然光线与纹理、参考主体保留、编辑精度、多轮一致性和速度；生成延迟相对 Images 2.0 **最多降低 50%（up to 50%）**，不是画质提升 50%。官方资料核对日期：2026-09-09。
+
+按照 [官方迁移指南](https://developers.openai.com/api/docs/guides/image-prompting)，已验证有效的 GPT Image 2 Prompt 优先原样测试 2.5，首轮尽量保持 Prompt、参考图、场景事实、画幅与限制一致。只在发现具体失败变量后局部修复。
+
+## 本次更新
+
+- 普通 GPT Image / ChatGPT 生图请求默认使用 2.5-compatible Adapter；保留 GPT Image 2 legacy compatibility 与原适配器文件路径。
+- 强化 `CHANGE ONLY` / `PRESERVE EXACTLY`，明确修改区域、新状态和其余身份、几何、构图、光线与物件的保留边界；多轮优先一次修改一个有意义的变量。
+- 明确 identity / wardrobe / object / location / composition / material / light 参考图职责，并尊重用户指定的优先级。
+- 仅在 API 场景按任务考虑 [Flare](https://developers.openai.com/api/docs/models/gpt-image-2.5-flare)（快速高质量生成）或 [Sunburst](https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst)（高精度编辑、较长生成时间）。Skill 不锁定 ChatGPT / Codex 底层模型，也不向普通用户输出 API 配置。
+- 同步中英文 README、能力矩阵、编译规则与回归测试。导演库、风格卡、摄影卡与其他模型适配器保持不变。
+
+## Upgrade
+
+从 [v2.1.1 Release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.1.1) 下载 `zy-cinematic-realism-v2.1.1.zip`，导入或解压其中唯一顶级目录 `zy-cinematic-realism/`。升级时用新目录完整替换旧版，避免同时安装多个同名副本。调用名仍为 `$zy-cinematic-realism`。
+
+## License
+
+继续采用 CC BY-NC 4.0；保留作者、许可证与仓库来源。历史版本与原有致谢保留。
+
+---
+
+## Previous release — v2.1.0
+
 # 造梦师 v2.1.0
 
 ## Midjourney V8.2 Adapter Migration

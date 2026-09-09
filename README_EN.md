@@ -2,9 +2,9 @@
 
 # Dream Director
 
-## A Cinematic Visual Guide for the AI Era · v2.1.0
+## A Cinematic Visual Guide for the AI Era · v2.1.1
 
-**DREAM DIRECTOR v2.1 — Midjourney V8.2 Adapter Migration**
+**DREAM DIRECTOR v2.1.1 — GPT Image 2.5 Compatibility Update**
 
 > Build one stable visual plan first. Then translate it into the language each model understands best.
 
@@ -25,6 +25,18 @@ Dream Director is not a new image model or a bag of universal “cinematic” ke
 The public brand is **造梦师 / DREAM DIRECTOR**. To preserve installation paths, automatic triggering, and explicit invocation, the technical name remains `zy-cinematic-realism`, and the invocation remains `$zy-cinematic-realism`.
 
 **[Download the latest release](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)**
+
+## v2.1.1 — GPT Image 2.5 Compatibility Update
+
+The OpenAI adapter now targets **ChatGPT Images 2.5 / GPT Image 2.5**. The Scene Master and Model Compiler architecture stays intact.
+
+Following [OpenAI's migration guidance](https://developers.openai.com/api/docs/guides/image-prompting), **test validated GPT Image 2 prompts unchanged on GPT Image 2.5 first.** Keep the prompt, references, scene facts, aspect-ratio intent, and constraints consistent for the first comparison where practical. Repair a specific failed variable only after evaluation; a new version number is not a reason to redesign the scene.
+
+The [official announcement](https://openai.com/index/introducing-chatgpt-images-2-5/) highlights detail, natural lighting, texture, reference-subject fidelity, precise editing, and preservation across turns. Generation latency is reduced by **up to 50% versus Images 2.0**; this is a latency claim, not a percentage gain in image quality.
+
+Keep readable visual briefs, `CHANGE ONLY` / `PRESERVE EXACTLY`, and explicit reference roles. Generic GPT Image, OpenAI image, and ChatGPT image requests use the 2.5-compatible adapter; explicit GPT Image 2 requests retain legacy compatibility.
+
+In ChatGPT / Codex, this Skill prepares visual plans and prompts; it does not pin the underlying model or invoke an API automatically. Only API requests receive task-based Flare (fast, high-quality generation) or Sunburst (precise editing, longer generation time) guidance, without a permanent ranking. See the [OpenAI adapter](zy-cinematic-realism/references/models/gpt-image-2.md). Verified: 2026-09-09.
 
 ### v2.1.0 — Midjourney V8.2 Adapter Migration
 
@@ -54,7 +66,7 @@ SCENE LOGIC MAY NOT.
 - **Create** — Build a Scene Master from one idea and compile it into a native prompt for the target model. Example: `A woman holds a hot coffee outside a convenience store on a rainy night, looking away from camera.`
 - **Model Router** — Recommend a suitable adapter path for the task. Example: `I need a character look first, then several prop edits. Which model workflow should I use?`
 - **Model Compiler** — Translate one visual plan into an expression a specific model can execute more naturally. Example: `Compile this Scene Master for Midjourney.`
-- **Transcode** — Change model language while preserving scene facts. Example: `Convert this GPT Image 2 prompt to Seedream 5.0 Pro.`
+- **Transcode** — Change model language while preserving scene facts. Example: `Convert this GPT Image 2.5 prompt to Seedream 5.0 Pro.`
 - **Multi-model Pack** — Produce native versions for multiple models in one pass. Example: `Give me four model-native versions of the same scene.`
 - **Continuity Bible** — Lock characters, wardrobe, props, locations, and light across shots. Example: `Build an eight-shot sequence of an urban knight leaving work.`
 - **Prompt Check** — Find conflicts, vague language, and physically impossible instructions before generation. Example: `Check why this prompt may turn into a poster.`
@@ -63,6 +75,8 @@ SCENE LOGIC MAY NOT.
 - **Creative Shuffle** — Recombine style, cinematography, and blocking within controlled boundaries. Example: `Give me three restrained, production-ready directions.`
 
 ## One Scene Master, Four Model Interpretations
+
+These are historical v2.0.0 examples. The GPT Image 2 image keeps its original model label and is not presented as a new 2.5 result.
 
 The four results below share the same core visual constraints: a black horse, a person in silver armor, a coast, breaking waves, and a cool, realistic environment. Only the model adapter and the model's own interpretation differ. These are not the same image, and the workflow does not promise pixel-level consistency.
 
@@ -99,7 +113,7 @@ Different model interpretations.
 
 | Target model | Compilation focus |
 |---|---|
-| GPT Image 2 | Structured natural-language visual and editing instructions |
+| GPT Image 2.5 | Structured natural-language visual and editing instructions |
 | Midjourney V8.2 | Concise, natural visual relationships with request-relevant parameters at the end |
 | Seedream 5.0 Pro | Explicit spatial and subject relationships presented as a visual brief |
 | Nano Banana | Direct, task-oriented language suited to iterative editing |
@@ -130,7 +144,7 @@ who + where + what just happened + the small action now + what you do not want
 
 ```text
 Transcode: Keep the woman, convenience store, rainy night, hot coffee,
-and lack of eye contact unchanged. Convert it to GPT Image 2.
+and lack of eye contact unchanged. Convert it to GPT Image 2.5.
 
 Multi-model Pack: Compile the same Scene Master into native prompts for all four models.
 
@@ -409,7 +423,7 @@ If Skills are available in your account or workspace:
 1. Open **Plugins** in the sidebar.
 2. Open **Skills** in the Plugin Directory.
 3. Choose **Create**, then **Upload from your computer**.
-4. Upload `zy-cinematic-realism-v2.1.0.zip` from the latest Release.
+4. Upload `zy-cinematic-realism-v2.1.1.zip` from the latest Release.
 5. After scanning and installation finish, enter `$zy-cinematic-realism` or describe a cinematic prompt task directly.
 
 Personal Skills currently need to be added separately in desktop and web/mobile interfaces; they do not automatically synchronize across those interfaces.
@@ -435,7 +449,7 @@ zy-cinematic-realism/                 # GitHub repository root
 ├── README_EN.md                       # English guide and showcase
 ├── CHANGELOG.md                       # Version history
 ├── LICENSE                            # CC BY-NC 4.0
-├── RELEASE_NOTES.md                   # v2.1.0 release notes
+├── RELEASE_NOTES.md                   # v2.1.1 release notes
 ├── docs/
 │   └── images/                        # Visual examples
 ├── scripts/
@@ -475,10 +489,10 @@ zy-cinematic-realism/                 # GitHub repository root
         └── manual-regression.md
 ```
 
-The v2.1.0 Release package has exactly one top-level Skill folder:
+The v2.1.1 Release package has exactly one top-level Skill folder:
 
 ```text
-zy-cinematic-realism-v2.1.0.zip
+zy-cinematic-realism-v2.1.1.zip
 └── zy-cinematic-realism/
     ├── SKILL.md
     ├── LICENSE
@@ -503,7 +517,7 @@ CC BY-NC 4.0
 
 ## Use and Licensing
 
-*Dream Director: A Cinematic Visual Guide for the AI Era v2.1.0* is licensed under [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE) (CC BY-NC 4.0).
+*Dream Director: A Cinematic Visual Guide for the AI Era v2.1.1* is licensed under [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE) (CC BY-NC 4.0).
 
 You may:
 

@@ -2,9 +2,9 @@
 
 # 造梦师
 
-## AI时代电影视觉指南 · v2.1.0
+## AI时代电影视觉指南 · v2.1.1
 
-**DREAM DIRECTOR v2.1 — Midjourney V8.2 Adapter Migration**
+**DREAM DIRECTOR v2.1.1 — GPT Image 2.5 Compatibility Update**
 
 > 先建立一个稳定的视觉方案，再把它翻译成不同模型最容易理解的语言。
 
@@ -25,6 +25,18 @@
 对外品牌是 **造梦师 / DREAM DIRECTOR**；为保持安装路径、自动触发和显式调用兼容，技术名称始终是 `zy-cinematic-realism`，调用名始终是 `$zy-cinematic-realism`。
 
 **[下载最新 Release](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)**
+
+## v2.1.1 — GPT Image 2.5 Compatibility Update
+
+OpenAI 图像适配基线更新为 **ChatGPT Images 2.5 / GPT Image 2.5**，Scene Master 与 Model Compiler 架构保持不变。
+
+根据 [OpenAI 迁移指南](https://developers.openai.com/api/docs/guides/image-prompting)，**已经验证有效的 GPT Image 2 Prompt，优先原样测试 GPT Image 2.5。** 首轮比较尽量保持 Prompt、参考图、场景事实、画幅意图与限制一致；发现具体失败变量后再局部修复，不因版本号主动重新创作。
+
+[官方发布说明](https://openai.com/index/introducing-chatgpt-images-2-5/)重点更新细节、自然光线、纹理、参考主体保真、精确编辑与多轮保留，生成延迟相对 Images 2.0 **最多降低 50%（up to 50%）**。这项比例描述延迟，不代表画质提升比例。
+
+继续使用自然语言视觉 brief、`CHANGE ONLY` / `PRESERVE EXACTLY` 与明确的参考图职责。普通 GPT Image、OpenAI image、ChatGPT 生图请求默认进入 2.5-compatible Adapter；显式 GPT Image 2 请求仍支持 legacy compatibility。
+
+Skill 在 ChatGPT / Codex 中生成视觉方案和 Prompt，不锁定底层模型或自动调用 API。仅在用户要求 API 时，Router 才按任务考虑 Flare（快速高质量生成）或 Sunburst（高精度编辑、较长生成时间）；这不是永久排名。详见 [OpenAI Adapter](zy-cinematic-realism/references/models/gpt-image-2.md)。核对日期：2026-09-09。
 
 ### v2.1.0 — Midjourney V8.2 Adapter Migration
 
@@ -54,7 +66,7 @@ SCENE LOGIC MAY NOT.
 - **Create** — 从一句想法建立 Scene Master，并编译为目标模型的原生 Prompt。例：`雨夜便利店里，一个女人握着热咖啡，不看镜头。`
 - **Model Router** — 根据任务类型推荐更合适的适配路径。例：`我要先生成角色定妆，再连续修改道具，用哪个模型流程？`
 - **Model Compiler** — 把同一个视觉方案翻译成某个模型更容易执行的表达。例：`把 Scene Master 编译为 Midjourney。`
-- **Transcode** — 在保持场景事实不变的前提下换模型语言。例：`把这条 GPT Image 2 Prompt 转成 Seedream 5.0 Pro。`
+- **Transcode** — 在保持场景事实不变的前提下换模型语言。例：`把这条 GPT Image 2.5 Prompt 转成 Seedream 5.0 Pro。`
 - **Multi-model Pack** — 一次输出多种模型的原生版本。例：`同一场景同时给我四模型版本。`
 - **Continuity Bible** — 锁定跨镜头人物、服装、道具、地点与光线。例：`做 8 镜下班女骑士连续组图。`
 - **Prompt Check** — 生成前检查冲突、空泛和物理不成立的描述。例：`检查这条 Prompt 为什么可能做成海报。`
@@ -63,6 +75,8 @@ SCENE LOGIC MAY NOT.
 - **Creative Shuffle** — 在可控边界内重新组合风格、摄影与调度。例：`给我三个克制、可落地的创意方向。`
 
 ## 同一个 Scene Master，四种模型会发生什么？
+
+以下为 v2.0.0 时期的历史示例，GPT Image 2 图片保留原模型标注，未作为 2.5 新实测结果。
 
 下面四张结果使用同一套核心视觉约束：黑马、银色盔甲人物、海岸、海浪与冷色写实环境。区别只在模型适配器与模型自身的解释方式；它们不是同一张图，也不承诺像素级一致。
 
@@ -99,7 +113,7 @@ Different model interpretations.
 
 | 目标模型 | 编译重点 |
 |---|---|
-| GPT Image 2 | 结构清晰的自然语言视觉说明与编辑说明 |
+| GPT Image 2.5 | 结构清晰的自然语言视觉说明与编辑说明 |
 | Midjourney V8.2 | 自然、紧凑、关系明确的视觉描述；参数按需置于末尾 |
 | Seedream 5.0 Pro | 明确的空间、主体关系与视觉 brief |
 | Nano Banana | 直接、适合多轮编辑的任务措辞 |
@@ -128,7 +142,7 @@ Skill 会先整理 Scene Master，再输出 Midjourney 原生表达。你不需�
 ### 2. 转码、多模型、修复与 Remix
 
 ```text
-Transcode：保持女人、便利店、雨夜、热咖啡和不看镜头不变，转成 GPT Image 2。
+Transcode：保持女人、便利店、雨夜、热咖啡和不看镜头不变，转成 GPT Image 2.5。
 
 Multi-model Pack：同一个 Scene Master，同时输出四个模型的原生版本。
 
@@ -402,7 +416,7 @@ Codex 通常会自动发现变更；如果没有出现，请重新启动 Codex�
 1. 在侧边栏打开 **Plugins / 插件**。
 2. 在 Plugin Directory 中进入 **Skills**。
 3. 选择 **Create**，再选择 **Upload from your computer**。
-4. 上传最新 Release 中的 `zy-cinematic-realism-v2.1.0.zip`。
+4. 上传最新 Release 中的 `zy-cinematic-realism-v2.1.1.zip`。
 5. 扫描和安装完成后，输入 `$zy-cinematic-realism`，或直接描述电影感 Prompt 任务。
 
 Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会自动跨这些界面同步。
@@ -428,7 +442,7 @@ zy-cinematic-realism/                 # GitHub 仓库根目录
 ├── README_EN.md                       # English guide and showcase
 ├── CHANGELOG.md                       # 版本记录
 ├── LICENSE                            # CC BY-NC 4.0
-├── RELEASE_NOTES.md                   # v2.1.0 发布说明
+├── RELEASE_NOTES.md                   # v2.1.1 发布说明
 ├── docs/
 │   └── images/                        # 作品示例图
 ├── scripts/
@@ -468,10 +482,10 @@ zy-cinematic-realism/                 # GitHub 仓库根目录
         └── manual-regression.md
 ```
 
-v2.1.0 Release 安装包只有一层顶级 Skill 文件夹：
+v2.1.1 Release 安装包只有一层顶级 Skill 文件夹：
 
 ```text
-zy-cinematic-realism-v2.1.0.zip
+zy-cinematic-realism-v2.1.1.zip
 └── zy-cinematic-realism/
     ├── SKILL.md
     ├── LICENSE
@@ -532,7 +546,7 @@ CC BY-NC 4.0
 
 ## 使用与授权
 
-《造梦师：AI时代电影视觉指南 v2.1.0》采用 [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE)（CC BY-NC 4.0）授权。
+《造梦师：AI时代电影视觉指南 v2.1.1》采用 [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE)（CC BY-NC 4.0）授权。
 
 你可以：
 
