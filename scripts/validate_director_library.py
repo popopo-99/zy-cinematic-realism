@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SKILL_ROOT = REPO_ROOT / "zy-cinematic-realism"
 DIRECTOR_ROOT = SKILL_ROOT / "references" / "directors"
 INDEX_PATH = DIRECTOR_ROOT / "index.md"
-EXPECTED_VERSION = "2.1.1"
+EXPECTED_VERSION = "2.3.0"
 
 REQUIRED_SECTIONS = (
     "Identity",
@@ -48,6 +48,34 @@ SIGNATURE_FIELDS = (
 
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*]\(([^)]+)\)")
 HTML_LINK_RE = re.compile(r"""(?:src|href)=["']([^"']+)["']""", re.IGNORECASE)
+
+DREAM_DECODE_PRODUCTION_PATHS = (
+    REPO_ROOT / "README.md",
+    REPO_ROOT / "README_EN.md",
+    REPO_ROOT / "RELEASE_NOTES.md",
+    REPO_ROOT / "CHANGELOG.md",
+    SKILL_ROOT / "SKILL.md",
+    SKILL_ROOT / "agents" / "openai.yaml",
+    SKILL_ROOT / "references" / "dream-decode.md",
+    SKILL_ROOT / "references" / "decode-card.md",
+    SKILL_ROOT / "references" / "reference-role-router.md",
+    SKILL_ROOT / "references" / "medium-router.md",
+    SKILL_ROOT / "references" / "prompt-compiler.md",
+    SKILL_ROOT / "references" / "result-repair.md",
+    SKILL_ROOT / "references" / "continuity-cards.md",
+    SKILL_ROOT / "references" / "models" / "gpt-image-2.md",
+    SKILL_ROOT / "references" / "models" / "midjourney.md",
+    SKILL_ROOT / "references" / "models" / "seedream-5-pro.md",
+    SKILL_ROOT / "references" / "models" / "nano-banana.md",
+)
+
+FORBIDDEN_DREAM_DECODE_TERMS = (
+    re.compile(r"\bDNA\b", re.IGNORECASE),
+    re.compile(r"\bGenome\b", re.IGNORECASE),
+    re.compile(r"\bgenetic\b", re.IGNORECASE),
+    re.compile(r"\bgenes?\b", re.IGNORECASE),
+    re.compile(r"基因"),
+)
 
 
 def section_body(text: str, heading: str) -> str:
@@ -183,7 +211,7 @@ def validate_signature_and_versions(errors: list[str]) -> None:
     )
     for path, token in version_checks:
         text = path.read_text(encoding="utf-8")
-        current_version = re.search(r"\bv\d+\.\d+\.\d+\b", text)
+        current_version = re.search(r"\bv\d+\.\d+\.\d+(?:-dev)?\b", text)
         if current_version is None or current_version.group() != token:
             errors.append(
                 f"{path.relative_to(REPO_ROOT)}: expected current version '{token}'."
@@ -193,7 +221,7 @@ def validate_signature_and_versions(errors: list[str]) -> None:
     for name in ("README.md", "README_EN.md", "RELEASE_NOTES.md"):
         text = (REPO_ROOT / name).read_text(encoding="utf-8")
         if name == "RELEASE_NOTES.md":
-            text = text.split("## Previous release", 1)[0]
+            text = text.split("\n---\n", 1)[0]
         packages = re.findall(r"zy-cinematic-realism-v\d+\.\d+\.\d+\.zip", text)
         if not packages or set(packages) != {expected_zip}:
             errors.append(f"{name}: current package must be '{expected_zip}'.")
@@ -226,12 +254,31 @@ def validate_markdown_links(errors: list[str]) -> None:
                 )
 
 
+def validate_dream_decode_terminology(errors: list[str]) -> None:
+    """Reject heredity metaphors in current Dream Decode production content.
+
+    Manual regression fixtures are intentionally outside this production-path list
+    because they contain the forbidden literals as negative test data.
+    """
+    for path in DREAM_DECODE_PRODUCTION_PATHS:
+        text = path.read_text(encoding="utf-8")
+        for line_number, line in enumerate(text.splitlines(), start=1):
+            for pattern in FORBIDDEN_DREAM_DECODE_TERMS:
+                match = pattern.search(line)
+                if match:
+                    errors.append(
+                        f"{path.relative_to(REPO_ROOT)}:{line_number}: "
+                        f"forbidden Dream Decode term '{match.group()}'."
+                    )
+
+
 def main() -> int:
     errors: list[str] = []
     director_files = validate_directors(errors)
     validate_index(director_files, errors)
     validate_signature_and_versions(errors)
     validate_markdown_links(errors)
+    validate_dream_decode_terminology(errors)
 
     if errors:
         print(f"Validation failed with {len(errors)} error(s):")
@@ -242,7 +289,8 @@ def main() -> int:
     print(
         "Validation passed: "
         f"{len(director_files)} directors, required sections, index routing, "
-        "Director Signature Block fields, version tokens, and local Markdown links."
+        "Director Signature Block fields, version tokens, local Markdown links, "
+        "and Dream Decode terminology."
     )
     return 0
 

@@ -7,6 +7,8 @@ SPDX-License-Identifier: CC-BY-NC-4.0
 
 For a series, establish one Base Lock and express each image as a Shot Delta. Do not redesign the cast, wardrobe, location, or visual grammar from scratch for every shot.
 
+When a series uses Dream Decode, keep the Continuity Bible and Decode Card as coordinated but non-competing structures. The Bible owns scene and story continuity; the Decode Card owns shared visual grammar. The current Scene Master remains the canonical source of facts for each shot.
+
 ## Bible Schema
 
 ### Project
@@ -61,6 +63,10 @@ List identity mutation, wardrobe redesign, topology changes, prop duplication, l
 
 Assign each reference one role such as facial identity, wardrobe construction, prop identity, location topology, material, composition, or light. Do not treat every reference as authority over every field.
 
+### Shared Visual Grammar
+
+When the project uses Dream Decode, link or restate only the Decode Card's Core Visual Rules, Allowed Variation, Transfer Scope, and Drift Warnings. Keep color/exposure behavior, material language, texture/capture character, composition tendencies, spatial rhythm, and anti-cliches here only as visual-grammar constraints. Do not copy Source Residue—characters, wardrobe, props, location, or story facts—out of the Decode Card.
+
 ### Target Model
 
 Name the adapter and frontend context. Record only verified controls actually available in that workflow.
@@ -72,7 +78,7 @@ For each shot:
 1. Copy the current **BASE LOCK** from the Bible.
 2. Write a **SHOT DELTA** containing only what changes from the immediately previous narrative state.
 3. Update dependent physical consequences: hand occupancy, wetness, damage, shadow direction, visibility, or object location.
-4. Compile `Base Lock + Shot Delta` through the target adapter.
+4. Compile `Base Lock + Shot Delta + optional Decoded Visual Grammar` through the target adapter.
 5. Compare the prompt against Forbidden Drift before output.
 
 Do not let a Shot Delta restate or silently revise the Bible. When a new user instruction conflicts with the Bible, identify the conflict and ask only if it cannot be resolved as an allowed state change.

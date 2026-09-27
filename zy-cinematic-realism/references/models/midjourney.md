@@ -77,6 +77,8 @@ Assign each supplied reference exactly one primary role before compiling. Combin
 
 Use only references, URLs, style codes, weights, seeds, and personalization profiles that the user actually supplies or confirms are active. Never fabricate an image URL, `--sref` code, `--iw`, `--sw`, reference weight, seed, profile, or style code. If a required reference is absent, request it or provide a text-only fallback with the limitation stated.
 
+For Dream Decode, independently compile the shared Scene Master, authorized Primary Medium and identity-critical Medium Constraints, an Expression Mechanism only when observed, three to five Active Core Rules selected from the full five to eight, and Transfer Scope into one concise V8.2 description. Do not let default photographic or generic concept-art wording override a non-photo medium. Choose Image Prompt, Style Reference, Edit Model Reference, or established Moodboard/Personalization only when its documented role matches supplied input; invent no URLs or weights. Exclude style-reference scene facts and resolve Hybrid Decisions for OPEN scene decisions without overriding USER-LOCKED ones.
+
 ## Raw strategy
 
 `--raw` is a purposeful control, not a default cinematic suffix.

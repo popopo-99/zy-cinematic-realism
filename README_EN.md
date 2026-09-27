@@ -2,9 +2,9 @@
 
 # Dream Director
 
-## A Cinematic Visual Guide for the AI Era · v2.1.1
+## A Cinematic Visual Guide for the AI Era · v2.3.0
 
-**DREAM DIRECTOR v2.1.1 — GPT Image 2.5 Compatibility Update**
+**DREAM DIRECTOR v2.3.0 — Dream Decode**
 
 > Build one stable visual plan first. Then translate it into the language each model understands best.
 
@@ -20,13 +20,87 @@
 
 Dream Director is not a new image model or a bag of universal “cinematic” keywords. It is a cinematic visual workflow for ChatGPT and Codex. It first locks the character, story moment, action, setting, camera, composition, light, props, time, weather, and constraints, then compiles that plan into a native prompt for the target model.
 
-`Scene Master → Creative Grammar → Model Compiler → Result Repair`
+`Scene Master + Creative Grammar → Model Compiler → Result Repair`
+
+With references, Dream Decode first determines each image's role and medium, then extracts transferable visual rules:
+
+`User Intent + Reference Image(s) → Reference Role Router → Medium Router → Dream Decode → Compiler Priority Gate → Model Compiler`
 
 The public brand is **造梦师 / DREAM DIRECTOR**. To preserve installation paths, automatic triggering, and explicit invocation, the technical name remains `zy-cinematic-realism`, and the invocation remains `$zy-cinematic-realism`.
 
 **[Download the latest release](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)**
 
-## v2.1.1 — GPT Image 2.5 Compatibility Update
+## Table of Contents
+
+- [v2.3 Dream Decode](#dream-decode)
+- [Core Workflow Capabilities](#core-workflows)
+- [One Scene Master, Four Model Interpretations](#model-comparison)
+- [Model Router and Four Native Adapters](#model-router)
+- [Get Started in 60 Seconds](#quick-start)
+- [Continuity](#continuity)
+- [Prompt Doctor](#prompt-doctor)
+- [Creative Grammar](#creative-grammar)
+- [Director Method](#director-method)
+- [Complete Input Card](#input-card)
+- [Install in Codex](#install-codex)
+- [Use in ChatGPT](#use-chatgpt)
+- [Repository and Package Structure](#repository-structure)
+- [Copyright and License](#license)
+
+<a id="dream-decode"></a>
+## v2.3 Dream Decode
+
+> **See a reference. Decode what matters. Carry the visual logic somewhere new.**
+
+Dream Decode is not Image-to-Prompt. Instead of flattening a reference into a pile of `cinematic`, `moody`, `soft light`, and `film grain`, it separates original content from the visual decisions that make the work recognizable. Characters, locations, camera distance, and stories can change. The worthwhile visual logic can survive.
+
+### 01 · Decode the visual logic
+
+#### Describe less. Understand more.
+
+Consider a dark rider, a group of orange-red horses, and heavy grain. The useful decode is not simply “black, orange, grain.” It notices the unstable bright group against the nearly informationless dark, a subject whose outline survives while inner detail falls away, grain across both highlights and shadows, edge glow that merges forms, and the relationship of **one person watching something**. The rider, horses, and outdoor setting belong to the source. A new scene—“At 3 a.m., an old wizard buys coffee in a convenience store”—can still carry the dark structure, color tension, coarse grain, edge bloom, and watching relationship. **Transfer visual logic. Preserve new scene intent.**
+
+### 02 · Preserve the logic, change the scene
+
+#### The reference is evidence, not an order.
+
+Composition, shot size, viewpoint, subject scale, or aspect ratio explicitly chosen by the user is **USER-LOCKED**. The reference cannot override it. Unspecified visual decisions remain **OPEN** and can be preserved, adapted, filled, or released from the reference. If the user asks for a chest-up portrait in a style taken from a wide shot, keep the close framing while carrying over compatible exposure, color, material, and viewing logic. Keep the relationship, not the source coordinates.
+
+### 03 · Multi-reference Roles
+
+#### Four images do not become one averaged style.
+
+Image A can supply soft lilac, sage, and warm-white color relationships; B, a vertical axis and large circle low in the frame; C, the warmth and proportions of a real person; D, reflective chrome material. Each image contributes only within its assigned role. Conflicting media are not averaged merely because both files were uploaded. **One reference does not need to explain everything.**
+
+### 04 · Decode once. Reuse later.
+
+#### Turn an analysis into a Decode Card.
+
+`Reference Image(s) → Dream Decode → Decode Card → New Scene → New Image`
+
+A Decode Card is not the original prompt, a generic image description, a database record, or an instruction to copy the image. It keeps Primary Medium, Medium Constraints, full Core Visual Rules, Visual Grammar, an Expression Mechanism only when observed, Transfer Scope, Allowed Variation, Source Residue, and Drift Warnings. After four references become a “Powder Mist and Chrome” card, the images can leave. “Use this card for an old wizard in a subway station” is enough to compile a new scene.
+
+**The reference can leave. The visual logic you understood stays.**
+
+### What Dream Decode separates
+
+| Layer | Purpose |
+| --- | --- |
+| Scene Facts | What belongs to the original image, not automatically to the new scene. |
+| Visual Grammar | How the image is organized and rendered. |
+| Expression Mechanism | A central visual event, only when there is clear evidence. |
+| Core Visual Rules | The full five to eight reusable rules. |
+| Active Core Rules | The three to five most relevant rules for this scene. |
+| Transfer Scope | Strong, Conditional, or Do Not Transfer. |
+| Source Residue | People, clothing, locations, text, brands, and props that should stay behind. |
+
+The full Decode Card is not poured into the final prompt. The Compiler Priority Gate selects only what the current scene needs. **REFERENCE MEDIUM OVERRIDES DEFAULT CINEMATIC REALISM**: paper illustration stays paper-based, stylized 3D does not become photoreal PBR, and old game capture is not automatically upgraded to modern AAA rendering. Photographic references still use photographic logic; other media keep their own paper, pigment, line, edge, form, and rendering behavior.
+
+### v2.2 — Dream Decode Foundation
+
+v2.2 introduced the Reference Role Router, Dream Decode, Core Visual Rules, Transfer Scope, Decode Cards, and Decode Repair. v2.3 builds on that foundation with stronger medium fidelity, optional expression analysis, selective compilation, and reusable cards. The technical Skill name and existing workflows remain compatible.
+
+### v2.1.1 — GPT Image 2.5 Compatibility Update
 
 The OpenAI adapter now targets **ChatGPT Images 2.5 / GPT Image 2.5**. The Scene Master and Model Compiler architecture stays intact.
 
@@ -61,7 +135,8 @@ SCENE LOGIC MAY NOT.
 
 **Model language may change. The visual design may not change behind your back.**
 
-## Ten Core Capabilities
+<a id="core-workflows"></a>
+## Core Workflow Capabilities
 
 - **Create** — Build a Scene Master from one idea and compile it into a native prompt for the target model. Example: `A woman holds a hot coffee outside a convenience store on a rainy night, looking away from camera.`
 - **Model Router** — Recommend a suitable adapter path for the task. Example: `I need a character look first, then several prop edits. Which model workflow should I use?`
@@ -71,9 +146,11 @@ SCENE LOGIC MAY NOT.
 - **Continuity Bible** — Lock characters, wardrobe, props, locations, and light across shots. Example: `Build an eight-shot sequence of an urban knight leaving work.`
 - **Prompt Check** — Find conflicts, vague language, and physically impossible instructions before generation. Example: `Check why this prompt may turn into a poster.`
 - **Prompt Doctor** — Repair only the variables that caused a failed result. Example: `The character looks like an ad; only fix camera position, posing, and light hierarchy.`
+- **Dream Decode** — Explain why references look the way they do, then extract and transfer reusable visual rules. Example: `Use only image one's visual grammar; replace its content with an astronaut in a lunar base.`
 - **One Variable Remix** — Lock every core fact and change one variable only. Example: `Move the witness position from the front to outside the doorway, and change nothing else.`
 - **Creative Shuffle** — Recombine style, cinematography, and blocking within controlled boundaries. Example: `Give me three restrained, production-ready directions.`
 
+<a id="model-comparison"></a>
 ## One Scene Master, Four Model Interpretations
 
 These are historical v2.0.0 examples. The GPT Image 2 image keeps its original model label and is not presented as a new 2.5 result.
@@ -109,6 +186,7 @@ Different native prompts.
 Different model interpretations.
 ```
 
+<a id="model-router"></a>
 ## Model Router and Four Native Adapters
 
 | Target model | Compilation focus |
@@ -122,6 +200,7 @@ The Router is a task heuristic, not a permanent ranking, and it does not claim t
 
 The Midjourney adapter now targets the current V8.2 by default, preserves natural visual relationships, distinguishes Imagine from the Edit Model, and selects parameters by need instead of applying a legacy suffix template.
 
+<a id="quick-start"></a>
 ## Get Started in 60 Seconds
 
 ### 1. Create from one sentence and choose a model
@@ -155,12 +234,14 @@ One Variable Remix: Move the camera from a frontal interior view to a position o
 the awning, looking through glass. Lock everything else.
 ```
 
+<a id="continuity"></a>
 ## Continuity: Base Lock + Shot Delta
 
 For an eight-shot sequence about an urban woman knight leaving work, start with a `Continuity Bible` that locks her face, silver commuter armor, worn canvas bag, folding spear, station, and cool/warm practical light sources. Every shot combines the same `Base Lock` with one limited `Shot Delta` describing only the new action, camera, or time change.
 
 This reduces drift in faces, clothing, props, locations, and lighting. It does not promise identical model outputs; it makes every change traceable.
 
+<a id="prompt-doctor"></a>
 ## Prompt Doctor: Repair, Do Not Rewrite
 
 When a result looks like a commercial, the problem is usually not a lack of “cinematic” words. The camera may be too frontal, the character may be posing, or the key and supporting light may have no hierarchy. Prompt Doctor diagnoses the result before producing a scoped repair instruction:
@@ -172,6 +253,7 @@ PRESERVE EXACTLY: identity, wardrobe, car, and location.
 
 Repair is not a new creative pass. Character identity, wardrobe, vehicle, and location remain anchored to the original Scene Master. Only named variables may change.
 
+<a id="creative-grammar"></a>
 ## Creative Grammar: Executable Decisions, Not Filters
 
 v2.0.0 preserves the Four-Axis Visual Fingerprints for 38 directors and adds 16 style cards plus 8 cinematography cards. These cards alter light, exposure, camera, space, blocking, and visual center instead of appending a style label.
@@ -220,6 +302,7 @@ The same method works for crime, boxing, family drama, science fiction, historic
 
 > **Do not stop at “two boxers fighting intensely.” Specify the round, the fraction of a second before or after impact, what the camera sees through, and how much motion blur should remain.**
 
+<a id="director-method"></a>
 ## Reobserve the Same Story Through a Director's Method
 
 ### Director Four-Axis Visual Fingerprint System
@@ -345,6 +428,7 @@ Fixed scene: mid-1980s Manhattan, late at night in a police evidence room. A tir
 
 [View all six invocation examples, Final Prompts, and Avoid blocks](docs/director-style-comparison.md)
 
+<a id="input-card"></a>
 ## Complete Input Card
 
 Copy this card when you first use the Skill. It is fine to leave fields blank:
@@ -368,6 +452,7 @@ Output:
 3. Scene-specific constraints and Avoid block
 ```
 
+<a id="install-codex"></a>
 ## Install in Codex
 
 According to the current OpenAI documentation, Codex discovers Skills in the user-level `$HOME/.agents/skills` and project-level `.agents/skills` directories. You can also ask the built-in `$skill-installer` to install from another GitHub repository. See [OpenAI: Build skills](https://learn.chatgpt.com/docs/build-skills).
@@ -412,6 +497,7 @@ Use $zy-cinematic-realism to turn “two detectives riding a night bus back to t
 after a failed interrogation” into a grounded cinematic still prompt.
 ```
 
+<a id="use-chatgpt"></a>
 ## Use in ChatGPT
 
 ### If your account has a Skills installation entry point
@@ -423,7 +509,7 @@ If Skills are available in your account or workspace:
 1. Open **Plugins** in the sidebar.
 2. Open **Skills** in the Plugin Directory.
 3. Choose **Create**, then **Upload from your computer**.
-4. Upload `zy-cinematic-realism-v2.1.1.zip` from the latest Release.
+4. Upload `zy-cinematic-realism-v2.3.0.zip` from the latest Release.
 5. After scanning and installation finish, enter `$zy-cinematic-realism` or describe a cinematic prompt task directly.
 
 Personal Skills currently need to be added separately in desktop and web/mobile interfaces; they do not automatically synchronize across those interfaces.
@@ -439,6 +525,7 @@ You can still use the workflow directly:
 
 This does not require Codex or plugin installation, but you may need to provide the rules again in each conversation.
 
+<a id="repository-structure"></a>
 ## Repository and Package Structure
 
 The repository root contains the brand guide, tutorials, license, and release history. The installable Skill itself is the `zy-cinematic-realism/` folder.
@@ -449,11 +536,12 @@ zy-cinematic-realism/                 # GitHub repository root
 ├── README_EN.md                       # English guide and showcase
 ├── CHANGELOG.md                       # Version history
 ├── LICENSE                            # CC BY-NC 4.0
-├── RELEASE_NOTES.md                   # v2.1.1 release notes
+├── RELEASE_NOTES.md                   # v2.3.0 release notes and history
 ├── docs/
 │   └── images/                        # Visual examples
 ├── scripts/
-│   └── validate_director_library.py   # Director-library and Markdown-link validation
+│   ├── validate_director_library.py   # Director-library and Markdown-link validation
+│   └── validate_skill.py              # Full Skill validation
 └── zy-cinematic-realism/              # Installable Skill
     ├── SKILL.md
     ├── LICENSE
@@ -468,6 +556,10 @@ zy-cinematic-realism/                 # GitHub repository root
         ├── model-routing.md
         ├── model-capability-matrix.md
         ├── prompt-compiler.md
+        ├── dream-decode.md
+        ├── reference-role-router.md
+        ├── medium-router.md
+        ├── decode-card.md
         ├── prompt-check.md
         ├── result-repair.md
         ├── continuity-cards.md
@@ -489,10 +581,10 @@ zy-cinematic-realism/                 # GitHub repository root
         └── manual-regression.md
 ```
 
-The v2.1.1 Release package has exactly one top-level Skill folder:
+The v2.3.0 Release package has one top-level Skill folder:
 
 ```text
-zy-cinematic-realism-v2.1.1.zip
+zy-cinematic-realism-v2.3.0.zip
 └── zy-cinematic-realism/
     ├── SKILL.md
     ├── LICENSE
@@ -503,6 +595,7 @@ zy-cinematic-realism-v2.1.1.zip
     └── tests/
 ```
 
+<a id="license"></a>
 ## Copyright and License
 
 The Skill source files include copyright notices. The distributable Skill package contains its own license file.
@@ -517,7 +610,7 @@ CC BY-NC 4.0
 
 ## Use and Licensing
 
-*Dream Director: A Cinematic Visual Guide for the AI Era v2.1.1* is licensed under [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE) (CC BY-NC 4.0).
+*Dream Director: A Cinematic Visual Guide for the AI Era v2.3.0* is licensed under [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE) (CC BY-NC 4.0).
 
 You may:
 

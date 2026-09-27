@@ -35,21 +35,21 @@ Structured natural-language production briefs, high-quality image generation, im
 
 ## Prompt density
 
-Use complete, concrete sentences grouped by function. Keep one clear instruction per sentence or short paragraph. Dense visual clauses are acceptable only when their relationships remain explicit. No special 2.5 syntax is required: use readable natural language, concrete observable descriptions, explicit action, spatial relationships, camera position, source-based light, material response, and constraints. Sections may help complex tasks; JSON, tags, and fixed templates are optional. Do not introduce `masterpiece`, `8K`, `award-winning`, or `hyper detailed` as new quality rules.
+Use complete, concrete sentences grouped by function. Keep one clear instruction per sentence or short paragraph. Dense visual clauses are acceptable only when their relationships remain explicit. No special 2.5 syntax is required: use readable natural language, concrete observable descriptions, explicit action, spatial relationships, medium-appropriate viewpoint and value/light behavior, material response, and constraints. Camera position, source light, and capture terms suit photographic media; do not impose them on illustration, stylized 3D, print, game capture, or mixed media. Sections may help complex tasks; JSON, tags, and fixed templates are optional. Do not introduce `masterpiece`, `8K`, `award-winning`, or `hyper detailed` as new quality rules.
 
 ## Prompt structure
 
 1. Task and grounded scene facts.
 2. Story beat and current action.
 3. blocking, object interaction, and physical space.
-4. camera witness position, distance, height, and composition.
-5. source-light map, exposure, color, and material response.
-6. capture behavior and aspect-ratio intent.
+4. Medium-appropriate viewpoint, framing, and spatial arrangement; use camera witness position, distance, or focal behavior when the Primary Medium is photographic.
+5. Medium-appropriate value, shading, color, and material response; use source-light map and exposure for photography.
+6. Medium-specific edge, mark-making, paper surface, rendering, or capture behavior, plus aspect-ratio intent.
 7. integrated constraints and preserve rules.
 
 ## Generation strategy
 
-Write a production brief that explains spatial and causal relationships. Prefer “the camera stands behind the parked car, with its roof cutting across the lower foreground” over a disconnected list of camera adjectives.
+Write a production brief that explains spatial and causal relationships. For photography, prefer “the camera stands behind the parked car, with its roof cutting across the lower foreground” over a disconnected list of camera adjectives. For non-photo media, express the equivalent relationship through viewpoint, framing, layers, mark-making, form language, or rendering limits without pretending it was photographed.
 
 ## Editing strategy
 
@@ -60,6 +60,8 @@ Use **one meaningful variable per edit** across turns and repeat the critical pr
 ## Reference-image strategy
 
 Assign each image an explicit role or a clearly scoped combination: identity, wardrobe, object, location, composition, material, or light. When several images are present, name their roles and resolve conflicts in favor of user-declared priority. For example: Image A → identity; Image B → wardrobe; Image C → location; Image D → composition; Image E → material / light. These are brief-level roles, not API attachment parameters. Do not assume the model can infer each image's responsibility, and do not invent API attachment fields in a prose prompt.
+
+For Dream Decode, independently compile the shared Scene Master, authorized Primary Medium and identity-critical Medium Constraints, an Expression Mechanism only if observed, three to five Active Core Rules selected from the full five to eight, and Transfer Scope into a concise natural-language brief. Do not let cinematic or photoreal defaults erase a non-photo medium. Paper illustration uses pigment, edge, mark, surface, and layered-space terms; stylized 3D uses viewpoint, form language, surface response, and stylized lighting; game capture may need rendering limits, camera logic, texture, interface, or engine-era behavior when observed. Photographic references retain normal cinematic-realism camera, light, exposure, and capture language. Keep Do Not Transfer content out; adapt Hybrid Decisions only for OPEN scene decisions, never USER-LOCKED ones. Actual references may be supplied, but invent no attachment metadata, strengths, or controls.
 
 ## Text strategy
 

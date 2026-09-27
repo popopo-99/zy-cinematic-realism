@@ -1,5 +1,55 @@
 # Changelog
 
+## v2.3.0 — 2026-09-27
+
+### Added
+
+- Medium-aware Dream Decode with per-reference role isolation and explicit `Host Medium + Secondary Construction Rule` for user-requested cross-medium work.
+- Optional Expression Mechanism and reusable Decode Card fields that preserve the transferable relationship without copying source content.
+- `USER-LOCKED` / `OPEN` Scene Master visual decisions and three-to-five Active Core Rules selected from the full five-to-eight-rule archive.
+- Image-level manual regression protocol using at least three paired comparisons per case, plus a general Skill validator.
+
+### Improved
+
+- Compiler Priority Gate preserves reference medium and scene intent while selecting only relevant visual grammar for each native model prompt.
+- Decode Repair distinguishes Valid Adaptation from Medium Drift and Mechanism Drift; GPT Image compilation protects non-photographic media from default camera/capture language.
+- Kept the technical name, four independent model adapters, earlier workflows, and CC BY-NC 4.0 license unchanged.
+
+## v2.2.0 — 2026-09-24
+
+### Added
+
+- Dream Decode / 解梦 for explaining why reference images look the way they do and extracting transferable visual rules.
+- Reference Role Router with explicit user-role priority and conservative role inference.
+- Separation of reference Scene Facts, transferable Visual Grammar, and context-dependent Hybrid Decisions.
+- Five-to-eight executable Core Visual Rules as the main decoded input to transfer and compilation.
+- Dynamic Transfer Scope with Strong Transfer, Conditional Transfer, and Do Not Transfer boundaries.
+- Decode Transfer from reference-derived visual grammar into a new Scene Master without prompt-to-prompt noun replacement.
+- Multi-Reference Consensus Decode for stable shared rules and Variable Traits.
+- Role-Based Multi-Reference Decode for separately assigned color, composition, identity, material, and other responsibilities.
+- Decode Card schema with Core Visual Rules / 核心梦律, explicit Transfer Scope, Allowed Variation, Source Residue, and Drift Warnings, without automatic persistence claims.
+- Decode Repair classification for Valid Adaptation versus Actual Drift before surgical correction.
+- Eighteen Dream Decode regression cases covering analysis, transfer, multi-reference routing, conflicts, cards, valid adaptation, terminology, compression, compilation, repair, and scene contamination.
+
+### Changed
+
+- Scene Master can now receive visual grammar extracted from reference images without treating reference content as scene facts.
+- Prompt Compiler prioritizes Scene Master, five-to-eight Core Visual Rules, Transfer Scope, and only relevant supporting Visual Grammar instead of copying the complete Decode Card.
+- Reference handling now resolves explicit roles before analysis, transfer, or adapter mapping.
+- GPT Image 2.5, Midjourney V8.2, Seedream 5.0 Pro, and Nano Banana adapters can compile the same `Scene Master + Decoded Visual Grammar` through their own native prompt shapes.
+- Result Repair can compare an accepted Reference Decode with a generated result and preserve successful variables.
+- Continuity can use a Decode Card for shared visual grammar while the Continuity Bible remains responsible for series facts and state.
+- Chinese and English README files now introduce Dream Decode through “understand, learn, use” rather than a feature dump.
+
+### Preserved
+
+- Scene Master remains the canonical source of scene facts.
+- Model Compiler architecture and independent target-specific compilation remain unchanged.
+- Existing Director, Style, Cinematography, Prompt Check, Transcode, Remix, Creative Shuffle, Result Repair, and Continuity systems remain compatible.
+- GPT Image 2.5, Midjourney V8.2, Seedream 5.0 Pro, Nano Banana, and legacy target handling remain supported.
+- Technical skill name `zy-cinematic-realism`, folder name, and `$zy-cinematic-realism` invocation remain unchanged.
+- License remains CC BY-NC 4.0 and is unchanged.
+
 ## v2.1.1 — 2026-09-09
 
 ### GPT Image 2.5 Compatibility Update

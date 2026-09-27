@@ -1,6 +1,6 @@
 ---
 name: zy-cinematic-realism
-description: Compile scene ideas or existing visual prompts into restrained, physically believable cinematic image prompts for ChatGPT Images 2.5 / GPT Image 2.5 (with GPT Image 2 legacy compatibility), Midjourney, Seedream 5.0 Pro, Nano Banana, or a model-neutral workflow. Use for cinematic AIGC creation, model routing or transcoding, continuity packs, prompt diagnosis, result repair, director/style/cinematography methods, one-variable remixes, and grounded creative shuffles.
+description: Compile scene ideas, visual references, or existing prompts into model-native image prompts. Use for cinematic creation or Dream Decode visual analysis and transfer; when a reference has a non-photographic medium, preserve that medium rather than defaulting to cinematic realism. Supports ChatGPT Images 2.5 / GPT Image 2.5 (with GPT Image 2 legacy compatibility), Midjourney, Seedream 5.0 Pro, Nano Banana, or a model-neutral workflow, plus model routing, continuity, prompt diagnosis, and result repair.
 ---
 
 <!--
@@ -12,13 +12,19 @@ Source: https://github.com/popopo-99/zy-cinematic-realism
 
 # 造梦师 · ZY Cinematic Realism
 
-Public edition: 《造梦师：AI时代电影视觉指南 v2.1.1》.
+Public edition: 《造梦师 v2.3.0 — 解梦 / DREAM DIRECTOR v2.3.0 — Dream Decode》.
 
 Build every result in this order:
 
 `Scene Master → Creative Grammar → Model Compiler → Result Repair`
 
 First decide what the image is, then how it is witnessed, and only then how to express it to a target model. One Scene Master may compile into multiple native model prompts.
+
+When visual references are used for analysis or transfer:
+
+`User Intent + Reference Image(s) → Reference Role Router → Per-Reference Medium Analysis → Dream Decode (Expression Mechanism only when observed) → Core Visual Rules → Transfer Scope → Compiler Priority Gate`
+
+Then compile `Scene Master + Decoded Visual Grammar → target-specific Model Compiler`. Scene Master remains the source of scene facts; reference-derived visual grammar remains a separate input.
 
 ## Mode Selection
 
@@ -32,6 +38,7 @@ Infer the mode from the request. Do not print a menu.
 - **Repair** — diagnose a generated result and produce a model-native repair instruction.
 - **Prompt Check** — inspect an existing prompt without rewriting unless requested.
 - **Director / Style / Cinematography** — apply a selected visual grammar.
+- **Dream Decode** — analyze why references look the way they do, transfer their visual grammar, synthesize multiple references, create a Decode Card, or repair reference drift. Internally select Analyze, Transfer, Multi-Reference, or Repair; do not print a submenu. Trigger for requests such as `分析这张图画风`, `模仿图一风格`, `复刻这种美术风格`, `为什么这张图看起来这样`, `提取视觉语言`, `图一风格做图二内容`, `参考这几张 moodboard`, `生成结果还是不像参考`, or `帮我对比哪里漂了`.
 - **Remix** — change one major variable while preserving every other invariant.
 - **Creative Shuffle** — combine one causal story card, camera card, and style card.
 
@@ -57,9 +64,15 @@ Build or recover the Scene Master before applying style or model syntax. Preserv
 - visual center, camera witness position, spatial layers, or composition logic;
 - primary light sources, core props, aspect ratio, or explicit restrictions.
 
+For Dream Decode visual decisions (camera/viewpoint, composition, subject scale, light, framing, perspective, blocking, aspect ratio, visual center, and similar fields), mark an explicit user choice **USER-LOCKED** and an unspecified system-completed value **OPEN**. Priority is `USER-LOCKED > reference-derived Hybrid Decision > system-generated default`. Resolve OPEN values using Hybrid Decisions and Transfer Scope (Preserve / Adapt / Fill / Release) before the final Scene Master lock; never overwrite USER-LOCKED choices. The resolved Scene Master remains the sole source of scene facts.
+
 For Transcode and Multi-model Pack, apply a Transcode Lock before writing any target prompt. `MODEL SYNTAX MAY CHANGE. SCENE LOGIC MAY NOT.`
 
+For Dream Decode, separate reference **Scene Facts**, transferable **Visual Grammar**, and **Hybrid Decisions** such as composition, viewpoint, subject scale, occlusion, spatial layering, and light direction. Route each reference's Primary Medium after assigning its role; identify an Expression Mechanism only when a distinct, observable one exists. Transfer visual logic without importing unassigned people, wardrobe, objects, locations, text, brands, or story events. USER-LOCKED Scene Master facts outrank reference-derived grammar; an authorized non-photo medium outranks default cinematic realism unless the user requests reinterpretation. For non-photo media, use viewpoint, value, edges, marks, surface, and rendering behavior rather than default camera/capture instructions.
+
 ## Core Create Workflow
+
+These camera and source-light steps apply to photographic / cinematic Create work. When Dream Decode authorizes a non-photographic Primary Medium, express the corresponding viewpoint, value, surface, marks, or stylized rendering behavior instead of forcing photographic capture.
 
 1. Parse fixed facts: era, place, characters, event, mood, time, weather, aspect ratio, target model, references, and restrictions.
 2. Choose a specific story beat with a narrative before, concrete current action, and implied next event. Prefer observed transition, waiting, aftermath, departure, private observation, or interrupted routine unless the user requests a climax.
@@ -81,6 +94,7 @@ Load only the branch required for the active mode.
 - **Prompt Check:** [prompt-check.md](references/prompt-check.md), the target adapter when known, and [anti-ai-cleanup.md](references/anti-ai-cleanup.md) when cinematic realism is relevant.
 - **Continuity:** [continuity-cards.md](references/continuity-cards.md), [prompt-compiler.md](references/prompt-compiler.md), and the target adapter.
 - **Repair:** [result-repair.md](references/result-repair.md), the target adapter, and [continuity-cards.md](references/continuity-cards.md) for a series.
+- **Dream Decode:** [reference-role-router.md](references/reference-role-router.md) → [medium-router.md](references/medium-router.md) → [dream-decode.md](references/dream-decode.md); read [prompt-compiler.md](references/prompt-compiler.md) and only the selected adapter when compilation is required. Also read [result-repair.md](references/result-repair.md) for Decode Repair and [decode-card.md](references/decode-card.md) when the user requests a reusable card or series-level visual continuity. Do not load all Style Cards by default.
 - **Director:** [director-routing.md](references/director-routing.md), [directors/index.md](references/directors/index.md), and one matching director file. For recommendations, also read [directors/recommendation-matrix.md](references/directors/recommendation-matrix.md) and load only two or three candidates.
 - **Style:** [creative-cards.md](references/creative-cards.md) and [style-cards.md](references/style-cards.md).
 - **Cinematography:** [cinematography-cards.md](references/cinematography-cards.md).
@@ -107,6 +121,11 @@ Preserve the existing Director Four-Axis system. Use it only when the user names
 - **Multi-model Pack:** one short Scene Lock → clearly different native prompts sharing the same invariants.
 - **Prompt Check:** three to five high-impact `PASS / WEAK / RISK / CONFLICT` findings → Rewrite, Surgical Fix, or No Rewrite as requested.
 - **Repair:** dominant failures → `CHANGE ONLY` → `PRESERVE EXACTLY` → target-native repair prompt.
+- **Dream Decode — Analyze:** `画面理解` → `媒介判断` → optional `表达机制` (only when observed) → `解梦分析` → five to eight `核心梦律`; omit an absent mechanism rather than printing an empty block. No prompt when the user asks only for analysis.
+- **Dream Decode — Transfer:** `解梦摘要` → `核心视觉规则` → `[Target Model] Prompt`. Prompt-only requests return only the prompt.
+- **Dream Decode — Multi-Reference:** compact `Reference Roles` → `Shared / Assigned Visual Grammar` → Core Rules → prompt when requested.
+- **Decode Card:** only when requested or needed for reuse or series continuity; include five to eight `Core Visual Rules / 核心梦律`, explicit `Transfer Scope`, `Allowed Variation`, `Source Residue`, and `Drift Warnings`; optionally include evidence-backed Primary Medium, Medium Constraints, and Expression Mechanism. Use a compact card unless deeper archival grammar is useful, and never claim automatic persistence.
+- **Decode Repair:** classify `Valid Adaptation` before `Actual Drift`; only actual drift enters at most three dominant failures → `CHANGE ONLY` → `PRESERVE EXACTLY` → target-native repair prompt.
 - **Continuity:** Continuity Bible → Shot List → Shot Deltas → model-native prompts.
 - **Remix:** Preserved → Changed axis → New Prompt.
 - **Shuffle:** Combination → Story Card → Camera Card → Style Card → Final Prompt.
@@ -118,6 +137,6 @@ Do not expose hidden reasoning or internal locks unless the user requests them. 
 - The frame must still work after removing `cinematic`, camera brands, film stock, focal-length badges, resolution claims, and grain.
 - Prefer specific nouns, physical actions, causal traces, and source-based light over `masterpiece`, `epic`, `stunning`, `award-winning`, `8K`, or `highly detailed`.
 - Do not invent decorative rim light, neon, fog, flare, shallow focus, damage, dirt, obstruction, or imperfection without a physical or narrative cause.
-- Avoid poster, fashion-campaign, game-render, concept-art, and advertising logic unless requested.
+- Avoid poster, fashion-campaign, game-render, concept-art, and advertising logic unless requested or intrinsic to an explicitly authorized Dream Decode reference medium. Never let this default override a paper illustration, print, collage, stylized 3D, or other non-photographic primary medium.
 - Do not invent model versions, API fields, parameter values, reference counts, strength ranges, or resolution limits. Frontend behavior may differ from the underlying model.
 - Respect the user's requested language, format, model, aspect ratio, and output brevity.

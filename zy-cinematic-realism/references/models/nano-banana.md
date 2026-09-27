@@ -44,6 +44,8 @@ State `Change only` and `Keep unchanged` in concrete visual terms. Mention the s
 
 Assign one role per image and specify priority when roles overlap. Multi-reference capability varies by family member; do not assume the fastest member is optimized for complex reference sets or long sequential editing.
 
+For Dream Decode, state each supplied image's role, then independently compile the shared Scene Master, authorized Primary Medium and identity-critical Medium Constraints, an Expression Mechanism only when observed, three to five Active Core Rules selected from the full five to eight, and Transfer Scope for the selected member. Preserve non-photo making logic without importing unassigned identities, clothing, objects, locations, text, or events. Let composition and camera fill OPEN scene decisions but never override USER-LOCKED ones; invent no capabilities, reference counts, strengths, or attachment fields.
+
 ## Text strategy
 
 Quote exact wording and define placement, hierarchy, language, orientation, and material. Choose a member suited to text or production precision when the user has access to it; do not promise perfect rendering.

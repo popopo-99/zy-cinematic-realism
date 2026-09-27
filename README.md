@@ -2,9 +2,9 @@
 
 # 造梦师
 
-## AI时代电影视觉指南 · v2.1.1
+## AI时代电影视觉指南 · v2.3.0
 
-**DREAM DIRECTOR v2.1.1 — GPT Image 2.5 Compatibility Update**
+**DREAM DIRECTOR v2.3.0 — Dream Decode**
 
 > 先建立一个稳定的视觉方案，再把它翻译成不同模型最容易理解的语言。
 
@@ -20,13 +20,89 @@
 
 造梦师不是新的生图模型，也不是一包“万能电影词”。它是一套给 ChatGPT / Codex 使用的电影视觉工作流：先锁定人物、故事瞬间、动作、场景、机位、构图、光线、道具、时间、天气与限制，再为目标模型编译原生 Prompt。
 
-`Scene Master → Creative Grammar → Model Compiler → Result Repair`
+`Scene Master + Creative Grammar → Model Compiler → Result Repair`
+
+有参考图时，解梦会先判断每张图片的职责与媒介，再提炼可迁移的视觉规律：
+
+`User Intent + Reference Image(s) → Reference Role Router → Medium Router → Dream Decode → Compiler Priority Gate → Model Compiler`
 
 对外品牌是 **造梦师 / DREAM DIRECTOR**；为保持安装路径、自动触发和显式调用兼容，技术名称始终是 `zy-cinematic-realism`，调用名始终是 `$zy-cinematic-realism`。
 
 **[下载最新 Release](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)**
 
-## v2.1.1 — GPT Image 2.5 Compatibility Update
+## 目录
+
+- [v2.3 Dream Decode / 解梦](#dream-decode)
+- [核心工作流能力](#core-workflows)
+- [同一个 Scene Master，四种模型会发生什么？](#model-comparison)
+- [Model Router 与四个原生适配器](#model-router)
+- [60 秒上手](#quick-start)
+- [连续性：Base Lock + Shot Delta](#continuity)
+- [Prompt Doctor](#prompt-doctor)
+- [Creative Grammar](#creative-grammar)
+- [用导演的方法重新观察同一个故事](#director-method)
+- [完整输入卡片](#input-card)
+- [安装到 Codex](#install-codex)
+- [在 ChatGPT 中使用](#use-chatgpt)
+- [仓库与安装包结构](#repository-structure)
+- [Copyright and License](#license)
+
+<a id="dream-decode"></a>
+## v2.3 Dream Decode / 解梦
+
+> **看见参考，读懂规律，把真正重要的东西带去一个全新的画面。**
+
+解梦不是普通的 Image-to-Prompt。它不会只把画面压成 `cinematic`、`moody`、`soft light`、`film grain` 之类的词，而是区分：**哪些东西属于原图本身，哪些东西真正构成它的视觉语言。** 人物、地点和事件可以换；值得保留的媒介、色彩关系、空间组织、材质逻辑与观看方式可以继续迁移。
+
+### 01 · Decode the visual logic
+
+#### 不只描述参考图，而是理解它为什么成立
+
+想象一张暗色骑手、橙红马群和粗颗粒的参考图。解梦不止记住黑色、橙色和颗粒，还会看暗色主体与不稳定亮色群体的关系、大面积无信息暗部、主体保留轮廓却丢失内部细节、横跨明暗的颗粒、让物体边缘融合的溢光，以及“一个人在看什么”比具体马群更重要的观看关系。
+
+骑手、马群和户外地点是来源内容。换成“凌晨三点，老巫师在便利店买咖啡”，仍可保留暗部结构、色彩张力、粗颗粒、边缘溢光和观看关系。**Transfer visual logic. Preserve new scene intent.**
+
+### 02 · Preserve the logic, change the scene
+
+#### 参考图不是命令，新场景才是
+
+用户明确指定的构图、景别、视点、人物占比或画幅属于 **USER-LOCKED**，参考图不能覆盖；未指定的视觉选择保持 **OPEN**，可由参考图合理保留、适配、填充或放弃。比如“参考这张图的画风，但我要人物胸像近景”：即使原图是远景，也保留新景别，同时继承兼容的曝光、色彩、材质和观看方式。**保持视觉逻辑，不照搬参考图坐标。**
+
+### 03 · Multi-reference Roles
+
+#### 多张参考，不再自动搅成一种平均风格
+
+图 A 只负责柔和粉紫、鼠尾草绿和暖白的色彩关系；图 B 负责纵向中轴与下方大圆形构图；图 C 负责真实人物的温度、比例和存在方式；图 D 负责镜面铬金属及真实反射。每张图各司其职，不把四张图的全部内容混合；冲突媒介也不会因为同时上传就求平均。**One reference does not need to explain everything.**
+
+### 04 · Decode once. Reuse later.
+
+#### 解梦一次，把结果变成可继续使用的解梦卡
+
+`Reference Image(s) → Dream Decode → Decode Card → New Scene → New Image`
+
+解梦卡不是原始 Prompt、图片描述、数据库记录或原图复制说明。它保存主要媒介、媒介约束、完整核心梦律、视觉语法、仅在确有证据时的表达机制，以及迁移范围、允许变化、来源残留和失效警报。四张参考形成「粉雾铬镜」解梦卡后，原图可以离开；下次只说“用这张卡，来一张地铁站里的老巫师”，仍可据卡片编译新场景。
+
+**参考图可以离开。被看懂的视觉规律留下来。**
+
+### 解梦会分开什么？
+
+| 层次 | 作用 |
+| --- | --- |
+| Scene Facts | 原图具体有什么；不会因“参考画风”自动复制。 |
+| Visual Grammar | 画面如何组织和表现。 |
+| Expression Mechanism | 作品发生了什么关键视觉事件；仅在有明确证据时提取。 |
+| Core Visual Rules / 核心梦律 | 完整保留 5–8 条可复用规则。 |
+| Active Core Rules | 为当前新场景只激活最相关的 3–5 条。 |
+| Transfer Scope / 迁移范围 | Strong、Conditional、Do Not Transfer。 |
+| Source Residue / 来源残留 | 不该混入新场景的人物、服装、地点、文字、品牌与道具。 |
+
+完整 Decode Card 不会全部灌进最终 Prompt；Compiler Priority Gate 只选当前场景真正需要的信息。**REFERENCE MEDIUM OVERRIDES DEFAULT CINEMATIC REALISM**：纸本插画不会自动变成电影剧照，风格化 3D 不会默认变成写实 PBR，旧游戏截图不会自动升级为现代 AAA；摄影参考仍使用摄影逻辑，非摄影参考保留自己的纸张、颜料、线条、边缘、形体与渲染语言。
+
+### v2.2 — Dream Decode Foundation
+
+v2.2 首次建立 Reference Role Router、Dream Decode、Core Visual Rules、Transfer Scope、Decode Card 和 Decode Repair。v2.3 在此基础上加强媒介保真、可选表达机制、编译选择与卡片复用；技术名称与原有工作流保持兼容。
+
+### v2.1.1 — GPT Image 2.5 Compatibility Update
 
 OpenAI 图像适配基线更新为 **ChatGPT Images 2.5 / GPT Image 2.5**，Scene Master 与 Model Compiler 架构保持不变。
 
@@ -61,7 +137,8 @@ SCENE LOGIC MAY NOT.
 
 **模型语言可以改变，画面设计不能偷偷改变。**
 
-## 十个核心功能
+<a id="core-workflows"></a>
+## 核心工作流能力
 
 - **Create** — 从一句想法建立 Scene Master，并编译为目标模型的原生 Prompt。例：`雨夜便利店里，一个女人握着热咖啡，不看镜头。`
 - **Model Router** — 根据任务类型推荐更合适的适配路径。例：`我要先生成角色定妆，再连续修改道具，用哪个模型流程？`
@@ -71,9 +148,11 @@ SCENE LOGIC MAY NOT.
 - **Continuity Bible** — 锁定跨镜头人物、服装、道具、地点与光线。例：`做 8 镜下班女骑士连续组图。`
 - **Prompt Check** — 生成前检查冲突、空泛和物理不成立的描述。例：`检查这条 Prompt 为什么可能做成海报。`
 - **Prompt Doctor** — 根据失败结果只修真正出问题的变量。例：`人物太像商业广告，只修机位、姿态和光线层级。`
+- **Dream Decode / 解梦** — 理解参考图为何呈现当前效果，提炼并迁移真正可复用的视觉规律。例：`只参考图一画风，把内容换成月球基地里的宇航员。`
 - **One Variable Remix** — 锁住全部核心事实，只改变一个变量。例：`只把观察位置从正面改到门外。`
 - **Creative Shuffle** — 在可控边界内重新组合风格、摄影与调度。例：`给我三个克制、可落地的创意方向。`
 
+<a id="model-comparison"></a>
 ## 同一个 Scene Master，四种模型会发生什么？
 
 以下为 v2.0.0 时期的历史示例，GPT Image 2 图片保留原模型标注，未作为 2.5 新实测结果。
@@ -109,6 +188,7 @@ Different native prompts.
 Different model interpretations.
 ```
 
+<a id="model-router"></a>
 ## Model Router 与四个原生适配器
 
 | 目标模型 | 编译重点 |
@@ -122,6 +202,7 @@ Router 是任务启发式工具，不是永久排名，也不宣称某个模型�
 
 Midjourney Adapter 已更新至当前 V8.2：默认保留自然视觉关系，区分 Imagine 与 Edit Model，并按任务需要选择参数，而不是套用旧版本固定后缀。
 
+<a id="quick-start"></a>
 ## 60 秒上手
 
 ### 1. 一句话创建并选择模型
@@ -151,12 +232,14 @@ Prompt Doctor：结果太像咖啡广告。只修机位、人物姿态和光线�
 One Variable Remix：只把摄影机从店内正面改到雨棚外隔着玻璃观察，其余完全锁定。
 ```
 
+<a id="continuity"></a>
 ## 连续性：Base Lock + Shot Delta
 
 例如要做 8 镜“都市女骑士下班”组图，先用 `Continuity Bible` 锁定角色脸、银色通勤盔甲、旧帆布包、折叠长枪、车站与冷暖光源。每一镜都由同一份 `Base Lock` 加一条有限的 `Shot Delta` 生成：只描述该镜新增的动作、机位或时间变化。
 
 这能减少脸、服装、道具、地点和光线在镜头之间漂移；它不承诺模型输出完全相同，而是让变化有据可查。
 
+<a id="prompt-doctor"></a>
 ## Prompt Doctor：修图，不推倒重写
 
 如果结果太像商业广告，问题通常不在“电影感词”太少，而在摄影机太正、人物摆拍、主辅光没有层级。Prompt Doctor 会先诊断，再输出局部修复指令：
@@ -168,6 +251,7 @@ PRESERVE EXACTLY: identity, wardrobe, car, and location.
 
 修复不是重新创作。角色身份、服装、汽车和地点继续来自原 Scene Master，只有被点名的变量允许改变。
 
+<a id="creative-grammar"></a>
 ## Creative Grammar：不是滤镜，而是可执行决策
 
 v2.0.0 保留 38 位导演的四轴视觉指纹，并新增 16 张风格卡与 8 张摄影卡。它们会实际改变光线、曝光、摄影机、空间、调度与视觉中心，而不是只附加一个风格标签。
@@ -216,6 +300,7 @@ Skill 不只是在同一个构图上换滤镜。它会帮你判断，故事里�
 
 > **不要只说“两名拳手激烈搏斗”。要说清楚这是第几回合、重拳命中的前后哪一秒、摄影机隔着什么看见他们，以及动作模糊应该保留多少。**
 
+<a id="director-method"></a>
 ## 用导演的方法重新观察同一个故事
 
 ### 导演四轴视觉指纹系统
@@ -339,6 +424,7 @@ Skill 不只是在同一个构图上换滤镜。它会帮你判断，故事里�
 
 [查看六组完整调用文本、Final Prompt 与 Avoid](docs/director-style-comparison.md)
 
+<a id="input-card"></a>
 ## 完整输入卡片
 
 第一次使用时，可以直接复制这张卡片。填不完也没关系：
@@ -362,6 +448,7 @@ Skill 不只是在同一个构图上换滤镜。它会帮你判断，故事里�
 3. 当前场景专属约束与 Avoid
 ```
 
+<a id="install-codex"></a>
 ## 安装到 Codex
 
 OpenAI 当前文档说明，Codex 会从用户级 `$HOME/.agents/skills` 与项目级 `.agents/skills` 目录发现 Skill；也可以让内置的 `$skill-installer` 从其他 GitHub 仓库安装。详见 [OpenAI：Build skills](https://learn.chatgpt.com/docs/build-skills)。
@@ -405,6 +492,7 @@ Codex 通常会自动发现变更；如果没有出现，请重新启动 Codex�
 请使用 $zy-cinematic-realism，把“两个侦探在审讯失败后坐夜班公交车回警局”转换成真实电影单帧 Prompt。
 ```
 
+<a id="use-chatgpt"></a>
 ## 在 ChatGPT 中使用
 
 ### 有 Skills 安装入口
@@ -416,7 +504,7 @@ Codex 通常会自动发现变更；如果没有出现，请重新启动 Codex�
 1. 在侧边栏打开 **Plugins / 插件**。
 2. 在 Plugin Directory 中进入 **Skills**。
 3. 选择 **Create**，再选择 **Upload from your computer**。
-4. 上传最新 Release 中的 `zy-cinematic-realism-v2.1.1.zip`。
+4. 上传最新 Release 中的 `zy-cinematic-realism-v2.3.0.zip`。
 5. 扫描和安装完成后，输入 `$zy-cinematic-realism`，或直接描述电影感 Prompt 任务。
 
 Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会自动跨这些界面同步。
@@ -432,6 +520,7 @@ Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会
 
 这种方式不需要 Codex，也不需要安装插件，只是每次可能需要重新提供规则。
 
+<a id="repository-structure"></a>
 ## 仓库与安装包结构
 
 仓库根目录是品牌说明、教程、授权与发布记录；`zy-cinematic-realism/` 才是可安装的 Skill 本体。
@@ -442,11 +531,12 @@ zy-cinematic-realism/                 # GitHub 仓库根目录
 ├── README_EN.md                       # English guide and showcase
 ├── CHANGELOG.md                       # 版本记录
 ├── LICENSE                            # CC BY-NC 4.0
-├── RELEASE_NOTES.md                   # v2.1.1 发布说明
+├── RELEASE_NOTES.md                   # v2.3.0 发布说明与历史记录
 ├── docs/
 │   └── images/                        # 作品示例图
 ├── scripts/
-│   └── validate_director_library.py   # 导演库与 Markdown 链接校验
+│   ├── validate_director_library.py   # 导演库与 Markdown 链接校验
+│   └── validate_skill.py              # Skill 综合校验
 └── zy-cinematic-realism/              # 可安装 Skill 本体
     ├── SKILL.md
     ├── LICENSE
@@ -461,6 +551,10 @@ zy-cinematic-realism/                 # GitHub 仓库根目录
         ├── model-routing.md
         ├── model-capability-matrix.md
         ├── prompt-compiler.md
+        ├── dream-decode.md
+        ├── reference-role-router.md
+        ├── medium-router.md
+        ├── decode-card.md
         ├── prompt-check.md
         ├── result-repair.md
         ├── continuity-cards.md
@@ -482,10 +576,10 @@ zy-cinematic-realism/                 # GitHub 仓库根目录
         └── manual-regression.md
 ```
 
-v2.1.1 Release 安装包只有一层顶级 Skill 文件夹：
+v2.3.0 Release 安装包只有一层顶级 Skill 文件夹：
 
 ```text
-zy-cinematic-realism-v2.1.1.zip
+zy-cinematic-realism-v2.3.0.zip
 └── zy-cinematic-realism/
     ├── SKILL.md
     ├── LICENSE
@@ -533,6 +627,7 @@ zy-cinematic-realism-v2.1.1.zip
 > 名单按收集顺序记录，不代表贡献大小。\
 > 如果你也曾参与测试、反馈或帮助这个项目，并希望留下自己的名字，欢迎通过 Issue 与我联系。
 
+<a id="license"></a>
 ## Copyright and License
 
 The Skill source files include copyright notices.
@@ -546,7 +641,7 @@ CC BY-NC 4.0
 
 ## 使用与授权
 
-《造梦师：AI时代电影视觉指南 v2.1.1》采用 [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE)（CC BY-NC 4.0）授权。
+《造梦师：AI时代电影视觉指南 v2.3.0》采用 [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE)（CC BY-NC 4.0）授权。
 
 你可以：
 

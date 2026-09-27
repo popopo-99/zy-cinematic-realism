@@ -40,6 +40,8 @@ When the active interface provides points, boxes, masks, sketches, or annotation
 
 Assign roles to the base image and each auxiliary image. Identify which input controls layout, identity, wardrobe, object, material, or lighting. For fusion, state the target position and integration requirements. Do not invent reference-count limits.
 
+For Dream Decode, independently compile the shared Scene Master, authorized Primary Medium and identity-critical Medium Constraints, an Expression Mechanism only when observed, three to five Active Core Rules selected from the full five to eight, and Transfer Scope into spatially explicit instructions. Preserve a non-photo medium instead of defaulting to cinematic photography or generic CG. Use composition, camera, scale, or occlusion only when its Hybrid Decision fits an OPEN scene decision or matches a USER-LOCKED one; exclude Do Not Transfer content and use regional controls only when the interface provides them.
+
 ## Text strategy
 
 Quote exact wording and describe language, hierarchy, placement, orientation, and layout direction. Keep narrative imagery and dense information-layout requests structurally separate.
