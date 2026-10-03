@@ -81,7 +81,7 @@ For an existing story or script, one sentence describing the task is enough. Ana
 
 An awkward first dance, active participation after removing her shoes, and laughter after being caught beside a table. Read the change, develop a shared visual world, then turn actions and relationships into key frames.
 
-[Workflow and actual result status](docs/titanic-story-to-frame.md): script facts, interpretation, and new directing proposals lead into reference decoding, external generation, and inspection. The case displays only the P01 revision recognized by the user as the visual direction for later work. The earlier P02/P03 results failed visual review; replacement external Image2 candidate prompts are ready, with no new results yet.
+[Workflow and actual result status](docs/titanic-story-to-frame.md): script facts, interpretation, and new directing proposals lead into reference decoding, external generation, and inspection. The case shows the P01 direction and the new P02/P03 images confirmed usable by the user, together with the supplied prompts and actual result observations.
 
 ### Original Short Story: Art Concepts and Relationship Key Frames
 

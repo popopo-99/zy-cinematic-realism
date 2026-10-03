@@ -104,9 +104,9 @@ An art concept or frame plan is not the final prompt. When you need one, ask “
 
 For a full script, name the scenes you want to develop. A movie title still needs a readable excerpt or source. Film memory, subtitles, and film stills do not replace screenplay evidence.
 
-The [Titanic third-class dance example](titanic-story-to-frame.md) shows script actions becoming original visual development. Its illustration is the P01 revision recognized by the user as the direction for later work, not a film still. P02/P03 failed visual review, and image iteration has stopped.
+The [Titanic third-class dance example](titanic-story-to-frame.md) shows script actions becoming original visual development: the P01 direction and new P02/P03 images confirmed usable by the user. These are original development images, not film stills.
 
-[The Last Photo art-concept trial](last-photo-art-development.md) records observations after external generation: spatial art direction and warmth are readable, while the narrative moment remains underdeveloped. This is a qualitative trial without a controlled comparison or a locked set or face.
+[The Last Photo art-concept and key-frame trial](last-photo-art-development.md) includes three images confirmed usable by the user: the empty-chair invitation, shoulder lean with a small smile, and empty-room art concept. They show the different purposes of relationship key frames and scene design.
 
 ### Resume in a new conversation
 
