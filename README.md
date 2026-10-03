@@ -6,7 +6,7 @@
 
 从故事想法、剧本节选或参考图出发，建立场景、开发视觉世界，再输出适合目标模型的 Prompt 和局部修复指令。
 
-**v2.5.0 发布候选** · [当前稳定发布](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) · [60 秒上手](#quick-start) · [剧本实战](docs/titanic-story-to-frame.md) · [看案例](#showcase) · [安装教程](docs/getting-started.md)
+**v2.5.0 正式版** · [下载正式版](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0) · [60 秒上手](#quick-start) · [剧本实战](docs/titanic-story-to-frame.md) · [看案例](#showcase) · [安装教程](docs/getting-started.md)
 
 ![两个侦探在失败后的夜班公交车上沉默而坐](docs/images/hero-night-bus.webp)
 
@@ -141,12 +141,12 @@ v2.4 尊重 **轻微 / 明确 / 强烈**；不指定时默认明确。轻微选�
 | 环境 | 入口 |
 | --- | --- |
 | Codex | [从 GitHub 或本地文件夹安装](docs/getting-started.md#install-codex) |
-| ChatGPT 有 Skills 入口 | [上传完整候选 ZIP](docs/getting-started.md#use-chatgpt) |
+| ChatGPT 有 Skills 入口 | [上传完整安装 ZIP](docs/getting-started.md#use-chatgpt) |
 | 没有 Skills 入口 | [自包含聊天入门版](docs/chat-starter-zh.md)，基础能力可直接粘贴 |
 
-v2.5.0 尚未创建正式 Release。当前可从[审查分支](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame/zy-cinematic-realism)安装源码，或导入本次交付的候选包 `zy-cinematic-realism-v2.5.0.zip`；正式发布后提供 Release 下载。
+下载 [v2.5.0 完整安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip)（[SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip.sha256)），或从 [main 分支](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism)安装源码。版本说明见 [GitHub Release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0)。
 
-候选包只有一层顶级 `zy-cinematic-realism/` 文件夹。升级时完整替换旧目录，避免同时安装同名副本。**只复制 SKILL.md 无法带上它引用的完整方法库。**
+安装包只有一层顶级 `zy-cinematic-realism/` 文件夹。升级时完整替换旧目录，避免同时安装同名副本。**只复制 SKILL.md 无法带上它引用的完整方法库。**
 
 <a id="model-router"></a>
 <a id="model-comparison"></a>

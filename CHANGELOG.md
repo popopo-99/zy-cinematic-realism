@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.5.0 — 2026-10-03
+## v2.5.0 — 2026-10-04
 
 ### Added
 
@@ -24,7 +24,7 @@
 - The planned six-image comparison was not completed. Later reference-driven external revisions are not controlled A/B evidence; no overall winner or general image-quality improvement is established.
 - The user recognizes P01 as the visual direction for later work; this does not accept the complete series or Bible. Earlier P02/P03 results failed visual review; after an external Image2 revision on 2026-10-04, the user confirmed both replacement images usable. This does not certify every action or costume detail.
 - The Last Photo trial is qualitative, has no controlled comparison, and does not lock a specific set or face; it establishes no general image-quality improvement.
-- Release publication is pending. Current instructions use the review branch or supplied v2.5.0 candidate ZIP; the stable-release link remains separate.
+- Stable release: [v2.5.0](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0), with the complete installation ZIP and SHA-256 checksum. Installation instructions use the main branch or the versioned Release package.
 
 ## v2.4.0 — 2026-10-03
 

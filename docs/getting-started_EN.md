@@ -1,6 +1,6 @@
 # Installation and First Use
 
-This guide covers the **v2.5.0 release candidate**, which has no published GitHub Release yet. Install the [review-branch source](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame/zy-cinematic-realism), or use the supplied candidate ZIP, `zy-cinematic-realism-v2.5.0.zip`. The [current stable release](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) is available separately.
+This guide covers **v2.5.0 stable**. Download the [complete installation ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip) ([SHA-256 checksum](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip.sha256)), or install the [main-branch source](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism). See the [v2.5.0 Release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0) for version notes.
 
 
 <a id="install-codex"></a>
@@ -15,14 +15,14 @@ Enter this in Codex:
 ```text
 Use $skill-installer to install zy-cinematic-realism from this GitHub repository:
 https://github.com/popopo-99/zy-cinematic-realism
-Use the review branch codex/story-to-frame and the skill folder zy-cinematic-realism.
+Use the main branch and the skill folder zy-cinematic-realism.
 ```
 
 If your Codex interface offers a Skills installation or local import entry point, you can also choose the ZIP from the latest Release or the extracted `zy-cinematic-realism` folder. Entry points vary by product interface.
 
 ### Method 2: Install manually
 
-Download the [review-branch source](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame), or extract the supplied candidate ZIP, then copy the complete `zy-cinematic-realism` folder into your user-level Skills directory. Use [Releases](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) for the stable edition.
+Extract the [v2.5.0 installation ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip), or download the [main-branch source](https://github.com/popopo-99/zy-cinematic-realism/tree/main), then copy the complete `zy-cinematic-realism` folder into your user-level Skills directory.
 
 **Windows**
 
@@ -61,7 +61,7 @@ If Skills are available in your account or workspace:
 1. Open **Plugins** in the sidebar.
 2. Open **Skills** in the Plugin Directory.
 3. Choose **Create**, then **Upload from your computer**.
-4. Upload the supplied candidate package, `zy-cinematic-realism-v2.5.0.zip`; the formal Release is not published yet.
+4. Download and upload the [complete v2.5.0 package](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip), named `zy-cinematic-realism-v2.5.0.zip`.
 5. After scanning and installation finish, enter `$zy-cinematic-realism` or describe a cinematic prompt task directly.
 
 Personal Skills currently need to be added separately in desktop and web/mobile interfaces; they do not automatically synchronize across those interfaces.

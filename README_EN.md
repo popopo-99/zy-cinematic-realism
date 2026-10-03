@@ -6,7 +6,7 @@
 
 Start with a story, screenplay excerpt, or references. Establish the scene, develop the visual world, and compile model-native prompts and scoped repair instructions.
 
-**v2.5.0 release candidate** · [Current stable release](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) · [60-second start](#quick-start) · [Screenplay example](docs/titanic-story-to-frame.md) · [Examples](#showcase) · [Installation guide](docs/getting-started_EN.md)
+**v2.5.0 stable** · [Download the release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0) · [60-second start](#quick-start) · [Screenplay example](docs/titanic-story-to-frame.md) · [Examples](#showcase) · [Installation guide](docs/getting-started_EN.md)
 
 ![Two detectives sit apart in silence on a night bus after a failed interrogation](docs/images/hero-night-bus.webp)
 
@@ -149,12 +149,12 @@ Reuse the card in the same conversation; supply its full contents again in a new
 | Environment | Entry point |
 | --- | --- |
 | Codex | [Install from GitHub or a local folder](docs/getting-started_EN.md#install-codex) |
-| ChatGPT with Skills | [Upload the complete candidate ZIP](docs/getting-started_EN.md#use-chatgpt) |
+| ChatGPT with Skills | [Upload the complete installation ZIP](docs/getting-started_EN.md#use-chatgpt) |
 | No Skills entry point | [Paste the self-contained basic chat edition](docs/chat-starter-en.md) |
 
-v2.5.0 has no published GitHub Release yet. Install from the [review branch](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame/zy-cinematic-realism), or import the supplied candidate package, `zy-cinematic-realism-v2.5.0.zip`. A Release download will follow formal publication.
+Download the [complete v2.5.0 package](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip) ([SHA-256 checksum](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip.sha256)), or install the source from [main](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism). See the [GitHub Release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0) for version notes.
 
-The candidate ZIP has one top-level `zy-cinematic-realism/` folder. Replace the complete old folder and avoid duplicate installations. **SKILL.md alone does not include its referenced method library.**
+The installation ZIP has one top-level `zy-cinematic-realism/` folder. Replace the complete old folder and avoid duplicate installations. **SKILL.md alone does not include its referenced method library.**
 
 <a id="model-router"></a>
 <a id="model-comparison"></a>

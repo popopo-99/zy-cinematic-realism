@@ -1,6 +1,6 @@
 # 安装与第一次使用
 
-本文对应 **v2.5.0 发布候选**，正式 GitHub Release 尚未创建。当前可安装[审查分支源码](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame/zy-cinematic-realism)，或使用本次交付的候选包 `zy-cinematic-realism-v2.5.0.zip`。[当前稳定发布](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)另有独立入口。
+本文对应 **v2.5.0 正式版**。下载[完整安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip)（[SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip.sha256)），或安装 [main 分支源码](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism)。更新说明见 [v2.5.0 Release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0)。
 
 
 <a id="install-codex"></a>
@@ -15,14 +15,14 @@ OpenAI 当前文档说明，Codex 会从用户级 `$HOME/.agents/skills` 与项�
 ```text
 请使用 $skill-installer，从下面的 GitHub 仓库安装 zy-cinematic-realism：
 https://github.com/popopo-99/zy-cinematic-realism
-使用审查分支 codex/story-to-frame，Skill 文件夹为 zy-cinematic-realism。
+使用 main 分支，Skill 文件夹为 zy-cinematic-realism。
 ```
 
 如果当前 Codex 界面提供 Skills 安装或本地导入入口，也可以选择 Release 下载的 ZIP，或解压后的 `zy-cinematic-realism` 文件夹。不同产品界面的入口可能不同。
 
 ### 方法二：手动安装
 
-从[审查分支](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame)下载源码，或解压本次候选 ZIP，将完整的 `zy-cinematic-realism` 文件夹复制到用户级 Skills 目录。需要稳定版时使用 [Releases](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)。
+解压 [v2.5.0 安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip)，或从 [main 分支](https://github.com/popopo-99/zy-cinematic-realism/tree/main)下载源码，将完整的 `zy-cinematic-realism` 文件夹复制到用户级 Skills 目录。
 
 **Windows**
 
@@ -60,7 +60,7 @@ Codex 通常会自动发现变更；如果没有出现，请重新启动 Codex�
 1. 在侧边栏打开 **Plugins / 插件**。
 2. 在 Plugin Directory 中进入 **Skills**。
 3. 选择 **Create**，再选择 **Upload from your computer**。
-4. 上传本次交付的候选包 `zy-cinematic-realism-v2.5.0.zip`；正式 Release 尚未发布。
+4. 下载并上传 [v2.5.0 完整安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip)，文件名为 `zy-cinematic-realism-v2.5.0.zip`。
 5. 扫描和安装完成后，输入 `$zy-cinematic-realism`，或直接描述电影感 Prompt 任务。
 
 Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会自动跨这些界面同步。
