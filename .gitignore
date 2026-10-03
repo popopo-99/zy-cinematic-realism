@@ -3,3 +3,4 @@ Thumbs.db
 *.zip
 __pycache__/
 *.py[cod]
+dist/

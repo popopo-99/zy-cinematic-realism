@@ -29,4 +29,4 @@ Capture behavior: add only a few compatible traits such as natural exposure, sof
 Delivery: preserve the requested aspect ratio, visible text, reference-image roles, restrictions, and likely scene-specific failure modes.
 ```
 
-For a named supported director, apply the Director Four-Axis block from `references/director-routing.md` after the grounded facts and before detailed camera design. For a model-neutral result, keep exclusions as direct visual constraints. For a target model, let its adapter determine whether exclusions are integrated, separated, or expressed through native syntax.
+For a named supported director, apply Director Four-Axis planning from `references/director-routing.md` at the requested strength, respecting every user lock. Let the selected adapter control final syntax; show a labeled breakdown only when requested. For a model-neutral result, keep exclusions as direct visual constraints. For a target model, let its adapter determine whether exclusions are integrated, separated, or expressed through native syntax.

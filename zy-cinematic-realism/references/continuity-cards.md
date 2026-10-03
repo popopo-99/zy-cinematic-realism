@@ -83,6 +83,10 @@ For each shot:
 
 Do not let a Shot Delta restate or silently revise the Bible. When a new user instruction conflicts with the Bible, identify the conflict and ask only if it cannot be resolved as an allowed state change.
 
+## Project Handoff
+
+When the user asks to resume later or move to another conversation, use [project-handoff.md](project-handoff.md). Record the latest accepted narrative state and necessary locks, not merely the initial Bible. No automatic storage or identity-reference recovery is implied.
+
 ## Output
 
 Return the Continuity Bible, concise Shot List, one Shot Delta per image, and model-native prompts. For long series, define the full Bible and shot list first; generate prompts in manageable batches only when requested or when output length would otherwise reduce quality.

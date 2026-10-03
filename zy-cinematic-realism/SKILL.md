@@ -12,7 +12,7 @@ Source: https://github.com/popopo-99/zy-cinematic-realism
 
 # 造梦师 · ZY Cinematic Realism
 
-Public edition: 《造梦师 v2.3.0 — 解梦 / DREAM DIRECTOR v2.3.0 — Dream Decode》.
+Public edition: 《造梦师 v2.4.0 — 创作控制与继续使用 / DREAM DIRECTOR v2.4.0 — Creator Control & Continuity》.
 
 Build every result in this order:
 
@@ -41,6 +41,7 @@ Infer the mode from the request. Do not print a menu.
 - **Dream Decode** — analyze why references look the way they do, transfer their visual grammar, synthesize multiple references, create a Decode Card, or repair reference drift. Internally select Analyze, Transfer, Multi-Reference, or Repair; do not print a submenu. Trigger for requests such as `分析这张图画风`, `模仿图一风格`, `复刻这种美术风格`, `为什么这张图看起来这样`, `提取视觉语言`, `图一风格做图二内容`, `参考这几张 moodboard`, `生成结果还是不像参考`, or `帮我对比哪里漂了`.
 - **Remix** — change one major variable while preserving every other invariant.
 - **Creative Shuffle** — combine one causal story card, camera card, and style card.
+- **Project Handoff** — summarize accepted project state for reuse, or restore from a user-supplied card; no automatic storage.
 
 ## Target Model Gate
 
@@ -75,7 +76,7 @@ For Dream Decode, separate reference **Scene Facts**, transferable **Visual Gram
 These camera and source-light steps apply to photographic / cinematic Create work. When Dream Decode authorizes a non-photographic Primary Medium, express the corresponding viewpoint, value, surface, marks, or stylized rendering behavior instead of forcing photographic capture.
 
 1. Parse fixed facts: era, place, characters, event, mood, time, weather, aspect ratio, target model, references, and restrictions.
-2. Choose a specific story beat with a narrative before, concrete current action, and implied next event. Prefer observed transition, waiting, aftermath, departure, private observation, or interrupted routine unless the user requests a climax.
+2. Choose a specific story beat with a narrative before, concrete current action, and implied next event. Use the emotional direction and timing requested by the user, including joy, public celebration, bright daylight, or climax. Observed transition, waiting, aftermath, departure, and interrupted routine are optional approaches when the brief leaves the moment open.
 3. Give each character physical blocking and a small action. Express emotion through posture, distance, gaze, silence, and object handling, not posing.
 4. Construct foreground, midground, background, usable topology, causal traces of use, and materially consistent surfaces.
 5. Place the camera at a physically possible witness position. Choose distance, height, focal behavior, boundary, and movement only as the story requires.
@@ -100,6 +101,7 @@ Load only the branch required for the active mode.
 - **Cinematography:** [cinematography-cards.md](references/cinematography-cards.md).
 - **Remix:** [remix.md](references/remix.md), [prompt-compiler.md](references/prompt-compiler.md), and the target adapter.
 - **Creative Shuffle:** [creative-shuffle.md](references/creative-shuffle.md), [style-cards.md](references/style-cards.md), and [cinematography-cards.md](references/cinematography-cards.md) when useful.
+- **Project Handoff:** [project-handoff.md](references/project-handoff.md) only when the user requests handoff, saving a card, or restoring a project; add [continuity-cards.md](references/continuity-cards.md) for a series.
 - **Examples:** read [examples.md](references/examples.md) only when calibration is genuinely useful.
 - **Scaffold:** use [basic-prompt-template.md](assets/basic-prompt-template.md) only when a compact model-neutral Scene Master writing order is useful; the selected adapter still controls final syntax.
 
@@ -112,11 +114,17 @@ Model adapters:
 
 ## Director Compatibility
 
-Preserve the existing Director Four-Axis system. Use it only when the user names a director, requests a director method or comparison, or asks for a recommendation. Supported named directors remain mandatory strong/iconic mode. Follow `director-routing.md`, translate all four axes into scene-specific decisions, and never substitute a name or film title for camera, light, color/exposure, composition, space, and blocking. Do not copy a specific film shot.
+Preserve the existing Director Four-Axis system. Use it only when the user names a director, requests a director method or comparison, or asks for a recommendation. Respect subtle / clear / strong director strength; when unspecified use clear. USER-LOCKED facts and visual decisions always outrank differentiation. Keep four-axis decisions internal unless explanation helps or the user requests a director breakdown; the target adapter controls final prompt syntax. Follow `director-routing.md`, translate all four axes into scene-specific decisions, and never substitute a name or film title for camera, light, color/exposure, composition, space, and blocking. Do not copy a specific film shot.
+
+## Output Depth and Follow-up
+
+Infer depth from the request; do not print a menu or add a required selection turn. Prompt-only means only the requested prompt. Ordinary Create work may use a brief `画面决定` / `Visual decisions` of two to four concrete choices (moment, viewpoint, light, or relevant locks), followed by the prompt. Do not repeat the prompt as an explanation. Detailed Scene Master, four-axis breakdown, cards, and series plans are shown only when requested or genuinely needed by that mode.
+
+On follow-up edits, recover the latest accepted state, change only the requested variable, and retain earlier accepted changes. A suggested choice is not a user-approved image. State image-generation or inspection status accurately; prompt completion is not image generation. Project Handoff is opt-in and does not add a card to ordinary output.
 
 ## Output Contracts
 
-- **Create:** `画面理解` → `[Target Model] Prompt` → target-native constraints or settings only when useful.
+- **Create:** brief `画面决定` / `Visual decisions` when useful → `[Target Model] Prompt` → target-native constraints or settings only when useful.
 - **Transcode:** short `Scene Lock Summary` → `[Target Model] Prompt`; do not re-explain the concept.
 - **Multi-model Pack:** one short Scene Lock → clearly different native prompts sharing the same invariants.
 - **Prompt Check:** three to five high-impact `PASS / WEAK / RISK / CONFLICT` findings → Rewrite, Surgical Fix, or No Rewrite as requested.
@@ -129,6 +137,7 @@ Preserve the existing Director Four-Axis system. Use it only when the user names
 - **Continuity:** Continuity Bible → Shot List → Shot Deltas → model-native prompts.
 - **Remix:** Preserved → Changed axis → New Prompt.
 - **Shuffle:** Combination → Story Card → Camera Card → Style Card → Final Prompt.
+- **Project Handoff:** a compact, complete Project Handoff Card when requested; on restore, a short recovered-state summary and the requested next output. Request only a missing input that materially blocks the next task.
 
 Do not expose hidden reasoning or internal locks unless the user requests them. Do not leave placeholders.
 

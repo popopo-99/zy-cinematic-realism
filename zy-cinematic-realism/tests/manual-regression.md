@@ -444,3 +444,90 @@ Use a verbose Decode Card with eight full Core Visual Rules and many archival no
 ### Case 60 — Cinematic Override (A and B separately)
 
 Use a new scene with dramatic light but no request for photoreal reinterpretation; include GPT Image runs. Expected: A stays paper illustration with medium-appropriate viewpoint/value/mark language; B stays stylized 3D with form/surface/stylized-light language. Neither becomes photographic, glossy generic CG, or generic concept art merely because the Skill's broader domain is cinematic.
+
+## v2.4 Creator Control and Handoff Regression
+
+These are behavior specifications, not executed-result claims. See the separate validation record for actual text runs. Image recognizability and usability require additional evaluation.
+
+### Test 61 — Subtle Director with Locks
+
+**User:** `晴天下午，老夫妻在菜园摘第一颗番茄，两人开怀大笑。正面平视中景，脸和番茄清楚。轻微参考王家卫，只给模型中立 Prompt。`
+
+**Expected:** Subtle compatible traits only; all facts, mood, framing, visibility, and camera remain. No automatic night, melancholy, face obstruction, strongest interpretation, analysis, or model question.
+
+### Test 62 — Strong Director with Few Open Axes
+
+**User:** Same as Test 61, but `强烈参考王家卫，以上事实、机位和构图锁定，只给 Prompt。`
+
+**Expected:** Stronger compatible treatment only in open dimensions; locked gesture, viewpoint, composition, and mood stay. No forced three-axis quota, invented source, or unwanted explanation. Image-level recognizability is a separate question.
+
+### Test 63 — Locked Procedural Gesture
+
+**User:** `正面桌边平视，女维修员右手握黄铜钥匙，正插入锁孔。室内唯一顶灯。动作、机位、光源和钥匙锁定，强烈参考芬奇，只给 MJ Prompt。`
+
+**Expected:** Retains insertion, right hand, brass, the fixed camera, and sole source; no new task lamp, window, withdrawn key, or mandatory labeled signature payload. Native parameters only when task-relevant and supported.
+
+### Test 64 — Default and Reduced Strength
+
+**User:** Name a supported director without strength; then ask `减轻到只保留一点色彩关系，其他沿用。`
+
+**Expected:** Initial clear interpretation; subsequent subtle compatible color trait only, retaining accepted unrelated facts. No strength questionnaire or forced iconic mode.
+
+### Test 65 — Requested Four-Axis Breakdown
+
+**User:** `沿用刚才的画面，展开四轴说明，并指出哪些轴按我的锁定保持不变。`
+
+**Expected:** Scene-specific applicable axes and preserved locks, without pretending every axis changed. Breakdown is separate from native prompt syntax.
+
+### Test 66 — Cumulative Project Handoff
+
+**User:** `白色车在地下车库，固定正面机位与顶灯；已经从黑漆改白、驾驶员车窗半降。只写过 Prompt，没有生图。Nano Banana，整理交接卡，下次只改副驾驶窗。`
+
+**Expected:** Full known cumulative state, old paint not restored, half-lowered driver window retained, next passenger-window state unresolved. Reports prompt-only status, no generated or approved image, no invented identity reference.
+
+### Test 67 — Restore Supplied Card
+
+**Setup:** Supply Test 66's complete card and the last full prompt.
+
+**User:** `副驾驶窗也降到一半，只给 Prompt。`
+
+**Expected:** Established target and prior white paint, driver window, garage, camera, and sources preserved; passenger window changes, no repeated discovery, card dump, or automatic-save claim.
+
+### Test 68 — Unavailable Card and Identity Reference
+
+**User:** In a fresh conversation without attachments, `用上次粉雾铬镜卡，原人物不变，做下一张。`
+
+**Expected:** Requests full missing card and necessary identity image, plus the new scene only if absent. No imaginary memory, card interpretation from title alone, or unseen image inspection.
+
+### Test 69 — Plain-Language Follow-up
+
+**Setup:** Accepted scene and known target exist.
+
+**User:** `人物、动作和光线保留，机位改到雨棚外隔着玻璃。`
+
+**Expected:** Camera change and necessary physical viewing consequences only; no model question, new wardrobe, different time, or reset to initial rejected version.
+
+### Test 70 — Joy and Daylight
+
+**User:** `晴天的社区庆典，两个孩子正在开心地击掌，给模型中立 Prompt。`
+
+**Expected:** Visible high-five and positive mood; source-based daylight. Cleanup does not introduce sadness, night, grime, artificial shadow, or aftermath.
+
+### Test 71 — Requested Climax
+
+**User:** `拳击比赛高潮，重拳命中的瞬间，现场顶灯，机位在围绳外，给 Seedream Prompt。`
+
+**Expected:** Requested impact moment and physical action survive rather than being replaced with waiting or aftermath. Source, spatial access, and movement consequences remain plausible.
+
+### Test 72 — Minimal and Detailed Output
+
+**Setup:** A scene and target are established.
+
+**User A:** `只给 Prompt。`
+**Expected A:** Prompt only, no decisions, model question, menu, or handoff.
+
+**User B:** `解释时刻、机位和光源的决定。`
+**Expected B:** Brief concrete decisions, not a full archival schema or duplicate prompt.
+
+**User C:** `展开 Scene Master 和连续性设定。`
+**Expected C:** Requested detailed plan; no claim images have been generated or accepted.

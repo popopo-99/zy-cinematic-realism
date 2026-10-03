@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the v2.3.0 Skill and its Dream Decode contracts."""
+"""Validate the v2.4.0 Skill and its Dream Decode contracts."""
 
 from __future__ import annotations
 
@@ -14,10 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "zy-cinematic-realism"
 REF = SKILL / "references"
 EXPECTED_ANCHORS = (
-    "dream-decode", "core-workflows", "model-comparison", "model-router",
-    "quick-start", "continuity", "prompt-doctor", "creative-grammar",
-    "director-method", "input-card", "install-codex", "use-chatgpt",
-    "repository-structure", "license",
+    "quick-start", "use-cases", "showcase", "install",
+    "advanced", "validation", "community", "license",
 )
 
 
@@ -36,11 +34,13 @@ def validate_readme_toc(path: Path, errors: list[str]) -> None:
     ids = re.findall(r'<a id="([a-z0-9-]+)"></a>', body)
     links = re.findall(r"\[[^\]]+\]\(#([a-z0-9-]+)\)", body)
     for anchor in EXPECTED_ANCHORS:
-        if ids.count(anchor) != 1 or links.count(anchor) != 1:
-            errors.append(f"{path.name}: expected one explicit anchor and one TOC link for #{anchor}.")
+        if ids.count(anchor) != 1:
+            errors.append(f"{path.name}: expected one explicit anchor for #{anchor}.")
     for link in links:
         if link not in ids:
-            errors.append(f"{path.name}: TOC link #{link} has no explicit anchor.")
+            errors.append(f"{path.name}: local navigation #{link} has no explicit anchor.")
+    for duplicate in {item for item in ids if ids.count(item) > 1}:
+        errors.append(f"{path.name}: duplicate anchor #{duplicate}.")
 
 
 def main() -> int:
@@ -55,13 +55,13 @@ def main() -> int:
     for path in (ROOT / "README.md", ROOT / "README_EN.md", ROOT / "CHANGELOG.md", ROOT / "RELEASE_NOTES.md", SKILL / "SKILL.md"):
         body = path.read_text(encoding="utf-8")
         current = body.split("\n---\n", 1)[0] if path.name == "RELEASE_NOTES.md" else body
-        for stale in ("v2.3.0-dev", "unreleased", "未发布", "local development", "本地开发版"):
+        for stale in ("v2.4.0-dev", "unreleased", "未发布", "local development", "本地开发版"):
             if stale in current:
                 errors.append(f"{path.relative_to(ROOT)}: current release content contains '{stale}'.")
         if re.search(r"[A-Z]:\\Users\\", body):
             errors.append(f"{path.relative_to(ROOT)}: local Windows user path must not be published.")
 
-    require(SKILL / "SKILL.md", ("name: zy-cinematic-realism", "v2.3.0", "medium-router.md", "dream-decode.md", "prompt-compiler.md", "USER-LOCKED", "OPEN", "optional `表达机制`"), errors)
+    require(SKILL / "SKILL.md", ("name: zy-cinematic-realism", "v2.4.0", "medium-router.md", "dream-decode.md", "prompt-compiler.md", "USER-LOCKED", "OPEN", "optional `表达机制`"), errors)
     require(REF / "medium-router.md", ("Primary Medium", "Secondary Influences (0–2)", "Confidence", "Medium Constraints", "Medium Avoid", "Conflict Notes", "never average", "Host Medium", "Secondary Construction Rule"), errors)
     require(REF / "dream-decode.md", ("Expression Mechanism is **optional**", "Expression Mechanism: Not required", "Abnormal Event", "Event Locus", "Subject–Event Coupling", "Emotional Function", "Transferable Mechanism", "Surface Implementation", "Non-transferable Residue", "Core Visual Rules", "five to eight", "Strong Transfer", "Conditional Transfer", "Do Not Transfer", "USER-LOCKED", "OPEN"), errors)
     require(REF / "prompt-compiler.md", ("Compiler Priority Gate", "USER-LOCKED", "OPEN", "User Explicit Reference Roles", "Primary Medium / Medium Constraints", "Expression Mechanism (optional)", "Active Core Rules (3–5)", "Transfer Scope", "Medium Drift Risk", "Mechanism Drift Risk", "Prompt Overload", "three to five Active Core Rules", "full five to eight Core Visual Rules"), errors)
@@ -77,6 +77,18 @@ def main() -> int:
             errors.append("Decode Card mechanism section must be optional.")
     gpt = REF / "models" / "gpt-image-2.md"
     require(gpt, ("For non-photo media", "when the Primary Medium is photographic", "three to five Active Core Rules", "an Expression Mechanism only if observed"), errors)
+    require(REF / "director-routing.md", ("Never normalize a subtle request to strong", "USER-LOCKED", "only when that many are available", "selected model adapter", "Prompt-only"), errors)
+    director = (REF / "director-routing.md").read_text(encoding="utf-8")
+    if "Normalize every supplied strength" in director or "Mandatory Strong / Iconic Mode" in director:
+        errors.append("Director routing still coerces strength to iconic.")
+    require(REF / "project-handoff.md", ("accepted", "cumulative", "automatic storage", "Result status", "unavailable image", "Newer explicit user instructions"), errors)
+    for name in ("chat-starter-zh.md", "chat-starter-en.md"):
+        path = ROOT / "docs" / name
+        require(path, ("v2.4.0", "CC BY-NC 4.0"), errors)
+        if path.is_file() and re.search(r"\]\((?:\.\./)?(?:zy-cinematic-realism/)?references/", path.read_text(encoding="utf-8")):
+            errors.append(f"{name}: basic chat rules depend on external reference files.")
+    for path in (ROOT / "docs" / "getting-started.md", ROOT / "docs" / "getting-started_EN.md"):
+        require(path, ('<a id="install-codex"></a>', '<a id="use-chatgpt"></a>', "v2.4.0"), errors)
     metadata = SKILL / "agents" / "openai.yaml"
     require(metadata, ("$zy-cinematic-realism", "model-native image prompt"), errors)
     if metadata.is_file() and "model-native cinematic image prompt" in metadata.read_text(encoding="utf-8"):
@@ -98,7 +110,7 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print(f"Skill validation passed: v2.3.0, {len(director_files)} directors, Dream Decode contracts, {len(cases)} image-level manual cases, README anchors, and local links.")
+    print(f"Skill validation passed: v2.4.0, {len(director_files)} directors, Dream Decode contracts, {len(cases)} image-level manual cases, README anchors, and local links.")
     print("Image generation and human scoring: NOT AUTOMATICALLY VERIFIED.")
     return 0
 

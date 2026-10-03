@@ -7,78 +7,64 @@ SPDX-License-Identifier: CC-BY-NC-4.0
 
 ## When to use
 
-Use this library only when the user explicitly names a director, asks for a director's visual method, asks to compare directions, or asks for a suitable director recommendation.
+Use only when the user names a director, requests a director's visual method or comparison, or asks for a recommendation. No named or requested director means no automatic director reference.
 
-## Mandatory Strong / Iconic Mode
+## Strength and User Control
 
-- Whenever a director listed in [directors/index.md](directors/index.md) is named, execute the request as `iconic`, publicly labeled `强烈`.
-- Normalize every supplied strength word to `iconic`: `subtle`, `clear`, `strong`, `iconic`, `轻微`, `明确`, and `强烈` are all the same mandatory strongest behavior.
-- No named director means no director reference. Use one director by default.
-- Read only the references needed for the task: exactly one matching reference for a single named director, two or three candidates for a comparison or recommendation, or no more than the primary and secondary references for an explicit mix.
-- For each named director, read that director's `Default Iconic Anchor` and use its strongest recognizable image grammar as strongly as possible. Convert the method into visual decisions; never use a name as shorthand for those decisions.
-- The director must lead the exact story beat, visual center, blocking, camera axis, focal behavior, movement grammar, light and contrast, color response, depth of field, texture or capture character, and environment participation; physical plausibility and user-fixed facts still prevail.
-- `Iconic` is not a stronger version of the baseline composition. It must reinterpret the scene through a different visual priority.
+Honor the user's requested strength. Never normalize a subtle request to strong.
 
-Before generating, ask:
+| Request | Interpretation | Apply within open decisions |
+| --- | --- | --- |
+| 轻微 / 一点 / subtle / a touch | Subtle | Select one or two compatible signature traits. Keep the current moment and viewing logic unless the user asks to change them. |
+| 明确 / clear | Clear | Make the method recognizable through relevant light, color/exposure, camera, and space decisions without requiring a new story moment. |
+| 强烈 / 标志性 / strong / iconic | Strong | Use the Default Iconic Anchor as a strong interpretation. Seek structural distinction in open axes and viewing decisions. |
 
-- Does the director version preserve the same central gesture as the baseline?
-- Are the same two objects still perfectly aligned as the main visual event?
-- Is the camera merely closer, lower, wider, or shallower without changing what the shot is actually about?
-- Could the director version and baseline be used as adjacent coverage in the same conventional scene?
+When strength is unspecified, use clear without asking another question. More specific user wording wins over these aliases. Disabling or reducing a director on a later turn is a valid change; preserve unrelated accepted facts. These are qualitative creative instructions, not native numerical reference weights or measured model guarantees.
 
-If any answer is yes, reselect the specific moment, visual center, or camera relationship before generating.
+Use one director by default. Load [directors/index.md](directors/index.md) and exactly one matching director file, two or three candidates for recommendations, or at most a primary and a secondary for an explicit mix. The `Default Iconic Anchor` is a strong-mode resource, not a command to maximize every request.
+
+## Lock Before Differentiation
+
+Mark explicit facts and visual decisions USER-LOCKED before applying the director. User-locked identity, event, action, moment, camera, framing, subject scale, composition, light sources, ratio, and restrictions remain unchanged. A locked gesture never has to change merely because it matches an undirected baseline.
+
+For strong mode, aim for structural distinction across at least three open axes and three open viewing decisions **only when that many are available and compatible**. Exclude locked dimensions from the comparison. If fewer are open, use the available ones and retain the locks; do not fabricate a new source, relocate a prop, or change the action to meet a quota. Mention the limitation briefly only if it materially affects the requested result and explanation is allowed.
+
+Possible viewing decisions are the precise moment, visual center, physical witness position, subject scale/visibility, and whether environment, person, or object leads. Reselect them only when OPEN. Matching the original gesture or camera is not a failure by itself. Differentiate through the unlocked dimensions rather than automatic re-composition.
 
 ## Four-Axis Visual Fingerprint
 
-For every supported named director, read and translate all four fingerprint sections in the selected director file:
+Read all four fingerprint sections in the selected file:
 
-1. `Light and Contrast Fingerprint`
-2. `Color and Exposure Fingerprint`
-3. `Lens and Camera Fingerprint`
-4. `Composition and Spatial Fingerprint`
+1. Light and Contrast Fingerprint.
+2. Color and Exposure Fingerprint.
+3. Lens and Camera Fingerprint.
+4. Composition and Spatial Fingerprint.
 
-Missing any axis is a failed output. Apply structural change on at least three axes relative to an undirected baseline. A name, film title, focal-length number, shallow focus, warm/cool swap, grain, atmosphere adjective, or aspect-ratio change alone does not count.
+Resolve each axis against the current scene, requested strength, medium, and locks. An axis can deliberately remain unchanged. In subtle mode only the selected traits are active; do not manufacture changes on the other axes. A name, film title, focal-length badge, warm/cool swap, grain, or atmosphere adjective alone is not an executable method.
 
-Reselect at least three of these five viewing decisions:
-
-- the moment before, during, or after the stated action;
-- the primary visual center;
-- the camera's physical witness position;
-- the subject's scale and whether it remains fully visible;
-- whether environment, person, or object controls the frame.
-
-After drafting, mentally delete the director name and film titles. The four axes must still communicate a distinct method. Then read the selected file's `Nearest-Neighbor Contrast`; if the result could belong to that neighboring director, rebuild the ambiguous axes.
+Mentally remove names and titles: the active decisions must still describe what the image should do. Use `Nearest-Neighbor Contrast` to sharpen ambiguous active traits without escalating strength or breaking locks. Keep light motivated; never copy a specific film shot.
 
 ## Mixing
 
-Allow at most one primary and one secondary director, and only on explicit request. The secondary director may control one stated dimension only, such as weather pressure, camera distance, character intimacy, spatial geometry, or movement rhythm.
-
-Do not average two full fingerprints. State which single axis the secondary director controls, keep the primary director in control of the other three, and reject mixtures whose source hierarchy or camera logic contradicts.
+Only on explicit request, use one primary and one secondary director. The secondary controls one stated axis such as camera intimacy, weather pressure, or spatial geometry. Do not average two complete methods. Respect declared strength and locks for both; resolve an incompatible source hierarchy or camera instruction before compilation.
 
 ## Recommendation Routing
 
-For recommendations, read [directors/recommendation-matrix.md](directors/recommendation-matrix.md) first. Select two or three candidates by scene goal, explain their four-axis difference briefly, then load only those director files. Never load the full library into working context.
+Read [directors/recommendation-matrix.md](directors/recommendation-matrix.md), select two or three candidates by the scene goal, briefly explain their relevant differences, and load only those files. Never load the entire library.
 
-## Differentiation and Cleanup
+## Output and Native Compilation
 
-Read [anti-ai-cleanup.md](anti-ai-cleanup.md) for every output. For every named supported director, rebuild if the result could be exchanged with the baseline after removing the director name. Do not use polished AI finish, decorative aging, uniform sharpness, or a new Avoid list as a substitute for changed image grammar.
+The four axes are a planning and checking structure, not mandatory labels in every final prompt. The selected model adapter controls native ordering, density, parameters, and editing language. Prompt-only output contains only the compiled prompt; never prepend a director analysis or strength explanation.
 
-## Output rule
-
-For every named-director request, put the following uninterrupted block immediately after grounded scene facts and before detailed camera design:
+When the user requests a breakdown, explain the applicable decisions with these labels, marking a locked axis preserved where useful:
 
 ```text
-Director and visual reference: [standard English director name], drawing strongly from the visual language associated with [film 1], [film 2], and [film 3].
-
-Lighting and contrast signature: [current-scene decision].
-
-Color and exposure signature: [current-scene decision].
-
-Lens and camera signature: [current-scene decision].
-
-Composition and spatial signature: [current-scene decision].
+Lighting and contrast signature:
+Color and exposure signature:
+Lens and camera signature:
+Composition and spatial signature:
 ```
 
-Keep all five labels and translate the selected fingerprint into the current scene. Never rely on names or titles alone, and do not use `in the style of` or `directed by`.
+When names help and the user permits them, include the director's standard English name and relevant film anchors at the requested strength. `Director and visual reference:` is an optional presentation label, not a mandatory five-line payload. For name-free output, omit names and titles while retaining the same applicable visual decisions. Do not use `in the style of` or `directed by` as substitutes for those decisions. Do not force film anchors into a concise prompt when they add no task-relevant information.
 
-Do not output an ordinary name-free version when a supported director is named, unless the user explicitly requests a name-free prompt or explicitly says that their platform does not allow director names. In either exception, omit names and titles but retain the four labeled signatures and the strongest internal director grammar. Preserve the user's original characters, event, era, and location unless the user explicitly asks to recreate a particular film scene. Keep light motivated and physical, and never copy a specific film scene.
+Read [anti-ai-cleanup.md](anti-ai-cleanup.md) when photographic realism is relevant. A non-photographic reference medium retains its own making logic. Cleanup cannot override the requested mood, medium, strength, or locks.
