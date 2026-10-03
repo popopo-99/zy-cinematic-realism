@@ -24,9 +24,13 @@ After installation, copy:
 
 ```text
 Use $zy-cinematic-realism:
-A woman just off work holds hot coffee with both hands inside a rainy-night convenience store, looking away from camera.
-Give me a Midjourney prompt and a few sentences about the moment, viewpoint, and main light source.
-Avoid advertising poses and unmotivated rim light.
+Inside a rainy-night convenience store,
+a woman just off work holds hot coffee
+with both hands, looking away from camera.
+Give me a Midjourney prompt.
+Briefly explain the moment, viewpoint,
+and main light source. Avoid advertising
+poses and unmotivated rim light.
 ```
 
 At minimum: **who, where, the action now, and what to avoid**. State any fixed framing, light, ratio, or model directly.
@@ -34,7 +38,9 @@ At minimum: **who, where, the action now, and what to avoid**. State any fixed f
 Continue naturally:
 
 ```text
-Keep the person, action, and light. Only move the camera outside the awning, looking through glass.
+Keep the person, action, and light.
+Only move the camera outside the awning,
+looking through glass.
 ```
 
 Add “prompt only” for a copyable prompt without explanation. Ask for the Scene Master, four-axis director breakdown, or continuity plan when you want depth. The Skill keeps the established model; it asks once only when an unknown target materially affects compilation. You can request a model-neutral version first.
@@ -47,14 +53,14 @@ Add “prompt only” for a copyable prompt without explanation. Ask for the Sce
 <a id="use-cases"></a>
 ## Start with What You Have
 
-| Your task | Say this | Receive |
-| --- | --- | --- |
-| An idea | “Two detectives ride a night bus after a failed interrogation. Give me a cinematic still prompt.” | Brief visual decisions and a target-native prompt |
-| References | “A supplies color; B supplies composition. Replace the content with a watchmaker before dawn.” | Reference roles, core rules, and a new-scene prompt |
-| A failed result | “Identity and framing are right. Fix only the commercial-looking light.” | Up to three dominant failures and a scoped repair |
-| A series | “Eight urban-knight shots; preserve face, armor, garage, and sources.” | Continuity Bible, shot list, and controlled deltas |
-| Another model or viewpoint | “Same scene, compile for Seedream.” / “Change only the camera.” | Transcode or a one-variable variation |
-| Continue later | “Make a handoff card with accepted changes and the next step.” | Complete portable project state |
+| Task | Say this → receive |
+| --- | --- |
+| Idea | “Two detectives ride a night bus after a failed interrogation. Give me a cinematic still prompt.”<br>→ Brief decisions and a target-native prompt |
+| Reference | “A supplies color; B supplies composition. Replace the content with a watchmaker before dawn.”<br>→ Roles, core rules, and a new-scene prompt |
+| Repair | “Identity and framing are right. Fix only the commercial-looking light.”<br>→ Up to three dominant failures and scoped repair |
+| Series | “Eight urban-knight shots; preserve face, armor, garage, and sources.”<br>→ Continuity, shot list, and controlled deltas |
+| Variation | “Same scene, compile for Seedream.” / “Change only the camera.”<br>→ Transcode or a one-variable variation |
+| Resume | “Make a handoff card with accepted changes and the next step.”<br>→ Complete portable project state |
 
 References contribute only within assigned roles. Paper illustration does not default to photography; an identity reference does not take over the medium. Analysis-only requests receive no unwanted generation prompt.
 
