@@ -9,7 +9,7 @@
 - Scene art concepts for director discussion, covering candidate spaces, materials, character looks, props, and light, distinguished from narrative key frames that show one specific moment of relationship change.
 - Frame selection preserves action order and location while choosing one visible moment per image; shared world decisions feed the existing Scene Master and Continuity Bible.
 - Titanic scenes 85 and 87 worked example connecting script reading, visual proposals, reference decoding, external Image2 generation, and inspection; it displays the P01 revision recognized by the user as the direction for later work and records P02/P03 as failing visual review.
-- The Last Photo qualitative art-development trial links an actual externally generated image to the distinction between readable warmth/spatial art direction and an underdeveloped narrative moment.
+- The Last Photo qualitative trial preserves the initial art concept and adds three follow-up external images accepted for case display: the empty-chair invitation, shoulder lean with a small smile, and an empty-room art concept (2026-10-04).
 
 ### Improved
 
@@ -22,7 +22,7 @@
 
 - docs/validation-v2.5.md records static checks and independent text behavior separately. The old/new text runs and their additional length compression are preserved in docs/titanic-comparison-v2.5.md.
 - The planned six-image comparison was not completed. Later reference-driven external revisions are not controlled A/B evidence; no overall winner or general image-quality improvement is established.
-- The user recognizes P01 as the visual direction for later work; this does not accept the complete series or Bible. P02/P03 failed visual review, and image iteration stopped at the user's request.
+- The user recognizes P01 as the visual direction for later work; this does not accept the complete series or Bible. Earlier P02/P03 results failed visual review. The user requested another external Image2 prompt pass on 2026-10-04; replacement results are not yet available.
 - The Last Photo trial is qualitative, has no controlled comparison, and does not lock a specific set or face; it establishes no general image-quality improvement.
 - Release publication is pending. Current instructions use the review branch or supplied v2.5.0 candidate ZIP; the stable-release link remains separate.
 

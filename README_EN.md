@@ -81,11 +81,11 @@ For an existing story or script, one sentence describing the task is enough. Ana
 
 An awkward first dance, active participation after removing her shoes, and laughter after being caught beside a table. Read the change, develop a shared visual world, then turn actions and relationships into key frames.
 
-[Workflow and actual result status](docs/titanic-story-to-frame.md): script facts, interpretation, and new directing proposals lead into reference decoding, external generation, and inspection. The case displays only the P01 revision recognized by the user as the visual direction for later work. P02/P03 failed visual review, and image iteration has stopped.
+[Workflow and actual result status](docs/titanic-story-to-frame.md): script facts, interpretation, and new directing proposals lead into reference decoding, external generation, and inspection. The case displays only the P01 revision recognized by the user as the visual direction for later work. The earlier P02/P03 results failed visual review; replacement external Image2 candidate prompts are ready, with no new results yet.
 
-### Original Short Story: From Script to Art Concept
+### Original Short Story: Art Concepts and Relationship Key Frames
 
-[The Last Photo trial](docs/last-photo-art-development.md): spatial art direction and warmth are readable in the externally generated image, while the narrative moment remains underdeveloped. This qualitative trial supports discussion of candidate art directions; it is not a controlled comparison and does not lock a specific set or face.
+[The Last Photo trial](docs/last-photo-art-development.md): three follow-up external images are approved by the user for case display: an invitation through an empty chair, a shoulder lean with a small smile, and an empty-room art concept. They show the different purposes of art development and relationship key frames; production details remain open.
 
 <a id="showcase"></a>
 ## Three Ways to See the Method
