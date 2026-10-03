@@ -6,7 +6,7 @@
 
 Start with a story, screenplay excerpt, or references. Establish the scene, develop the visual world, and compile model-native prompts and scoped repair instructions.
 
-**v2.5.0 release candidate** · [Current stable release](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) · [60-second start](#start-in-60-seconds) · [Screenplay example](#screenplay-to-frames-titanics-third-class-dance) · [Examples](#three-ways-to-see-the-method) · [Installation guide](docs/getting-started_EN.md)
+**v2.5.0 release candidate** · [Current stable release](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) · [60-second start](#user-content-start-in-60-seconds) · [Screenplay example](#user-content-screenplay-to-frames-titanics-third-class-dance) · [Examples](#user-content-three-ways-to-see-the-method) · [Installation guide](docs/getting-started_EN.md)
 
 ![Two detectives sit apart in silence on a night bus after a failed interrogation](docs/images/hero-night-bus.webp)
 

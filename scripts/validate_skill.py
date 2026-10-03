@@ -46,7 +46,8 @@ def validate_readme_toc(path: Path, errors: list[str]) -> None:
         if ids.count(anchor) != 1:
             errors.append(f"{path.name}: expected one explicit anchor for #{anchor}.")
     for link in links:
-        if link not in ids and link not in heading_ids:
+        target = link.removeprefix("user-content-")
+        if target not in ids and target not in heading_ids:
             errors.append(f"{path.name}: local navigation #{link} has no explicit or heading anchor.")
     for duplicate in {item for item in ids if ids.count(item) > 1}:
         errors.append(f"{path.name}: duplicate anchor #{duplicate}.")
