@@ -24,13 +24,17 @@ After installation, copy:
 
 ```text
 Use $zy-cinematic-realism:
-Inside a rainy-night convenience store,
-a woman just off work holds hot coffee
-with both hands, looking away from camera.
-Give me a Midjourney prompt.
-Briefly explain the moment, viewpoint,
-and main light source. Avoid advertising
-poses and unmotivated rim light.
+Rainy night, inside a
+convenience store.
+A woman just off work
+holds hot coffee in both
+hands, looking away
+from camera.
+Give me an MJ prompt.
+Explain the moment,
+viewpoint, and main light.
+No advertising poses or
+unmotivated rim light.
 ```
 
 At minimum: **who, where, the action now, and what to avoid**. State any fixed framing, light, ratio, or model directly.
@@ -39,7 +43,8 @@ Continue naturally:
 
 ```text
 Keep the person, action, and light.
-Only move the camera outside the awning,
+Only move the camera
+outside the awning,
 looking through glass.
 ```
 

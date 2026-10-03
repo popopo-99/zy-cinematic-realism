@@ -12,7 +12,8 @@ Date: 2026-10-03 (Asia/Shanghai).
 | Independent text behavior | Executed, 6 cases | [Full inputs, responses, references, and observations](behavior-check-v2.4.md); no image generation |
 | ZIP packaging | Built and verified: 73 files, 193,725 bytes | `scripts/build_release.py`; checks single root, file set, bytes, licensing files, integrity, and SHA256 |
 | Lossless presentation encoding | Executed, 7 images | 14,585,369 PNG bytes → 10,948,374 WebP bytes (24.9% smaller). Pixel equality checked; original PNGs retained. No artwork changes |
-| GitHub README desktop/mobile rendering | Pending visual inspection | Must verify actual rendered navigation, image loading, and narrow-width readability |
+| GitHub README desktop/mobile rendering | Visually inspected | Chinese and English pages at desktop and 390px widths; first-use anchors navigate correctly, four showcase images per page load, task entries remain readable. First-use code lines shortened for narrow screens |
+| GitHub Actions static/package checks | Passed | PR #4 runs the two repository validators and release builder; this verifies repository/package contracts, not image quality |
 | Image-level comparison | Not executed | Existing 10-case protocol remains; no new-versus-old image-quality winner selected |
 | Human first-use / interaction comparison | Not executed | Layout and output-depth changes are implemented design candidates, not proven usability gains |
 
