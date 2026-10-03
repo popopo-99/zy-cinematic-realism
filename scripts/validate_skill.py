@@ -31,14 +31,23 @@ def require(path: Path, terms: tuple[str, ...], errors: list[str]) -> None:
 
 def validate_readme_toc(path: Path, errors: list[str]) -> None:
     body = path.read_text(encoding="utf-8")
-    ids = re.findall(r'<a id="([a-z0-9-]+)"></a>', body)
-    links = re.findall(r"\[[^\]]+\]\(#([a-z0-9-]+)\)", body)
+    ids = re.findall(r'<a id="([^\"]+)"></a>', body)
+    links = re.findall(r"\[[^\]]+\]\(#([^\s)]+)\)", body)
+    # README navigation may use GitHub's plain-heading anchors. Keep explicit
+    # aliases for existing inbound links, but do not require them for new links.
+    heading_ids = set()
+    counts: dict[str, int] = {}
+    for heading in re.findall(r"^#{1,6} (.+)$", body, re.MULTILINE):
+        slug = re.sub(r"[^\w -]", "", heading.lower()).replace(" ", "-")
+        count = counts.get(slug, 0)
+        heading_ids.add(f"{slug}-{count}" if count else slug)
+        counts[slug] = count + 1
     for anchor in EXPECTED_ANCHORS:
         if ids.count(anchor) != 1:
             errors.append(f"{path.name}: expected one explicit anchor for #{anchor}.")
     for link in links:
-        if link not in ids:
-            errors.append(f"{path.name}: local navigation #{link} has no explicit anchor.")
+        if link not in ids and link not in heading_ids:
+            errors.append(f"{path.name}: local navigation #{link} has no explicit or heading anchor.")
     for duplicate in {item for item in ids if ids.count(item) > 1}:
         errors.append(f"{path.name}: duplicate anchor #{duplicate}.")
 

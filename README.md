@@ -6,7 +6,7 @@
 
 从故事想法、剧本节选或参考图出发，建立场景、开发视觉世界，再输出适合目标模型的 Prompt 和局部修复指令。
 
-**v2.5.0 发布候选** · [当前稳定发布](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) · [60 秒上手](#quick-start) · [剧本实战](#story-to-frame) · [看案例](#showcase) · [安装教程](docs/getting-started.md)
+**v2.5.0 发布候选** · [当前稳定发布](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) · [60 秒上手](#60-秒上手) · [剧本实战](#剧本实战泰坦尼克号三等舱舞会) · [看案例](#三种方式看见方法) · [安装教程](docs/getting-started.md)
 
 ![两个侦探在失败后的夜班公交车上沉默而坐](docs/images/hero-night-bus.webp)
 

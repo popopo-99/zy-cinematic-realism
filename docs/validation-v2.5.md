@@ -23,8 +23,8 @@ Date: 2026-10-03 (Asia/Shanghai). Release status: candidate; no v2.5 GitHub Rele
 | Frontmatter、命名与未完成占位符 | 已通过skill-creator的quick_validate检查。 |
 | ZIP单层结构、内容、署名与完整性 | 已通过：76个Skill文件，保留LICENSE与NOTICE；安装包不含公开文档、完整剧本或测试回图。 |
 | Git diff空白与冲突检查 | 已通过git diff --check。 |
-| GitHub Actions | 待执行 |
-| 本轮README浏览器展示 | 待执行 |
+| GitHub Actions | 已通过：实现提交b642f81的[push检查](https://github.com/popopo-99/zy-cinematic-realism/actions/runs/37116954884)与[pull_request检查](https://github.com/popopo-99/zy-cinematic-realism/actions/runs/37117020633)，均执行静态检查与打包。后续文档提交的最新检查见[PR #5](https://github.com/popopo-99/zy-cinematic-realism/pull/5)。 |
+| 本轮README浏览器展示 | 已检查：GitHub审查分支的中英文README与案例页，在默认桌面视窗及390×844窄屏查看文字换行、保留的历史作品与新案例图；P01图已加载为1672×941，案例折叠提示词可展开。首页导航改用实际标题锚点，兼容GitHub文件预览。此检查不判断图片创作质量。 |
 
 候选安装包：`zy-cinematic-realism-v2.5.0.zip`，206,805 bytes。构建校验输出的 SHA-256：
 
