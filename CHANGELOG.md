@@ -1,5 +1,31 @@
 # Changelog
 
+## v2.5.0 — 2026-10-03
+
+### Added
+
+- Story to Frame workflow for developing a readable screenplay excerpt or story passage through character change, a visual world, and key frames.
+- Explicit separation of source facts, story interpretation, and new visual proposals, with source availability and provenance recorded.
+- Scene art concepts for director discussion, covering candidate spaces, materials, character looks, props, and light, distinguished from narrative key frames that show one specific moment of relationship change.
+- Frame selection preserves action order and location while choosing one visible moment per image; shared world decisions feed the existing Scene Master and Continuity Bible.
+- Titanic scenes 85 and 87 worked example connecting script reading, visual proposals, reference decoding, external Image2 generation, and inspection; it displays the P01 revision recognized by the user as the direction for later work and records P02/P03 as failing visual review.
+- The Last Photo qualitative art-development trial links an actual externally generated image to the distinction between readable warmth/spatial art direction and an underdeveloped narrative moment.
+
+### Improved
+
+- Chinese and English README and first-use docs introduce screenplay work through natural-language requests, with a short text entry linking the full case.
+- Self-contained chat starters include basic script reading, visual development, and one-moment frame selection without external reference-file dependencies.
+- Analysis-only requests, accepted visual directions, and model-native compilation remain scoped to the user's request.
+- Story entry follows the requested purpose without a mandatory two-option menu, additional image set, or model questionnaire. Art concepts and frame plans require prompt compilation before generation; the Skill does not generate images automatically.
+
+### Validation and Release Status
+
+- docs/validation-v2.5.md records static checks and independent text behavior separately. The old/new text runs and their additional length compression are preserved in docs/titanic-comparison-v2.5.md.
+- The planned six-image comparison was not completed. Later reference-driven external revisions are not controlled A/B evidence; no overall winner or general image-quality improvement is established.
+- The user recognizes P01 as the visual direction for later work; this does not accept the complete series or Bible. P02/P03 failed visual review, and image iteration stopped at the user's request.
+- The Last Photo trial is qualitative, has no controlled comparison, and does not lock a specific set or face; it establishes no general image-quality improvement.
+- Release publication is pending. Current instructions use the review branch or supplied v2.5.0 candidate ZIP; the stable-release link remains separate.
+
 ## v2.4.0 — 2026-10-03
 
 ### Fixed

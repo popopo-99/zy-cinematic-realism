@@ -16,11 +16,13 @@ Read the latest accepted Scene Master, user corrections, relevant Continuity Bib
 Include only fields needed to resume:
 
 - **Project / version:** a user label when available and card revision if useful.
+- **Story source / scope (when relevant):** actual source version, verified read coverage, current scene/frame IDs and usable locators, material needed again, character/audience knowledge, and affected revision dependencies. Preserve the distinction between source facts, interpretations, accepted visual choices, and unresolved proposals; see [story-source-ledger.md](story-source-ledger.md).
 - **Task / target:** current output goal, established model/version/frontend if known, ratio, requested language and depth.
 - **Accepted state:** current characters, wardrobe, action/time, props, spatial relationships, sources, and visual decisions that matter; include only supported facts.
 - **Locks / allowed change:** what must remain, what the next task may change, and unresolved choices.
 - **Reference roles:** what each actually supplied image controls and which images need reattachment.
 - **Shared visual grammar:** include the complete relevant Decode Card or enough substantive rules, medium, scope, and exclusions to resume without an inaccessible title or path. Attach the relevant Bible when a series needs it; avoid duplicate facts.
+- **Accepted art direction (when relevant):** complete story-developed visual rules needed for continuation, separate from image-observed grammar and unaccepted alternatives. Do not label a story proposal as an observed Dream Decode mechanism.
 - **Last accepted changes:** a concise cumulative record, not all conversation history.
 - **Result status:** distinguish prompt ready, image generated, inspected, user accepted, and reported failure. Mark unavailable/unknown states accurately.
 - **Next step:** requested continuation and any missing input that genuinely blocks it.
@@ -34,5 +36,7 @@ Write a compact complete Markdown card in the user's language. Omit irrelevant s
 3. Continue the requested task using the established model and requested depth. Give a short recovered-state summary only when useful; prompt-only still means only the prompt.
 4. If an unavailable image is required for identity preservation, editing, or result comparison, request it. If only textual planning is requested, proceed from the available facts without pretending the image was seen.
 5. Ask only about a material unresolved conflict. Do not require redoing discovery or filling a full form.
+
+A complete supplied card can support text-only continuation. Faithful analysis of a changed screenplay passage requires its actual contents when the card does not contain them; a source title, locator, or unread file does not recover the script. On restore, keep the requested analysis-only or prompt-only scope.
 
 For visual-grammar reuse see [decode-card.md](decode-card.md); for shot-state continuity see [continuity-cards.md](continuity-cards.md).

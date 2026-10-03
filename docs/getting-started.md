@@ -1,5 +1,7 @@
 # 安装与第一次使用
 
+本文对应 **v2.5.0 发布候选**，正式 GitHub Release 尚未创建。当前可安装[审查分支源码](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame/zy-cinematic-realism)，或使用本次交付的候选包 `zy-cinematic-realism-v2.5.0.zip`。[当前稳定发布](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)另有独立入口。
+
 
 <a id="install-codex"></a>
 ## 安装到 Codex
@@ -12,14 +14,15 @@ OpenAI 当前文档说明，Codex 会从用户级 `$HOME/.agents/skills` 与项�
 
 ```text
 请使用 $skill-installer，从下面的 GitHub 仓库安装 zy-cinematic-realism：
-https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism
+https://github.com/popopo-99/zy-cinematic-realism
+使用审查分支 codex/story-to-frame，Skill 文件夹为 zy-cinematic-realism。
 ```
 
 如果当前 Codex 界面提供 Skills 安装或本地导入入口，也可以选择 Release 下载的 ZIP，或解压后的 `zy-cinematic-realism` 文件夹。不同产品界面的入口可能不同。
 
 ### 方法二：手动安装
 
-从 [Releases](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) 下载并解压，将完整的 `zy-cinematic-realism` 文件夹复制到用户级 Skills 目录。
+从[审查分支](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame)下载源码，或解压本次候选 ZIP，将完整的 `zy-cinematic-realism` 文件夹复制到用户级 Skills 目录。需要稳定版时使用 [Releases](https://github.com/popopo-99/zy-cinematic-realism/releases/latest)。
 
 **Windows**
 
@@ -57,7 +60,7 @@ Codex 通常会自动发现变更；如果没有出现，请重新启动 Codex�
 1. 在侧边栏打开 **Plugins / 插件**。
 2. 在 Plugin Directory 中进入 **Skills**。
 3. 选择 **Create**，再选择 **Upload from your computer**。
-4. 上传最新 Release 中的 `zy-cinematic-realism-v2.4.0.zip`。
+4. 上传本次交付的候选包 `zy-cinematic-realism-v2.5.0.zip`；正式 Release 尚未发布。
 5. 扫描和安装完成后，输入 `$zy-cinematic-realism`，或直接描述电影感 Prompt 任务。
 
 Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会自动跨这些界面同步。
@@ -77,6 +80,31 @@ Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会
 ```
 
 应得到针对当前画面的 Prompt；已指定模型时不重复询问。若 Skill 未出现，检查是否误放成两层同名目录。升级时完整替换旧文件夹，避免同名副本。
+
+### 从故事或剧本开始
+
+安装后直接附上你要开发的故事或剧本节选，用普通中文说明任务：
+
+```text
+请使用 $zy-cinematic-realism：
+我有一段短故事，先做给导演讨论的场景美术概念。
+提出空间、材料、人物造型、道具和光线的候选设计。
+区分原文事实、剧情解读和新增设计，先给模型中立方案。
+下面是故事节选：
+（在此粘贴你要开发的片段）
+```
+
+美术概念帮助导演讨论视觉世界，空间、材料、人物造型、道具与光线仍是候选设计。想看故事里的关系变化，也可以直接说“挑人物关系变化的关键画面”；每张只选一个具体瞬间，不要求先做美术概念。按你这次的请求展开，一句话就能开始。
+
+会先根据可读文字理解人物的目标、阻力与变化；原文没有的设计会标为建议。若只想读懂剧情，写“先只分析，不给 Prompt”，就只交分析。
+
+美术方案或关键画面计划还不是最终 Prompt。需要提示词时，可以说“把这个美术概念编译成 Midjourney Prompt”，或“保留已接受的视觉设定，把选定的关键画面编译成 Prompt”；若一开始已要求 Prompt，就直接编译。沿用对话中已确定的模型，也可以先要模型中立 Prompt；Skill 不自动生图，实际生成需要你所用环境的生图功能。
+
+上传整个剧本时，说明想开发的场次；给电影名时，还需要可读取的片段或来源。电影记忆、字幕与电影剧照不能代替剧本文字证据。
+
+[《泰坦尼克号》三等舱舞会实战](titanic-story-to-frame.md)展示原文动作怎样进入原创视觉开发。案例配图为用户认可作为后续视觉方向的 P01 修订图，非电影剧照；P02/P03 视觉未通过，已停止图片迭代。
+
+[《最后一张照片》美术概念试用](last-photo-art-development.md)记录实际外部生成后的观察：空间美术与温情可读，叙事瞬间尚未充分呈现。这是定性试用，未做受控对比，也未锁定具体布景或人物脸。
 
 ### 在新对话恢复
 
