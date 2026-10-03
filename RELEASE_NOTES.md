@@ -4,20 +4,21 @@
 
 **状态：发布候选，尚未发布 GitHub Release。** 当前通过审查分支或本次交付的 v2.5.0 候选 ZIP 安装；实际构建、图片与检查结果见[验证记录](docs/validation-v2.5.md)。
 
-v2.5 从一段可读剧本开始，先理解人物的目标、阻力和变化，再开发视觉世界与关键画面。服装、空间、光线和机位各自服务这个变化，最后接入已有 Scene Master、连续性设定与模型编译。
+v2.5 从一段可读故事或剧本开始，先理解人物的目标、阻力和变化，再按当前用途开发给导演讨论的场景美术概念，或挑关系变化的叙事关键画面。设计方案最后接入已有 Scene Master、连续性设定与模型编译。
 
-- **自然语言入口：**“我有一段剧本，先帮我找人物变化，再开发视觉世界和关键画面。”不必先记住模式名。
+- **自然语言入口：**“先做给导演讨论的场景美术概念。”或“挑人物关系变化的关键画面。”按当前请求推进，不强制二选一菜单、额外多图或模型问卷。
 - **事实与设计分开：**原文明示、剧情解读和新导演建议分别呈现；可读取的片段是分析依据，电影记忆与剧照不作为剧本证据。
-- **先建立视觉世界：**为人物、空间、衣饰、材质与光线形成可继续修改的共同设定；已接受的方向进入后续关键帧与局部修复。
+- **美术概念与叙事画面各有用途：**美术概念讨论空间、材料、人物造型、道具与光线的候选设计；关键画面呈现关系变化中的具体瞬间。只分析时就只交分析，方案需要再编译成目标模型 Prompt；Skill 不自动生图。
 - **每帧一个瞬间：**保留原稿动作顺序与地点，选一个可见动作成为关键画面；只有分析需求时先交分析。
 - **《泰坦尼克号》实战：**取 James Cameron 署名剧本第 85、87 场三等舱舞会，展示“剧情分析 → 视觉提案 → 参考解梦 → Image2 外部生成 → 检查”。用户评价 P01“效果还不错”，认可它作为后续视觉方向；案例仅展示这张修订图。P02/P03 视觉未通过，已停止图片迭代。配图为原创视觉开发，非电影剧照；来源与新增设计见[案例页](docs/titanic-story-to-frame.md)。
+- **《最后一张照片》定性试用：**[案例记录](docs/last-photo-art-development.md)保留实际外部生成后的观察：空间美术与温情可读，叙事瞬间尚未充分呈现。未做受控对比，也未锁定具体布景或人物脸。
 - **同步上手文档：**中英文首页、安装教程与自包含聊天入门版增加剧本入口，基础聊天版仍明确自身范围。
 
-静态检查、文本行为验证和用户图片反馈分别记录。两版文字输出及同一次压缩修订已保存；原计划六图比较未完成，后续参考驱动的外部修订不属于受控 A/B，不据此宣布新版胜出。查看[文字比较](docs/titanic-comparison-v2.5.md)、[本次验证记录](docs/validation-v2.5.md)与[CHANGELOG](CHANGELOG.md)。
+静态检查、文本行为验证和用户图片反馈分别记录。两版文字输出及同一次压缩修订已保存；原计划六图比较未完成，后续参考驱动的外部修订不属于受控 A/B，不据此宣布新版胜出。新美术案例也不证明电影画质整体提升。查看[文字比较](docs/titanic-comparison-v2.5.md)、[本次验证记录](docs/validation-v2.5.md)与[CHANGELOG](CHANGELOG.md)。
 
 **Candidate install:** 从[审查分支](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame/zy-cinematic-realism)安装，或导入本次交付的 `zy-cinematic-realism-v2.5.0.zip`，完整替换旧目录。正式 Release 下载待发布后提供。安装包保留单层 `zy-cinematic-realism/` 结构，调用为 `$zy-cinematic-realism`，许可证为 CC BY-NC 4.0。
 
-**English:** Story to Frame reads character goals, resistance, and change before developing a visual world and individual key frames. Facts, interpretation, and new proposals remain distinct. The Titanic case connects this work with reference decoding and external Image2 generation, displaying only the P01 revision recognized by the user as the direction for later work. P02/P03 failed visual review, and image iteration has stopped. Actual text runs and an additional compression round are preserved. The planned image comparison was not completed; later reference-driven revisions do not establish an A/B winner. This is a release candidate, not a published GitHub Release.
+**English:** Story to Frame reads character goals, resistance, and change, then develops scene art concepts for director discussion or narrative key frames for the requested purpose. Art concepts explore candidate spaces, materials, character looks, props, and light; key frames show one specific moment of relationship change. The workflow does not require a two-option menu, extra image set, or model questionnaire. Analysis-only requests stay analysis-only; plans still need model-native prompt compilation, and the Skill does not generate images automatically. Facts, interpretation, and new proposals remain distinct. The Titanic case displays only the P01 revision recognized by the user as the direction for later work. P02/P03 failed visual review, and image iteration has stopped. The Last Photo qualitative trial finds readable spatial art direction and warmth in an externally generated image, with the narrative moment still underdeveloped; it has no controlled comparison or locked set or face. Actual text runs and an additional compression round are preserved. The planned image comparison was not completed; these cases do not establish an A/B winner or general image-quality improvement. This is a release candidate, not a published GitHub Release.
 
 ---
 

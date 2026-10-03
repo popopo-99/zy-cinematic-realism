@@ -50,7 +50,7 @@
 <a id="use-cases"></a>
 ## 从你手上的材料开始
 
-- **剧本**：“我有一段剧本，先帮我找人物变化，再开发视觉世界和关键画面。”<br>→ 剧情解读、视觉开发方向与可生成的单一瞬间
+- **故事 / 剧本**：“先做给导演讨论的场景美术概念。” / “挑人物关系变化的关键画面。”<br>→ 美术概念讨论空间、材料、人物造型、道具与光线的候选设计；叙事关键画面表现一个具体瞬间
 
 - **想法**：“两个侦探审讯失败后坐夜班公交回警局，给我电影单帧 Prompt。”<br>→ 简短画面决定与目标模型 Prompt
 
@@ -66,12 +66,18 @@
 
 参考图只按你指定的职责参与；纸本插画不会默认变成摄影，角色参考也不会自动接管画风。解梦只分析图像时不会强行输出 Prompt。
 
+已有故事或剧本，一句话说明这次想做什么即可。只分析时就只交分析；美术方案或关键画面计划需要再编译成目标模型 Prompt，Skill 不自动生图。
+
 <a id="story-to-frame"></a>
 ## 剧本实战：《泰坦尼克号》三等舱舞会
 
 从生涩地跟随，到脱鞋后主动投入，再到桌边被接住后笑起来。先读人物变化，再开发共同的视觉世界，把动作和关系转成关键画面。
 
 [看实战过程与真实结果状态](docs/titanic-story-to-frame.md)：区分原文事实、剧情解读和新导演建议，串起参考解梦、外部生成与检查。案例只展示用户认可作为后续视觉方向的 P01 修订图；P02/P03 视觉未通过，已停止图片迭代。
+
+### 原创短故事：从剧本到美术概念
+
+[《最后一张照片》试用记录](docs/last-photo-art-development.md)：外部生成图中的空间美术与温情可读，叙事瞬间尚未充分呈现。这次定性试用用于讨论候选美术方向，未做受控对比，也未锁定具体布景或人物脸。
 
 <a id="showcase"></a>
 ## 三种方式，看见方法
@@ -149,13 +155,13 @@ v2.5.0 尚未创建正式 Release。当前可从[审查分支](https://github.co
 
 `场景母版 + 视觉规律 → 独立模型编译 → 结果修复`
 
-剧本入口先经过 `人物变化 → 视觉世界 → 关键画面`，再接入上述流程。
+故事或剧本先读懂人物变化，再按本次用途开发场景美术概念或叙事关键画面，最后接入上述流程。
 
 模型语言可以变，已锁定的场景事实不能偷偷变。
 
 | 想深入哪里 | 文档 |
 | --- | --- |
-| 从剧本开发视觉世界与关键画面 | [Story to Frame 工作流](zy-cinematic-realism/references/story-visual-development.md) · [《泰坦尼克号》实战](docs/titanic-story-to-frame.md) |
+| 从故事开发美术概念或叙事关键画面 | [Story to Frame 工作流](zy-cinematic-realism/references/story-visual-development.md) · [《泰坦尼克号》实战](docs/titanic-story-to-frame.md) |
 | 故事瞬间、导演与摄影方法 | [视觉指南与历史作品](docs/visual-guide.md) |
 | 参考职责、媒介与解梦 | [解梦工作流](zy-cinematic-realism/references/dream-decode.md) · [解梦卡](zy-cinematic-realism/references/decode-card.md) |
 | 持续修改与跨对话恢复 | [项目交接卡](zy-cinematic-realism/references/project-handoff.md) |

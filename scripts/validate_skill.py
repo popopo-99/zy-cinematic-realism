@@ -67,7 +67,7 @@ def main() -> int:
     story_path = REF / "story-visual-development.md"
     if not story_path.is_file():
         errors.append("Missing story visual development resource.")
-    for path in (REF / "story-source-ledger.md", SKILL / "tests" / "story-to-frame.md", ROOT / "docs" / "titanic-story-to-frame.md", ROOT / "docs" / "validation-v2.5.md"):
+    for path in (REF / "story-source-ledger.md", SKILL / "tests" / "story-to-frame.md", SKILL / "tests" / "story-art-development.md", ROOT / "docs" / "titanic-story-to-frame.md", ROOT / "docs" / "last-photo-art-development.md", ROOT / "docs" / "behavior-check-art-development-v2.5.md", ROOT / "docs" / "validation-v2.5.md"):
         if not path.is_file():
             errors.append(f"Missing Story to Frame resource: {path.relative_to(ROOT)}")
     # These are resource/contract checks; actual responses are reviewed separately.

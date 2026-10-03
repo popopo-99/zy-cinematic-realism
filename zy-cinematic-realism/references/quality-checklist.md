@@ -9,10 +9,10 @@ Check every applicable item before responding. Rewrite any failed structural ite
 
 ## Scene
 
-- [ ] The frame occupies a specific story beat with a trace of before or after.
-- [ ] Every visible character performs a natural action rather than posing.
+- [ ] The image serves its requested purpose: a narrative keyframe carries a specific story beat; an art concept makes the relevant design decisions assessable.
+- [ ] Visible characters have coherent current actions and gaze targets. Posing for a portrait is valid when requested or source-backed; it is not automatically a structural failure.
 - [ ] Environment details are few, causal, and story-relevant.
-- [ ] Foreground, midground, background, and location topology are physically plausible.
+- [ ] Foreground, midground, background, and location topology are physically plausible; the relevant travel paths, working zones, seats, and props are usable.
 - [ ] The visual center and information hierarchy are intentional.
 - [ ] Period, wardrobe, props, signage, architecture, time, and weather agree.
 - [ ] No user-fixed fact or restriction was silently changed.
@@ -21,6 +21,7 @@ Check every applicable item before responding. Rewrite any failed structural ite
 ## Camera and Light
 
 - [ ] The witness position, distance, and height can be sketched inside the location.
+- [ ] When an in-scene camera photographs the characters, its lens and the audience's viewing position are distinguished; gaze targets and sightlines agree with both.
 - [ ] Obstruction or reflection, if present, follows from that position.
 - [ ] Composition does not default to centered promotion or symmetry.
 - [ ] Every important light has a source; protected shadows remain plausible.
@@ -29,10 +30,12 @@ Check every applicable item before responding. Rewrite any failed structural ite
 
 ## Story Visual Development (when active)
 
-- [ ] Output matches the requested analysis, visual development, or prompts; no automatic prompt/model question or fixed count of directions/frames.
+- [ ] Output matches the requested analysis, director-facing art concept, narrative keyframe, or prompts; no mandatory purpose menu, automatic prompt/model question/generation, compulsory pair of deliverables, or fixed count of directions/images.
 - [ ] Source version and reading coverage are accurate; facts are traceable without claiming unread scenes, original page numbers, actor identity, or remembered film shots.
 - [ ] Source facts, narrative interpretations, and visual proposals remain distinct; unaccepted proposals are not accepted project locks.
-- [ ] Relationship/emotion changes have observable expression, and each selected keyframe has a story or art-development reason with one coherent current moment.
+- [ ] An art concept makes the requested space, materials, wardrobe, props, practical source light, or blocking decisions discussable; characters may help demonstrate these without carrying every story beat.
+- [ ] Each narrative keyframe has one coherent current moment and a reason for selection. If a relationship/emotion change is its purpose, supported visible evidence distinguishes it from a generally pleasant atmosphere or settled pose; set dressing does not replace the beat.
+- [ ] Current action, gaze, and action-driving prop states agree; consecutive stages such as a running timer and a completed exposure are not stacked into one instant.
 - [ ] Character and audience knowledge, chronology, wardrobe/prop states, and source-revision dependencies remain consistent; later reveals do not leak into an earlier frame.
 - [ ] Story-developed visual rules follow this story's space, action, materials, and source light, rather than a fixed emotion/color formula; Dream Decode observation claims require actual image evidence.
 
@@ -64,4 +67,4 @@ Check every applicable item before responding. Rewrite any failed structural ite
 - [ ] The exclusion list is concise, scene-specific, model-compatible, and non-contradictory.
 - [ ] The output contains no placeholders or hidden reasoning.
 
-If the result reads like an advertisement, poster, fashion portrait, concept sheet, or game render, first revise action, subject scale, witness position, and source hierarchy. Do not repair structure with more style words.
+If the result misses its intended purpose, first revise action, subject scale, viewpoint, and source hierarchy. A requested art concept or portrait is valid; a narrative keyframe that becomes an unrelated advertisement, fashion portrait, or set-dressing sheet needs a structural repair. Do not repair structure with more style words.

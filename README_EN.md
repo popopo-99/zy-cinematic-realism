@@ -58,7 +58,7 @@ Add “prompt only” for a copyable prompt without explanation. Ask for the Sce
 <a id="use-cases"></a>
 ## Start with What You Have
 
-- **Screenplay**: “I have a screenplay excerpt. Find the character change first, then develop the visual world and key frames.”<br>→ Story interpretation, visual directions, and moments that can become individual images
+- **Story / screenplay**: “Develop a scene art concept to discuss with the director.” / “Choose key frames where the relationship changes.”<br>→ Art concepts explore candidate spaces, materials, character looks, props, and light; narrative key frames show one specific moment
 
 - **Idea**: “Two detectives ride a night bus after a failed interrogation. Give me a cinematic still prompt.”<br>→ Brief decisions and a target-native prompt
 
@@ -74,12 +74,18 @@ Add “prompt only” for a copyable prompt without explanation. Ask for the Sce
 
 References contribute only within assigned roles. Paper illustration does not default to photography; an identity reference does not take over the medium. Analysis-only requests receive no unwanted generation prompt.
 
+For an existing story or script, one sentence describing the task is enough. Analysis-only requests stay analysis-only. An art concept or frame plan still needs model-native prompt compilation; the Skill does not generate images automatically.
+
 <a id="story-to-frame"></a>
 ## Screenplay to Frames: Titanic's Third-Class Dance
 
 An awkward first dance, active participation after removing her shoes, and laughter after being caught beside a table. Read the change, develop a shared visual world, then turn actions and relationships into key frames.
 
 [Workflow and actual result status](docs/titanic-story-to-frame.md): script facts, interpretation, and new directing proposals lead into reference decoding, external generation, and inspection. The case displays only the P01 revision recognized by the user as the visual direction for later work. P02/P03 failed visual review, and image iteration has stopped.
+
+### Original Short Story: From Script to Art Concept
+
+[The Last Photo trial](docs/last-photo-art-development.md): spatial art direction and warmth are readable in the externally generated image, while the narrative moment remains underdeveloped. This qualitative trial supports discussion of candidate art directions; it is not a controlled comparison and does not lock a specific set or face.
 
 <a id="showcase"></a>
 ## Three Ways to See the Method
@@ -157,13 +163,13 @@ The candidate ZIP has one top-level `zy-cinematic-realism/` folder. Replace the 
 
 `Scene Master + Visual Grammar → Independent Model Compiler → Result Repair`
 
-Screenplay work starts with `Character Change → Visual World → Key Frames`, then joins this pipeline.
+Story or screenplay work reads character change, develops scene art concepts or narrative key frames for the requested purpose, then joins this pipeline.
 
 Model syntax can change; locked scene facts cannot change silently.
 
 | Topic | Documentation |
 | --- | --- |
-| Develop a visual world and key frames from a screenplay | [Story to Frame workflow](zy-cinematic-realism/references/story-visual-development.md) · [Titanic example](docs/titanic-story-to-frame.md) |
+| Develop art concepts or narrative key frames from a story | [Story to Frame workflow](zy-cinematic-realism/references/story-visual-development.md) · [Titanic example](docs/titanic-story-to-frame.md) |
 | Story, directors, and cinematography | [Visual guide and historical work](docs/visual-guide_EN.md) |
 | Reference roles, medium, and decode | [Dream Decode](zy-cinematic-realism/references/dream-decode.md) · [Decode Card](zy-cinematic-realism/references/decode-card.md) |
 | Iteration and a new conversation | [Project Handoff Card](zy-cinematic-realism/references/project-handoff.md) |

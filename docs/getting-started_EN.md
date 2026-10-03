@@ -82,25 +82,31 @@ Give me a Midjourney prompt and briefly explain the key visual decisions.
 
 Expect a scene-specific prompt without another model question. If the Skill is missing, check for an accidentally nested duplicate folder. Replace the complete old folder when upgrading; avoid duplicate installations.
 
-### Start with a screenplay excerpt
+### Start with a story or screenplay
 
-Attach the excerpt you want to develop, then describe the task naturally:
+Attach the story or screenplay excerpt you want to develop, then describe the task naturally:
 
 ```text
 Use $zy-cinematic-realism:
-I have a screenplay excerpt. Find the character change first,
-then develop the visual world and key frames.
-Separate script facts, story interpretation, and new directing proposals.
-Choose one specific moment per frame. Start with a model-neutral plan.
+I have a short story. Develop a scene art concept to discuss with the director.
+Propose candidate spaces, materials, character looks, props, and light.
+Separate source facts, story interpretation, and new design proposals.
+Start with a model-neutral plan.
 Here is the excerpt:
 (Paste the passage you want to develop here.)
 ```
 
-The Skill reads the characters' goals, resistance, and change before developing the visual world and key frames. Wardrobe, lighting, and camera choices absent from the passage are identified as proposals. For an analysis-only first pass, say “Analyze first; no prompt yet.” Once a direction is accepted, ask “Keep this visual world and compile the selected frames for Midjourney.”
+Art concepts help a director discuss the visual world; spaces, materials, character looks, props, and light remain candidate designs. To see a change in the story, you can directly ask “Choose key frames where the relationship changes.” Each frame shows one specific moment, without requiring an art-concept pass first. The Skill follows the current request; one sentence is enough to start.
+
+The Skill reads the characters' goals, resistance, and change from accessible text. Designs absent from the passage are identified as proposals. For an analysis-only pass, say “Analyze first; no prompt yet” and receive analysis only.
+
+An art concept or frame plan is not the final prompt. When you need one, ask “Compile this art concept for Midjourney,” or “Keep the accepted visual decisions and compile the selected frame.” If the initial request already asks for a prompt, the Skill compiles it directly. It keeps the established model; you can also request a model-neutral prompt first. It does not generate images automatically; actual generation needs the image features in your environment.
 
 For a full script, name the scenes you want to develop. A movie title still needs a readable excerpt or source. Film memory, subtitles, and film stills do not replace screenplay evidence.
 
-The [Titanic third-class dance example](titanic-story-to-frame.md) shows script actions becoming original visual development. Its illustration is the P01 revision recognized by the user as the direction for later work, not a film still; later-frame status is recorded separately.
+The [Titanic third-class dance example](titanic-story-to-frame.md) shows script actions becoming original visual development. Its illustration is the P01 revision recognized by the user as the direction for later work, not a film still. P02/P03 failed visual review, and image iteration has stopped.
+
+[The Last Photo art-concept trial](last-photo-art-development.md) records observations after external generation: spatial art direction and warmth are readable, while the narrative moment remains underdeveloped. This is a qualitative trial without a controlled comparison or a locked set or face.
 
 ### Resume in a new conversation
 
