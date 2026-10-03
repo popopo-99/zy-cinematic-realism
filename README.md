@@ -4,9 +4,9 @@
 
 **把一个念头，变成可以生成、修改和延续的视觉方案。**
 
-从故事想法或参考图出发，建立场景、提炼视觉规律，再输出适合目标模型的 Prompt 和局部修复指令。
+从故事想法、剧本节选或参考图出发，建立场景、开发视觉世界，再输出适合目标模型的 Prompt 和局部修复指令。
 
-**[下载 v2.4.0](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.4.0)** · [60 秒上手](#quick-start) · [看案例](#showcase) · [安装教程](docs/getting-started.md)
+**v2.5.0 发布候选** · [当前稳定发布](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) · [60 秒上手](#quick-start) · [剧本实战](#story-to-frame) · [看案例](#showcase) · [安装教程](docs/getting-started.md)
 
 ![两个侦探在失败后的夜班公交车上沉默而坐](docs/images/hero-night-bus.webp)
 
@@ -50,6 +50,8 @@
 <a id="use-cases"></a>
 ## 从你手上的材料开始
 
+- **剧本**：“我有一段剧本，先帮我找人物变化，再开发视觉世界和关键画面。”<br>→ 剧情解读、视觉开发方向与可生成的单一瞬间
+
 - **想法**：“两个侦探审讯失败后坐夜班公交回警局，给我电影单帧 Prompt。”<br>→ 简短画面决定与目标模型 Prompt
 
 - **参考**：“图一只参考颜色，图二参考构图；内容换成凌晨修表的老人。”<br>→ 参考职责、核心规律与新场景 Prompt
@@ -63,6 +65,13 @@
 - **继续**：“整理项目交接卡，记录已经接受的改动和下一步。”<br>→ 可复制到新对话的完整项目状态
 
 参考图只按你指定的职责参与；纸本插画不会默认变成摄影，角色参考也不会自动接管画风。解梦只分析图像时不会强行输出 Prompt。
+
+<a id="story-to-frame"></a>
+## 剧本实战：《泰坦尼克号》三等舱舞会
+
+从生涩地跟随，到脱鞋后主动投入，再到桌边被接住后笑起来。先读人物变化，再开发共同的视觉世界，把动作和关系转成关键画面。
+
+[看实战过程与真实结果状态](docs/titanic-story-to-frame.md)：区分原文事实、剧情解读和新导演建议，串起参考解梦、外部生成与检查。案例只展示用户认可作为后续视觉方向的 P01 修订图；P02/P03 视觉未通过，已停止图片迭代。
 
 <a id="showcase"></a>
 ## 三种方式，看见方法
@@ -126,10 +135,12 @@ v2.4 尊重 **轻微 / 明确 / 强烈**；不指定时默认明确。轻微选�
 | 环境 | 入口 |
 | --- | --- |
 | Codex | [从 GitHub 或本地文件夹安装](docs/getting-started.md#install-codex) |
-| ChatGPT 有 Skills 入口 | [上传完整 Release ZIP](docs/getting-started.md#use-chatgpt) |
+| ChatGPT 有 Skills 入口 | [上传完整候选 ZIP](docs/getting-started.md#use-chatgpt) |
 | 没有 Skills 入口 | [自包含聊天入门版](docs/chat-starter-zh.md)，基础能力可直接粘贴 |
 
-完整安装包是 `zy-cinematic-realism-v2.4.0.zip`，只有一层顶级 `zy-cinematic-realism/` 文件夹。升级时完整替换旧目录，避免同时安装同名副本。**只复制 SKILL.md 无法带上它引用的完整方法库。**
+v2.5.0 尚未创建正式 Release。当前可从[审查分支](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame/zy-cinematic-realism)安装源码，或导入本次交付的候选包 `zy-cinematic-realism-v2.5.0.zip`；正式发布后提供 Release 下载。
+
+候选包只有一层顶级 `zy-cinematic-realism/` 文件夹。升级时完整替换旧目录，避免同时安装同名副本。**只复制 SKILL.md 无法带上它引用的完整方法库。**
 
 <a id="model-router"></a>
 <a id="model-comparison"></a>
@@ -138,10 +149,13 @@ v2.4 尊重 **轻微 / 明确 / 强烈**；不指定时默认明确。轻微选�
 
 `场景母版 + 视觉规律 → 独立模型编译 → 结果修复`
 
+剧本入口先经过 `人物变化 → 视觉世界 → 关键画面`，再接入上述流程。
+
 模型语言可以变，已锁定的场景事实不能偷偷变。
 
 | 想深入哪里 | 文档 |
 | --- | --- |
+| 从剧本开发视觉世界与关键画面 | [Story to Frame 工作流](zy-cinematic-realism/references/story-visual-development.md) · [《泰坦尼克号》实战](docs/titanic-story-to-frame.md) |
 | 故事瞬间、导演与摄影方法 | [视觉指南与历史作品](docs/visual-guide.md) |
 | 参考职责、媒介与解梦 | [解梦工作流](zy-cinematic-realism/references/dream-decode.md) · [解梦卡](zy-cinematic-realism/references/decode-card.md) |
 | 持续修改与跨对话恢复 | [项目交接卡](zy-cinematic-realism/references/project-handoff.md) |
@@ -149,7 +163,7 @@ v2.4 尊重 **轻微 / 明确 / 强烈**；不指定时默认明确。轻微选�
 | 局部修复 | [Prompt Doctor](zy-cinematic-realism/references/result-repair.md) |
 | 模型编译与选择 | [Model Compiler](zy-cinematic-realism/references/prompt-compiler.md) · [Model Router](zy-cinematic-realism/references/model-routing.md) |
 | 四模型历史图片对照 | [同一个 Scene Master 的解释](docs/model-comparison.md) |
-| 本次升级与版本历史 | [v2.4 发布说明](RELEASE_NOTES.md) · [CHANGELOG](CHANGELOG.md) |
+| 本次升级与版本历史 | [v2.5 发布说明](RELEASE_NOTES.md) · [CHANGELOG](CHANGELOG.md) |
 
 支持 GPT Image 2.5（保留显式 GPT Image 2 兼容）、Midjourney V8.2、Seedream 5.0 Pro、Nano Banana 及模型中立流程。适配器记录资料核对日期；界面能力变化时核对对应官方说明，不把任务启发式当作永久模型排名。
 
@@ -157,11 +171,11 @@ v2.4 尊重 **轻微 / 明确 / 强烈**；不指定时默认明确。轻微选�
 <a id="validation"></a>
 ## 验证状态
 
-v2.4 新增强度、锁定、短输出、交接恢复与正向情绪的行为用例。静态校验、独立文本行为检查、实际图像对照与人类体验评测分别记录。
+v2.5 围绕剧本事实、人物变化、视觉开发与单帧选择增加行为检查。静态校验、独立文本行为检查、实际图像对照与人类体验评测分别记录。
 
-**图像质量与新版交互增益尚待验证。** 现有展示图不是新版重测结果；手动回归中的 Expected 是预期行为，不是执行记录。
+**个案展示与普遍增益分开判断。** 历史作品不是本次升级的重测结果；手动回归中的 Expected 是预期行为，不是执行记录。新案例的生成、比较与检查状态见验证记录。
 
-[本次验证记录](docs/validation-v2.4.md) · [完整手动回归与图像对照协议](zy-cinematic-realism/tests/manual-regression.md)
+[本次验证记录](docs/validation-v2.5.md) · [v2.4 验证历史](docs/validation-v2.4.md) · [完整手动回归与图像对照协议](zy-cinematic-realism/tests/manual-regression.md)
 
 仓库根目录保存教程与作品；`zy-cinematic-realism/` 是可安装 Skill 本体。`scripts/` 提供静态校验与打包脚本，ZIP 不携带作品图库。
 

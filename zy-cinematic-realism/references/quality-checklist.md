@@ -27,6 +27,15 @@ Check every applicable item before responding. Rewrite any failed structural ite
 - [ ] Color and material response follow sources, exposure, weather, and surface properties.
 - [ ] Capture texture reinforces the scene instead of replacing it.
 
+## Story Visual Development (when active)
+
+- [ ] Output matches the requested analysis, visual development, or prompts; no automatic prompt/model question or fixed count of directions/frames.
+- [ ] Source version and reading coverage are accurate; facts are traceable without claiming unread scenes, original page numbers, actor identity, or remembered film shots.
+- [ ] Source facts, narrative interpretations, and visual proposals remain distinct; unaccepted proposals are not accepted project locks.
+- [ ] Relationship/emotion changes have observable expression, and each selected keyframe has a story or art-development reason with one coherent current moment.
+- [ ] Character and audience knowledge, chronology, wardrobe/prop states, and source-revision dependencies remain consistent; later reveals do not leak into an earlier frame.
+- [ ] Story-developed visual rules follow this story's space, action, materials, and source light, rather than a fixed emotion/color formula; Dream Decode observation claims require actual image evidence.
+
 ## Model
 
 - [ ] Target model is known or explicitly model-neutral.

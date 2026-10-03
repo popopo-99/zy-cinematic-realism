@@ -26,6 +26,12 @@ Do not force absent or irrelevant fields into the visible prompt. Resolve only w
 
 For visual decisions, distinguish **USER-LOCKED** explicit user choices from **OPEN** unspecified or system-completed defaults. Resolve OPEN camera/viewpoint, composition, subject scale, light, framing, perspective, blocking, aspect ratio, and visual-center decisions against authorized reference Hybrid Decisions before final locking. `USER-LOCKED > reference-derived Hybrid Decision > system-generated default`. This does not create a second source of scene facts; the resolved Scene Master is canonical.
 
+## Story Visual Development Inputs
+
+For [story visual development](story-visual-development.md), build the current Scene Master from the source-backed moment, relevant Continuity Bible state, and resolved visual proposal. Preserve explicit source actions and visual directions for faithful development; only a user-requested adaptation may change them. Keep interpretations separate from source facts and complete unspecified visual decisions as OPEN candidate choices. Freezing a candidate for compilation does not mark it user accepted or USER-LOCKED.
+
+Retain source version, scene/beat locator, character/audience knowledge, and revision dependencies in the [story source ledger](story-source-ledger.md) when needed, not as compulsory prompt headings. Do not paste the ledger or import unprovided later plot, actors, or original-film framing. Prompts must show one coherent current moment and only the information intended to be visible then. Story-derived art direction remains distinct from visual grammar actually observed in references; a proposed narrative device is not an observed Dream Decode Expression Mechanism.
+
 ## Dream Decode Inputs
 
 When visual references are used for analysis or transfer, compile from two coordinated structures:

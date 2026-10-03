@@ -1,3 +1,28 @@
+# 造梦师 v2.5.0 — 剧本到画面
+
+**DREAM DIRECTOR v2.5.0 — Story to Frame**
+
+**状态：发布候选，尚未发布 GitHub Release。** 当前通过审查分支或本次交付的 v2.5.0 候选 ZIP 安装；实际构建、图片与检查结果见[验证记录](docs/validation-v2.5.md)。
+
+v2.5 从一段可读剧本开始，先理解人物的目标、阻力和变化，再开发视觉世界与关键画面。服装、空间、光线和机位各自服务这个变化，最后接入已有 Scene Master、连续性设定与模型编译。
+
+- **自然语言入口：**“我有一段剧本，先帮我找人物变化，再开发视觉世界和关键画面。”不必先记住模式名。
+- **事实与设计分开：**原文明示、剧情解读和新导演建议分别呈现；可读取的片段是分析依据，电影记忆与剧照不作为剧本证据。
+- **先建立视觉世界：**为人物、空间、衣饰、材质与光线形成可继续修改的共同设定；已接受的方向进入后续关键帧与局部修复。
+- **每帧一个瞬间：**保留原稿动作顺序与地点，选一个可见动作成为关键画面；只有分析需求时先交分析。
+- **《泰坦尼克号》实战：**取 James Cameron 署名剧本第 85、87 场三等舱舞会，展示“剧情分析 → 视觉提案 → 参考解梦 → Image2 外部生成 → 检查”。用户评价 P01“效果还不错”，认可它作为后续视觉方向；案例仅展示这张修订图。P02/P03 视觉未通过，已停止图片迭代。配图为原创视觉开发，非电影剧照；来源与新增设计见[案例页](docs/titanic-story-to-frame.md)。
+- **同步上手文档：**中英文首页、安装教程与自包含聊天入门版增加剧本入口，基础聊天版仍明确自身范围。
+
+静态检查、文本行为验证和用户图片反馈分别记录。两版文字输出及同一次压缩修订已保存；原计划六图比较未完成，后续参考驱动的外部修订不属于受控 A/B，不据此宣布新版胜出。查看[文字比较](docs/titanic-comparison-v2.5.md)、[本次验证记录](docs/validation-v2.5.md)与[CHANGELOG](CHANGELOG.md)。
+
+**Candidate install:** 从[审查分支](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame/zy-cinematic-realism)安装，或导入本次交付的 `zy-cinematic-realism-v2.5.0.zip`，完整替换旧目录。正式 Release 下载待发布后提供。安装包保留单层 `zy-cinematic-realism/` 结构，调用为 `$zy-cinematic-realism`，许可证为 CC BY-NC 4.0。
+
+**English:** Story to Frame reads character goals, resistance, and change before developing a visual world and individual key frames. Facts, interpretation, and new proposals remain distinct. The Titanic case connects this work with reference decoding and external Image2 generation, displaying only the P01 revision recognized by the user as the direction for later work. P02/P03 failed visual review, and image iteration has stopped. Actual text runs and an additional compression round are preserved. The planned image comparison was not completed; later reference-driven revisions do not establish an A/B winner. This is a release candidate, not a published GitHub Release.
+
+---
+
+## Previous release — v2.4.0
+
 # 造梦师 v2.4.0 — 创作控制与继续使用
 
 **DREAM DIRECTOR v2.4.0 — Creator Control & Continuity**

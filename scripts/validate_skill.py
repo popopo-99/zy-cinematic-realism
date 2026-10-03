@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the v2.4.0 Skill and its Dream Decode contracts."""
+"""Validate the v2.5.0 Skill, resource routes, and existing contracts."""
 
 from __future__ import annotations
 
@@ -55,13 +55,33 @@ def main() -> int:
     for path in (ROOT / "README.md", ROOT / "README_EN.md", ROOT / "CHANGELOG.md", ROOT / "RELEASE_NOTES.md", SKILL / "SKILL.md"):
         body = path.read_text(encoding="utf-8")
         current = body.split("\n---\n", 1)[0] if path.name == "RELEASE_NOTES.md" else body
-        for stale in ("v2.4.0-dev", "unreleased", "未发布", "local development", "本地开发版"):
+        # Release candidates may truthfully state that they are not published.
+        # Reject stale development identities, not accurate publication status.
+        for stale in ("v2.5.0-dev", "local development", "本地开发版"):
             if stale in current:
                 errors.append(f"{path.relative_to(ROOT)}: current release content contains '{stale}'.")
         if re.search(r"[A-Z]:\\Users\\", body):
             errors.append(f"{path.relative_to(ROOT)}: local Windows user path must not be published.")
 
-    require(SKILL / "SKILL.md", ("name: zy-cinematic-realism", "v2.4.0", "medium-router.md", "dream-decode.md", "prompt-compiler.md", "USER-LOCKED", "OPEN", "optional `表达机制`"), errors)
+    require(SKILL / "SKILL.md", ("name: zy-cinematic-realism", "v2.5.0", "medium-router.md", "dream-decode.md", "prompt-compiler.md", "USER-LOCKED", "OPEN", "optional `表达机制`", "story-visual-development.md"), errors)
+    story_path = REF / "story-visual-development.md"
+    if not story_path.is_file():
+        errors.append("Missing story visual development resource.")
+    for path in (REF / "story-source-ledger.md", SKILL / "tests" / "story-to-frame.md", ROOT / "docs" / "titanic-story-to-frame.md", ROOT / "docs" / "validation-v2.5.md"):
+        if not path.is_file():
+            errors.append(f"Missing Story to Frame resource: {path.relative_to(ROOT)}")
+    # These are resource/contract checks; actual responses are reviewed separately.
+    require(story_path, ("Source Facts /", "Interpretations /", "Visual Proposals /", "Task and Reading Scope", "cinematic-principles.md", "camera-and-light.md", "prompt-compiler.md", "continuity-cards.md", "Dream Decode"), errors)
+    require(REF / "story-source-ledger.md", ("Read coverage", "Frame dependencies", "Result status", "Recompile only the requested affected outputs"), errors)
+    require(REF / "prompt-compiler.md", ("Story Visual Development Inputs", "Freezing a candidate for compilation does not mark it user accepted or USER-LOCKED"), errors)
+    require(REF / "quality-checklist.md", ("Story Visual Development (when active)",), errors)
+    story_tests = SKILL / "tests" / "story-to-frame.md"
+    if story_tests.is_file():
+        case_ids = re.findall(r"^## (S\d{2}) —", story_tests.read_text(encoding="utf-8"), re.MULTILINE)
+        if case_ids != [f"S{number:02d}" for number in range(1, 10)]:
+            errors.append("Story regression document must retain S01–S09 in order.")
+    if not (ROOT / "docs" / "behavior-check-v2.5.md").is_file():
+        errors.append("Missing v2.5 text behavior record.")
     require(REF / "medium-router.md", ("Primary Medium", "Secondary Influences (0–2)", "Confidence", "Medium Constraints", "Medium Avoid", "Conflict Notes", "never average", "Host Medium", "Secondary Construction Rule"), errors)
     require(REF / "dream-decode.md", ("Expression Mechanism is **optional**", "Expression Mechanism: Not required", "Abnormal Event", "Event Locus", "Subject–Event Coupling", "Emotional Function", "Transferable Mechanism", "Surface Implementation", "Non-transferable Residue", "Core Visual Rules", "five to eight", "Strong Transfer", "Conditional Transfer", "Do Not Transfer", "USER-LOCKED", "OPEN"), errors)
     require(REF / "prompt-compiler.md", ("Compiler Priority Gate", "USER-LOCKED", "OPEN", "User Explicit Reference Roles", "Primary Medium / Medium Constraints", "Expression Mechanism (optional)", "Active Core Rules (3–5)", "Transfer Scope", "Medium Drift Risk", "Mechanism Drift Risk", "Prompt Overload", "three to five Active Core Rules", "full five to eight Core Visual Rules"), errors)
@@ -84,11 +104,11 @@ def main() -> int:
     require(REF / "project-handoff.md", ("accepted", "cumulative", "automatic storage", "Result status", "unavailable image", "Newer explicit user instructions"), errors)
     for name in ("chat-starter-zh.md", "chat-starter-en.md"):
         path = ROOT / "docs" / name
-        require(path, ("v2.4.0", "CC BY-NC 4.0"), errors)
+        require(path, ("v2.5.0", "CC BY-NC 4.0"), errors)
         if path.is_file() and re.search(r"\]\((?:\.\./)?(?:zy-cinematic-realism/)?references/", path.read_text(encoding="utf-8")):
             errors.append(f"{name}: basic chat rules depend on external reference files.")
     for path in (ROOT / "docs" / "getting-started.md", ROOT / "docs" / "getting-started_EN.md"):
-        require(path, ('<a id="install-codex"></a>', '<a id="use-chatgpt"></a>', "v2.4.0"), errors)
+        require(path, ('<a id="install-codex"></a>', '<a id="use-chatgpt"></a>', "v2.5.0"), errors)
     metadata = SKILL / "agents" / "openai.yaml"
     require(metadata, ("$zy-cinematic-realism", "model-native image prompt"), errors)
     if metadata.is_file() and "model-native cinematic image prompt" in metadata.read_text(encoding="utf-8"):
@@ -110,7 +130,7 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print(f"Skill validation passed: v2.4.0, {len(director_files)} directors, Dream Decode contracts, {len(cases)} image-level manual cases, README anchors, and local links.")
+    print(f"Skill validation passed: v2.5.0, {len(director_files)} directors, Story to Frame route, Dream Decode contracts, {len(cases)} image-level manual cases, README anchors, and local links.")
     print("Image generation and human scoring: NOT AUTOMATICALLY VERIFIED.")
     return 0
 

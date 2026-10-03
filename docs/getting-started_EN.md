@@ -1,5 +1,7 @@
 # Installation and First Use
 
+This guide covers the **v2.5.0 release candidate**, which has no published GitHub Release yet. Install the [review-branch source](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame/zy-cinematic-realism), or use the supplied candidate ZIP, `zy-cinematic-realism-v2.5.0.zip`. The [current stable release](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) is available separately.
+
 
 <a id="install-codex"></a>
 ## Install in Codex
@@ -12,14 +14,15 @@ Enter this in Codex:
 
 ```text
 Use $skill-installer to install zy-cinematic-realism from this GitHub repository:
-https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism
+https://github.com/popopo-99/zy-cinematic-realism
+Use the review branch codex/story-to-frame and the skill folder zy-cinematic-realism.
 ```
 
 If your Codex interface offers a Skills installation or local import entry point, you can also choose the ZIP from the latest Release or the extracted `zy-cinematic-realism` folder. Entry points vary by product interface.
 
 ### Method 2: Install manually
 
-Download and extract the latest package from [Releases](https://github.com/popopo-99/zy-cinematic-realism/releases/latest), then copy the complete `zy-cinematic-realism` folder into your user-level Skills directory.
+Download the [review-branch source](https://github.com/popopo-99/zy-cinematic-realism/tree/codex/story-to-frame), or extract the supplied candidate ZIP, then copy the complete `zy-cinematic-realism` folder into your user-level Skills directory. Use [Releases](https://github.com/popopo-99/zy-cinematic-realism/releases/latest) for the stable edition.
 
 **Windows**
 
@@ -58,7 +61,7 @@ If Skills are available in your account or workspace:
 1. Open **Plugins** in the sidebar.
 2. Open **Skills** in the Plugin Directory.
 3. Choose **Create**, then **Upload from your computer**.
-4. Upload `zy-cinematic-realism-v2.4.0.zip` from the latest Release.
+4. Upload the supplied candidate package, `zy-cinematic-realism-v2.5.0.zip`; the formal Release is not published yet.
 5. After scanning and installation finish, enter `$zy-cinematic-realism` or describe a cinematic prompt task directly.
 
 Personal Skills currently need to be added separately in desktop and web/mobile interfaces; they do not automatically synchronize across those interfaces.
@@ -78,6 +81,26 @@ Give me a Midjourney prompt and briefly explain the key visual decisions.
 ```
 
 Expect a scene-specific prompt without another model question. If the Skill is missing, check for an accidentally nested duplicate folder. Replace the complete old folder when upgrading; avoid duplicate installations.
+
+### Start with a screenplay excerpt
+
+Attach the excerpt you want to develop, then describe the task naturally:
+
+```text
+Use $zy-cinematic-realism:
+I have a screenplay excerpt. Find the character change first,
+then develop the visual world and key frames.
+Separate script facts, story interpretation, and new directing proposals.
+Choose one specific moment per frame. Start with a model-neutral plan.
+Here is the excerpt:
+(Paste the passage you want to develop here.)
+```
+
+The Skill reads the characters' goals, resistance, and change before developing the visual world and key frames. Wardrobe, lighting, and camera choices absent from the passage are identified as proposals. For an analysis-only first pass, say “Analyze first; no prompt yet.” Once a direction is accepted, ask “Keep this visual world and compile the selected frames for Midjourney.”
+
+For a full script, name the scenes you want to develop. A movie title still needs a readable excerpt or source. Film memory, subtitles, and film stills do not replace screenplay evidence.
+
+The [Titanic third-class dance example](titanic-story-to-frame.md) shows script actions becoming original visual development. Its illustration is the P01 revision recognized by the user as the direction for later work, not a film still; later-frame status is recorded separately.
 
 ### Resume in a new conversation
 
