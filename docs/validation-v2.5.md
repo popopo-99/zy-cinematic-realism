@@ -33,6 +33,7 @@ Date: 2026-10-03; image follow-up: 2026-10-04 (Asia/Shanghai). Release status: c
 | Git diff空白与冲突检查 | 已通过git diff --check。 |
 | GitHub Actions | 已通过：实现提交b642f81的[push检查](https://github.com/popopo-99/zy-cinematic-realism/actions/runs/37116954884)与[pull_request检查](https://github.com/popopo-99/zy-cinematic-realism/actions/runs/37117020633)，均执行静态检查与打包。后续文档提交的最新检查见[PR #5](https://github.com/popopo-99/zy-cinematic-realism/pull/5)。 |
 | 此前README浏览器展示 | 已检查：GitHub审查分支的中英文README与泰坦尼克号案例页，在默认桌面视窗及390×844窄屏查看文字换行、保留的历史作品与案例图；P01图已加载为1672×941，案例折叠提示词可展开。文件预览中的段落跳转未稳定触发，最终把首页剧本入口改为直接打开实战页。此次新增的原创案例入口已做结构与链接校验；前述浏览器记录不覆盖本轮新入口。此检查不判断图片创作质量。 |
+| 本轮案例与首页浏览器展示 | 已检查：2026-10-04在默认桌面视窗查看两个案例与中英文README。照相馆L01–L03及泰坦尼克号P01–P03均加载为1672×941；查看图片与说明排版，照相馆提示词折叠可展开，案例返回首页及语言切换可到达。中英文首页均显示新回图可用状态及准确的候选发布身份。本轮未重做窄屏检查。 |
 
 候选安装包：`zy-cinematic-realism-v2.5.0.zip`，212,223 bytes。构建校验输出的 SHA-256：
 
