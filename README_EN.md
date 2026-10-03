@@ -53,14 +53,17 @@ Add “prompt only” for a copyable prompt without explanation. Ask for the Sce
 <a id="use-cases"></a>
 ## Start with What You Have
 
-| Task | Say this → receive |
-| --- | --- |
-| Idea | “Two detectives ride a night bus after a failed interrogation. Give me a cinematic still prompt.”<br>→ Brief decisions and a target-native prompt |
-| Reference | “A supplies color; B supplies composition. Replace the content with a watchmaker before dawn.”<br>→ Roles, core rules, and a new-scene prompt |
-| Repair | “Identity and framing are right. Fix only the commercial-looking light.”<br>→ Up to three dominant failures and scoped repair |
-| Series | “Eight urban-knight shots; preserve face, armor, garage, and sources.”<br>→ Continuity, shot list, and controlled deltas |
-| Variation | “Same scene, compile for Seedream.” / “Change only the camera.”<br>→ Transcode or a one-variable variation |
-| Resume | “Make a handoff card with accepted changes and the next step.”<br>→ Complete portable project state |
+- **Idea**: “Two detectives ride a night bus after a failed interrogation. Give me a cinematic still prompt.”<br>→ Brief decisions and a target-native prompt
+
+- **Reference**: “A supplies color; B supplies composition. Replace the content with a watchmaker before dawn.”<br>→ Roles, core rules, and a new-scene prompt
+
+- **Repair**: “Identity and framing are right. Fix only the commercial-looking light.”<br>→ Up to three dominant failures and scoped repair
+
+- **Series**: “Eight urban-knight shots; preserve face, armor, garage, and sources.”<br>→ Continuity, shot list, and controlled deltas
+
+- **Variation**: “Same scene, compile for Seedream.” / “Change only the camera.”<br>→ Transcode or a one-variable variation
+
+- **Resume**: “Make a handoff card with accepted changes and the next step.”<br>→ Complete portable project state
 
 References contribute only within assigned roles. Paper illustration does not default to photography; an identity reference does not take over the medium. Analysis-only requests receive no unwanted generation prompt.
 
