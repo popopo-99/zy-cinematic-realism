@@ -9,6 +9,8 @@ SPDX-License-Identifier: CC-BY-NC-4.0
 
 Keep the image grounded, materially believable, and free from the common polished AI look.
 
+Apply cleanup within the authorized medium and mood. Brightness, clean surfaces, clear faces, joy, or a public event are not failures by themselves. Do not add grime, darkness, occlusion, melancholy, or underexposure solely to prove cinematic realism. For non-photographic media, preserve the observed making logic instead of applying photographic cleanup.
+
 ## Common Failure Modes
 
 - waxy skin, plastic sheen, or over-smoothed surfaces;

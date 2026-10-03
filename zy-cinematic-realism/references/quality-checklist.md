@@ -16,6 +16,7 @@ Check every applicable item before responding. Rewrite any failed structural ite
 - [ ] The visual center and information hierarchy are intentional.
 - [ ] Period, wardrobe, props, signage, architecture, time, and weather agree.
 - [ ] No user-fixed fact or restriction was silently changed.
+- [ ] The requested emotional direction and timing survive; no automatic melancholy, darkness, or aftermath replaced joy, daylight, or climax.
 
 ## Camera and Light
 
@@ -46,7 +47,9 @@ Check every applicable item before responding. Rewrite any failed structural ite
 
 ## Director and Cleanup
 
-- [ ] A supported named-director prompt follows the Four-Axis and nearest-neighbor rules in `director-routing.md`.
+- [ ] Director strength matches the request; locked dimensions are excluded from differentiation quotas.
+- [ ] Four axes are checked internally, while the adapter and requested output depth control visible syntax.
+- [ ] Follow-up edits preserve earlier accepted changes; handoff never implies automatic storage or unobserved image approval.
 - [ ] Removing director names and film titles still leaves an executable visual method.
 - [ ] Surfaces are not uniformly glossy, sharp, clean, or equally legible.
 - [ ] The exclusion list is concise, scene-specific, model-compatible, and non-contradictory.

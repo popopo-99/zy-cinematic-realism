@@ -1,0 +1,23 @@
+name: Validate Skill and Package
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  static-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate director library and local links
+        run: python -B scripts/validate_director_library.py
+      - name: Validate current Skill contracts and README navigation
+        run: python -B scripts/validate_skill.py
+      - name: Build and inspect the release package
+        run: python -B scripts/build_release.py

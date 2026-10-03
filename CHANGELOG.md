@@ -1,5 +1,34 @@
 # Changelog
 
+## v2.4.0 — 2026-10-03
+
+### Fixed
+
+- Director strength now respects subtle / clear / strong requests; unspecified strength uses clear instead of coercing every request to iconic.
+- User-locked action, viewpoint, framing, sources, and composition are excluded from differentiation quotas. Strong interpretation uses only available compatible open decisions.
+- Four-axis director planning no longer forces a labeled five-line block into every native or prompt-only result; target adapters control final syntax.
+- Installation docs no longer equate pasting SKILL.md with providing its complete reference library.
+
+### Added
+
+- Opt-in Project Handoff Card and restore workflow for cumulative accepted state, reference availability, image status, and the next permitted change.
+- Chinese and English self-contained basic chat starters without external reference-file dependencies; their reduced scope is explicit.
+- A reference-grounded Dream Decode text example with a complete portable card, new-scene prompt, and explicit not-generated status.
+- Manual behavior cases 61–72 for strength, locks, native output, cumulative handoff, unavailable inputs, mood preservation, and accepted edits.
+- Reproducible ZIP builder and lossless PNG-to-WebP presentation conversion with pixel equality checks.
+
+### Improved
+
+- Chinese and English README lead with first use and creator tasks, with long tutorials, authored galleries, credits, model comparisons, and unchanged licensing text linked from focused pages.
+- Ordinary creation can expose a few concise visual decisions; prompt-only and analysis-only output remain scoped. Detailed plans and handoff are requested as needed.
+- Cinematic defaults and cleanup preserve explicit joy, daylight, celebration, or climax instead of implying darkness or aftermath is mandatory.
+
+### Validation and Compatibility
+
+- Independent text behavior checks and static/package validation are recorded separately in docs/validation-v2.4.md. Image comparisons and human usability gains remain unvalidated.
+- Technical name, invocation, 38 director files, four model adapters, legacy handling, original showcase images, attribution, and CC BY-NC 4.0 remain intact.
+- Intentional behavior change: unspecified director strength is now clear. Use strong / iconic explicitly to request the previous strong interpretation, subject to user locks.
+
 ## v2.3.0 — 2026-09-27
 
 ### Added

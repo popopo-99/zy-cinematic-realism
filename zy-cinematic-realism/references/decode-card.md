@@ -153,6 +153,8 @@ When the user supplies an existing Decode Card:
 4. Respect newer explicit user instructions.
 5. Compile `Scene Master + Primary Medium + optional Expression Mechanism + 3–5 Active Core Rules + Transfer Scope + relevant Visual Grammar` through the Compiler Priority Gate and selected target adapter. Omitted optional fields are not a license to invent them.
 
+In a new conversation the user must supply the complete card again. A title alone does not recover an unavailable card. Reattach accessible images when visual identity or fresh image comparison requires them; a text card is not an image reference. Do not claim persistent memory.
+
 Do not mechanically match the card to the nearest predefined Style Card. A Style Card may supplement it only when the user asks to combine them.
 
 ## Series Continuity

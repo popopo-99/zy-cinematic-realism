@@ -1,3 +1,27 @@
+# 造梦师 v2.4.0 — 创作控制与继续使用
+
+**DREAM DIRECTOR v2.4.0 — Creator Control & Continuity**
+
+v2.4 围绕已有方法改善控制与入口：从一句话开始，明确哪些决定可以改，带着已接受的状态继续创作。
+
+- **导演强度真实分流：**轻微选少量兼容特征，明确形成可辨识决定，强烈在未锁定维度中追求结构差异。不指定时默认明确；需要此前的强烈演绎请显式写“强烈 / iconic”。任何强度都不能覆盖用户固定的动作、机位、构图、光源与画幅。
+- **四轴服务编译：**四轴仍是专业规划与检查结构，但不再强迫每条 Prompt 带相同标签。模型适配器和用户要求决定最终表达；只要 Prompt 就只给 Prompt。
+- **可继续修改：**普通创作按需呈现少量关键画面决定；后续只改指定变量，并保留此前接受的修改。
+- **跨对话交接：**按请求整理完整项目交接卡，记录已知状态、视觉规律、参考职责、累计修改、真实图像状态和下一步。新对话重新提供卡片与所需图片，不声称自动记忆。
+- **第一次使用提前：**中英文 README 按上手、任务、案例、安装与进阶文档重排。长教程、历史作品、完整致谢和授权内容仍保留。
+- **基础聊天版：**没有 Skills 入口时可用自包含入门文本；明确不包含完整导演库或参数适配器。只粘贴主 SKILL.md 不再被描述为完整安装。
+- **作品与证据分开：**原作品保留历史标注，新增解梦文本示例标明尚未生成迁移图。PNG 的展示副本采用无损 WebP，原图保留；不宣称页面速度或生图质量已经提升。
+
+这些是实现的行为与文档变化，不是已经证明的新旧版图像质量排名。查看 [验证记录](docs/validation-v2.4.md)、[CHANGELOG](CHANGELOG.md) 与 [手动图像对照协议](zy-cinematic-realism/tests/manual-regression.md)。
+
+**Upgrade:** 下载 `zy-cinematic-realism-v2.4.0.zip`，完整替换旧目录。安装包只有一层顶级 `zy-cinematic-realism/`，包含 Skill、references、assets、tests、LICENSE 与 NOTICE；图库和仓库文档不进入包内。调用仍是 `$zy-cinematic-realism`，许可证仍是 CC BY-NC 4.0。
+
+**English:** Director requests now honor subtle / clear / strong strength, with clear as the unspecified default and locked dimensions excluded from differentiation. Four axes remain internal planning rather than mandatory native-prompt labels. Opt-in handoff preserves cumulative state without invented persistence. Bilingual first-use docs and self-contained basic chat editions are included. Historical images and ungenerated text examples are labeled honestly. Static checks and independent text checks do not establish image-quality or human usability gains.
+
+---
+
+## Previous release — v2.3.0
+
 # 造梦师 v2.3.0 — 解梦
 
 **DREAM DIRECTOR v2.3.0 — Dream Decode**

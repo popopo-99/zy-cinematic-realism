@@ -13,7 +13,7 @@ Weak: `A detective stands on a New York street.`
 
 Stronger: `After the last patrol car leaves, a detective remains outside the shuttered grocery store, holding a coffee that has gone cold.`
 
-Favor moments of waiting, aftermath, hesitation, interrupted routine, departure, or unobserved behavior. Use climactic action only when the brief depends on it.
+Follow the requested emotion and timing first. Joy, celebration, daylight, tenderness, and climactic action can all be grounded story moments. Waiting, aftermath, hesitation, interrupted routine, departure, and unobserved behavior are optional choices when the brief leaves timing open; they must not turn a joyful or energetic request into melancholy.
 
 ## 2. Give the camera a physical witness position
 
