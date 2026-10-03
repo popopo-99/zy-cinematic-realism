@@ -4,9 +4,9 @@
 
 **Turn an idea into a visual plan you can generate, revise, and continue.**
 
-Start with a story or references. Establish the scene, extract visual rules, and compile model-native prompts and scoped repair instructions.
+Start with a story, screenplay excerpt, or references. Establish the scene, develop the visual world, and compile model-native prompts and scoped repair instructions.
 
-**[Download v2.4.0](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.4.0)** · [60-second start](#quick-start) · [Examples](#showcase) · [Installation guide](docs/getting-started_EN.md)
+**v2.5.0 stable** · [Download the release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0) · [60-second start](#quick-start) · [Screenplay example](docs/titanic-story-to-frame.md) · [Examples](#showcase) · [Installation guide](docs/getting-started_EN.md)
 
 ![Two detectives sit apart in silence on a night bus after a failed interrogation](docs/images/hero-night-bus.webp)
 
@@ -58,6 +58,8 @@ Add “prompt only” for a copyable prompt without explanation. Ask for the Sce
 <a id="use-cases"></a>
 ## Start with What You Have
 
+- **Story / screenplay**: “Develop a scene art concept to discuss with the director.” / “Choose key frames where the relationship changes.”<br>→ Art concepts explore candidate spaces, materials, character looks, props, and light; narrative key frames show one specific moment
+
 - **Idea**: “Two detectives ride a night bus after a failed interrogation. Give me a cinematic still prompt.”<br>→ Brief decisions and a target-native prompt
 
 - **Reference**: “A supplies color; B supplies composition. Replace the content with a watchmaker before dawn.”<br>→ Roles, core rules, and a new-scene prompt
@@ -71,6 +73,19 @@ Add “prompt only” for a copyable prompt without explanation. Ask for the Sce
 - **Resume**: “Make a handoff card with accepted changes and the next step.”<br>→ Complete portable project state
 
 References contribute only within assigned roles. Paper illustration does not default to photography; an identity reference does not take over the medium. Analysis-only requests receive no unwanted generation prompt.
+
+For an existing story or script, one sentence describing the task is enough. Analysis-only requests stay analysis-only. An art concept or frame plan still needs model-native prompt compilation; the Skill does not generate images automatically.
+
+<a id="story-to-frame"></a>
+## Screenplay to Frames: Titanic's Third-Class Dance
+
+An awkward first dance, active participation after removing her shoes, and laughter after being caught beside a table. Read the change, develop a shared visual world, then turn actions and relationships into key frames.
+
+[Workflow and actual result status](docs/titanic-story-to-frame.md): script facts, interpretation, and new directing proposals lead into reference decoding, external generation, and inspection. The case shows the P01 direction and the new P02/P03 images confirmed usable by the user, together with the supplied prompts and actual result observations.
+
+### Original Short Story: Art Concepts and Relationship Key Frames
+
+[The Last Photo trial](docs/last-photo-art-development.md): three follow-up external images are approved by the user for case display: an invitation through an empty chair, a shoulder lean with a small smile, and an empty-room art concept. They show the different purposes of art development and relationship key frames; production details remain open.
 
 <a id="showcase"></a>
 ## Three Ways to See the Method
@@ -134,10 +149,12 @@ Reuse the card in the same conversation; supply its full contents again in a new
 | Environment | Entry point |
 | --- | --- |
 | Codex | [Install from GitHub or a local folder](docs/getting-started_EN.md#install-codex) |
-| ChatGPT with Skills | [Upload the complete release ZIP](docs/getting-started_EN.md#use-chatgpt) |
+| ChatGPT with Skills | [Upload the complete installation ZIP](docs/getting-started_EN.md#use-chatgpt) |
 | No Skills entry point | [Paste the self-contained basic chat edition](docs/chat-starter-en.md) |
 
-`zy-cinematic-realism-v2.4.0.zip` has one top-level `zy-cinematic-realism/` folder. Replace the complete old folder and avoid duplicate installations. **SKILL.md alone does not include its referenced method library.**
+Download the [complete v2.5.0 package](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip) ([SHA-256 checksum](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip.sha256)), or install the source from [main](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism). See the [GitHub Release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0) for version notes.
+
+The installation ZIP has one top-level `zy-cinematic-realism/` folder. Replace the complete old folder and avoid duplicate installations. **SKILL.md alone does not include its referenced method library.**
 
 <a id="model-router"></a>
 <a id="model-comparison"></a>
@@ -146,10 +163,13 @@ Reuse the card in the same conversation; supply its full contents again in a new
 
 `Scene Master + Visual Grammar → Independent Model Compiler → Result Repair`
 
+Story or screenplay work reads character change, develops scene art concepts or narrative key frames for the requested purpose, then joins this pipeline.
+
 Model syntax can change; locked scene facts cannot change silently.
 
 | Topic | Documentation |
 | --- | --- |
+| Develop art concepts or narrative key frames from a story | [Story to Frame workflow](zy-cinematic-realism/references/story-visual-development.md) · [Titanic example](docs/titanic-story-to-frame.md) |
 | Story, directors, and cinematography | [Visual guide and historical work](docs/visual-guide_EN.md) |
 | Reference roles, medium, and decode | [Dream Decode](zy-cinematic-realism/references/dream-decode.md) · [Decode Card](zy-cinematic-realism/references/decode-card.md) |
 | Iteration and a new conversation | [Project Handoff Card](zy-cinematic-realism/references/project-handoff.md) |
@@ -157,7 +177,7 @@ Model syntax can change; locked scene facts cannot change silently.
 | Scoped repair | [Prompt Doctor](zy-cinematic-realism/references/result-repair.md) |
 | Model compilation and selection | [Compiler](zy-cinematic-realism/references/prompt-compiler.md) · [Router](zy-cinematic-realism/references/model-routing.md) |
 | Historical four-model image comparison | [One Scene Master, multiple interpretations](docs/model-comparison.md) |
-| Release changes | [v2.4 notes](RELEASE_NOTES.md) · [CHANGELOG](CHANGELOG.md) |
+| Release changes | [v2.5 notes](RELEASE_NOTES.md) · [CHANGELOG](CHANGELOG.md) |
 
 Supports GPT Image 2.5 with explicit GPT Image 2 compatibility, Midjourney V8.2, Seedream 5.0 Pro, Nano Banana, and model-neutral work. Adapters record documentation-check dates; verify current official controls when a frontend changes. Routing heuristics are not permanent rankings.
 
@@ -165,11 +185,11 @@ Supports GPT Image 2.5 with explicit GPT Image 2 compatibility, Midjourney V8.2,
 <a id="validation"></a>
 ## Validation Status
 
-v2.4 adds cases for strength, locks, brief output, handoff/resume, and positive emotion. Static validation, independent text behavior checks, image comparisons, and human usability evaluation are recorded separately.
+v2.5 adds behavior checks for script facts, character change, visual development, and choosing an individual frame. Static validation, independent text behavior checks, image comparisons, and human usability evaluation are recorded separately.
 
-**Image quality and interaction gains remain unvalidated.** Existing images are not new-version retests; Expected entries in manual regression are specifications, not execution records.
+**A worked example and general improvement are separate claims.** Historical images are not retests for this upgrade; Expected entries in manual regression are specifications, not execution records. See the validation record for the new example's generation, comparison, and check status.
 
-[Validation record](docs/validation-v2.4.md) · [Manual regression and image comparison protocol](zy-cinematic-realism/tests/manual-regression.md)
+[Current validation record](docs/validation-v2.5.md) · [v2.4 validation history](docs/validation-v2.4.md) · [Manual regression and image comparison protocol](zy-cinematic-realism/tests/manual-regression.md)
 
 The repository root contains tutorials and work; `zy-cinematic-realism/` is the installable Skill. `scripts/` provides static checks and packaging. The ZIP excludes the showcase gallery.
 

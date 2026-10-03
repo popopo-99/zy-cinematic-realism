@@ -1,3 +1,29 @@
+# 造梦师 v2.5.0 — 剧本到画面
+
+**DREAM DIRECTOR v2.5.0 — Story to Frame**
+
+**正式版：v2.5.0 · 2026-10-04。** 下载与版本说明见 [GitHub Release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0)；实际构建、图片与检查结果见[验证记录](docs/validation-v2.5.md)。
+
+v2.5 从一段可读故事或剧本开始，先理解人物的目标、阻力和变化，再按当前用途开发给导演讨论的场景美术概念，或挑关系变化的叙事关键画面。设计方案最后接入已有 Scene Master、连续性设定与模型编译。
+
+- **自然语言入口：**“先做给导演讨论的场景美术概念。”或“挑人物关系变化的关键画面。”按当前请求推进，不强制二选一菜单、额外多图或模型问卷。
+- **事实与设计分开：**原文明示、剧情解读和新导演建议分别呈现；可读取的片段是分析依据，电影记忆与剧照不作为剧本证据。
+- **美术概念与叙事画面各有用途：**美术概念讨论空间、材料、人物造型、道具与光线的候选设计；关键画面呈现关系变化中的具体瞬间。只分析时就只交分析，方案需要再编译成目标模型 Prompt；Skill 不自动生图。
+- **每帧一个瞬间：**保留原稿动作顺序与地点，选一个可见动作成为关键画面；只有分析需求时先交分析。
+- **《泰坦尼克号》实战：**取 James Cameron 署名剧本第 85、87 场三等舱舞会，展示“剧情分析 → 视觉提案 → 参考解梦 → Image2 外部生成 → 检查”。用户认可 P01 作为后续视觉方向，随后在外部重做 P02/P03 并确认可以使用；案例展示这三张结果及真实检查记录。旧差评稿与本轮提供的文字分别保留，不伪装成受控版本比较。配图为原创视觉开发，非电影剧照；来源与新增设计见[案例页](docs/titanic-story-to-frame.md)。
+- **《最后一张照片》定性试用：**[案例记录](docs/last-photo-art-development.md)保留最初美术提案与本轮三张外部回图：空椅邀请、靠肩小笑和无人空间美术。用户确认后续图可用于案例；器材造型与朝向仍作连续性讨论点。未做受控对比或宣称普遍画质提升。
+- **同步上手文档：**中英文首页、安装教程与自包含聊天入门版增加剧本入口，基础聊天版仍明确自身范围。
+
+静态检查、文本行为验证和用户图片反馈分别记录。两版文字输出及同一次压缩修订已保存；原计划六图比较未完成，后续参考驱动的外部修订不属于受控 A/B，不据此宣布新版胜出。新美术案例也不证明电影画质整体提升。查看[文字比较](docs/titanic-comparison-v2.5.md)、[本次验证记录](docs/validation-v2.5.md)与[CHANGELOG](CHANGELOG.md)。
+
+**Install / Upgrade:** 下载 [v2.5.0 完整安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip)（[SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip.sha256)），或从 [main 分支](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism)安装，完整替换旧目录。安装包保留单层 `zy-cinematic-realism/` 结构，调用为 `$zy-cinematic-realism`，许可证为 CC BY-NC 4.0。
+
+**English:** Story to Frame reads character goals, resistance, and change, then develops scene art concepts for director discussion or narrative key frames for the requested purpose. Art concepts explore candidate spaces, materials, character looks, props, and light; key frames show one specific moment of relationship change. The workflow does not require a two-option menu, extra image set, or model questionnaire. Analysis-only requests stay analysis-only; plans still need model-native prompt compilation, and the Skill does not generate images automatically. Facts, interpretation, and new proposals remain distinct. The Titanic case displays the P01 direction and replacement P02/P03 images confirmed usable by the user, with the supplied prompts and actual observations. Earlier failed results remain recorded separately. The Last Photo trial now includes three follow-up images accepted for case display: the empty-chair invitation, shoulder lean with a small smile, and an empty-room art concept. Camera design and direction remain continuity discussion points; the trial has no controlled comparison or production lock. Actual text runs and an additional compression round are preserved. The planned image comparison was not completed; these cases do not establish an A/B winner or general image-quality improvement. v2.5.0 is the stable release; install the complete versioned ZIP or use the main-branch source.
+
+---
+
+## Previous release — v2.4.0
+
 # 造梦师 v2.4.0 — 创作控制与继续使用
 
 **DREAM DIRECTOR v2.4.0 — Creator Control & Continuity**

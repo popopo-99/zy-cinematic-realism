@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SKILL_ROOT = REPO_ROOT / "zy-cinematic-realism"
 DIRECTOR_ROOT = SKILL_ROOT / "references" / "directors"
 INDEX_PATH = DIRECTOR_ROOT / "index.md"
-EXPECTED_VERSION = "2.4.0"
+EXPECTED_VERSION = "2.5.0"
 
 REQUIRED_SECTIONS = (
     "Identity",

@@ -1,6 +1,6 @@
 ---
 name: zy-cinematic-realism
-description: Compile scene ideas, visual references, or existing prompts into model-native image prompts. Use for cinematic creation or Dream Decode visual analysis and transfer; when a reference has a non-photographic medium, preserve that medium rather than defaulting to cinematic realism. Supports ChatGPT Images 2.5 / GPT Image 2.5 (with GPT Image 2 legacy compatibility), Midjourney, Seedream 5.0 Pro, Nano Banana, or a model-neutral workflow, plus model routing, continuity, prompt diagnosis, and result repair.
+description: Develop supplied scripts, short stories, or synopses into scene understanding, director-facing art concepts, and motivated narrative keyframes; compile scene ideas, visual references, or existing prompts into model-native image prompts when requested. Use for story visual development, cinematic creation, or Dream Decode visual analysis and transfer; preserve a reference's non-photographic medium. Supports ChatGPT Images 2.5 / GPT Image 2.5 (with GPT Image 2 legacy compatibility), Midjourney, Seedream 5.0 Pro, Nano Banana, or a model-neutral workflow, plus continuity and result repair.
 ---
 
 <!--
@@ -12,9 +12,9 @@ Source: https://github.com/popopo-99/zy-cinematic-realism
 
 # 造梦师 · ZY Cinematic Realism
 
-Public edition: 《造梦师 v2.4.0 — 创作控制与继续使用 / DREAM DIRECTOR v2.4.0 — Creator Control & Continuity》.
+Public edition: 《造梦师 v2.5.0 — 剧本到画面 / DREAM DIRECTOR v2.5.0 — Story to Frame》.
 
-Build every result in this order:
+For image-prompt work, build the result in this order:
 
 `Scene Master → Creative Grammar → Model Compiler → Result Repair`
 
@@ -26,11 +26,14 @@ When visual references are used for analysis or transfer:
 
 Then compile `Scene Master + Decoded Visual Grammar → target-specific Model Compiler`. Scene Master remains the source of scene facts; reference-derived visual grammar remains a separate input.
 
+For story material, use `Read Scope → Source Facts / Interpretations / Visual Proposals → requested Visual Development → Scene Master` before the existing compiler. Infer whether the request needs an art concept for director discussion or a keyframe carrying one narrative moment; do not require both. Stop at the requested stage; story analysis or visual development does not automatically require prompts or image generation.
+
 ## Mode Selection
 
 Infer the mode from the request. Do not print a menu.
 
 - **Create** — build a new cinematic scene and compile it for one target model.
+- **Story Visual Development / 剧本到画面** — work from supplied screenplay passages, short stories, synopses, or oral accounts to understand a scene, develop art concepts for director discussion, or select narrative keyframes. Requests such as `把这段剧本变成画面`, `做给导演看的美术概念`, or `口述一个故事，帮我设计关键画面` enter this workflow. Infer the image's purpose from the request; analysis-only requests receive only the requested analysis.
 - **Model Router** — recommend a model when the user is unsure.
 - **Transcode** — preserve an existing scene while changing model-native expression.
 - **Multi-model Pack** — compile one locked Scene Master for several models.
@@ -77,7 +80,7 @@ These camera and source-light steps apply to photographic / cinematic Create wor
 
 1. Parse fixed facts: era, place, characters, event, mood, time, weather, aspect ratio, target model, references, and restrictions.
 2. Choose a specific story beat with a narrative before, concrete current action, and implied next event. Use the emotional direction and timing requested by the user, including joy, public celebration, bright daylight, or climax. Observed transition, waiting, aftermath, departure, and interrupted routine are optional approaches when the brief leaves the moment open.
-3. Give each character physical blocking and a small action. Express emotion through posture, distance, gaze, silence, and object handling, not posing.
+3. Give each character physical blocking and a concrete current action. Express emotion through posture, distance, gaze, silence, and object handling; posing for a portrait is valid when it is the requested or source-backed action.
 4. Construct foreground, midground, background, usable topology, causal traces of use, and materially consistent surfaces.
 5. Place the camera at a physically possible witness position. Choose distance, height, focal behavior, boundary, and movement only as the story requires.
 6. Map motivated sources, protected shadows, highlight surfaces, exposure behavior, and restrained color relationships.
@@ -90,6 +93,7 @@ These camera and source-light steps apply to photographic / cinematic Create wor
 Load only the branch required for the active mode.
 
 - **Create:** [cinematic-principles.md](references/cinematic-principles.md), [camera-and-light.md](references/camera-and-light.md), [anti-ai-cleanup.md](references/anti-ai-cleanup.md), [model-routing.md](references/model-routing.md), the selected adapter, and [quality-checklist.md](references/quality-checklist.md). Read [negative-prompts.md](references/negative-prompts.md) when exclusions are needed.
+- **Story Visual Development:** [story-visual-development.md](references/story-visual-development.md); add [story-source-ledger.md](references/story-source-ledger.md) for multiple scenes, nonlinear chronology, or source revisions. Use the relevant Create references and [quality-checklist.md](references/quality-checklist.md) for image development, and [prompt-compiler.md](references/prompt-compiler.md) when compilation is requested; add [continuity-cards.md](references/continuity-cards.md) for a series. Route actual visual references through Dream Decode separately.
 - **Model Router:** [model-routing.md](references/model-routing.md) and [model-capability-matrix.md](references/model-capability-matrix.md).
 - **Transcode / Multi-model Pack:** [prompt-compiler.md](references/prompt-compiler.md), [model-routing.md](references/model-routing.md), and only the source and target adapters needed.
 - **Prompt Check:** [prompt-check.md](references/prompt-check.md), the target adapter when known, and [anti-ai-cleanup.md](references/anti-ai-cleanup.md) when cinematic realism is relevant.
@@ -125,6 +129,7 @@ On follow-up edits, recover the latest accepted state, change only the requested
 ## Output Contracts
 
 - **Create:** brief `画面决定` / `Visual decisions` when useful → `[Target Model] Prompt` → target-native constraints or settings only when useful.
+- **Story Visual Development:** requested scene analysis, or brief `故事理解` → `视觉策略` → art concept or narrative keyframes appropriate to the request, with their purpose. Identify relevant source facts, interpretations, and new proposals without requiring both deliverables or a fixed number of directions or images. Prompts only when requested; prompt-only requests return only the requested compiled prompts.
 - **Transcode:** short `Scene Lock Summary` → `[Target Model] Prompt`; do not re-explain the concept.
 - **Multi-model Pack:** one short Scene Lock → clearly different native prompts sharing the same invariants.
 - **Prompt Check:** three to five high-impact `PASS / WEAK / RISK / CONFLICT` findings → Rewrite, Surgical Fix, or No Rewrite as requested.
