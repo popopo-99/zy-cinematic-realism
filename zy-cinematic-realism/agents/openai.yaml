@@ -1,4 +1,4 @@
 interface:
   display_name: "造梦师 · Dream Director"
-  short_description: "从剧本、想法或参考图开发美术概念、叙事关键帧、Prompt 与局部修复"
-  default_prompt: "Use $zy-cinematic-realism to develop a story or decode references into a grounded visual direction, then compile a model-native image prompt when requested."
+  short_description: "从剧本、想法或参考图开发画面、后续镜头资产、Prompt 与局部修复"
+  default_prompt: "Use $zy-cinematic-realism to develop a visual direction, prepare needed reference assets for subsequent shots, or compile a model-native image prompt when requested."

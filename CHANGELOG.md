@@ -1,5 +1,26 @@
 # Changelog
 
+## v2.6.0 — 2026-11-02
+
+### Added
+
+- Need-driven Asset Pack workflow for preparing reference assets from an available frame and requested later shots, integrated into the existing entry, resource routing and output contract.
+- Explicit asset roles, visible/proposed design, acceptance scopes, and prop/hand/open-close state checks without a fixed inventory or image count.
+- Eight manual behavior specifications and two independent forward text tasks with one rerun; actual requests/responses and limits are preserved separately.
+- Last Bus Testimony case with actual generated references, author-provided look correction, subsequent frames and a targeted lid-state repair; the user confirmed the final set usable.
+
+### Improved
+
+- Neutral character/prop-sheet presentation no longer has implicit authority over narrative medium, look, camera or light. Existing role/compile systems remain canonical.
+- An observed forward-trial ambiguity led to explicit handling of uncertain low-light fabric/hand details and preservation of supported prop state.
+- Chinese/English entry docs, tutorials and basic chat starters introduce asset preparation through natural requests.
+
+### Validation and Release Status
+
+- Static checks, isolated packaging, independent text behavior, images and human feedback are reported in docs/validation-v2.6.md. Designed manual cases are not all treated as executed tests.
+- The examples are qualitative; no controlled old/new or with/without-assets comparison establishes general quality or efficiency gains.
+- v2.6.0 is prepared locally and on this review branch; GitHub Release publication remains pending. License, attribution and invocation remain compatible.
+
 ## v2.5.0 — 2026-10-04
 
 ### Added

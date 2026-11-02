@@ -1,0 +1,106 @@
+{
+  "backend": "built-in image_gen",
+  "underlying_model": "not exposed by tool",
+  "original_author_style_images": "not redistributed here; reattach accessible originals for fresh image-level transfer",
+  "prompts": [
+    {
+      "id": "L02",
+      "role": "updated_empty_location_plate",
+      "references": [
+        {
+          "id": "M02r1",
+          "role": "edit target; camera, visible bus geometry and accepted look direction"
+        }
+      ],
+      "prompt": "Edit the supplied 1987 New York bus frame into ONE empty location plate in the same wide approximately 2.33:1 aspect ratio.\nCHANGE ONLY: remove the two seated detectives and all their belongings, including the cassette case and coffee cup. Fill the body-occluded portions of the seats conservatively from neighboring seats. Leave no person or replacement prop.\nPRESERVE: the existing camera position, framing, dark close seat backs and large vertical foreground interruption; aisle, existing rows, metal poles and window divisions; source-light positions, subdued warm window reflections, dense shadows and low midtones, olive-gray/earth color response, restrained soft film-print-like detail and fine grain. Keep the actual low-key local light and selective legibility. Do not brighten the empty seats to show them or turn this into a clean vehicle catalog photograph. Keep the optical softness and patchy practical illumination of the target.\nNo added seats, light fixtures, modern displays, luggage, smoke, weather, signs or text. Reconstructed hidden seat surfaces are a provisional design; do not redesign already visible structure. Single photorealistic image, no before/after layout, labels or watermark."
+    },
+    {
+      "id": "S13",
+      "role": "new_look_sequence_dawn_exterior",
+      "references": [
+        {
+          "id": "R2",
+          "role": "environment scale, layered glass viewpoint, broad muted daylight color and soft print response only"
+        },
+        {
+          "id": "R6",
+          "role": "quiet dark foreground and soft grain-bearing image response only; no apartment or night lighting"
+        },
+        {
+          "id": "M02r1",
+          "role": "two characters, wardrobe, weather aftermath and established crime-story look"
+        },
+        {
+          "id": "A01",
+          "role": "older detective identity and wardrobe only; no studio backdrop, pose or light"
+        },
+        {
+          "id": "A02",
+          "role": "younger detective identity and wardrobe only; no studio backdrop, pose or light"
+        }
+      ],
+      "prompt": "Generate ONE new narrative film frame continuing the original 1987 New York detective story Last Bus Testimony, wide approximately 2.33:1 composition with no black bars.\nReference roles: image 1 (the user's dusk street) controls environment/person scale, layered observation through real glass and muted broad daylight color. Its specific people, parked police car, pose, shop names, reflection figure and exact street must not be copied. Image 2 (the user's apartment) contributes only soft grain-bearing old-film-print response, selective detail and a dark physical viewing foreground; do not bring its room or lamp into the street. Image 3 is the current bus story master, controlling these two original men, their outfits and grounded dramatic language. Images 4 and 5 are identity and wardrobe references only; absolutely no gray studio backdrop, neutral studio light, standing model pose or split-panel layout may transfer. The new scene and actual light sources determine the final picture, preserving the user's subdued old-film-frame style.\n\nA deliberate time ellipsis: first dawn some time after the bus conversation, on a wet ordinary 1987 New York avenue beside the precinct. Both detectives have just left the bus and are walking toward a recessed municipal brick doorway on the opposite part of the sidewalk, three-quarter side/back view. This is a new exterior design, not an exact location reconstruction from the user's street photograph. The older lean receding-haired moustached man in his brown-gray herringbone overcoat and brown suit is a half-step ahead. He has closed the palm-size cassette case and placed it in his INNER overcoat pocket; his right hand is finishing withdrawing from the pocket as his left hand releases the lapel. Do not show a loose second cassette or an open box. The younger Black clean-shaven short-haired man in deep navy overcoat, charcoal suit, light blue shirt and muted burgundy tie walks beside him, still carrying ONE plain white coffee cup low in his RIGHT hand. He glances toward his older partner. Their silence and guarded proximity carry the return to a compromised workplace, no heroic stride.\n\nThe camera remains INSIDE the stopped bus and watches them through a side window from a real empty seat. A dark near seat/back and window frame occupy a substantial side/lower foreground, with subtle old glass reflection that does not erase the action. The men belong in the middle distance and occupy a modest portion of the wide image, leaving the brick entrance, pavement and awakening street to carry visual weight. They are not two frontal fashion figures filling the frame. Keep enough silhouette, profile and garment information to recognize continuity without lighting their faces for identification.\n\nCool gray-blue first daylight fills street-level shadows; pale warm light reaches the upper brickwork and a few old amber streetlights remain on. Keep their colors distinct and restrained. Low midtones and dense bus-interior foreground, soft pale highlight transitions, matte damp wool, ordinary wet sidewalk with broad subdued reflections. The tiny men do not display every pore or herringbone fiber. Natural, slightly softened old print detail and fine irregular grain as in images 1–2, no HDR, digital sharpening, glossy neon, excessive orange reflections, fog or distress overlay. Period background may include one distant boxy ordinary sedan and shuttered stores without legible new text; avoid contemporary vehicles and screens. Single image, no poster, captions or watermark."
+    },
+    {
+      "id": "S11",
+      "role": "new_look_sequence_older_close",
+      "references": [
+        {
+          "id": "M02r1",
+          "role": "accepted look direction, story cast, seating relationship, motivated night sources"
+        },
+        {
+          "id": "R3",
+          "role": "soft old-print response, oblique witness view and layered foreground only; no office or people"
+        },
+        {
+          "id": "A01",
+          "role": "older detective identity and clothes only"
+        },
+        {
+          "id": "P01",
+          "role": "cassette/case construction and mark placement only; opening angle is allowed to change"
+        },
+        {
+          "id": "L02",
+          "role": "visible bus construction and local lighting, not exact unseen reverse geometry"
+        }
+      ],
+      "prompt": "Create ONE photographic narrative frame for the SAME original 1987 New York crime drama Last Bus Testimony, approximately 2.33:1 wide composition, no black bars, captions, title or watermark. This is a closer scene view inside the continuing drama, not a studio portrait or an evidence display.\nThe user's preferred image response has priority over asset-sheet presentation: dense dark foreground and low midtones, patchy practical illumination, soft pale highlights, subdued olive-gray/earth colors, matte cloth and ordinary skin, slightly softened old-film-print edges and integrated fine irregular grain. No independent face fill, glamour light, digitally etched coat fibers, pore emphasis, HDR shadow lifting or glittering wet glass. The closer camera may reveal a little more detail naturally, but must not become a clean contemporary actor headshot. Reference-sheet gray backgrounds, split panels, standing poses and neutral work light must never transfer.\nInput roles: image 1 = current master with authoritative story/look; image 2 = the user's office visual grammar only, no source faces/props; image 3 = older man identity/wardrobe only; image 4 = cassette/case object only, never its tabletop or studio illumination; image 5 = current empty bus's visible construction and source light.\n\nThe next beat after image 1, a few seconds later. The older detective is still in the same window-side seat at frame left, opposite his younger partner across the aisle. Camera moves to a plausible seated position just beside/behind the younger partner's shoulder on the other side of the aisle. Medium-close three-quarter view of the older man, including his upper torso and both hands low in frame. Keep actual bus window/paneling behind him and a subdued navy shoulder/seat edge along the right/lower foreground, so the camera observes a relationship inside a space. His face must not fill the whole wide composition.\n\nHis LEFT hand supports one small clear cassette case at lap/waist level. His RIGHT fingers gently bring its lid toward the base, paused HALF CLOSED at roughly 50 degrees. The black cassette remains inside. Preserve the plain white insert with its thin red diagonal slash and tiny broken paper-seal remnants on the same physical outer short edge as image 4 when visible; do not turn the case into a large recorder or mirror its construction. The object is not lifted toward the audience. He has just raised his eyes from the case toward his partner, looking off-camera to FRAME RIGHT while his chin stays slightly lowered. A small guarded look and arrested hand movement, not theatrical surprise. The half-closed lid and change of gaze are the current story action; no fully closed/open state simultaneously and no duplicates.\n\nKeep the lean receding-haired, small-moustached man and his exact brown-gray herringbone overcoat, brown suit/waistcoat, off-white shirt and dark brown tie. The herringbone is subdued under low practical light, not crisply engraved. The existing fluorescent fixture farther along the bus finds only part of his cheek, shirt edge and hands; coat recesses and the nearer partner's shoulder remain dark. Weak amber window spill is quiet and desaturated. His face is readable without beauty fill or symmetrical bright eyes. No neutral gray backdrop, new passengers, desk, telephone, gun, added rim light, fog or new light sources."
+    },
+    {
+      "id": "S12",
+      "role": "new_look_sequence_partner_reverse",
+      "references": [
+        {
+          "id": "M02r1",
+          "role": "accepted look direction, cast, opposite seating and night sources"
+        },
+        {
+          "id": "R4",
+          "role": "localized practical light, quiet working gestures, low midtones and soft print response only"
+        },
+        {
+          "id": "A02",
+          "role": "younger detective identity and clothes only"
+        },
+        {
+          "id": "L02",
+          "role": "visible bus materials and layout only; the new reverse view is inferred"
+        }
+      ],
+      "prompt": "Create ONE photographic narrative frame for the SAME original 1987 New York crime drama Last Bus Testimony, approximately 2.33:1 wide composition, no black bars, captions, title or watermark. This is a closer scene view inside the continuing drama, not a studio portrait or an evidence display.\nThe user's preferred image response has priority over asset-sheet presentation: dense dark foreground and low midtones, patchy practical illumination, soft pale highlights, subdued olive-gray/earth colors, matte cloth and ordinary skin, slightly softened old-film-print edges and integrated fine irregular grain. No independent face fill, glamour light, digitally etched coat fibers, pore emphasis, HDR shadow lifting or glittering wet glass. The closer camera may reveal a little more detail naturally, but must not become a clean contemporary actor headshot. Reference-sheet gray backgrounds, split panels, standing poses and neutral work light must never transfer.\nInput roles: image 1 = current master story and accepted look direction; image 2 = the user's night office visual grammar only, never its people, desks, blinds or source wardrobe; image 3 = younger detective identity and clothes only; image 4 = current bus location materials and source lighting. No element of the office or gray casting sheet belongs in the output.\n\nA reverse view just after the older detective's quiet raised look. The younger detective stays in his original right-side seat, opposite the older man across the aisle. Camera is at a physically plausible seated position just beside/behind the older detective on his side of the aisle, looking toward the younger partner and the right-side bus windows. A dark piece of brown herringbone shoulder at frame LEFT and a seat edge low in foreground connect the shared space. Medium-close view with enough torso/arm and bus environment to read the interrupted gesture, not an isolated headshot.\n\nThe younger Black, short-cropped-haired, clean-shaven man is in the same deep navy wool overcoat, charcoal suit, light blue shirt and muted burgundy tie. His RIGHT hand has begun lifting the same ONE plain white paper coffee cup, then stopped roughly 10–15 cm below his mouth before drinking. His elbow remains naturally bent, cup upright; his LEFT hand stays low near his lap and the simple metal wristwatch stays on the LEFT wrist. He looks steadily toward the older man just off-camera to FRAME LEFT, not into the lens. A slight tightening around the eyes, mouth closed; the incomplete everyday action shows understanding and caution without an exaggerated gasp or a staged coffee advertisement. No cassette transfers to him.\n\nThe same rain-dimmed bus window, dull beige paneling, metal upright and faded blue-green vinyl sit behind him from this reverse angle. Let much of his navy coat and the older shoulder merge into dense shadows. A real overhead practical gives only a small soft patch to forehead/cheek, collar or cup rim, not full facial illumination. Broad quiet window reflections, no jewel-like raindrops or big colored bokeh. Preserve matte, muted, soft grain-bearing photographic rendering like images 1–2. No moustache on this man, new face, gray studio backdrop, glowing clean skin, extra cup, invented accessories or modern bus fixtures."
+    },
+    {
+      "id": "S11r1",
+      "role": "surgical_lid_state_repair",
+      "references": [
+        {
+          "id": "S11",
+          "role": "edit target; all scene and look facts"
+        }
+      ],
+      "prompt": "Make ONE surgical object-state edit to this narrative bus frame. Keep the shot's visual direction and content otherwise unchanged.\nCHANGE ONLY the cassette case lid's opening angle and the minimum right-fingertip adjustment required for physically plausible contact. His LEFT hand still supports the same palm-size clear base with one black cassette inside. His RIGHT fingers are gently bringing the clear lid down. Lower the lid until it is visibly HALF CLOSED, approximately 35–45 degrees relative to the base, so the lid overlaps part of the cassette in projection and the white card/red slash is foreshortened. It must be clearly less open than the current almost-upright lid, but not fully shut. Keep the hinge in its correct place, same clear case construction, white paper insert with the same thin red diagonal slash and tiny seal remnants on the same physical edge. There is ONE case and ONE cassette.\nPRESERVE the older man's raised guarded gaze toward the partner, facial identity, moustache, hair, expression, head/body position, coat/shirt/tie, left supporting hand, younger partner's dark foreground shoulder, seat and pole geometry, windows/rain, framing, wide aspect ratio, exposure, muted practical light, low midtones, film-like softness and grain. Do not brighten the box, move it toward the camera or turn this into a prop close-up. No other scene redesign, text, labels, arrows or collage."
+    }
+  ]
+}

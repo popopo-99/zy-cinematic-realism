@@ -6,7 +6,7 @@
 
 从故事想法、剧本节选或参考图出发，建立场景、开发视觉世界，再输出适合目标模型的 Prompt 和局部修复指令。
 
-**v2.5.0 正式版** · [下载正式版](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0) · [60 秒上手](#quick-start) · [剧本实战](docs/titanic-story-to-frame.md) · [看案例](#showcase) · [安装教程](docs/getting-started.md)
+**v2.6.0 发布准备** · [版本说明](RELEASE_NOTES.md) · [60 秒上手](#quick-start) · [剧本实战](docs/titanic-story-to-frame.md) · [看案例](#showcase) · [安装教程](docs/getting-started.md)
 
 ![两个侦探在失败后的夜班公交车上沉默而坐](docs/images/hero-night-bus.webp)
 
@@ -58,6 +58,8 @@
 
 - **修复**：“人物和构图对了，只修灯光太像广告的问题。”<br>→ 最多三个主导问题与局部修复指令
 
+- **资产包**：“这张的方向定了，后面要反打和证物近景，先准备必要素材。”<br>→ 按镜头需要复用或补充参考，限定每张图的职责，记录候选设计和道具状态
+
 - **组图**：“做八张女骑士下班组图，脸、盔甲、车库和光源保持一致。”<br>→ 连续性设定、镜头列表与每镜变化
 
 - **变化**：“场景不变，转为 Seedream。” / “只换机位。”<br>→ 转码或单变量变体
@@ -67,6 +69,22 @@
 参考图只按你指定的职责参与；纸本插画不会默认变成摄影，角色参考也不会自动接管画风。解梦只分析图像时不会强行输出 Prompt。
 
 已有故事或剧本，一句话说明这次想做什么即可。只分析时就只交分析；美术方案或关键画面计划需要再编译成目标模型 Prompt，Skill 不自动生图。
+
+<a id="asset-pack"></a>
+## 从认可画面到下一镜
+
+人物、道具和空间已经有了方向，接下来判断反打、背面、手部或新场景还缺什么参考。角色页可以清楚展示衣着，正式镜头仍沿用你的视觉语言。
+
+```text
+请使用 $zy-cinematic-realism：
+这张的影调可以继续，后面要背面下车和证物近景。
+先准备必要资产的方案与 Prompt，不要生图。
+未展示的背部和鞋标为候选设计，已有参考能用就复用。
+```
+
+![末班证词：两名侦探在夜班公交上检查录音带](docs/images/last-bus-testimony/master.png)
+
+[《末班证词》完整试作](docs/last-bus-testimony-asset-pack.md)：从影调纠正、按职责使用人物与证物，到近景、反打、黎明街头和局部修复。用户已确认这一组结果可以；这是一个定性案例，尚未证明普遍增益。纽约、复古暗调和宽画幅均属于本例的选择。
 
 <a id="story-to-frame"></a>
 ## 剧本实战：《泰坦尼克号》三等舱舞会
@@ -144,7 +162,7 @@ v2.4 尊重 **轻微 / 明确 / 强烈**；不指定时默认明确。轻微选�
 | ChatGPT 有 Skills 入口 | [上传完整安装 ZIP](docs/getting-started.md#use-chatgpt) |
 | 没有 Skills 入口 | [自包含聊天入门版](docs/chat-starter-zh.md)，基础能力可直接粘贴 |
 
-下载 [v2.5.0 完整安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip)（[SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip.sha256)），或从 [main 分支](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism)安装源码。版本说明见 [GitHub Release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0)。
+当前分支为 **v2.6.0 发布准备版**，GitHub Release 尚未发布。完整安装包名为 `zy-cinematic-realism-v2.6.0.zip`，附同名 `.sha256`。发布前可下载本分支源码并使用完整的 [Skill 文件夹](zy-cinematic-realism)；包与验证状态见[发布说明](RELEASE_NOTES.md)。
 
 安装包只有一层顶级 `zy-cinematic-realism/` 文件夹。升级时完整替换旧目录，避免同时安装同名副本。**只复制 SKILL.md 无法带上它引用的完整方法库。**
 
@@ -165,11 +183,12 @@ v2.4 尊重 **轻微 / 明确 / 强烈**；不指定时默认明确。轻微选�
 | 故事瞬间、导演与摄影方法 | [视觉指南与历史作品](docs/visual-guide.md) |
 | 参考职责、媒介与解梦 | [解梦工作流](zy-cinematic-realism/references/dream-decode.md) · [解梦卡](zy-cinematic-realism/references/decode-card.md) |
 | 持续修改与跨对话恢复 | [项目交接卡](zy-cinematic-realism/references/project-handoff.md) |
+| 准备后续镜头的视觉参考 | [Asset Pack 工作流](zy-cinematic-realism/references/asset-pack.md) · [实际案例](docs/last-bus-testimony-asset-pack.md) |
 | 连续组图 | [Continuity Bible](zy-cinematic-realism/references/continuity-cards.md) |
 | 局部修复 | [Prompt Doctor](zy-cinematic-realism/references/result-repair.md) |
 | 模型编译与选择 | [Model Compiler](zy-cinematic-realism/references/prompt-compiler.md) · [Model Router](zy-cinematic-realism/references/model-routing.md) |
 | 四模型历史图片对照 | [同一个 Scene Master 的解释](docs/model-comparison.md) |
-| 本次升级与版本历史 | [v2.5 发布说明](RELEASE_NOTES.md) · [CHANGELOG](CHANGELOG.md) |
+| 本次升级与版本历史 | [v2.6 发布说明](RELEASE_NOTES.md) · [CHANGELOG](CHANGELOG.md) |
 
 支持 GPT Image 2.5（保留显式 GPT Image 2 兼容）、Midjourney V8.2、Seedream 5.0 Pro、Nano Banana 及模型中立流程。适配器记录资料核对日期；界面能力变化时核对对应官方说明，不把任务启发式当作永久模型排名。
 
@@ -177,11 +196,11 @@ v2.4 尊重 **轻微 / 明确 / 强烈**；不指定时默认明确。轻微选�
 <a id="validation"></a>
 ## 验证状态
 
-v2.5 围绕剧本事实、人物变化、视觉开发与单帧选择增加行为检查。静态校验、独立文本行为检查、实际图像对照与人类体验评测分别记录。
+v2.6 将认可画面接到后续镜头所需的素材准备、职责分配与状态检查。本轮保存独立文字试用、真实图像修订和用户认可，静态检查与比较评测分别记录。
 
 **个案展示与普遍增益分开判断。** 历史作品不是本次升级的重测结果；手动回归中的 Expected 是预期行为，不是执行记录。新案例的生成、比较与检查状态见验证记录。
 
-[本次验证记录](docs/validation-v2.5.md) · [v2.4 验证历史](docs/validation-v2.4.md) · [完整手动回归与图像对照协议](zy-cinematic-realism/tests/manual-regression.md)
+[本次验证记录](docs/validation-v2.6.md) · [v2.5 验证历史](docs/validation-v2.5.md) · [v2.4 验证历史](docs/validation-v2.4.md) · [完整手动回归与图像对照协议](zy-cinematic-realism/tests/manual-regression.md)
 
 仓库根目录保存教程与作品；`zy-cinematic-realism/` 是可安装 Skill 本体。`scripts/` 提供静态校验与打包脚本，ZIP 不携带作品图库。
 

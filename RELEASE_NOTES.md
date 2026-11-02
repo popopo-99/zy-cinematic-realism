@@ -1,3 +1,33 @@
+# 造梦师 v2.6.0 — 从画面到资产
+
+**DREAM DIRECTOR v2.6.0 — Frame to Assets**
+
+**发布准备：2026-11-02（Asia/Shanghai）。** GitHub Release 尚未发布。完整包名为 `zy-cinematic-realism-v2.6.0.zip`，附 SHA-256；当前可使用本分支的完整 [Skill 文件夹](zy-cinematic-realism)。[实际验证记录](docs/validation-v2.6.md)分别记录文件检查、前向文字试用、图片与用户反馈。
+
+当一张画面已经有了方向，后续反打、背面、手部或新场景需要可复用的参考。本版增加按镜头需要准备资产的流程，接入原有场景母版、连续性、解梦、模型编译与修复。
+
+- 从后续镜头反推必要素材，复用已有参考，未见区域仍是候选设计。
+- 分开人物/道具结构与成片视觉语言，避免参考页的灰底、工作光和展示锐度接管叙事镜头。
+- 检查道具开合、标记位置、持有人和手的占用，按实际回图做局部修复。
+- 认可范围按影调、人物、服装或其他明确维度记录；完整视觉试作的授权不自动变成内容验收。
+- [《末班证词》案例](docs/last-bus-testimony-asset-pack.md)保留实际素材、影调纠正、三镜和盒盖修复。用户已确认本组结果可以；原始六张风格参考未复制到公开图库。
+
+自然调用：
+
+```text
+请使用 $zy-cinematic-realism：
+这张方向定了，后面要窗边反打和证物近景。
+准备必要资产的方案与 Prompt，先不要生图。
+```
+
+技术名、调用名、38 位导演、四模型适配和 CC BY-NC 4.0 保持兼容。完整安装包只含单层 `zy-cinematic-realism/`，不含公开案例图库。升级前保存旧目录，再完整替换，避免同名副本。
+
+**English:** Asset Pack derives the minimum reference set needed for requested later shots, separates source facts from proposed unseen design, keeps asset roles separate from the shot's visual grammar, and checks actual prop state and scoped repair. Look approval and execution authorization are not blanket image acceptance. Two independent text tasks and one rerun are recorded; eight manual cases are not all automatically certified. The actual detective prototype provides qualitative user feedback, not controlled evidence of general quality or efficiency improvement. This branch prepares v2.6.0; its GitHub Release is not published yet.
+
+---
+
+## Previous release — v2.5.0
+
 # 造梦师 v2.5.0 — 剧本到画面
 
 **DREAM DIRECTOR v2.5.0 — Story to Frame**
