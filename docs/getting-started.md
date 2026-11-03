@@ -1,6 +1,6 @@
 # 安装与第一次使用
 
-本文对应 **v2.5.0 正式版**。下载[完整安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip)（[SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip.sha256)），或安装 [main 分支源码](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism)。更新说明见 [v2.5.0 Release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0)。
+本文对应 **v2.6.0 正式版**。下载[完整安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip)（[SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip.sha256)），或安装 [main 分支完整源码](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism)。具体更新见[版本说明](../RELEASE_NOTES.md)。
 
 
 <a id="install-codex"></a>
@@ -22,7 +22,7 @@ https://github.com/popopo-99/zy-cinematic-realism
 
 ### 方法二：手动安装
 
-解压 [v2.5.0 安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip)，或从 [main 分支](https://github.com/popopo-99/zy-cinematic-realism/tree/main)下载源码，将完整的 `zy-cinematic-realism` 文件夹复制到用户级 Skills 目录。
+解压 [v2.6.0 完整安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip)，或下载 main 分支源码，将完整的 `zy-cinematic-realism` 文件夹复制到用户级 Skills 目录。
 
 **Windows**
 
@@ -60,7 +60,7 @@ Codex 通常会自动发现变更；如果没有出现，请重新启动 Codex�
 1. 在侧边栏打开 **Plugins / 插件**。
 2. 在 Plugin Directory 中进入 **Skills**。
 3. 选择 **Create**，再选择 **Upload from your computer**。
-4. 下载并上传 [v2.5.0 完整安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip)，文件名为 `zy-cinematic-realism-v2.5.0.zip`。
+4. 下载并上传 [v2.6.0 完整安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip)；不要只上传入口文件。
 5. 扫描和安装完成后，输入 `$zy-cinematic-realism`，或直接描述电影感 Prompt 任务。
 
 Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会自动跨这些界面同步。
@@ -139,4 +139,18 @@ Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会
 2. 目标模型原生 Prompt
 3. 当前场景专属约束与 Avoid
 ```
+
+
+### 从认可画面准备后续素材
+
+```text
+请使用 $zy-cinematic-realism：
+这张画面的影调可以继续，后面要反打和手部近景。
+先准备必要资产方案与 Prompt，不要生图。
+人物页只控制身份和服装，正式画面沿用我的风格参考。
+```
+
+已有素材能用就复用，未展示的背面、鞋或空间标为候选设计。角色页和证物页的中性背景与照明不会自动成为成片影调。只有要求实际图片时才进入生成；明确授权的完整视觉试作可以继续到检查和局部修复。
+
+[《末班证词》实际案例](last-bus-testimony-asset-pack.md)展示这一流程及认可范围。
 

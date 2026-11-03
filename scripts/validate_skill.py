@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the v2.5.0 Skill, resource routes, and existing contracts."""
+"""Validate the v2.6.0 Skill, resource routes, and existing contracts."""
 
 from __future__ import annotations
 
@@ -57,13 +57,13 @@ def main() -> int:
         current = body.split("\n---\n", 1)[0] if path.name == "RELEASE_NOTES.md" else body
         # Release candidates may truthfully state that they are not published.
         # Reject stale development identities, not accurate publication status.
-        for stale in ("v2.5.0-dev", "local development", "本地开发版"):
+        for stale in ("v2.6.0-dev", "local development", "本地开发版"):
             if stale in current:
                 errors.append(f"{path.relative_to(ROOT)}: current release content contains '{stale}'.")
         if re.search(r"[A-Z]:\\Users\\", body):
             errors.append(f"{path.relative_to(ROOT)}: local Windows user path must not be published.")
 
-    require(SKILL / "SKILL.md", ("name: zy-cinematic-realism", "v2.5.0", "medium-router.md", "dream-decode.md", "prompt-compiler.md", "USER-LOCKED", "OPEN", "optional `表达机制`", "story-visual-development.md"), errors)
+    require(SKILL / "SKILL.md", ("name: zy-cinematic-realism", "v2.6.0", "medium-router.md", "dream-decode.md", "prompt-compiler.md", "USER-LOCKED", "OPEN", "optional `表达机制`", "story-visual-development.md"), errors)
     story_path = REF / "story-visual-development.md"
     if not story_path.is_file():
         errors.append("Missing story visual development resource.")
@@ -104,11 +104,11 @@ def main() -> int:
     require(REF / "project-handoff.md", ("accepted", "cumulative", "automatic storage", "Result status", "unavailable image", "Newer explicit user instructions"), errors)
     for name in ("chat-starter-zh.md", "chat-starter-en.md"):
         path = ROOT / "docs" / name
-        require(path, ("v2.5.0", "CC BY-NC 4.0"), errors)
+        require(path, ("v2.6.0", "CC BY-NC 4.0"), errors)
         if path.is_file() and re.search(r"\]\((?:\.\./)?(?:zy-cinematic-realism/)?references/", path.read_text(encoding="utf-8")):
             errors.append(f"{name}: basic chat rules depend on external reference files.")
     for path in (ROOT / "docs" / "getting-started.md", ROOT / "docs" / "getting-started_EN.md"):
-        require(path, ('<a id="install-codex"></a>', '<a id="use-chatgpt"></a>', "v2.5.0"), errors)
+        require(path, ('<a id="install-codex"></a>', '<a id="use-chatgpt"></a>', "v2.6.0"), errors)
     metadata = SKILL / "agents" / "openai.yaml"
     require(metadata, ("$zy-cinematic-realism", "model-native image prompt"), errors)
     if metadata.is_file() and "model-native cinematic image prompt" in metadata.read_text(encoding="utf-8"):
@@ -125,12 +125,25 @@ def main() -> int:
             if case not in body:
                 errors.append(f"Image-level regression missing case: {case}")
 
+    # Asset resources are checked structurally here; model behavior is recorded separately.
+    asset_reference = REF / "asset-pack.md"
+    if not asset_reference.is_file() or "references/asset-pack.md" not in (SKILL / "SKILL.md").read_text(encoding="utf-8"):
+        errors.append("Asset Pack reference must exist and be discoverable from the entry.")
+    for resource in (SKILL / "tests" / "asset-pack.md", ROOT / "docs" / "validation-v2.6.md", ROOT / "docs" / "behavior-check-v2.6.md", ROOT / "docs" / "last-bus-testimony-asset-pack.md"):
+        if not resource.is_file():
+            errors.append(f"Missing Asset Pack resource: {resource.relative_to(ROOT)}")
+    asset_tests = SKILL / "tests" / "asset-pack.md"
+    if asset_tests.is_file():
+        identifiers = re.findall(r"^## (AP\d{2}) —", asset_tests.read_text(encoding="utf-8"), re.MULTILINE)
+        if identifiers != [f"AP{number:02d}" for number in range(1, 9)]:
+            errors.append("Asset behavior specifications must retain AP01–AP08 in order.")
+
     if errors:
         print(f"Skill validation failed with {len(errors)} error(s):")
         for error in errors:
             print(f"- {error}")
         return 1
-    print(f"Skill validation passed: v2.5.0, {len(director_files)} directors, Story to Frame route, Dream Decode contracts, {len(cases)} image-level manual cases, README anchors, and local links.")
+    print(f"Skill validation passed: v2.6.0, {len(director_files)} directors, Story to Frame and Asset Pack routes, Dream Decode contracts, {len(cases)} image-level manual cases, README anchors, and local links.")
     print("Image generation and human scoring: NOT AUTOMATICALLY VERIFIED.")
     return 0
 

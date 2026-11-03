@@ -1,6 +1,6 @@
 ---
 name: zy-cinematic-realism
-description: Develop supplied scripts, short stories, or synopses into scene understanding, director-facing art concepts, and motivated narrative keyframes; compile scene ideas, visual references, or existing prompts into model-native image prompts when requested. Use for story visual development, cinematic creation, or Dream Decode visual analysis and transfer; preserve a reference's non-photographic medium. Supports ChatGPT Images 2.5 / GPT Image 2.5 (with GPT Image 2 legacy compatibility), Midjourney, Seedream 5.0 Pro, Nano Banana, or a model-neutral workflow, plus continuity and result repair.
+description: Develop supplied scripts, short stories, or synopses into scene understanding, director-facing art concepts, and motivated narrative keyframes; compile scene ideas, visual references, or existing prompts into model-native image prompts when requested. Use for story visual development, cinematic creation, Dream Decode visual analysis and transfer, or preparing visual reference assets for subsequent shots; preserve a reference's non-photographic medium. Supports ChatGPT Images 2.5 / GPT Image 2.5 (with GPT Image 2 legacy compatibility), Midjourney, Seedream 5.0 Pro, Nano Banana, or a model-neutral workflow, plus continuity and result repair.
 ---
 
 <!--
@@ -12,7 +12,7 @@ Source: https://github.com/popopo-99/zy-cinematic-realism
 
 # 造梦师 · ZY Cinematic Realism
 
-Public edition: 《造梦师 v2.5.0 — 剧本到画面 / DREAM DIRECTOR v2.5.0 — Story to Frame》.
+Public edition: 《造梦师 v2.6.0 — 从画面到资产 / DREAM DIRECTOR v2.6.0 — Frame to Assets》.
 
 For image-prompt work, build the result in this order:
 
@@ -37,6 +37,7 @@ Infer the mode from the request. Do not print a menu.
 - **Model Router** — recommend a model when the user is unsure.
 - **Transcode** — preserve an existing scene while changing model-native expression.
 - **Multi-model Pack** — compile one locked Scene Master for several models.
+- **Asset Pack / 视觉资产包** — prepare only the character, wardrobe, prop, or location references needed for requested subsequent shots. Trigger for requests such as `从这张图准备后续镜头的素材`, `做人物和场景资产包`, or `这张满意了，后面的反打需要哪些参考`. Use the existing Scene Master and reference roles; a series alone does not require an asset pack.
 - **Continuity** — create a Continuity Bible, shot list, and controlled Shot Deltas.
 - **Repair** — diagnose a generated result and produce a model-native repair instruction.
 - **Prompt Check** — inspect an existing prompt without rewriting unless requested.
@@ -98,6 +99,7 @@ Load only the branch required for the active mode.
 - **Transcode / Multi-model Pack:** [prompt-compiler.md](references/prompt-compiler.md), [model-routing.md](references/model-routing.md), and only the source and target adapters needed.
 - **Prompt Check:** [prompt-check.md](references/prompt-check.md), the target adapter when known, and [anti-ai-cleanup.md](references/anti-ai-cleanup.md) when cinematic realism is relevant.
 - **Continuity:** [continuity-cards.md](references/continuity-cards.md), [prompt-compiler.md](references/prompt-compiler.md), and the target adapter.
+- **Asset Pack:** [asset-pack.md](references/asset-pack.md). Add reference-role routing and continuity resources for actual reference/shot integration, Dream Decode for style references, and Result Repair for observed failures; load only the selected adapter when prompts are requested.
 - **Repair:** [result-repair.md](references/result-repair.md), the target adapter, and [continuity-cards.md](references/continuity-cards.md) for a series.
 - **Dream Decode:** [reference-role-router.md](references/reference-role-router.md) → [medium-router.md](references/medium-router.md) → [dream-decode.md](references/dream-decode.md); read [prompt-compiler.md](references/prompt-compiler.md) and only the selected adapter when compilation is required. Also read [result-repair.md](references/result-repair.md) for Decode Repair and [decode-card.md](references/decode-card.md) when the user requests a reusable card or series-level visual continuity. Do not load all Style Cards by default.
 - **Director:** [director-routing.md](references/director-routing.md), [directors/index.md](references/directors/index.md), and one matching director file. For recommendations, also read [directors/recommendation-matrix.md](references/directors/recommendation-matrix.md) and load only two or three candidates.
@@ -140,6 +142,7 @@ On follow-up edits, recover the latest accepted state, change only the requested
 - **Decode Card:** only when requested or needed for reuse or series continuity; include five to eight `Core Visual Rules / 核心梦律`, explicit `Transfer Scope`, `Allowed Variation`, `Source Residue`, and `Drift Warnings`; optionally include evidence-backed Primary Medium, Medium Constraints, and Expression Mechanism. Use a compact card unless deeper archival grammar is useful, and never claim automatic persistence.
 - **Decode Repair:** classify `Valid Adaptation` before `Actual Drift`; only actual drift enters at most three dominant failures → `CHANGE ONLY` → `PRESERVE EXACTLY` → target-native repair prompt.
 - **Continuity:** Continuity Bible → Shot List → Shot Deltas → model-native prompts.
+- **Asset Pack:** needed assets and unresolved extensions → asset prompts and scoped reference use → requested shot integration. Actual images, inspection, and a file/role manifest only when requested or necessary for an authorized visual deliverable; prompt-only stays prompt-only.
 - **Remix:** Preserved → Changed axis → New Prompt.
 - **Shuffle:** Combination → Story Card → Camera Card → Style Card → Final Prompt.
 - **Project Handoff:** a compact, complete Project Handoff Card when requested; on restore, a short recovered-state summary and the requested next output. Request only a missing input that materially blocks the next task.

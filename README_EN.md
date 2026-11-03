@@ -6,7 +6,7 @@
 
 Start with a story, screenplay excerpt, or references. Establish the scene, develop the visual world, and compile model-native prompts and scoped repair instructions.
 
-**v2.5.0 stable** · [Download the release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0) · [60-second start](#quick-start) · [Screenplay example](docs/titanic-story-to-frame.md) · [Examples](#showcase) · [Installation guide](docs/getting-started_EN.md)
+**v2.6.0 stable** · [Download the release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.6.0) · [Release notes](RELEASE_NOTES.md) · [60-second start](#quick-start) · [Screenplay example](docs/titanic-story-to-frame.md) · [Examples](#showcase) · [Installation guide](docs/getting-started_EN.md)
 
 ![Two detectives sit apart in silence on a night bus after a failed interrogation](docs/images/hero-night-bus.webp)
 
@@ -66,6 +66,8 @@ Add “prompt only” for a copyable prompt without explanation. Ask for the Sce
 
 - **Repair**: “Identity and framing are right. Fix only the commercial-looking light.”<br>→ Up to three dominant failures and scoped repair
 
+- **Asset pack**: “This direction works. Prepare the references needed for a reverse and an evidence close-up.”<br>→ Reuse or derive only needed assets, with scoped roles, proposed extensions, and prop state
+
 - **Series**: “Eight urban-knight shots; preserve face, armor, garage, and sources.”<br>→ Continuity, shot list, and controlled deltas
 
 - **Variation**: “Same scene, compile for Seedream.” / “Change only the camera.”<br>→ Transcode or a one-variable variation
@@ -75,6 +77,22 @@ Add “prompt only” for a copyable prompt without explanation. Ask for the Sce
 References contribute only within assigned roles. Paper illustration does not default to photography; an identity reference does not take over the medium. Analysis-only requests receive no unwanted generation prompt.
 
 For an existing story or script, one sentence describing the task is enough. Analysis-only requests stay analysis-only. An art concept or frame plan still needs model-native prompt compilation; the Skill does not generate images automatically.
+
+<a id="asset-pack"></a>
+## From an Accepted Frame to the Next Shot
+
+Determine which references a reverse, rear view, hand insert, or new scene actually needs. A character sheet may clearly show the outfit; the narrative image keeps the user's visual grammar.
+
+```text
+Use $zy-cinematic-realism:
+Continue this look. The next shots are a rear-view exit and an evidence insert.
+Prepare the necessary asset plan and prompts; do not generate images yet.
+Mark unseen back/shoe designs as proposals and reuse sufficient references.
+```
+
+![Two detectives examine an audio cassette on a night bus](docs/images/last-bus-testimony/master.png)
+
+[Last Bus Testimony: actual prototype](docs/last-bus-testimony-asset-pack.md) follows look correction, role-scoped references, a close view, reverse, dawn exterior, and targeted repair. The user confirmed the set usable. This is one qualitative example, not proof of general gains; New York, retro low-key rendering and the wide ratio belong to this example.
 
 <a id="story-to-frame"></a>
 ## Screenplay to Frames: Titanic's Third-Class Dance
@@ -152,7 +170,7 @@ Reuse the card in the same conversation; supply its full contents again in a new
 | ChatGPT with Skills | [Upload the complete installation ZIP](docs/getting-started_EN.md#use-chatgpt) |
 | No Skills entry point | [Paste the self-contained basic chat edition](docs/chat-starter-en.md) |
 
-Download the [complete v2.5.0 package](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip) ([SHA-256 checksum](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.5.0/zy-cinematic-realism-v2.5.0.zip.sha256)), or install the source from [main](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism). See the [GitHub Release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.5.0) for version notes.
+Download the [complete v2.6.0 package](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip) ([SHA-256 checksum](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip.sha256)), or install the complete source from [main](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism). See [release notes](RELEASE_NOTES.md) for changes and validation scope.
 
 The installation ZIP has one top-level `zy-cinematic-realism/` folder. Replace the complete old folder and avoid duplicate installations. **SKILL.md alone does not include its referenced method library.**
 
@@ -173,11 +191,12 @@ Model syntax can change; locked scene facts cannot change silently.
 | Story, directors, and cinematography | [Visual guide and historical work](docs/visual-guide_EN.md) |
 | Reference roles, medium, and decode | [Dream Decode](zy-cinematic-realism/references/dream-decode.md) · [Decode Card](zy-cinematic-realism/references/decode-card.md) |
 | Iteration and a new conversation | [Project Handoff Card](zy-cinematic-realism/references/project-handoff.md) |
+| Prepare references for later shots | [Asset Pack workflow](zy-cinematic-realism/references/asset-pack.md) · [Actual prototype](docs/last-bus-testimony-asset-pack.md) |
 | Series continuity | [Continuity Bible](zy-cinematic-realism/references/continuity-cards.md) |
 | Scoped repair | [Prompt Doctor](zy-cinematic-realism/references/result-repair.md) |
 | Model compilation and selection | [Compiler](zy-cinematic-realism/references/prompt-compiler.md) · [Router](zy-cinematic-realism/references/model-routing.md) |
 | Historical four-model image comparison | [One Scene Master, multiple interpretations](docs/model-comparison.md) |
-| Release changes | [v2.5 notes](RELEASE_NOTES.md) · [CHANGELOG](CHANGELOG.md) |
+| Release changes | [v2.6 notes](RELEASE_NOTES.md) · [CHANGELOG](CHANGELOG.md) |
 
 Supports GPT Image 2.5 with explicit GPT Image 2 compatibility, Midjourney V8.2, Seedream 5.0 Pro, Nano Banana, and model-neutral work. Adapters record documentation-check dates; verify current official controls when a frontend changes. Routing heuristics are not permanent rankings.
 
@@ -185,11 +204,11 @@ Supports GPT Image 2.5 with explicit GPT Image 2 compatibility, Midjourney V8.2,
 <a id="validation"></a>
 ## Validation Status
 
-v2.5 adds behavior checks for script facts, character change, visual development, and choosing an individual frame. Static validation, independent text behavior checks, image comparisons, and human usability evaluation are recorded separately.
+v2.6 adds need-driven asset preparation, scoped reference use, and prop-state checks for subsequent shots. Independent text trials, actual image revisions and user feedback are recorded separately from static checks and comparative evaluation.
 
 **A worked example and general improvement are separate claims.** Historical images are not retests for this upgrade; Expected entries in manual regression are specifications, not execution records. See the validation record for the new example's generation, comparison, and check status.
 
-[Current validation record](docs/validation-v2.5.md) · [v2.4 validation history](docs/validation-v2.4.md) · [Manual regression and image comparison protocol](zy-cinematic-realism/tests/manual-regression.md)
+[Current validation record](docs/validation-v2.6.md) · [v2.5 validation history](docs/validation-v2.5.md) · [v2.4 validation history](docs/validation-v2.4.md) · [Manual regression and image comparison protocol](zy-cinematic-realism/tests/manual-regression.md)
 
 The repository root contains tutorials and work; `zy-cinematic-realism/` is the installable Skill. `scripts/` provides static checks and packaging. The ZIP excludes the showcase gallery.
 
