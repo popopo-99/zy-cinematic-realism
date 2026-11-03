@@ -1,6 +1,6 @@
 # v2.6.0 验证记录
 
-日期：2026-11-02（Asia/Shanghai）。状态：发布准备，GitHub Release 尚未发布。
+验证日期：2026-11-02（Asia/Shanghai）；正式发布：2026-11-03（Asia/Shanghai）。版本与安装包见 [v2.6.0 Release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.6.0)。
 
 ## 实际执行与证据
 
@@ -25,10 +25,10 @@
 | 隔离解包后资源与 Frontmatter | 完整性与内容比对通过，解包结果与源目录一致。公开图库、实际响应记录及原始用户风格图不进入安装包。 |
 | git diff 空白/冲突与私有路径 | `git diff --check` 通过；文本扫描未发现本机用户路径、原始素材路径或凭据。 |
 | 本地 Skill 升级 | 升级前验证 77 个旧文件并备份；安装后 79 个文件与 ZIP 逐文件一致，安装目录 quick_validate 通过。 |
-| GitHub Actions | 线上运行状态以审阅分支的 Actions / PR 检查为准；上述本地结果不代表线上已通过。 |
+| GitHub Actions | [初次 PR 检查](https://github.com/popopo-99/zy-cinematic-realism/actions/runs/41445982287)已通过，涵盖导演库/链接、Skill 契约和安装包构建。正式发布另核对最终提交的运行结果；可在 [PR #6](https://github.com/popopo-99/zy-cinematic-realism/pull/6)与 [Actions](https://github.com/popopo-99/zy-cinematic-realism/actions)查看，不能由本地结果代替。 |
 | 浏览器页面展示 | 本轮未做。前期本地服务与 file: 预览被工具策略拦截，没有绕过；本轮文件链接检查不等于浏览器渲染验收。 |
 
-安装包名：`zy-cinematic-realism-v2.6.0.zip`，附同名 `.sha256`。公开图库和前向响应记录不进入安装 ZIP。正式发布链接应在 GitHub Release 实际创建后再补充。
+安装包名：[`zy-cinematic-realism-v2.6.0.zip`](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip)，附同名 [`.sha256`](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip.sha256)。公开图库和前向响应记录不进入安装 ZIP。
 
 本次构建 SHA256：`97252e95bfdb8b21df61aa9f764959c45301bccf4e975926b1d0d17a8f4fd11d`。
 
@@ -38,4 +38,4 @@
 
 v2.6 增加按后续镜头准备素材、隔离参考职责、区分已见/提案、保持认可范围与检查道具状态的工作流。实际文字响应与图像个案提供相应范围的证据，不证明一般创作能力、模型服从度或长期效率。纽约侦探剧的复古影调属于该案例，非 Skill 通用默认。
 
-本版保持原调用名、四模型适配、38 位导演与原许可证。安装版同步与发布动作另记；本记录不把本地构建等同于 GitHub Release。
+本版保持原调用名、四模型适配、38 位导演与原许可证。安装版同步、线上检查与正式发布分别核对；本记录不把本地构建等同于 GitHub Release。

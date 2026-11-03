@@ -6,7 +6,7 @@
 
 从故事想法、剧本节选或参考图出发，建立场景、开发视觉世界，再输出适合目标模型的 Prompt 和局部修复指令。
 
-**v2.6.0 发布准备** · [版本说明](RELEASE_NOTES.md) · [60 秒上手](#quick-start) · [剧本实战](docs/titanic-story-to-frame.md) · [看案例](#showcase) · [安装教程](docs/getting-started.md)
+**v2.6.0 正式版** · [下载正式版](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.6.0) · [版本说明](RELEASE_NOTES.md) · [60 秒上手](#quick-start) · [剧本实战](docs/titanic-story-to-frame.md) · [看案例](#showcase) · [安装教程](docs/getting-started.md)
 
 ![两个侦探在失败后的夜班公交车上沉默而坐](docs/images/hero-night-bus.webp)
 
@@ -162,7 +162,7 @@ v2.4 尊重 **轻微 / 明确 / 强烈**；不指定时默认明确。轻微选�
 | ChatGPT 有 Skills 入口 | [上传完整安装 ZIP](docs/getting-started.md#use-chatgpt) |
 | 没有 Skills 入口 | [自包含聊天入门版](docs/chat-starter-zh.md)，基础能力可直接粘贴 |
 
-当前分支为 **v2.6.0 发布准备版**，GitHub Release 尚未发布。完整安装包名为 `zy-cinematic-realism-v2.6.0.zip`，附同名 `.sha256`。发布前可下载本分支源码并使用完整的 [Skill 文件夹](zy-cinematic-realism)；包与验证状态见[发布说明](RELEASE_NOTES.md)。
+下载 [v2.6.0 完整安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip)（[SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip.sha256)），或从 [main 分支](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism)安装完整源码。具体更新与验证范围见[发布说明](RELEASE_NOTES.md)。
 
 安装包只有一层顶级 `zy-cinematic-realism/` 文件夹。升级时完整替换旧目录，避免同时安装同名副本。**只复制 SKILL.md 无法带上它引用的完整方法库。**
 

@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.6.0 — 2026-11-02
+## v2.6.0 — 2026-11-03
 
 ### Added
 
@@ -19,7 +19,7 @@
 
 - Static checks, isolated packaging, independent text behavior, images and human feedback are reported in docs/validation-v2.6.md. Designed manual cases are not all treated as executed tests.
 - The examples are qualitative; no controlled old/new or with/without-assets comparison establishes general quality or efficiency gains.
-- v2.6.0 is prepared locally and on this review branch; GitHub Release publication remains pending. License, attribution and invocation remain compatible.
+- v2.6.0 stable packages and checksums are available from the versioned GitHub Release. License, attribution and invocation remain compatible; the complete Skill folder replaces the previous installation.
 
 ## v2.5.0 — 2026-10-04
 

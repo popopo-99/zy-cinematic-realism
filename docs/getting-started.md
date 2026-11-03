@@ -1,6 +1,6 @@
 # 安装与第一次使用
 
-本文对应 **v2.6.0 发布准备版**。GitHub Release 尚未发布；完整包名为 `zy-cinematic-realism-v2.6.0.zip`，附同名 `.sha256`。审阅阶段可从当前分支下载完整的 [Skill 源码](../zy-cinematic-realism)。下方 main 安装示例适用于合入后；发布状态见[版本说明](../RELEASE_NOTES.md)。
+本文对应 **v2.6.0 正式版**。下载[完整安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip)（[SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip.sha256)），或安装 [main 分支完整源码](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism)。具体更新见[版本说明](../RELEASE_NOTES.md)。
 
 
 <a id="install-codex"></a>
@@ -22,7 +22,7 @@ https://github.com/popopo-99/zy-cinematic-realism
 
 ### 方法二：手动安装
 
-解压完整的 `zy-cinematic-realism-v2.6.0.zip`，或下载当前分支源码，将完整的 `zy-cinematic-realism` 文件夹复制到用户级 Skills 目录。
+解压 [v2.6.0 完整安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip)，或下载 main 分支源码，将完整的 `zy-cinematic-realism` 文件夹复制到用户级 Skills 目录。
 
 **Windows**
 
@@ -60,7 +60,7 @@ Codex 通常会自动发现变更；如果没有出现，请重新启动 Codex�
 1. 在侧边栏打开 **Plugins / 插件**。
 2. 在 Plugin Directory 中进入 **Skills**。
 3. 选择 **Create**，再选择 **Upload from your computer**。
-4. 准备完整安装包 `zy-cinematic-realism-v2.6.0.zip` 后上传；不要只上传入口文件。
+4. 下载并上传 [v2.6.0 完整安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip)；不要只上传入口文件。
 5. 扫描和安装完成后，输入 `$zy-cinematic-realism`，或直接描述电影感 Prompt 任务。
 
 Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会自动跨这些界面同步。

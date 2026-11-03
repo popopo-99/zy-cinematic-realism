@@ -6,7 +6,7 @@
 
 Start with a story, screenplay excerpt, or references. Establish the scene, develop the visual world, and compile model-native prompts and scoped repair instructions.
 
-**v2.6.0 release preparation** · [Release notes](RELEASE_NOTES.md) · [60-second start](#quick-start) · [Screenplay example](docs/titanic-story-to-frame.md) · [Examples](#showcase) · [Installation guide](docs/getting-started_EN.md)
+**v2.6.0 stable** · [Download the release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.6.0) · [Release notes](RELEASE_NOTES.md) · [60-second start](#quick-start) · [Screenplay example](docs/titanic-story-to-frame.md) · [Examples](#showcase) · [Installation guide](docs/getting-started_EN.md)
 
 ![Two detectives sit apart in silence on a night bus after a failed interrogation](docs/images/hero-night-bus.webp)
 
@@ -170,7 +170,7 @@ Reuse the card in the same conversation; supply its full contents again in a new
 | ChatGPT with Skills | [Upload the complete installation ZIP](docs/getting-started_EN.md#use-chatgpt) |
 | No Skills entry point | [Paste the self-contained basic chat edition](docs/chat-starter-en.md) |
 
-This branch prepares **v2.6.0**; its GitHub Release is not published yet. The complete package is named `zy-cinematic-realism-v2.6.0.zip`, with a `.sha256` file. Until publication, use the complete [Skill folder](zy-cinematic-realism) from this branch; see [release notes](RELEASE_NOTES.md) for status.
+Download the [complete v2.6.0 package](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip) ([SHA-256 checksum](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip.sha256)), or install the complete source from [main](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism). See [release notes](RELEASE_NOTES.md) for changes and validation scope.
 
 The installation ZIP has one top-level `zy-cinematic-realism/` folder. Replace the complete old folder and avoid duplicate installations. **SKILL.md alone does not include its referenced method library.**
 

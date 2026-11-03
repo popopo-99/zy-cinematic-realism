@@ -1,6 +1,6 @@
 # Installation and First Use
 
-This guide covers **v2.6.0 release preparation**. Its GitHub Release is not published yet. The complete package is `zy-cinematic-realism-v2.6.0.zip`, with a `.sha256` file. During review, download the complete [Skill source](../zy-cinematic-realism) from the current branch; main-branch examples below apply after integration. See [release status](../RELEASE_NOTES.md).
+This guide covers **v2.6.0 stable**. Download the [complete installation ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip) ([SHA-256 checksum](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip.sha256)), or install the complete [main-branch source](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism). See [release notes](../RELEASE_NOTES.md) for changes.
 
 
 <a id="install-codex"></a>
@@ -22,7 +22,7 @@ If your Codex interface offers a Skills installation or local import entry point
 
 ### Method 2: Install manually
 
-Extract the complete `zy-cinematic-realism-v2.6.0.zip`, or download this branch, then copy the complete `zy-cinematic-realism` folder into the user-level Skills directory.
+Extract the [complete v2.6.0 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip), or download main, then copy the complete `zy-cinematic-realism` folder into the user-level Skills directory.
 
 **Windows**
 
@@ -61,7 +61,7 @@ If Skills are available in your account or workspace:
 1. Open **Plugins** in the sidebar.
 2. Open **Skills** in the Plugin Directory.
 3. Choose **Create**, then **Upload from your computer**.
-4. Upload the complete `zy-cinematic-realism-v2.6.0.zip` when available; do not upload only the entry file.
+4. Download and upload the [complete v2.6.0 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip); do not upload only the entry file.
 5. After scanning and installation finish, enter `$zy-cinematic-realism` or describe a cinematic prompt task directly.
 
 Personal Skills currently need to be added separately in desktop and web/mobile interfaces; they do not automatically synchronize across those interfaces.

@@ -2,27 +2,71 @@
 
 **DREAM DIRECTOR v2.6.0 — Frame to Assets**
 
-**发布准备：2026-11-02（Asia/Shanghai）。** GitHub Release 尚未发布。完整包名为 `zy-cinematic-realism-v2.6.0.zip`，附 SHA-256；当前可使用本分支的完整 [Skill 文件夹](zy-cinematic-realism)。[实际验证记录](docs/validation-v2.6.md)分别记录文件检查、前向文字试用、图片与用户反馈。
+**正式版：v2.6.0 · 2026-11-03（Asia/Shanghai）。** [下载完整安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip) · [SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip.sha256) · [版本页面](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.6.0)
 
 当一张画面已经有了方向，后续反打、背面、手部或新场景需要可复用的参考。本版增加按镜头需要准备资产的流程，接入原有场景母版、连续性、解梦、模型编译与修复。
 
-- 从后续镜头反推必要素材，复用已有参考，未见区域仍是候选设计。
-- 分开人物/道具结构与成片视觉语言，避免参考页的灰底、工作光和展示锐度接管叙事镜头。
-- 检查道具开合、标记位置、持有人和手的占用，按实际回图做局部修复。
-- 认可范围按影调、人物、服装或其他明确维度记录；完整视觉试作的授权不自动变成内容验收。
-- [《末班证词》案例](docs/last-bus-testimony-asset-pack.md)保留实际素材、影调纠正、三镜和盒盖修复。用户已确认本组结果可以；原始六张风格参考未复制到公开图库。
+## 新增：视觉资产包 / Asset Pack
 
-自然调用：
+### 1. 根据下一镜准备素材
+
+从后续动作和机位判断缺什么：人物身份、服装背面、道具结构、必要空间视角或空景。已有参考足够时直接复用，不强制完整三视图、固定图片数量或每次都做全套资产。
+
+例如，只接窗边反打和录音带近景，可以沿用已有的人物与证物参考；只有后续出现背面下车时，才补充未展示的背部服装与裤鞋设计。
+
+### 2. 让每张参考只控制自己的部分
+
+人物页控制身份和相关服装，道具页控制物件结构；正式镜头的构图、媒介、影调和光源继续按用户选定的视觉方向处理。中性灰底、工作光、站姿与展示锐度不会因为出现在参考页中就获得成片风格的控制权。
+
+纸本插画等非摄影媒介继续保留自己的制作逻辑。纽约、复古暗调、遮挡构图和宽画幅均是本次案例选择，不是资产包的通用默认。
+
+### 3. 区分看见的细节与新设计
+
+原图没有展示的鞋、衣服背面、被人物挡住的座面或新增街景，保留为待定或候选设计；暗处看不清的纹理不冒充确定事实。认可影调、人物或服装时，记录对应范围，方便后续沿用。
+
+### 4. 增加道具状态检查与局部修复
+
+接后续镜头时，关注持有人、握持的手、手部占用、开合状态、数量和标记位置。实际回图出现问题后，再按证据修复相关区域；普通换机位造成的外观变化不直接判成错误。
+
+### 5. 按请求交付方案、Prompt 或图片
+
+只要方案就交方案，只要 Prompt 就交 Prompt。明确要求完整视觉试作时，可继续完成必要素材、后续镜头、检查与局部修复；素材清单与图片生成保持区分。批量修订时只追踪受影响的素材和镜头，不因改影调就重做全部人物结构参考。
+
+## 新案例：《末班证词》
+
+1987 年纽约，两名侦探坐夜班公交返回警局，录音带盒上的异常让他们怀疑证物被动过手脚。
+
+[完整图像案例](docs/last-bus-testimony-asset-pack.md)展示了用户反馈后的影调纠正、人物与证物参考复用、空车厢、老侦探近景、搭档反打、黎明街头，以及一次盒盖状态局部修复。[实际 Prompt 与参考职责](docs/last-bus-testimony-prompts.json)同时保留。用户确认本组结果可继续使用；作者提供的六张原始风格参考未复制到公开图库。
+
+## 使用示例
 
 ```text
 请使用 $zy-cinematic-realism：
-这张方向定了，后面要窗边反打和证物近景。
+这张的影调可以继续，后面要背面下车和证物近景。
 准备必要资产的方案与 Prompt，先不要生图。
+已有参考能用就复用，未展示的背部和鞋标为候选设计。
 ```
 
-技术名、调用名、38 位导演、四模型适配和 CC BY-NC 4.0 保持兼容。完整安装包只含单层 `zy-cinematic-realism/`，不含公开案例图库。升级前保存旧目录，再完整替换，避免同名副本。
+## 文档、验证与兼容
 
-**English:** Asset Pack derives the minimum reference set needed for requested later shots, separates source facts from proposed unseen design, keeps asset roles separate from the shot's visual grammar, and checks actual prop state and scoped repair. Look approval and execution authorization are not blanket image acceptance. Two independent text tasks and one rerun are recorded; eight manual cases are not all automatically certified. The actual detective prototype provides qualitative user feedback, not controlled evidence of general quality or efficiency improvement. This branch prepares v2.6.0; its GitHub Release is not published yet.
+- 中英文首页、安装教程与自包含聊天入门版新增资产包说明；[工作流](zy-cinematic-realism/references/asset-pack.md)接入既有 Scene Master、连续性、Dream Decode、模型编译与修复。
+- 导演库/本地链接、Skill 契约和打包检查通过 GitHub Actions；[验证记录](docs/validation-v2.6.md)区分静态校验、实际文字响应和图像检查。
+- [两类独立文字试用与一次重跑](docs/behavior-check-v2.6.md)覆盖必要素材规划、低照细节不确定性、插画媒介与身份参考职责。AP01–AP08 是行为规范，未声称八例全部独立执行；本次图像案例为定性验证，未做普遍质量或效率增益的受控比较。
+- 调用名 `$zy-cinematic-realism`、38 位导演、四模型适配、原署名和 CC BY-NC 4.0 许可证保持兼容。
+
+## 安装与升级
+
+下载附件 `zy-cinematic-realism-v2.6.0.zip` 与 `.zip.sha256`，或使用 [完整 Skill 源码](zy-cinematic-realism)。先备份旧目录，再用完整 `zy-cinematic-realism/` 文件夹替换；只复制入口文件会漏掉方法库，不要保留两个同名安装副本。
+
+安装 ZIP 只有一层顶级目录，含 79 个文件、219,223 字节；不含公开案例图库和作者原始风格图。源码、隔离解包与本地安装已逐文件比对。
+
+SHA256：`97252e95bfdb8b21df61aa9f764959c45301bccf4e975926b1d0d17a8f4fd11d`
+
+## English
+
+v2.6.0 adds **Asset Pack / Frame to Assets**. Start from an available frame and requested later shots, reuse sufficient references, and derive only the missing character, wardrobe, prop or location assets. Keep identity/object references separate from narrative medium, look, camera and light; preserve unseen details as proposals and track current prop/hand/open-close state. Deliver planning, prompts or generated images according to the request.
+
+The actual **Last Bus Testimony** prototype includes look correction, reused references, later frames and a targeted lid-state repair. Chinese/English onboarding and chat starters are updated. Two independent text tasks and one rerun are recorded separately from eight manual specifications; the example does not establish general quality or efficiency gains. The invocation name, 38-director library, four adapters, attribution and license remain compatible. Install the complete versioned ZIP and replace the full old folder after backup.
 
 ---
 
