@@ -28,6 +28,20 @@ Check every applicable item before responding. Rewrite any failed structural ite
 - [ ] Color and material response follow sources, exposure, weather, and surface properties.
 - [ ] Capture texture reinforces the scene instead of replacing it.
 
+## Capture Design (when relevant)
+
+- [ ] Ordinary language and professional specifications enter one workflow. Output depth follows the request, with plain-text prompts by default and JSON only on explicit request.
+- [ ] The resolved record lives within Scene Master → Camera / Viewpoint and agrees with light, surface, and delivery decisions.
+- [ ] User equipment/effect locks and accepted cumulative edits retain their source and shot/project scope. System-selected candidates retain their actual status.
+- [ ] Transcode, Multi-model Pack and handoff retain the currently used OPEN candidate values. General image approval does not silently lock unshown parameters.
+- [ ] Sensor/effective format, output aspect ratio, actual focal length, and any stated equivalence are distinguished.
+- [ ] Focal length, camera distance, subject size, framing, aperture/focus, and required clear planes are mutually coherent. OPEN dependencies are adjusted without silently changing locks.
+- [ ] Swirl, bokeh, flare, diffusion, halation, grain, and weather each have an appropriate source, location, and strength when used.
+- [ ] Film-wide gear, documented scene methods, exact-shot metadata, reference observations, and proposed recreations retain their evidence scope.
+- [ ] Asset-scoped capture and per-shot changes do not silently overwrite project-wide capture. Model changes retain the shared resolved design.
+- [ ] Sources and internal records stay outside the copyable prompt unless requested. Package checks and illustrative usage examples do not establish image performance.
+- [ ] JSON follows an explicit user request. Image repair uses the actual designated or current available edit image, including a failed first result.
+
 ## Story Visual Development (when active)
 
 - [ ] Output matches the requested analysis, director-facing art concept, narrative keyframe, or prompts; no mandatory purpose menu, automatic prompt/model question/generation, compulsory pair of deliverables, or fixed count of directions/images.

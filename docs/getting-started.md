@@ -1,7 +1,9 @@
 # 安装与第一次使用
 
-本文对应 **v2.6.0 正式版**。下载[完整安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip)（[SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip.sha256)），或安装 [main 分支完整源码](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism)。具体更新见[版本说明](../RELEASE_NOTES.md)。
+本文对应 **v2.7.0 正式版**。下载[完整安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip)（[SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip.sha256)），或安装 [main 分支完整源码](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism)。具体更新见[版本说明](../RELEASE_NOTES.md)。
 
+
+安装后用同一个调用名开始创作。摄影武器库、画风迁移和按需 Jury 输出见[一句话上手](v2.7-quick-start.md)。从 v2.6.0 升级时，先备份旧目录，再替换完整 Skill 文件夹。
 
 <a id="install-codex"></a>
 ## 安装到 Codex
@@ -22,7 +24,7 @@ https://github.com/popopo-99/zy-cinematic-realism
 
 ### 方法二：手动安装
 
-解压 [v2.6.0 完整安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip)，或下载 main 分支源码，将完整的 `zy-cinematic-realism` 文件夹复制到用户级 Skills 目录。
+解压 [v2.7.0 完整安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip)，或下载 main 分支源码，将完整的 `zy-cinematic-realism` 文件夹复制到用户级 Skills 目录。
 
 **Windows**
 
@@ -60,7 +62,7 @@ Codex 通常会自动发现变更；如果没有出现，请重新启动 Codex�
 1. 在侧边栏打开 **Plugins / 插件**。
 2. 在 Plugin Directory 中进入 **Skills**。
 3. 选择 **Create**，再选择 **Upload from your computer**。
-4. 下载并上传 [v2.6.0 完整安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip)；不要只上传入口文件。
+4. 下载并上传 [v2.7.0 完整安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip)；不要只上传入口文件。
 5. 扫描和安装完成后，输入 `$zy-cinematic-realism`，或直接描述电影感 Prompt 任务。
 
 Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会自动跨这些界面同步。
@@ -76,10 +78,10 @@ Personal Skills 需要分别添加到桌面端和 Web / 移动端，目前不会
 ```text
 请使用 $zy-cinematic-realism：
 雨夜便利店里，一个刚下班的女人双手握着热咖啡，不看镜头。
-给我 Midjourney Prompt，并简短说明关键画面决定。
+直接给我 Seedream 5.5 普通提示词。
 ```
 
-应得到针对当前画面的 Prompt；已指定模型时不重复询问。若 Skill 未出现，检查是否误放成两层同名目录。升级时完整替换旧文件夹，避免同名副本。
+收到提示词后，复制到 Seedream 5.5 生成。若 Skill 未出现，检查是否误放成两层同名目录。升级时避免同时保留两个同名副本。
 
 ### 从故事或剧本开始
 

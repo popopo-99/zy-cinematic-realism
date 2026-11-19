@@ -11,7 +11,7 @@ Create a card only when the user asks to hand off, save project state as text, c
 
 ## Build from Evidence
 
-Read the latest accepted Scene Master, user corrections, relevant Continuity Bible, and Decode Card. Preserve cumulative accepted changes. Distinguish user-fixed facts, user-accepted proposals, and unresolved assistant suggestions. A finished prompt does not imply an image was generated, inspected, or approved. A reference filename or card title does not make unavailable content accessible.
+Read the current valid Scene Master, user corrections, relevant Continuity Bible, and Decode Card. Preserve cumulative user instructions and accepted changes. Keep currently used provisional choices with their actual status so text-only continuation can resume the current candidate. Distinguish user-fixed facts, specifically accepted proposals, and unresolved assistant suggestions. A finished prompt does not imply an image was generated, inspected, or approved. A reference filename or card title does not make unavailable content accessible.
 
 Include only fields needed to resume:
 
@@ -20,6 +20,7 @@ Include only fields needed to resume:
 - **Task / target:** current output goal, established model/version/frontend if known, ratio, requested language and depth.
 - **Accepted state:** current characters, wardrobe, action/time, props, spatial relationships, sources, and visual decisions that matter; include only supported facts.
 - **Locks / allowed change:** what must remain, what the next task may change, and unresolved choices.
+- **Capture Design (when relevant):** current resolved camera/format, lens and actual focal length or stated field of view, distance/framing, aperture/focus, effect location/strength, filter/medium, and related light/texture decisions. Include currently used OPEN candidates, source, lock and acceptance status, project-versus-shot scope, and cumulative valid revisions. Keep unused alternatives separate from the active candidate and preserve the established model/version.
 - **Reference roles:** what each actually supplied image controls and which images need reattachment.
 - **Shared visual grammar:** include the complete relevant Decode Card or enough substantive rules, medium, scope, and exclusions to resume without an inaccessible title or path. Attach the relevant Bible when a series needs it; avoid duplicate facts.
 - **Accepted art direction (when relevant):** complete story-developed visual rules needed for continuation, separate from image-observed grammar and unaccepted alternatives. Do not label a story proposal as an observed Dream Decode mechanism.
@@ -36,6 +37,8 @@ Write a compact complete Markdown card in the user's language. Omit irrelevant s
 3. Continue the requested task using the established model and requested depth. Give a short recovered-state summary only when useful; prompt-only still means only the prompt.
 4. If an unavailable image is required for identity preservation, editing, or result comparison, request it. If only textual planning is requested, proceed from the available facts without pretending the image was seen.
 5. Ask only about a material unresolved conflict. Do not require redoing discovery or filling a full form.
+
+Restore photographic decisions into the same Scene Master → Camera / Viewpoint record, including the active provisional values with their existing status. Restoration does not turn a candidate into an accepted lock. A copied equipment card supports its stated facts and scope. It does not recover an unavailable image or establish the exact lens of a film shot beyond the cited evidence.
 
 A complete supplied card can support text-only continuation. Faithful analysis of a changed screenplay passage requires its actual contents when the card does not contain them; a source title, locator, or unread file does not recover the script. On restore, keep the requested analysis-only or prompt-only scope.
 

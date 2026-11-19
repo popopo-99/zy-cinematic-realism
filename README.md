@@ -6,7 +6,24 @@
 
 从故事想法、剧本节选或参考图出发，建立场景、开发视觉世界，再输出适合目标模型的 Prompt 和局部修复指令。
 
-**v2.6.0 正式版** · [下载正式版](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.6.0) · [版本说明](RELEASE_NOTES.md) · [60 秒上手](#quick-start) · [剧本实战](docs/titanic-story-to-frame.md) · [看案例](#showcase) · [安装教程](docs/getting-started.md)
+**v2.7.0 正式版 · Capture Design & Dream Decode** · [下载 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip) · [SHA-256](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip.sha256) · [版本说明](RELEASE_NOTES.md) · [安装教程](docs/getting-started.md) · [60 秒上手](#quick-start) · [剧本实战](docs/titanic-story-to-frame.md) · [看案例](#showcase)
+
+- **专业摄影武器库与自然语言摄影引导（Camera & Lens Arsenal）**。可以说“背景更清楚”“像站在人物身边”，也可以直接指定摄影机、镜头、焦距和光圈。[53 项摄影语言](zy-cinematic-realism/references/camera-language-dictionary.md)、[器材与专业镜头库](zy-cinematic-realism/references/equipment-library.md)和[电影摄影案例库](zy-cinematic-realism/references/cinema-shot-library.md)按需联动，选择写入同一场景母版。[雪地西部片选型实录](docs/v2.7-camera-arsenal-snow-western.md) · [摄影设定指南](docs/capture-design.md)
+
+  > 请使用 `$zy-cinematic-realism`，查 ARRI Signature Prime 35mm，说明主体清楚、焦外过渡柔和需要哪些条件。再查《1917》德军地下空间段落，附访谈来源并列明已核实的焦距及仍未知的光圈、人物距离。
+
+- **Dream Decode 画风反推与媒介适配**。先明确参考图负责身份、构图还是画风，再提取造型、明暗、材质和色彩等视觉机制。需要跨画面复用时，可把获准迁移的规则保存为 Style Capsule，按动画、CG 或插画的表现逻辑应用。
+- **统一交互与按需专业输出**。用自然语言开始，默认交付普通提示词。想先审阅摄影方案时说“先给我 Capture Plan”，想保存字段和颜色职责时可直接要求完整 Jury JSON Brief 与 HEX 色板。
+
+安装完整 Skill 后，在 Codex 或支持 Skills 的 ChatGPT 对话中输入下面这段。拿到提示词后，复制到 Seedream 5.5 生成。
+
+```text
+请使用 $zy-cinematic-realism：
+白天树林里的人像，眼睛清楚，背景也能认出树，21:9。
+器材你决定，直接给我 Seedream 5.5 普通提示词。
+```
+
+[一句话上手](docs/v2.7-quick-start.md) · [Jury 贡献与来源](docs/capture-design-credits.md) · [v2.6.0 历史说明](RELEASE_NOTES.md#造梦师-v260--从画面到资产)
 
 ![两个侦探在失败后的夜班公交车上沉默而坐](docs/images/hero-night-bus.webp)
 
@@ -24,14 +41,11 @@
 
 ```text
 请使用 $zy-cinematic-realism：
-雨夜便利店里，一个刚下班的女人
-双手握着热咖啡，不看镜头。
-给我 Midjourney Prompt。
-简短说明时刻、机位与主要光源。
-不要广告摆拍和无来源的轮廓光。
+雨夜便利店里，一个刚下班的女人双手握着热咖啡，不看镜头。
+直接给我 Midjourney 提示词。
 ```
 
-最少只要告诉它：**谁、在哪里、此刻在做什么、最不想要什么**。有固定景别、光线、画幅或模型时直接写上。
+先说你想画什么。人物、动作、地点和已经确定的模型可以直接写进一句话，固定景别、光线或画幅按需补充。
 
 接着自然地修改，不必记住模式名：
 
@@ -43,6 +57,10 @@
 只想复制 Prompt：加上“只给 Prompt”。想深入设计：要求展开 Scene Master（场景母版）、导演四轴或连续性设定。它会沿用对话中已确定的模型；未知且影响编译时才询问一次，也可以说“先给模型中立版本”。
 
 **还没安装？** 看[完整安装教程](docs/getting-started.md)。没有 Skills 入口，可以复制[自包含聊天入门版](docs/chat-starter-zh.md)；基础聊天版不包含完整导演库和模型参数适配器。
+
+## 同一画风，两种输出 · 天文台案例
+
+同一个天文台场景编译成普通提示词和 Jury JSON + 15 色 HEX。公开案例提供两份原始输入和单次成像观察，两张回图保留在本地。每组仅一张，画面差异受多项变量影响。[查看原始提示词和观察](docs/v2.7-style-output-case.md) · [60 秒教程](docs/v2.7-video-tutorial.md)
 
 <a id="core-workflows"></a>
 <a id="continuity"></a>
@@ -162,7 +180,7 @@ v2.4 尊重 **轻微 / 明确 / 强烈**；不指定时默认明确。轻微选�
 | ChatGPT 有 Skills 入口 | [上传完整安装 ZIP](docs/getting-started.md#use-chatgpt) |
 | 没有 Skills 入口 | [自包含聊天入门版](docs/chat-starter-zh.md)，基础能力可直接粘贴 |
 
-下载 [v2.6.0 完整安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip)（[SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip.sha256)），或从 [main 分支](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism)安装完整源码。具体更新与验证范围见[发布说明](RELEASE_NOTES.md)。
+下载 [v2.7.0 完整安装包](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip)（[SHA-256 校验文件](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip.sha256)），或从 [main 分支](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism)安装完整源码。升级和兼容性见[版本说明](RELEASE_NOTES.md)。
 
 安装包只有一层顶级 `zy-cinematic-realism/` 文件夹。升级时完整替换旧目录，避免同时安装同名副本。**只复制 SKILL.md 无法带上它引用的完整方法库。**
 
@@ -188,19 +206,19 @@ v2.4 尊重 **轻微 / 明确 / 强烈**；不指定时默认明确。轻微选�
 | 局部修复 | [Prompt Doctor](zy-cinematic-realism/references/result-repair.md) |
 | 模型编译与选择 | [Model Compiler](zy-cinematic-realism/references/prompt-compiler.md) · [Model Router](zy-cinematic-realism/references/model-routing.md) |
 | 四模型历史图片对照 | [同一个 Scene Master 的解释](docs/model-comparison.md) |
-| 本次升级与版本历史 | [v2.6 发布说明](RELEASE_NOTES.md) · [CHANGELOG](CHANGELOG.md) |
+| 本次升级与版本历史 | [版本说明](RELEASE_NOTES.md) · [CHANGELOG](CHANGELOG.md) |
 
-支持 GPT Image 2.5（保留显式 GPT Image 2 兼容）、Midjourney V8.2、Seedream 5.0 Pro、Nano Banana 及模型中立流程。适配器记录资料核对日期；界面能力变化时核对对应官方说明，不把任务启发式当作永久模型排名。
+支持 GPT Image 2.5（兼容明确指定的 GPT Image 2）、Midjourney V8.2、Seedream 5.5、明确指定的 Seedream 5.0 Pro、Nano Banana 和模型中立流程。适配器记录资料核对日期，实际控件以所用界面为准。
 
 <a id="repository-structure"></a>
 <a id="validation"></a>
 ## 验证状态
 
-v2.6 将认可画面接到后续镜头所需的素材准备、职责分配与状态检查。本轮保存独立文字试用、真实图像修订和用户认可，静态检查与比较评测分别记录。
+v2.7 的摄影选型实录属于真实文本调用，天文台案例另有用户提交的单次成像观察。v2.6 从画面到资产的独立文字试用、图像修订和用户认可继续保留。
 
 **个案展示与普遍增益分开判断。** 历史作品不是本次升级的重测结果；手动回归中的 Expected 是预期行为，不是执行记录。新案例的生成、比较与检查状态见验证记录。
 
-[本次验证记录](docs/validation-v2.6.md) · [v2.5 验证历史](docs/validation-v2.5.md) · [v2.4 验证历史](docs/validation-v2.4.md) · [完整手动回归与图像对照协议](zy-cinematic-realism/tests/manual-regression.md)
+[v2.7 验证范围](RELEASE_NOTES.md#validation-scope) · [v2.6 验证记录](docs/validation-v2.6.md) · [v2.5 验证历史](docs/validation-v2.5.md) · [v2.4 验证历史](docs/validation-v2.4.md) · [完整手动回归与图像对照协议](zy-cinematic-realism/tests/manual-regression.md)
 
 仓库根目录保存教程与作品；`zy-cinematic-realism/` 是可安装 Skill 本体。`scripts/` 提供静态校验与打包脚本，ZIP 不携带作品图库。
 

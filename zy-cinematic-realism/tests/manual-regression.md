@@ -531,3 +531,27 @@ These are behavior specifications, not executed-result claims. See the separate 
 
 **User C:** `展开 Scene Master 和连续性设定。`
 **Expected C:** Requested detailed plan; no claim images have been generated or accepted.
+
+## Style Decode and Media Adaptation text regression
+
+Run with actual accessible attachments for image claims. Preserve original inputs, raw outputs and source hashes. Schema tests must parse the raw complete answer and validate the existing still profile. A text-only pass establishes compilation behavior, with image execution recorded separately.
+
+| Case | Input and behavioral acceptance |
+| --- | --- |
+| T01 | Analyze animated male image A. Separate observed shape/value/material cues, inferred medium and proposed execution. Preserve five to eight Core Visual Rules. |
+| T02 | Analyze fox image B. Identify directional fur, woven cloth, natural illumination and CG candidate status. Distinguish supplied virtual equipment and output ratio from image evidence. |
+| T03 | Use A Brief for style only with a new watchmaker scene. Exclude source male, armor and tower. |
+| T04 | Use A as identity and composition source, change only to flat illustration. Protect identifiable face, hair, stubble, wardrobe and pose. |
+| T05 | Compile animation and flat illustration directly. Use appropriate shape/shading language without unsolicited camera brands, grain or photographic pores. |
+| T06 | Faithfully convert B Brief to plain text. Preserve 1:1 and supplied CG virtual camera/lens intent. |
+| T07 | Compile both examples as raw Jury JSON. Validate the complete existing nine-key Schema and palette. |
+| T08 | Compile the same A grammar as a concise plain prompt. Preserve scene and selected active rules. |
+| T09 | Use a reference for color or material only with a new subject and composition. Prevent content or medium leakage. |
+| T10 | Retain photographic professional parameters, check-only behavior, capture-strategy locks, minimal result repair and independent multi-model compilation. Run existing dictionary and Schema checks. |
+| T11 | Style name only, no image. Produce a compact text-derived capsule and mark proposed choices. |
+| T12 | Incompatible explicit medium requirements with no host. Identify the material conflict and seek a focused decision. |
+| T13 | Photographic medium locked, animation reference for color only. Preserve photographic rendering. |
+| T14 | User accepts only a color/material subset. Preserve all exclusions and unchanged scene choices. |
+| T15 | In one conversation, start a new independent project with a new image. Recover only its assigned style and scene. |
+| T16 | Interpret nine media from text construction cues. Limit findings to text understanding. |
+| T17 | Compile professional Cel Shading / 3D-to-2D / grouped-value / directional-texture terms directly, preserving the same new scene as the everyday-language case. |

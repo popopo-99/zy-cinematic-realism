@@ -24,7 +24,9 @@ Supported adapters:
 - `GPT Image`, `OpenAI image`, `ChatGPT 生图`, `ChatGPT Images 2.5`, `GPT Image 2.5`, `Images 2.5` → current [ChatGPT Images 2.5-compatible adapter](models/gpt-image-2.md)
 - Explicit `GPT Image 2`, `GPT-Image-2`, `gpt-image-2` → [the same adapter](models/gpt-image-2.md), retaining the requested legacy target or legacy-prompt compatibility task
 - `Midjourney`, `MJ`, `Midjourney V8`, `Midjourney V8.2`, `MJ V8.2` → [models/midjourney.md](models/midjourney.md), using V8.2 as the default target
-- `Seedream 5.0 Pro`, `Seedream`, `即梦` when the context clearly means this model → [models/seedream-5-pro.md](models/seedream-5-pro.md)
+- Explicit `Seedream 5.5` or `即梦 5.5` → [models/seedream-5-5.md](models/seedream-5-5.md)
+- Explicit `Seedream 5.0 Pro` or an established 5.0 Pro conversation → [models/seedream-5-pro.md](models/seedream-5-pro.md)
+- A fresh unqualified `Seedream` request, or `即梦` when the context clearly means Seedream prompting → [models/seedream-5-5.md](models/seedream-5-5.md). Preserve an established version. A frontend name alone does not verify its available model or controls.
 - `Nano Banana`, `Nano Banana family`, or a named Gemini image member → [models/nano-banana.md](models/nano-banana.md)
 
 For any other model, stay model-neutral unless reliable current documentation is available. Do not borrow syntax from a supported adapter merely because the model is similar.
@@ -33,7 +35,7 @@ For any other model, stay model-neutral unless reliable current documentation is
 
 - Prefer **ChatGPT Images 2.5 / GPT Image 2.5** for a structured production brief, high-fidelity image input, or conversational generation/editing in an OpenAI workflow.
 - Prefer **Midjourney V8.2** for prompt-led visual exploration, native parameterized iteration, role-specific reference workflows, and current Edit Model generation or repair.
-- Prefer **Seedream 5.0 Pro** for spatially explicit creative briefs, multilingual or text-rich production, annotated/local editing, and multi-source composition when the available frontend exposes those controls.
+- Use **Seedream 5.5** for a current Seedream scene or editing brief, preserving reference roles and explicit change boundaries. Keep **Seedream 5.0 Pro** for an explicit or established 5.0 Pro workflow. Check the selected frontend before offering annotation, region, or multi-reference controls.
 - Choose the **Nano Banana family** member according to the actual frontend/model: fast iteration, general multi-reference work, or precision production. Never treat all family members as identical.
 
 These are heuristics, not a permanent ranking. Capabilities and frontends change. Use `Strong`, `Good`, `Conditional`, `Limited`, or `Frontend-dependent`; never invent numerical scores.
@@ -49,6 +51,8 @@ Do not add model IDs, quality fields, unsupported parameters, pricing, or endpoi
 ## Adapter Boundary
 
 An adapter may alter prompt order, clause density, exclusions, edit wording, reference-role syntax, and supported parameters. It must not alter character identity, scene, story beat, action, camera witness position, visual center, spatial layers, source lights, props, time, weather, aspect ratio, or explicit restrictions.
+
+The same current resolved Capture Design feeds every adapter, including OPEN candidate values. Preserve equipment, visible behavior, source, lock and acceptance status, scope, and exclusions when changing targets. A version or model change alone does not trigger new capture selection. Adapter support does not demonstrate accurate physical equipment simulation or a measured image-quality gain.
 
 For Transcode, first apply the lock in [prompt-compiler.md](prompt-compiler.md). If the source prompt contains a structural conflict, warn briefly that faithful transcoding will retain it. Preserve it by default; fix it only when the user asks for optimization.
 

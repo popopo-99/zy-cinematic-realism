@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-"""Validate the v2.6.0 Skill, resource routes, and existing contracts."""
+"""Statically validate the v2.7.0 candidate, resource routes, and retained contracts."""
 
 from __future__ import annotations
 
+import argparse
+import json
 import re
 import sys
 from pathlib import Path
 
 import validate_director_library as base
+import validate_camera_language as language
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,12 +47,16 @@ def validate_readme_toc(path: Path, errors: list[str]) -> None:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--allow-sparse", action="store_true", help="Accept referenced files explicitly omitted by the Git sparse-checkout index.")
+    args = parser.parse_args()
     errors: list[str] = []
     director_files = base.validate_directors(errors)
     base.validate_index(director_files, errors)
     base.validate_signature_and_versions(errors)
-    base.validate_markdown_links(errors)
+    base.validate_markdown_links(errors, allow_sparse=args.allow_sparse)
     base.validate_dream_decode_terminology(errors)
+    language.validate_camera_language(errors)
     for name in ("README.md", "README_EN.md"):
         validate_readme_toc(ROOT / name, errors)
     for path in (ROOT / "README.md", ROOT / "README_EN.md", ROOT / "CHANGELOG.md", ROOT / "RELEASE_NOTES.md", SKILL / "SKILL.md"):
@@ -63,7 +70,7 @@ def main() -> int:
         if re.search(r"[A-Z]:\\Users\\", body):
             errors.append(f"{path.relative_to(ROOT)}: local Windows user path must not be published.")
 
-    require(SKILL / "SKILL.md", ("name: zy-cinematic-realism", "v2.6.0", "medium-router.md", "dream-decode.md", "prompt-compiler.md", "USER-LOCKED", "OPEN", "optional `表达机制`", "story-visual-development.md"), errors)
+    require(SKILL / "SKILL.md", ("name: zy-cinematic-realism", "v2.7.0", "medium-router.md", "dream-decode.md", "prompt-compiler.md", "USER-LOCKED", "OPEN", "optional `表达机制`", "story-visual-development.md"), errors)
     story_path = REF / "story-visual-development.md"
     if not story_path.is_file():
         errors.append("Missing story visual development resource.")
@@ -110,7 +117,7 @@ def main() -> int:
     for path in (ROOT / "docs" / "getting-started.md", ROOT / "docs" / "getting-started_EN.md"):
         require(path, ('<a id="install-codex"></a>', '<a id="use-chatgpt"></a>', "v2.6.0"), errors)
     metadata = SKILL / "agents" / "openai.yaml"
-    require(metadata, ("$zy-cinematic-realism", "model-native image prompt"), errors)
+    require(metadata, ("$zy-cinematic-realism", "model-native", "plain-text image prompt"), errors)
     if metadata.is_file() and "model-native cinematic image prompt" in metadata.read_text(encoding="utf-8"):
         errors.append("openai.yaml default prompt must not force a cinematic image prompt.")
     tests = SKILL / "tests" / "manual-regression.md"
@@ -138,12 +145,36 @@ def main() -> int:
         if identifiers != [f"AP{number:02d}" for number in range(1, 9)]:
             errors.append("Asset behavior specifications must retain AP01–AP08 in order.")
 
+    # These checks establish resource presence and links, not runtime behavior.
+    for name in ("capture-design.md", "equipment-library.md", "cinema-shot-library.md"):
+        require(REF / name, ("Jury",), errors)
+        require(SKILL / "SKILL.md", (f"references/{name}",), errors)
+    require(REF / "models" / "seedream-5-5.md", ("Seedream 5.5", "2026-11-17", "seed.bytedance.com", "Scene Master"), errors)
+    require(REF / "model-routing.md", ("models/seedream-5-5.md", "models/seedream-5-pro.md"), errors)
+    require(REF / "capture-design.md", ("Camera / Viewpoint", "USER-LOCKED", "OPEN", "JSON"), errors)
+    require(REF / "guided-capture-workflow.md", ("Scene Master", "Capture Design", "USER-LOCKED", "OPEN", "jury-json-brief.md"), errors)
+    require(REF / "jury-json-brief.md", ("Jury", "jury-json-brief-still.schema.json", "60620023de0ebecc05478df21478675ef2019f7802a371f432eae7cf70a05832"), errors)
+    require(SKILL / "SKILL.md", ("references/guided-capture-workflow.md", "references/jury-json-brief.md"), errors)
+    schema_path = SKILL / "assets" / "jury-json-brief-still.schema.json"
+    if schema_path.is_file():
+        try:
+            json.loads(schema_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            errors.append(f"Jury still Schema contains invalid JSON: {exc}")
+    else:
+        errors.append("Missing Jury still Schema.")
+    require(SKILL / "tests" / "guided-capture.md", ("**User**", "**Expected**", "**Failure**"), errors)
+    for name in ("capture-design.md", "capture-design-credits.md"):
+        require(ROOT / "docs" / name, ("v2.7.0",), errors)
+
     if errors:
         print(f"Skill validation failed with {len(errors)} error(s):")
         for error in errors:
             print(f"- {error}")
         return 1
-    print(f"Skill validation passed: v2.6.0, {len(director_files)} directors, Story to Frame and Asset Pack routes, Dream Decode contracts, {len(cases)} image-level manual cases, README anchors, and local links.")
+    print(f"Static Skill validation passed: v2.7.0 candidate, {len(director_files)} directors, retained Story/Asset/Dream Decode resources, Capture Design, dynamic camera-language contracts and guided Capture/Jury still resources, Seedream adapters, {len(cases)} preserved image-level manual specifications, README anchors, and local links.")
+    if args.allow_sparse:
+        print("Sparse checkout mode: absent reference targets are accepted only when marked skip-worktree in the Git index.")
     print("Image generation and human scoring: NOT AUTOMATICALLY VERIFIED.")
     return 0
 

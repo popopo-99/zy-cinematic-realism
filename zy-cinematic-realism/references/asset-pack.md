@@ -47,6 +47,8 @@ If the user needs art direction or has rejected the look, resolve the narrative 
 
 The purpose of an asset view determines its presentation. A casting or prop reference may use clear neutral light. That clarity, background, pose, crop, or texture emphasis is not authority over the final narrative image. For a non-photographic reference, preserve its authorized making logic through the existing compiler.
 
+Resolve an asset's [Capture Design](capture-design.md) for the dimensions it must reveal. A facial identity or construction reference needs sufficient focus and detail in those dimensions. Apply strong swirl, shallow focus, flare, diffusion, or low-light treatment when the asset's requested role includes that look, preserving explicit user locks. Record this as asset-scoped capture. The final narrative shot uses its own accepted capture choices and inherits only the asset's assigned identity, structure, material, or look authority.
+
 Compile each requested shot from:
 
 `Scene Master + current story/prop state + relevant accepted visual grammar + role-scoped assets → selected model adapter`

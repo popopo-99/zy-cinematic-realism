@@ -237,3 +237,50 @@ Do not re-decode and rewrite the entire prompt when only light and material drif
 - **Model Compiler:** independently compiles the same `Scene Master + Decoded Visual Grammar` for each target.
 - **Result Repair:** performs the smallest correction after drift diagnosis.
 - **Continuity Bible:** owns character, wardrobe, props, location, geography, story state, and stable light facts across a series. A Decode Card may supply shared visual grammar without becoming a second source of scene facts.
+
+## Style Decode sources and evidence
+
+The existing decode accepts actual images, existing Jury JSON Briefs, everyday style descriptions and professional style terms. Assign source roles before extracting rules. Use the same Scene Facts, Visual Grammar and Hybrid Decisions for each source type.
+
+- An inspectable image supports visible observations. State likely medium or technique as an inference with confidence. Distinguish any proposed execution choice. If the image cannot be viewed, state that limitation and use available text with its actual source.
+- An existing Brief supports attributed descriptions and creative intent. It supplies no independent visual observation or verified production facts. For faithful conversion retain its scene, ratio, current virtual-camera choices and exclusions. For style-only extraction filter its scene content through reference roles.
+- Everyday descriptions and professional terms supply intended visual goals. Complete useful OPEN details as creative proposals. With no image, identify a text-derived proposal and leave unsupported dimensions unspecified. Never claim reverse analysis of an unseen image.
+- When both image and Brief exist, retain disagreements with their provenance. An observed image ratio and a requested output ratio may differ. Keep color estimates separate from sampled pixel values. A named work or device in a Brief is a supplied reference whose factual production status needs its own evidence.
+
+For new independent projects, recover only the user-assigned sources for that project. Prior style, medium, palette and references enter only when the user requests continuation or inheritance. Existing continuity state remains scoped to its project.
+
+### Mechanism dimensions
+
+Organize relevant Visual Grammar through eight dimensions. Use only supported dimensions and preserve their source status.
+
+- **Form Language** covers proportion, silhouette, facial design and shape simplification.
+- **Shading Logic** covers value groups, shadow boundaries, local transitions and volume cues.
+- **Material Logic** covers how surfaces are distinguished through reflection, roughness and simplification.
+- **Color Logic** covers palette relationships, local color, saturation and light/shadow color.
+- **Texture Logic** covers mark direction, detail scale, density and selective placement.
+- **View / Lens Logic** covers viewpoint, scale, crop, projection and applicable optical focus.
+- **Rendering Logic** covers photographic, virtual, drawn, painted or mixed construction and its constraints.
+- **Exclusion Rules** cover supported substitutions that would erase the selected grammar.
+
+These dimensions describe ordinary visual construction. Use the existing optional Expression Mechanism only for its distinct expressive-event criteria.
+
+## Style Capsule / 风格胶囊
+
+A Style Capsule is a compact projection of the existing Visual Grammar, Core Visual Rules and Transfer Scope. Scene facts remain in the sole Scene Master. The existing Decode Card remains the complete reusable archive. Capsule entries reference the same rules and evidence, with no independent priority or acceptance state.
+
+| Field | Content and existing ownership |
+| --- | --- |
+| Medium | Resolved Primary Medium, useful secondary influences, Rendering Logic and Medium Constraints |
+| Form Rules | Transferable proportions, silhouettes and face/shape design from Visual Grammar |
+| Shading Rules | Value grouping, shadow edges and volume treatment |
+| Material Rules | Surface distinctions and permitted simplification |
+| Color Rules | Color relationships and saturation structure with palette provenance |
+| Texture Rules | Mark direction, scale, density and location |
+| View / Lens Rules | Applicable view, framing, projection or virtual optics, governed by Hybrid Decisions |
+| Transfer Scope | Existing Strong / Conditional / Do Not Transfer and Preserve / Adapt / Fill / Release decisions within assigned roles |
+| Avoid / Exclusion Rules | Current Medium Avoid and source-specific drift risks |
+| Evidence Status | Source image or Brief-field locator, observed / described / inferred / proposed / unknown status, confidence where relevant and any conflicts |
+
+Retain the full five to eight Core Visual Rules in the existing archive. Capsule fields may group or reference those rules and necessary supporting grammar. Select three to five Active Core Rules for the current compilation. Do not invent evidence to fill every capsule field. A text-only proposal can be short and identify its unprovided dimensions.
+
+When the user requests only a capsule, return that compact view with a brief source-status statement. When only a prompt is requested, compile the selected rules and omit the capsule report. An explicit Jury JSON request maps them into its existing fields under [jury-json-brief.md](jury-json-brief.md). The capsule adds no required JSON key. Plan review remains opt-in.

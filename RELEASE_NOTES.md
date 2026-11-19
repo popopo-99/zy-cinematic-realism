@@ -1,3 +1,51 @@
+# Dream Director v2.7.0 — Capture Design & Dream Decode
+
+造梦师 v2.7.0 · 摄影设定与解梦
+
+[安装 ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip) · [SHA-256](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip.sha256) · [中文安装指南](docs/getting-started.md) · [English installation guide](docs/getting-started_EN.md)
+
+## 本次升级
+
+1. **摄影武器库与口语引导**。用“眼睛清楚，后面的树也能认出来”说明目标，或直接指定机身、镜头、焦距与光圈。[53 项摄影语言](zy-cinematic-realism/references/camera-language-dictionary.md)、[器材与专业镜头](zy-cinematic-realism/references/equipment-library.md)及[电影摄影案例](zy-cinematic-realism/references/cinema-shot-library.md)按需查用。摄影选择与画面共用同一 Scene Master。[雪地西部片选型实录](docs/v2.7-camera-arsenal-snow-western.md)
+2. **Dream Decode 画风反推与媒介适配**。为参考图指定身份、构图或画风等职责，提取造型、明暗、材质和色彩的视觉机制。通过 Style Capsule 复用获准迁移的规则，并按动画、CG 或插画的目标媒介编译。[Dream Decode](zy-cinematic-realism/references/dream-decode.md)
+3. **统一交互与按需专业输出**。从一句自然语言开始，默认给可复制的普通提示词。按需先看 Capture Plan，或直接请求完整 Jury JSON Brief 和 HEX 设计色板。[一句话上手](docs/v2.7-quick-start.md) · [天文台文字案例](docs/v2.7-style-output-case.md)
+
+## 安装、升级与第一条提示词
+
+在 Codex 中安装完整 `zy-cinematic-realism/` 文件夹，或在支持 Skills 的 ChatGPT 工作区上传完整 ZIP。升级时先备份旧目录，再替换完整文件夹，避免同名副本。正式调用名沿用 `$zy-cinematic-realism`。
+
+```text
+请使用 $zy-cinematic-realism。白天树林里的人像，眼睛清楚，背景也能认出树，21:9。器材你决定，直接给我 Seedream 5.5 普通提示词。
+```
+
+把收到的提示词复制到所选生图入口。故事到画面、导演方法、视觉资产和连续性入口继续可用。新对话只写 Seedream 或即梦时采用 5.5，已约定的版本及明确指定的 5.0 Pro 继续沿用。
+
+<a id="validation-scope"></a>
+## 验证与成像证据
+
+- **器材事实**以原厂资料及影片制作来源为准，分别标明产品规格、影片或段落的已知范围。
+- **创作建议**包含取景、机位、焦距、光线和清晰范围的组合选择。雪地西部片是一次真实的文本选型调用。
+- **生成模型表现**依据对应回图评价。天文台两组各一张，公开案例提供原始提示词和观察文字。当前证据不足以确认 JSON 或 HEX 的画质优势，也不足以证明生成结果精确模拟实际硬件。
+
+## 来源与贡献
+
+感谢 Jury 的粉丝版迭代，尤其是器材视觉签名、成像规划和结构化摄影字段。项目由 ZY / popopo-99 创建并维护。[完整致谢和资料来源](docs/capture-design-credits.md) · [CC BY-NC 4.0 与授权范围](docs/licensing.md)
+
+<a id="release-notes-en"></a>
+## Release notes in English
+
+1. **Camera & Lens Arsenal and conversational capture guidance.** Describe how the shot should look, or specify equipment and parameters directly. Look up [53 camera-language terms](zy-cinematic-realism/references/camera-language-dictionary.md), [cameras and cinema lenses](zy-cinematic-realism/references/equipment-library.md), and [sourced film examples](zy-cinematic-realism/references/cinema-shot-library.md) as needed. [Snowy Western equipment walkthrough in Chinese](docs/v2.7-camera-arsenal-snow-western.md)
+2. **Dream Decode and media adaptation.** Assign roles to references, extract how they handle form, values, materials and color, and save approved rules in a Style Capsule for reuse across scenes or media. [Dream Decode workflow](zy-cinematic-realism/references/dream-decode.md)
+3. **One conversational entry with optional professional output.** Get a plain-text prompt from an everyday request. Ask for a Capture Plan when you want to review the setup, or request a complete Jury JSON Brief with a HEX design palette directly. [Observatory case inputs and observations in Chinese](docs/v2.7-style-output-case.md)
+
+**Install and upgrade.** Download the ZIP above and install the entire `zy-cinematic-realism/` folder in Codex, or upload the full ZIP to a ChatGPT workspace with Skills. Back up and replace the previous folder to avoid duplicate installs. Keep using `$zy-cinematic-realism`. Try “Use $zy-cinematic-realism. Daylight forest portrait, sharp eyes, recognizable background trees, 21:9. Give me a plain-text Seedream 5.5 prompt.” Paste the prompt into your generation interface. Story, director, asset and continuity workflows remain available. Explicit Seedream 5.0 Pro and previously established versions are supported. [Installation guide](docs/getting-started_EN.md)
+
+**Evidence.** Manufacturer specifications and sourced production records describe equipment. Capture settings are creative choices. The snowy Western walkthrough records a real text call. The observatory case reports an exploratory run with one output per group, which cannot establish a quality advantage for JSON or HEX or exact hardware simulation. Its images are held locally.
+
+Thanks to Jury for the fan edition, equipment research and capture-planning work. Dream Director is created and maintained by ZY / popopo-99 under CC BY-NC 4.0. [Credits and sources](docs/capture-design-credits.md) · [Licensing scope](docs/licensing.md)
+
+---
+
 # 造梦师 v2.6.0 — 从画面到资产
 
 **DREAM DIRECTOR v2.6.0 — Frame to Assets**

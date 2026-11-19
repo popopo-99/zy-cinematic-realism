@@ -1,1 +1,9 @@
 * text=auto eol=lf
+
+# Keep archived case inputs and previously verified package members byte-exact.
+docs/examples/v2.7-style-output/A_Quick_Prompt.txt -text !eol
+docs/examples/v2.7-style-output/B_Jury_JSON_HEX.json -text !eol
+docs/examples/v2.7-style-output/manifest.json -text !eol
+zy-cinematic-realism/references/camera-language-dictionary.md -text !eol
+zy-cinematic-realism/references/cinema-shot-library.md -text !eol
+zy-cinematic-realism/tests/camera-language.md -text !eol

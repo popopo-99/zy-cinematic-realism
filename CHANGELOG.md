@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.7.0 — Capture Design & Dream Decode
+
+- **Camera & Lens Arsenal.** 53 indexed photography terms, sourced camera and lens cards, film and scene methods, and conversational photography guidance share one Capture Design in the Scene Master. Source scope, accepted locks and parameter dependencies carry through the existing workflows.
+- **Dream Decode.** Style Capsules carry approved visual rules across scenes. Reference roles and medium adaptation govern how form, value, texture and color transfer.
+- **Conversational output.** Plain-text prompts remain the default. Capture Plan review, Jury JSON Brief for stills, and HEX design colors are available on request.
+- **Model compatibility.** Adds the Seedream 5.5 adapter. Explicit 5.0 Pro and established model versions remain supported. Story, director, asset and continuity workflows are retained.
+- **Documentation and packaging.** Includes the real snowy Western text exchange and the observatory case prompts. The complete Skill ZIP continues to use the `zy-cinematic-realism/` root, with source and contributor notices and archive integrity checks.
+
 ## v2.6.0 — 2026-11-03
 
 ### Added

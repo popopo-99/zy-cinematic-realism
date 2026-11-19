@@ -6,7 +6,24 @@
 
 Start with a story, screenplay excerpt, or references. Establish the scene, develop the visual world, and compile model-native prompts and scoped repair instructions.
 
-**v2.6.0 stable** · [Download the release](https://github.com/popopo-99/zy-cinematic-realism/releases/tag/v2.6.0) · [Release notes](RELEASE_NOTES.md) · [60-second start](#quick-start) · [Screenplay example](docs/titanic-story-to-frame.md) · [Examples](#showcase) · [Installation guide](docs/getting-started_EN.md)
+**v2.7.0 stable · Capture Design & Dream Decode** · [Download ZIP](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip) · [SHA-256](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip.sha256) · [Release notes](RELEASE_NOTES.md#release-notes-en) · [Installation](docs/getting-started_EN.md) · [60-second start](#quick-start) · [Screenplay example](docs/titanic-story-to-frame.md) · [Examples](#showcase)
+
+- **Camera & Lens Arsenal and conversational photography guidance.** Say “keep the background readable,” or specify a camera, lens, focal length and aperture. [53 camera-language terms](zy-cinematic-realism/references/camera-language-dictionary.md), the [camera and lens library](zy-cinematic-realism/references/equipment-library.md) and the [film/shot library](zy-cinematic-realism/references/cinema-shot-library.md) connect on demand within one Scene Master. [Snowy Western equipment walkthrough in Chinese](docs/v2.7-camera-arsenal-snow-western.md) · [Capture Design guide in Chinese](docs/capture-design.md)
+
+  > Use `$zy-cinematic-realism` to look up the ARRI Signature Prime 35mm. Explain what keeps the subject sharp with a smooth transition into out-of-focus areas. Then look up the German bunker sequence in *1917*. Cite the interview, list the documented focal length, and flag the aperture and subject distance as unknown if the source gives neither.
+
+- **Dream Decode and media adaptation.** Assign each reference a role such as identity, composition or style. Extract how it handles form, values, materials and color. Save approved rules in a Style Capsule when you need them across scenes, with the intended medium guiding the transfer.
+- **One conversational entry with optional professional output.** Start in everyday language and get a plain-text prompt by default. Ask for a Capture Plan to review the setup, or request a full Jury JSON Brief with a HEX palette and color roles directly.
+
+After installing the complete Skill in Codex or a ChatGPT workspace with Skills, try this request. Paste the resulting prompt into Seedream 5.5 when you are ready to generate.
+
+```text
+Use $zy-cinematic-realism.
+A daylight forest portrait, sharp eyes and recognizable background trees, 21:9.
+Choose the equipment. Give me a plain-text Seedream 5.5 prompt directly.
+```
+
+[Quick-start guide in Chinese](docs/v2.7-quick-start.md) · [Jury contribution and sources](docs/capture-design-credits.md) · [Archived v2.6.0 notes](RELEASE_NOTES.md#造梦师-v260--从画面到资产)
 
 ![Two detectives sit apart in silence on a night bus after a failed interrogation](docs/images/hero-night-bus.webp)
 
@@ -23,21 +40,12 @@ The technical name and invocation remain `zy-cinematic-realism` / `$zy-cinematic
 After installation, copy:
 
 ```text
-Use $zy-cinematic-realism:
-Rainy night, inside a
-convenience store.
-A woman just off work
-holds hot coffee in both
-hands, looking away
-from camera.
-Give me an MJ prompt.
-Explain the moment,
-viewpoint, and main light.
-No advertising poses or
-unmotivated rim light.
+Use $zy-cinematic-realism.
+A woman just off work holds hot coffee inside a convenience store on a rainy night,
+looking away from camera. Give me a Midjourney prompt directly.
 ```
 
-At minimum: **who, where, the action now, and what to avoid**. State any fixed framing, light, ratio, or model directly.
+Start by saying what you want to make. Include the subject, action, location and established target model in one sentence, with any framing, light or ratio choices you already have.
 
 Continue naturally:
 
@@ -51,6 +59,10 @@ looking through glass.
 Add “prompt only” for a copyable prompt without explanation. Ask for the Scene Master, four-axis director breakdown, or continuity plan when you want depth. The Skill keeps the established model; it asks once only when an unknown target materially affects compilation. You can request a model-neutral version first.
 
 **Not installed?** See [installation](docs/getting-started_EN.md). Without a Skills entry point, paste the [self-contained chat starter](docs/chat-starter-en.md); this basic edition omits the complete director library and model parameter adapters.
+
+## One style, two outputs · Observatory case
+
+The observatory scene was compiled into a plain-text prompt and a Jury JSON Brief with 15 HEX colors. The public walkthrough includes the original prompts and observations from one output per group. The images are held locally, and several variables may account for their differences. [Original prompts and observations in Chinese](docs/v2.7-style-output-case.md) · [60-second tutorial in Chinese](docs/v2.7-video-tutorial.md)
 
 <a id="core-workflows"></a>
 <a id="continuity"></a>
@@ -170,7 +182,7 @@ Reuse the card in the same conversation; supply its full contents again in a new
 | ChatGPT with Skills | [Upload the complete installation ZIP](docs/getting-started_EN.md#use-chatgpt) |
 | No Skills entry point | [Paste the self-contained basic chat edition](docs/chat-starter-en.md) |
 
-Download the [complete v2.6.0 package](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip) ([SHA-256 checksum](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.6.0/zy-cinematic-realism-v2.6.0.zip.sha256)), or install the complete source from [main](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism). See [release notes](RELEASE_NOTES.md) for changes and validation scope.
+Download the [complete v2.7.0 package](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip) ([SHA-256 checksum](https://github.com/popopo-99/zy-cinematic-realism/releases/download/v2.7.0/zy-cinematic-realism-v2.7.0.zip.sha256)), or install the complete source from [main](https://github.com/popopo-99/zy-cinematic-realism/tree/main/zy-cinematic-realism). [Upgrade and compatibility notes](RELEASE_NOTES.md#release-notes-en)
 
 The installation ZIP has one top-level `zy-cinematic-realism/` folder. Replace the complete old folder and avoid duplicate installations. **SKILL.md alone does not include its referenced method library.**
 
@@ -196,19 +208,19 @@ Model syntax can change; locked scene facts cannot change silently.
 | Scoped repair | [Prompt Doctor](zy-cinematic-realism/references/result-repair.md) |
 | Model compilation and selection | [Compiler](zy-cinematic-realism/references/prompt-compiler.md) · [Router](zy-cinematic-realism/references/model-routing.md) |
 | Historical four-model image comparison | [One Scene Master, multiple interpretations](docs/model-comparison.md) |
-| Release changes | [v2.6 notes](RELEASE_NOTES.md) · [CHANGELOG](CHANGELOG.md) |
+| Release changes | [Release notes](RELEASE_NOTES.md#release-notes-en) · [CHANGELOG](CHANGELOG.md) |
 
-Supports GPT Image 2.5 with explicit GPT Image 2 compatibility, Midjourney V8.2, Seedream 5.0 Pro, Nano Banana, and model-neutral work. Adapters record documentation-check dates; verify current official controls when a frontend changes. Routing heuristics are not permanent rankings.
+Supports GPT Image 2.5 with explicit GPT Image 2 compatibility, Midjourney V8.2, Seedream 5.5, explicit Seedream 5.0 Pro requests, Nano Banana, and model-neutral work. Adapters record when documentation was checked. Available controls depend on your current interface.
 
 <a id="repository-structure"></a>
 <a id="validation"></a>
 ## Validation Status
 
-v2.6 adds need-driven asset preparation, scoped reference use, and prop-state checks for subsequent shots. Independent text trials, actual image revisions and user feedback are recorded separately from static checks and comparative evaluation.
+The v2.7 equipment walkthrough records an actual text exchange. The observatory case records exploratory observations from user-supplied images. The v2.6 records for text trials, image revisions and feedback on the asset workflow remain available.
 
 **A worked example and general improvement are separate claims.** Historical images are not retests for this upgrade; Expected entries in manual regression are specifications, not execution records. See the validation record for the new example's generation, comparison, and check status.
 
-[Current validation record](docs/validation-v2.6.md) · [v2.5 validation history](docs/validation-v2.5.md) · [v2.4 validation history](docs/validation-v2.4.md) · [Manual regression and image comparison protocol](zy-cinematic-realism/tests/manual-regression.md)
+[v2.7 validation scope](RELEASE_NOTES.md#release-notes-en) · [v2.6 validation record](docs/validation-v2.6.md) · [v2.5 validation history](docs/validation-v2.5.md) · [v2.4 validation history](docs/validation-v2.4.md) · [Manual regression and image comparison protocol](zy-cinematic-realism/tests/manual-regression.md)
 
 The repository root contains tutorials and work; `zy-cinematic-realism/` is the installable Skill. `scripts/` provides static checks and packaging. The ZIP excludes the showcase gallery.
 
