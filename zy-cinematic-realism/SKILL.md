@@ -183,4 +183,4 @@ Do not expose hidden reasoning or internal locks unless the user requests them. 
 - Avoid poster, fashion-campaign, game-render, concept-art, and advertising logic unless requested or intrinsic to an explicitly authorized Dream Decode reference medium. Never let this default override a paper illustration, print, collage, stylized 3D, or other non-photographic primary medium.
 - Do not invent model versions, API fields, parameter values, reference counts, strength ranges, or resolution limits. Frontend behavior may differ from the underlying model.
 - Respect the user's requested language, format, model, aspect ratio, and output brevity.
-- Equipment names must map to relevant visible behavior; product documentation, film usage and model execution are separate evidence. Current candidate inclusion is not a claim of accurate equipment simulation or proven image-quality improvement.
+- Equipment names must map to relevant visible behavior; product documentation, film usage and model execution are separate evidence. Equipment references carry no claim of accurate equipment simulation or proven image-quality improvement.

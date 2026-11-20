@@ -23,7 +23,7 @@ Removing attribution or presenting this work as independently created is not per
 
 ## Capture Design contribution
 
-The v2.7.0 local candidate credits Jury's fan edition and supplied materials for equipment visual signatures, capture planning and structured photographic fields. The integration, source-backed equipment and film-method cards, conversational guidance and Seedream 5.5 adapter were prepared for this candidate on 2026-11-17.
+Version 2.7.0 credits Jury's fan edition and supplied materials for equipment visual signatures, capture planning and structured photographic fields. The integration, source-backed equipment and film-method cards, conversational guidance and Seedream 5.5 adapter were prepared for v2.7.0 on 2026-11-17.
 
 The 2026-11-18 P1.5 integration also credits Jury's v2.5.3 dual-entry manual for the optional Capture Plan review workflow, and the supplied Jury JSON Brief and installed Jury reference for the complete still-image field structure. The machine-readable still Schema is a formalization prepared for this integration. Source identities and scope are recorded in references/jury-json-brief.md within the zy-cinematic-realism/ Skill directory.
 
