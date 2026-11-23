@@ -26,6 +26,8 @@ Verified: 2026-09-09 (OpenAI 2.5 refresh; other provider entries retain their 20
 
 ## Selection Rules
 
+For current Seedream requests, also read the [Seedream 5.5 adapter](models/seedream-5-5.md), verified against official sources on 2026-11-17. The table above retains its stated 5.0 Pro basis. Route explicit versions and established conversations according to [model-routing.md](model-routing.md). The 5.5 adapter documents generation, references, editing and frontend-dependent output capabilities without inheriting the table's qualitative ratings as a new benchmark.
+
 - Match the recommendation to the user's actual interface, references, editing needs, text needs, and iteration style.
 - Give one primary choice and optionally one backup. Do not call any model universally best.
 - Treat `Conditional` and `Frontend-dependent` as a prompt to verify the user's tool, not as a deficiency score.

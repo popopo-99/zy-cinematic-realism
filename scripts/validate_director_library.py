@@ -3,7 +3,10 @@
 
 from __future__ import annotations
 
+import argparse
+import html
 import re
+import subprocess
 import sys
 from pathlib import Path
 from urllib.parse import unquote
@@ -13,7 +16,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SKILL_ROOT = REPO_ROOT / "zy-cinematic-realism"
 DIRECTOR_ROOT = SKILL_ROOT / "references" / "directors"
 INDEX_PATH = DIRECTOR_ROOT / "index.md"
-EXPECTED_VERSION = "2.6.0"
+EXPECTED_VERSION = "2.7.0"
+STABLE_VERSION = "2.6.0"
 
 REQUIRED_SECTIONS = (
     "Identity",
@@ -177,6 +181,36 @@ def validate_index(director_files: list[Path], errors: list[str]) -> None:
             )
 
 
+def validate_preview_readme_versions(
+    name: str, text: str, expected_preview: str, errors: list[str]
+) -> None:
+    stable_label, preview_label = (
+        ("正式版", "本地预览") if name == "README.md" else ("stable", "local preview")
+    )
+    visible = markdown_content(text)
+    version = r"v\d+\.\d+\.\d+(?:-dev)?"
+    preview_versions = re.findall(
+        rf"^\*\*({version}) {preview_label}\b[^*\n]*\*\*", visible, re.MULTILINE
+    )
+    if preview_versions != [expected_preview]:
+        errors.append(f"{name}: expected one local preview declaration for '{expected_preview}'.")
+
+    stable_lines = re.findall(
+        rf"^\*\*({version}) {stable_label}\*\*([^\n]*)", visible, re.MULTILINE
+    )
+    expected_stable = f"v{STABLE_VERSION}"
+    if len(stable_lines) != 1 or stable_lines[0][0] != expected_stable:
+        errors.append(f"{name}: expected one stable navigation entry for '{expected_stable}'.")
+        return
+
+    release_tags = re.findall(
+        rf"\]\(https://github\.com/popopo-99/zy-cinematic-realism/releases/tag/({version})\)",
+        stable_lines[0][1],
+    )
+    if release_tags != [expected_stable]:
+        errors.append(f"{name}: stable navigation must link to release tag '{expected_stable}'.")
+
+
 def validate_signature_and_versions(errors: list[str]) -> None:
     skill_text = (SKILL_ROOT / "SKILL.md").read_text(encoding="utf-8")
     routing_text = (SKILL_ROOT / "references" / "director-routing.md").read_text(
@@ -202,6 +236,7 @@ def validate_signature_and_versions(errors: list[str]) -> None:
                 f"{path.relative_to(REPO_ROOT)}: missing Director Four-Axis routing reference."
             )
 
+    local_candidate = "Local candidate prepared" in skill_text
     version_checks = (
         (REPO_ROOT / "README.md", f"v{EXPECTED_VERSION}"),
         (REPO_ROOT / "README_EN.md", f"v{EXPECTED_VERSION}"),
@@ -211,6 +246,9 @@ def validate_signature_and_versions(errors: list[str]) -> None:
     )
     for path, token in version_checks:
         text = path.read_text(encoding="utf-8")
+        if local_candidate and path.name in {"README.md", "README_EN.md"}:
+            validate_preview_readme_versions(path.name, text, token, errors)
+            continue
         current_version = re.search(r"\bv\d+\.\d+\.\d+(?:-dev)?\b", text)
         if current_version is None or current_version.group() != token:
             errors.append(
@@ -222,6 +260,10 @@ def validate_signature_and_versions(errors: list[str]) -> None:
         text = (REPO_ROOT / name).read_text(encoding="utf-8")
         if name == "RELEASE_NOTES.md":
             text = text.split("\n---\n", 1)[0]
+        if local_candidate:
+            if re.search(rf"https://github\.com/[^\s)]+/releases/(?:download|tag)/v{re.escape(EXPECTED_VERSION)}(?:/|[)\s])", text):
+                errors.append(f"{name}: local candidate advertises a published current release.")
+            continue
         packages = re.findall(r"zy-cinematic-realism-v\d+\.\d+\.\d+\.zip", text)
         if not packages or set(packages) != {expected_zip}:
             errors.append(f"{name}: current package must be '{expected_zip}'.")
@@ -229,29 +271,86 @@ def validate_signature_and_versions(errors: list[str]) -> None:
 
 def local_target(link: str, source: Path) -> Path | None:
     value = link.strip().strip("<>")
-    if not value or value.startswith(("#", "http://", "https://", "mailto:", "data:")):
+    if not value or value.startswith(("http://", "https://", "mailto:", "data:")):
         return None
     value = value.split("#", 1)[0].split("?", 1)[0].strip()
     if not value:
-        return None
+        return source.resolve()
     return (source.parent / unquote(value)).resolve()
 
 
-def validate_markdown_links(errors: list[str]) -> None:
+def markdown_content(body: str) -> str:
+    """Keep Markdown outside fenced examples for link and heading checks."""
+    visible = []
+    fence = ""
+    for line in body.splitlines():
+        marker = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
+        if marker:
+            run, trailing = marker.groups()
+            if not fence:
+                fence = run
+            elif run[0] == fence[0] and len(run) >= len(fence) and not trailing.strip():
+                fence = ""
+            continue
+        if not fence:
+            visible.append(line)
+    return "\n".join(visible)
+
+
+def markdown_anchors(body: str) -> set[str]:
+    visible = markdown_content(body)
+    anchors = set(re.findall(r'<a id="([^"]+)"></a>', visible))
+    counts: dict[str, int] = {}
+    for heading in re.findall(r"^#{1,6}\s+(.+?)\s*#*\s*$", visible, flags=re.MULTILINE):
+        heading = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", heading)
+        heading = re.sub(r"<[^>]+>", "", heading)
+        slug = re.sub(r"[^\w\-\s]", "", html.unescape(heading).lower()).replace(" ", "-")
+        count = counts.get(slug, 0)
+        counts[slug] = count + 1
+        anchors.add(f"{slug}-{count}" if count else slug)
+    return anchors
+
+
+def validate_markdown_links(errors: list[str], allow_sparse: bool = False) -> None:
+    sparse_files: set[Path] = set()
+    if allow_sparse:
+        try:
+            entries = subprocess.check_output(
+                ["git", "ls-files", "-t", "-z"], cwd=REPO_ROOT
+            ).decode("utf-8").split("\0")
+            sparse_files = {
+                (REPO_ROOT / entry[2:]).resolve()
+                for entry in entries if entry.startswith("S ")
+            }
+        except (OSError, subprocess.CalledProcessError) as exc:
+            errors.append(f"Cannot inspect sparse checkout: {exc}")
+            return
     markdown_files = sorted(
         path
         for path in REPO_ROOT.rglob("*.md")
         if ".git" not in path.parts and "dist" not in path.parts
     )
+    anchor_cache: dict[Path, set[str]] = {}
     for path in markdown_files:
-        text = path.read_text(encoding="utf-8")
+        text = markdown_content(path.read_text(encoding="utf-8"))
+        explicit_ids = re.findall(r'<a id="([^"]+)"></a>', text)
+        if len(explicit_ids) != len(set(explicit_ids)):
+            errors.append(f"{path.relative_to(REPO_ROOT)}: duplicate explicit anchors.")
         links = MARKDOWN_LINK_RE.findall(text) + HTML_LINK_RE.findall(text)
         for link in links:
             target = local_target(link, path)
-            if target is not None and not target.exists():
-                errors.append(
-                    f"{path.relative_to(REPO_ROOT)}: broken local link '{link}'."
-                )
+            if target is None:
+                continue
+            if not target.exists():
+                if target not in sparse_files:
+                    errors.append(f"{path.relative_to(REPO_ROOT)}: broken local link '{link}'.")
+                continue
+            anchor = unquote(link.strip().strip("<>").partition("#")[2])
+            if anchor and target.suffix.lower() == ".md":
+                if target not in anchor_cache:
+                    anchor_cache[target] = markdown_anchors(target.read_text(encoding="utf-8"))
+                if anchor not in anchor_cache[target]:
+                    errors.append(f"{path.relative_to(REPO_ROOT)}: broken local anchor '{link}'.")
 
 
 def validate_dream_decode_terminology(errors: list[str]) -> None:
@@ -273,11 +372,14 @@ def validate_dream_decode_terminology(errors: list[str]) -> None:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--allow-sparse", action="store_true", help="Accept referenced files explicitly omitted by the Git sparse-checkout index.")
+    args = parser.parse_args()
     errors: list[str] = []
     director_files = validate_directors(errors)
     validate_index(director_files, errors)
     validate_signature_and_versions(errors)
-    validate_markdown_links(errors)
+    validate_markdown_links(errors, allow_sparse=args.allow_sparse)
     validate_dream_decode_terminology(errors)
 
     if errors:

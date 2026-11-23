@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Jury JSON Brief — verified still-image profile",
+  "$comment": "Formalized on 2026-11-18 from the matching complete still examples and field definitions in the installed Jury reference and user-supplied Jury_JSON_Brief.md. Original source SHA-256 60620023de0ebecc05478df21478675ef2019f7802a371f432eae7cf70a05832. Video SHOT_DESIGN is outside this still profile.",
+  "type": "object",
+  "properties": {
+    "scene_title": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "Caption": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "STYLE": {
+      "type": "object",
+      "properties": {
+        "Artistic Medium": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Aesthetic Movement / Genre": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Cultural / Historical Influence": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "Artistic Medium",
+        "Aesthetic Movement / Genre",
+        "Cultural / Historical Influence"
+      ],
+      "additionalProperties": false
+    },
+    "COMPOSITION": {
+      "type": "object",
+      "properties": {
+        "Framing": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Layout": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Perspective": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "Framing",
+        "Layout",
+        "Perspective"
+      ],
+      "additionalProperties": false
+    },
+    "SCENE": {
+      "type": "object",
+      "properties": {
+        "Subject Characteristics": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Setting": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Geographic / Cultural Context": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "Subject Characteristics",
+        "Setting",
+        "Geographic / Cultural Context"
+      ],
+      "additionalProperties": false
+    },
+    "CINEMATOGRAPHY_AND_LIGHTING": {
+      "type": "object",
+      "properties": {
+        "Lighting Style": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Color Palette": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Overall Color Tone": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Tone & Mood": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "Lighting Style",
+        "Color Palette",
+        "Overall Color Tone",
+        "Tone & Mood"
+      ],
+      "additionalProperties": false
+    },
+    "CAMERA_AND_LENS": {
+      "type": "object",
+      "properties": {
+        "Camera Type and Era": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Camera model": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Lens model": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Lens size": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Lens Effects": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Depth of Field": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Film Grain / Noise": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "Camera Type and Era",
+        "Camera model",
+        "Lens model",
+        "Lens size",
+        "Lens Effects",
+        "Depth of Field",
+        "Film Grain / Noise"
+      ],
+      "additionalProperties": false
+    },
+    "PHYSICAL_ATTRIBUTES": {
+      "type": "object",
+      "properties": {
+        "Material & Texture": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Physics & Effects": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "Execution Style": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "Material & Texture",
+        "Physics & Effects",
+        "Execution Style"
+      ],
+      "additionalProperties": false
+    },
+    "hex_values": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^#[0-9A-Fa-f]{6}$"
+      },
+      "minItems": 12,
+      "maxItems": 15
+    }
+  },
+  "required": [
+    "scene_title",
+    "Caption",
+    "STYLE",
+    "COMPOSITION",
+    "SCENE",
+    "CINEMATOGRAPHY_AND_LIGHTING",
+    "CAMERA_AND_LENS",
+    "PHYSICAL_ATTRIBUTES",
+    "hex_values"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "scene_title": "工作标题",
+      "Caption": "以实际主体、动作、空间关系和有来源的感官细节构成单段画面描述。",
+      "STYLE": {
+        "Artistic Medium": "获准媒介",
+        "Aesthetic Movement / Genre": "实际风格需求",
+        "Cultural / Historical Influence": "有依据的传统或未指定"
+      },
+      "COMPOSITION": {
+        "Framing": "景别、画幅、位置与边界",
+        "Layout": "空间层次与遮挡",
+        "Perspective": "见证位置、高度、角度与距离"
+      },
+      "SCENE": {
+        "Subject Characteristics": "实际主体及动作",
+        "Setting": "地点、时间、天气与关键细节",
+        "Geographic / Cultural Context": "有依据的背景或未指定"
+      },
+      "CINEMATOGRAPHY_AND_LIGHTING": {
+        "Lighting Style": "实际光源及作用",
+        "Color Palette": "示意为冷蓝灰主阶、灰中性过渡与少量暖褐强调",
+        "Overall Color Tone": "曝光与调色关系",
+        "Tone & Mood": "由可见关系产生的感受"
+      },
+      "CAMERA_AND_LENS": {
+        "Camera Type and Era": "适合媒介的成像类别",
+        "Camera model": "实际型号及创作目的，非摄影媒介写不适用",
+        "Lens model": "实际镜头及光学目的，非摄影媒介写不适用",
+        "Lens size": "焦距及构图原因，非摄影媒介写不适用",
+        "Lens Effects": "有来源的必要效果或无明显附加光学效果",
+        "Depth of Field": "清晰层次及用途",
+        "Film Grain / Noise": "按风格选择的颗粒或噪声行为"
+      },
+      "PHYSICAL_ATTRIBUTES": {
+        "Material & Texture": "重要表面及受光行为",
+        "Physics & Effects": "实际物理状态",
+        "Execution Style": "制作取向与场景特定限制"
+      },
+      "hex_values": [
+        "#101820",
+        "#192630",
+        "#253642",
+        "#384C59",
+        "#526674",
+        "#718592",
+        "#929FA8",
+        "#303236",
+        "#68696A",
+        "#BAB9B5",
+        "#604D38",
+        "#A17E53"
+      ]
+    }
+  ]
+}

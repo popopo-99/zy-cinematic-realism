@@ -1,0 +1,34 @@
+{
+  "status": "local documentation candidate; not published",
+  "public_release": "v2.6.0",
+  "preview": "v2.7.0 local preview and release preparation",
+  "reported_entry": "Lovart / Seedream 5.5, supplied by user",
+  "samples_per_group": 1,
+  "reference_role": "Original case A used for style only according to the supplied case record",
+  "reference_source_image_included": false,
+  "display_permission_status": "pending maintainer verification for reference and generated outputs",
+  "actual_submission_log_status": "not supplied; seeds, rewrite, reference controls and exact model build unknown",
+  "source_zip_sha256": "96fe4985a73a5cb7f56e45b84da7a23883590c672a626ea0f54a69ac91888a37",
+  "files": {
+    "docs/images/v2.7/astronomer-A-quick.png": {
+      "source_archive_member": "素材/对照图/A_Quick.png",
+      "bytes": 3169810,
+      "sha256": "4624e411c76a63b97b756cf9112715bca71d801564010ef184e16c0f1d8ef11a"
+    },
+    "docs/images/v2.7/astronomer-B-jury-json-hex.png": {
+      "source_archive_member": "素材/对照图/B_Jury_JSON_HEX.png",
+      "bytes": 3352991,
+      "sha256": "f1c0b114c94ce6760e9ff43961880fb1fd41946cad98abd3d9990d7e496afd59"
+    },
+    "docs/examples/v2.7-style-output/A_Quick_Prompt.txt": {
+      "source_archive_member": "素材/提示词/A_Quick_Prompt.txt",
+      "bytes": 3438,
+      "sha256": "b53964b0a1e17b5b39f57cedfe20c7a05b33c0d1453679d885ed8c076e5bba2d"
+    },
+    "docs/examples/v2.7-style-output/B_Jury_JSON_HEX.json": {
+      "source_archive_member": "素材/提示词/B_Jury_JSON_HEX.json",
+      "bytes": 5035,
+      "sha256": "43d5d8578f169e9b285861a344a1ea4305ed3ef05716cd1763c7af9a08784c88"
+    }
+  }
+}

@@ -49,6 +49,10 @@ Lock fixed sources, time progression, color contamination, exposure logic, sourc
 
 Define preferred witness positions, subject-scale range, focal behavior, movement, obstruction logic, axis rules, and forbidden hero framing. Individual shots vary within this grammar unless a deliberate transition is listed.
 
+When [Capture Design](capture-design.md) is active, retain accepted project-wide camera/format, lens-family, filter, recording-medium, color, and optical-effect choices here with their source, lock, and scope. The current Scene Master resolves these into its Camera / Viewpoint record. Keep focal length, camera distance, framing, aperture, focus target, and depth requirements in each Shot Delta unless the user locks them across the series. Coordinate exposure with the Lighting Bible and texture with the Material Bible without duplicating conflicting values.
+
+A request to change the current shot's lens or background blur affects that shot. Change the project baseline only when the user's scope supports it. Preserve cumulative accepted changes, and label unresolved alternatives as proposals.
+
 ### Material Bible
 
 Record recurring materials, roughness, reflectivity, wetness, wear, dirt transfer, damage, and how each changes over time.
@@ -88,7 +92,7 @@ For each shot:
 1. Copy the current **BASE LOCK** from the Bible.
 2. Write a **SHOT DELTA** containing only what changes from the immediately previous narrative state.
 3. Update dependent physical consequences: hand occupancy, wetness, damage, shadow direction, visibility, or object location.
-4. Compile `Base Lock + Shot Delta + optional Decoded Visual Grammar` through the target adapter.
+4. Resolve dependent OPEN capture choices within the shot's Scene Master, then compile `Base Lock + Shot Delta + optional Decoded Visual Grammar` through the target adapter.
 5. Compare the prompt against Forbidden Drift before output.
 
 Do not let a Shot Delta restate or silently revise the Bible. When a new user instruction conflicts with the Bible, identify the conflict and ask only if it cannot be resolved as an allowed state change.

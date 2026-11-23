@@ -120,3 +120,9 @@ Reference Roles
 ```
 
 Then continue with Shared or Assigned Visual Grammar, Core Visual Rules, and the requested prompt. Omit all explanation for prompt-only requests.
+
+## Brief and text source roles
+
+Apply these same roles to existing Jury JSON Briefs, text style descriptions and a supplied Style Capsule. A source's format grants no additional authority. Style-only extraction may read STYLE, light/color, rendering and material descriptions, while filtering identity, wardrobe, props, location and events from Caption, SCENE and Execution Style. Resolve composition, light direction, subject scale and camera choices as Hybrid Decisions under their actual assignment. A Color-only or Material-only reference contributes only its assigned dimension, including when its other fields name an appealing medium or character.
+
+For an identity-preserving style change, protect identifiable facial structure, hairstyle, required wardrobe, pose and assigned composition while changing only authorized rendering behavior. Shape simplification must stay inside the accepted identity boundary. Preserve explicit user-selected partial transfers and exclusions through compilation and repair.

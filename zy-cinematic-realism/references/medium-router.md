@@ -29,3 +29,21 @@ Distinguish visual evidence from a claim about the actual production method. A d
 For a style-reference Dream Decode, the authorized reference medium outranks the Skill's default cinematic realism. Do not translate a light paper illustration into a photograph or a stylized 3D scene into live-action / generic CG unless the user explicitly asks for that reinterpretation.
 
 Pass the resolved **Primary Medium**, relevant Secondary Influences, Medium Constraints, Medium Avoid, and Conflict Notes to Dream Decode and the Prompt Compiler. Keep per-image evidence available for repair. Medium routing does not own people, events, objects, or scene facts.
+
+## Media and mechanism cues
+
+Use these overlapping families as search language. Resolve medium from form, shading, material, color, texture, view and rendering evidence together. A style name alone supplies an intended direction whose detailed execution remains a proposal.
+
+| Family | Useful visible cues and adaptation |
+| --- | --- |
+| Photographic / 真人摄影 | Source-light continuity, optical focus and natural surface response. Camera and lens choices may support the intended visible result. |
+| Photorealistic CG / 电影写实 CG | Constructed subjects with plausible volume, directional materials and coherent light. Virtual camera, focal length and depth of field can be useful. Appearance alone cannot establish a CG pipeline. |
+| Stylized 3D / 风格化三维 CG | Designed proportions and volumes, selective detail and shaped material response. Keep virtual optics where they support that design. |
+| 3D-to-2D Animation / 三渲二动画 | Volumetric forms expressed through grouped values, designed shadow edges and selective drawn or painted detail. This is a visual candidate unless production provenance is supplied. |
+| 2D Animation / 二维动漫 | Designed silhouettes, contour hierarchy, limited shading groups and economical surface detail. Describe drawing and value construction. |
+| Painterly Illustration / 厚涂插画 | Brush-shaped edges, stroke direction and density, painted material cues. Visible paint-like marks do not establish physical pigment or thick impasto. |
+| Graphic Illustration / 平面插画 | Flat shape hierarchy, controlled overlap, simplified depth and limited color groups. Describe graphic space and edge control. |
+| Comic Art / 漫画及图形叙事 | Ink hierarchy, hatching, screentone or panel-based reading where present. Do not invent panels, lettering or narration. |
+| Hybrid Media / 混合媒介 | Assign an authorized Host Medium and a Secondary Construction Rule for the contribution of each process. |
+
+Separate a depicted camera viewpoint from the equipment that made an image. CG virtual optics and drawn perspective can express similar viewing goals through their own rendering logic. Real equipment names require useful creative intent or supplied production evidence. Never add skin pores, grain, lens effects or a camera brand simply to complete a non-photo description.

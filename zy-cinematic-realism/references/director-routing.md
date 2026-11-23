@@ -27,6 +27,8 @@ Use one director by default. Load [directors/index.md](directors/index.md) and e
 
 Mark explicit facts and visual decisions USER-LOCKED before applying the director. User-locked identity, event, action, moment, camera, framing, subject scale, composition, light sources, ratio, and restrictions remain unchanged. A locked gesture never has to change merely because it matches an undirected baseline.
 
+This includes explicit camera/format, lens/focal length, aperture/focus, recording medium, and optical-effect restrictions in [Capture Design](capture-design.md). The director's method may complete OPEN choices at the requested strength. Resolve the result once in Scene Master → Camera / Viewpoint and coordinate light and texture fields.
+
 For strong mode, aim for structural distinction across at least three open axes and three open viewing decisions **only when that many are available and compatible**. Exclude locked dimensions from the comparison. If fewer are open, use the available ones and retain the locks; do not fabricate a new source, relocate a prop, or change the action to meet a quota. Mention the limitation briefly only if it materially affects the requested result and explanation is allowed.
 
 Possible viewing decisions are the precise moment, visual center, physical witness position, subject scale/visibility, and whether environment, person, or object leads. Reselect them only when OPEN. Matching the original gesture or camera is not a failure by itself. Differentiate through the unlocked dimensions rather than automatic re-composition.
@@ -43,6 +45,8 @@ Read all four fingerprint sections in the selected file:
 Resolve each axis against the current scene, requested strength, medium, and locks. An axis can deliberately remain unchanged. In subtle mode only the selected traits are active; do not manufacture changes on the other axes. A name, film title, focal-length badge, warm/cool swap, grain, or atmosphere adjective alone is not an executable method.
 
 Mentally remove names and titles: the active decisions must still describe what the image should do. Use `Nearest-Neighbor Contrast` to sharpen ambiguous active traits without escalating strength or breaking locks. Keep light motivated; never copy a specific film shot.
+
+For a requested film-equipment or scene-method lookup, consult only relevant entries in [cinema-shot-library.md](cinema-shot-library.md) and their [equipment cards](equipment-library.md). A director name or a whole-film equipment list does not establish a specific shot's lens, aperture, or filter. Keep documented production facts, supported scene methods, and current creative selections distinct. Gear lists are optional research inputs to the four-axis method.
 
 ## Mixing
 
