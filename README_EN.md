@@ -64,6 +64,42 @@ Add “prompt only” for a copyable prompt without explanation. Ask for the Sce
 
 The observatory scene was compiled into a plain-text prompt and a Jury JSON Brief with 15 HEX colors. The public walkthrough includes the original prompts and observations from one output per group. The images are held locally, and several variables may account for their differences. [Original prompts and observations in Chinese](docs/v2.7-style-output-case.md) · [60-second tutorial in Chinese](docs/v2.7-video-tutorial.md)
 
+## Visual comparisons · Published historical cases
+
+The following images are already archived in this repository. **They are not the unreleased v2.7 observatory A/B outputs**, and they do not establish a controlled quality ranking of models or directors.
+
+### One Scene Master, four model interpretations (v2.0.0 historical samples)
+
+<table>
+<tr>
+<td width="50%"><img src="docs/images/v2/model-compiler-gpt-image-2.webp" alt="Historical GPT Image 2 interpretation" width="100%"><br><strong>GPT Image 2</strong></td>
+<td width="50%"><img src="docs/images/v2/model-compiler-midjourney.webp" alt="Historical Midjourney interpretation" width="100%"><br><strong>Midjourney</strong></td>
+</tr>
+<tr>
+<td><img src="docs/images/v2/model-compiler-seedream-5-pro.webp" alt="Historical Seedream 5.0 Pro interpretation" width="100%"><br><strong>Seedream 5.0 Pro</strong></td>
+<td><img src="docs/images/v2/model-compiler-nano-banana.webp" alt="Historical Nano Banana interpretation" width="100%"><br><strong>Nano Banana</strong></td>
+</tr>
+</table>
+
+[Four-model comparison notes](docs/model-comparison.md)
+
+### One evidence room, six director perspectives (v1.2.0 historical samples)
+
+<table>
+<tr>
+<td width="33%"><img src="docs/images/director-style-comparison/baseline.webp" alt="No-director baseline" width="100%"><br><strong>Baseline</strong></td>
+<td width="33%"><img src="docs/images/director-style-comparison/wong-kar-wai.webp" alt="Wong Kar-wai reference" width="100%"><br><strong>Wong Kar-wai</strong></td>
+<td width="33%"><img src="docs/images/director-style-comparison/stanley-kubrick.webp" alt="Stanley Kubrick reference" width="100%"><br><strong>Stanley Kubrick</strong></td>
+</tr>
+<tr>
+<td><img src="docs/images/director-style-comparison/denis-villeneuve.webp" alt="Denis Villeneuve reference" width="100%"><br><strong>Denis Villeneuve</strong></td>
+<td><img src="docs/images/director-style-comparison/david-fincher.webp" alt="David Fincher reference" width="100%"><br><strong>David Fincher</strong></td>
+<td><img src="docs/images/director-style-comparison/terrence-malick.webp" alt="Terrence Malick reference" width="100%"><br><strong>Terrence Malick</strong></td>
+</tr>
+</table>
+
+[Six complete historical prompts and test context](docs/director-style-comparison.md)
+
 <a id="core-workflows"></a>
 <a id="continuity"></a>
 <a id="prompt-doctor"></a>
@@ -112,6 +148,14 @@ Mark unseen back/shoe designs as proposals and reuse sufficient references.
 An awkward first dance, active participation after removing her shoes, and laughter after being caught beside a table. Read the change, develop a shared visual world, then turn actions and relationships into key frames.
 
 [Workflow and actual result status](docs/titanic-story-to-frame.md): script facts, interpretation, and new directing proposals lead into reference decoding, external generation, and inspection. The case shows the P01 direction and the new P02/P03 images confirmed usable by the user, together with the supplied prompts and actual result observations.
+
+<table>
+<tr>
+<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p01.webp" alt="P01 established visual direction" width="100%"><br><strong>P01 · Entering the dance</strong></td>
+<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p02.webp" alt="P02 taking the lead" width="100%"><br><strong>P02 · Taking the lead</strong></td>
+<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p03.webp" alt="P03 shared laughter by the table" width="100%"><br><strong>P03 · Relationship shift</strong></td>
+</tr>
+</table>
 
 ### Original Short Story: Art Concepts and Relationship Key Frames
 
