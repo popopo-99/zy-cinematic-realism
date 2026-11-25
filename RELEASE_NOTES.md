@@ -29,7 +29,7 @@
 
 ## 来源与贡献
 
-感谢 Jury 的粉丝版迭代，尤其是器材视觉签名、成像规划和结构化摄影字段。项目由 ZY / popopo-99 创建并维护。[完整致谢和资料来源](docs/capture-design-credits.md) · [CC BY-NC 4.0 与授权范围](docs/licensing.md)
+感谢 Jury 为摄影设定提供的迭代方案与实践资料，尤其是器材视觉签名、成像规划和结构化摄影字段。项目由 ZY / popopo-99 创建并维护。[完整致谢和资料来源](docs/capture-design-credits.md) · [CC BY-NC 4.0 与授权范围](docs/licensing.md)
 
 <a id="release-notes-en"></a>
 ## Release notes in English
@@ -42,7 +42,7 @@
 
 **Evidence.** Manufacturer specifications and sourced production records describe equipment. Capture settings are creative choices. The snowy Western walkthrough records a real text call. The observatory case reports an exploratory run with one output per group, which cannot establish a quality advantage for JSON or HEX or exact hardware simulation. Its images are held locally.
 
-Thanks to Jury for the fan edition, equipment research and capture-planning work. Dream Director is created and maintained by ZY / popopo-99 under CC BY-NC 4.0. [Credits and sources](docs/capture-design-credits.md) · [Licensing scope](docs/licensing.md)
+Thanks to Jury for the workflow iterations, equipment research, and capture-planning materials. Dream Director is created and maintained by ZY / popopo-99 under CC BY-NC 4.0. [Credits and sources](docs/capture-design-credits.md) · [Licensing scope](docs/licensing.md)
 
 ---
 
