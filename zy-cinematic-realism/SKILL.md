@@ -14,7 +14,7 @@ Source: https://github.com/popopo-99/zy-cinematic-realism
 
 Public edition: 《造梦师 v2.7.0 — 摄影设定与解梦 / Dream Director v2.7.0 — Capture Design & Dream Decode》.
 
-Existing v2.6 story and asset workflows remain included. Capture planning and equipment-to-visible-behavior work build on Jury's fan contribution; see [capture-design.md](references/capture-design.md).
+Existing v2.6 story and asset workflows remain included. Capture planning and equipment-to-visible-behavior work build on Jury's workflow contributions; see [capture-design.md](references/capture-design.md).
 
 For image-prompt work, build the result in this order:
 
