@@ -60,28 +60,29 @@
 
 ## 同一画风，两种输出 · 天文台案例
 
-同一个天文台场景编译成普通提示词和 Jury JSON + 15 色 HEX。公开案例提供两份原始输入和单次成像观察，两张回图保留在本地。每组仅一张，画面差异受多项变量影响。[查看原始提示词和观察](docs/v2.7-style-output-case.md) · [60 秒教程](docs/v2.7-video-tutorial.md)
+同一个天文台场景分别编译为普通提示词，以及 Jury JSON Brief + 15 色 HEX。每组各生成一张，公开案例提供原始输入和观察记录。原图已核对归档，公开展示权限待确认。[查看原始提示词和观察](docs/v2.7-style-output-case.md) · [60 秒教程](docs/v2.7-video-tutorial.md)
 
 ## 视觉对照图库 · 现有真实案例
 
-以下是仓库已归档的历史生成案例，**不是 v2.7 天文台 A/B 的回图**，也不是跨模型或导演效果的受控排名。图像与原始说明可点击查看。
+以下是已公开的历史生成案例。各组链接通往原始记录，可查阅当时的条件和证据边界。
 
 ### 同一个 Scene Master，四种模型解释（v2.0.0 历史样张）
 
 <table>
 <tr>
-<td width="50%"><img src="docs/images/v2/model-compiler-gpt-image-2.webp" alt="GPT Image 2 对同一场景的历史解释" width="100%"><br><strong>GPT Image 2</strong></td>
-<td width="50%"><img src="docs/images/v2/model-compiler-midjourney.webp" alt="Midjourney 对同一场景的历史解释" width="100%"><br><strong>Midjourney</strong></td>
+<td width="50%"><img src="docs/images/v2/model-compiler-gpt-image-2.webp" alt="GPT Image 2 对同一场景的历史解释" width="260"><br><strong>GPT Image 2</strong></td>
+<td width="50%"><img src="docs/images/v2/model-compiler-midjourney.webp" alt="Midjourney 对同一场景的历史解释" width="260"><br><strong>Midjourney</strong></td>
 </tr>
 <tr>
-<td><img src="docs/images/v2/model-compiler-seedream-5-pro.webp" alt="Seedream 5.0 Pro 对同一场景的历史解释" width="100%"><br><strong>Seedream 5.0 Pro</strong></td>
-<td><img src="docs/images/v2/model-compiler-nano-banana.webp" alt="Nano Banana 对同一场景的历史解释" width="100%"><br><strong>Nano Banana</strong></td>
+<td><img src="docs/images/v2/model-compiler-seedream-5-pro.webp" alt="Seedream 5.0 Pro 对同一场景的历史解释" width="260"><br><strong>Seedream 5.0 Pro</strong></td>
+<td><img src="docs/images/v2/model-compiler-nano-banana.webp" alt="Nano Banana 对同一场景的历史解释" width="260"><br><strong>Nano Banana</strong></td>
 </tr>
 </table>
 
-[查看四模型原始对照说明](docs/model-comparison.md)
+样张展示四个模型如何解释同一场景，保留当时的模型标注。样张数量和条件不足以支持模型排名。[查看四模型原始对照说明](docs/model-comparison.md)
 
-### 同一证据室，六种导演视角（v1.2.0 历史样张）
+<a id="historical-director-comparison"></a>
+### 同一证据室，一组基准与五种导演参考（v1.2.0 历史样张）
 
 <table>
 <tr>
@@ -96,7 +97,7 @@
 </tr>
 </table>
 
-[查看六组完整提示词、固定条件与历史说明](docs/director-style-comparison.md)
+六组沿用同一证据室场景。五组导演参考按 v1.2.0 的历史强烈模式生成。[查看六组完整提示词、固定条件与历史说明](docs/director-style-comparison.md)
 
 <a id="core-workflows"></a>
 <a id="continuity"></a>
@@ -136,8 +137,6 @@
 未展示的背部和鞋标为候选设计，已有参考能用就复用。
 ```
 
-![末班证词：两名侦探在夜班公交上检查录音带](docs/images/last-bus-testimony/master.png)
-
 [《末班证词》完整试作](docs/last-bus-testimony-asset-pack.md)：从影调纠正、按职责使用人物与证物，到近景、反打、黎明街头和局部修复。用户已确认这一组结果可以；这是一个定性案例，尚未证明普遍增益。纽约、复古暗调和宽画幅均属于本例的选择。
 
 <a id="story-to-frame"></a>
@@ -145,13 +144,13 @@
 
 从生涩地跟随，到脱鞋后主动投入，再到桌边被接住后笑起来。先读人物变化，再开发共同的视觉世界，把动作和关系转成关键画面。
 
-[看实战过程与真实结果状态](docs/titanic-story-to-frame.md)：区分原文事实、剧情解读和新导演建议，串起参考解梦、外部生成与检查。案例展示 P01 的认可方向与用户确认可用的新 P02/P03，保留提供的提示词、实际回图和检查记录。
+这三张是 v2.5 时期的视觉开发回图。P01 是用户认可的视觉方向，后续 P02、P03 经用户确认可用。[实战过程、提示词与回图记录](docs/titanic-story-to-frame.md) · [v2.5 验证范围](docs/validation-v2.5.md)
 
 <table>
 <tr>
-<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p01.webp" alt="P01 三等舱舞会视觉方向" width="100%"><br><strong>P01 · 初入舞会</strong></td>
-<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p02.webp" alt="P02 主动牵手前行" width="100%"><br><strong>P02 · 主动靠近</strong></td>
-<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p03.webp" alt="P03 桌边相笑" width="100%"><br><strong>P03 · 关系变化</strong></td>
+<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p01.webp" alt="P01 三等舱舞会视觉方向" width="100%"><br><strong>P01 · 舞会视觉基准</strong></td>
+<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p02.webp" alt="P02 主动牵手前行" width="100%"><br><strong>P02 · 主动入场</strong></td>
+<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p03.webp" alt="P03 桌边相笑" width="100%"><br><strong>P03 · 桌边相笑</strong></td>
 </tr>
 </table>
 
@@ -164,9 +163,7 @@
 
 ### ① 从故事里选一个具体瞬间
 
-![深夜公寓里的侦探在桌灯旁继续阅读文件](docs/images/scene-private-aftermath.webp)
-
-桌灯、没喝完的咖啡和门口观察的位置，说明案件还没有结束。动作、空间和光源先成立，镜头与胶片词最后加入。等待和余波是可选方法；你要晴天里的快乐、庆典或动作高潮时，会保留那个方向。
+桌灯、没喝完的咖啡和门口观察的位置，说明案件还没有结束。动作、空间和光源先成立，镜头与胶片词最后加入。等待和余波是可选方法；你要晴天里的快乐、庆典或动作高潮时，会保留那个方向。[查看深夜公寓画面](docs/images/scene-private-aftermath.webp)
 
 ```text
 请使用 $zy-cinematic-realism：
@@ -180,12 +177,7 @@
 <a id="creative-grammar"></a>
 ### ② 用导演的方法改变观看方式
 
-<table>
-  <tr>
-    <td width="50%"><img src="docs/images/director-style-comparison/baseline.webp" alt="证据室场景的历史无导演基准" width="100%"><br><strong>无导演基准</strong><br>主要看调查动作</td>
-    <td width="50%"><img src="docs/images/director-style-comparison/wong-kar-wai.webp" alt="证据室场景的历史王家卫强烈模式" width="100%"><br><strong>王家卫 · 历史强烈模式</strong><br>反射、遮挡与深夜关系</td>
-  </tr>
-</table>
+证据室的无导演基准突出调查动作，王家卫参考借反射与遮挡组织人物关系。[查看同一证据室的历史对照](#historical-director-comparison)
 
 v2.4 尊重 **轻微 / 明确 / 强烈**；不指定时默认明确。轻微选择少量兼容特征，强烈也只改变未锁定的决定。你固定的动作、机位、构图和光源不会为了制造差异被重选。
 
@@ -268,6 +260,8 @@ v2.7 的摄影选型实录属于真实文本调用，天文台案例另有用户
 
 <a id="community"></a>
 ## 一起维护造梦师
+
+感谢 Jury 为造梦师摄影设定提供的迭代方案、器材研究、结构化摄影字段和实践反馈。[Jury 的贡献与资料来源](docs/capture-design-credits.md)
 
 感谢参与测试、反馈、分享和支持项目的每一位朋友。[完整 Special Thanks 名单与社区插画](docs/community.md)持续保留。
 

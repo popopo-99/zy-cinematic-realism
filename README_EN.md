@@ -62,28 +62,29 @@ Add “prompt only” for a copyable prompt without explanation. Ask for the Sce
 
 ## One style, two outputs · Observatory case
 
-The observatory scene was compiled into a plain-text prompt and a Jury JSON Brief with 15 HEX colors. The public walkthrough includes the original prompts and observations from one output per group. The images are held locally, and several variables may account for their differences. [Original prompts and observations in Chinese](docs/v2.7-style-output-case.md) · [60-second tutorial in Chinese](docs/v2.7-video-tutorial.md)
+The observatory scene was compiled into a plain-text prompt and a Jury JSON Brief with 15 HEX colors. Each group produced one image. The public walkthrough includes the original inputs and observations. The archived images have been verified, and permission to display them publicly is pending. [Original prompts and observations in Chinese](docs/v2.7-style-output-case.md) · [60-second tutorial in Chinese](docs/v2.7-video-tutorial.md)
 
 ## Visual comparisons · Published historical cases
 
-The following images are already archived in this repository. **They are not the unreleased v2.7 observatory A/B outputs**, and they do not establish a controlled quality ranking of models or directors.
+These historical generation examples are already public. Each comparison links to the original case record for its conditions and evidence limits.
 
 ### One Scene Master, four model interpretations (v2.0.0 historical samples)
 
 <table>
 <tr>
-<td width="50%"><img src="docs/images/v2/model-compiler-gpt-image-2.webp" alt="Historical GPT Image 2 interpretation" width="100%"><br><strong>GPT Image 2</strong></td>
-<td width="50%"><img src="docs/images/v2/model-compiler-midjourney.webp" alt="Historical Midjourney interpretation" width="100%"><br><strong>Midjourney</strong></td>
+<td width="50%"><img src="docs/images/v2/model-compiler-gpt-image-2.webp" alt="Historical GPT Image 2 interpretation" width="260"><br><strong>GPT Image 2</strong></td>
+<td width="50%"><img src="docs/images/v2/model-compiler-midjourney.webp" alt="Historical Midjourney interpretation" width="260"><br><strong>Midjourney</strong></td>
 </tr>
 <tr>
-<td><img src="docs/images/v2/model-compiler-seedream-5-pro.webp" alt="Historical Seedream 5.0 Pro interpretation" width="100%"><br><strong>Seedream 5.0 Pro</strong></td>
-<td><img src="docs/images/v2/model-compiler-nano-banana.webp" alt="Historical Nano Banana interpretation" width="100%"><br><strong>Nano Banana</strong></td>
+<td><img src="docs/images/v2/model-compiler-seedream-5-pro.webp" alt="Historical Seedream 5.0 Pro interpretation" width="260"><br><strong>Seedream 5.0 Pro</strong></td>
+<td><img src="docs/images/v2/model-compiler-nano-banana.webp" alt="Historical Nano Banana interpretation" width="260"><br><strong>Nano Banana</strong></td>
 </tr>
 </table>
 
-[Four-model comparison notes](docs/model-comparison.md)
+The samples show how four models interpreted the same scene and retain their original model labels. This sample set is too limited to rank the models. [Four-model comparison notes](docs/model-comparison.md)
 
-### One evidence room, six director perspectives (v1.2.0 historical samples)
+<a id="historical-director-comparison"></a>
+### One evidence room, a baseline and five director references (v1.2.0 historical samples)
 
 <table>
 <tr>
@@ -98,7 +99,7 @@ The following images are already archived in this repository. **They are not the
 </tr>
 </table>
 
-[Six complete historical prompts and test context](docs/director-style-comparison.md)
+All six results use the same evidence-room scene. The five director references used v1.2.0's historical strong setting. [Six complete historical prompts and test conditions](docs/director-style-comparison.md)
 
 <a id="core-workflows"></a>
 <a id="continuity"></a>
@@ -138,8 +139,6 @@ Prepare the necessary asset plan and prompts; do not generate images yet.
 Mark unseen back/shoe designs as proposals and reuse sufficient references.
 ```
 
-![Two detectives examine an audio cassette on a night bus](docs/images/last-bus-testimony/master.png)
-
 [Last Bus Testimony: actual prototype](docs/last-bus-testimony-asset-pack.md) follows look correction, role-scoped references, a close view, reverse, dawn exterior, and targeted repair. The user confirmed the set usable. This is one qualitative example, not proof of general gains; New York, retro low-key rendering and the wide ratio belong to this example.
 
 <a id="story-to-frame"></a>
@@ -147,13 +146,13 @@ Mark unseen back/shoe designs as proposals and reuse sufficient references.
 
 An awkward first dance, active participation after removing her shoes, and laughter after being caught beside a table. Read the change, develop a shared visual world, then turn actions and relationships into key frames.
 
-[Workflow and actual result status](docs/titanic-story-to-frame.md): script facts, interpretation, and new directing proposals lead into reference decoding, external generation, and inspection. The case shows the P01 direction and the new P02/P03 images confirmed usable by the user, together with the supplied prompts and actual result observations.
+These three visual-development images come from the v2.5 work. The user accepted P01 as the visual direction and confirmed the two follow-up frames, P02 and P03, as usable. [Workflow, prompts, and image records in Chinese](docs/titanic-story-to-frame.md) · [v2.5 validation scope](docs/validation-v2.5.md)
 
 <table>
 <tr>
-<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p01.webp" alt="P01 established visual direction" width="100%"><br><strong>P01 · Entering the dance</strong></td>
+<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p01.webp" alt="P01 established visual direction" width="100%"><br><strong>P01 · Dance scene baseline</strong></td>
 <td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p02.webp" alt="P02 taking the lead" width="100%"><br><strong>P02 · Taking the lead</strong></td>
-<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p03.webp" alt="P03 shared laughter by the table" width="100%"><br><strong>P03 · Relationship shift</strong></td>
+<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p03.webp" alt="P03 shared laughter by the table" width="100%"><br><strong>P03 · Laughter by the table</strong></td>
 </tr>
 </table>
 
@@ -166,9 +165,7 @@ An awkward first dance, active participation after removing her shoes, and laugh
 
 ### 1. Choose a Specific Story Moment
 
-![A detective revisits case files beside a table lamp at home](docs/images/scene-private-aftermath.webp)
-
-A task lamp, unfinished coffee, and doorway viewpoint show that the case continues. Action, space, and sources come before lens or film labels. Waiting and aftermath are options; requested daylight joy, celebration, and climactic action remain valid directions.
+A task lamp, unfinished coffee, and doorway viewpoint show that the case continues. Action, space, and sources come before lens or film labels. Waiting and aftermath are options; requested daylight joy, celebration, and climactic action remain valid directions. [View the late-night apartment image](docs/images/scene-private-aftermath.webp)
 
 ```text
 Use $zy-cinematic-realism:
@@ -182,12 +179,7 @@ Eye-level view from the doorway. Give me a model-neutral prompt using practical 
 <a id="creative-grammar"></a>
 ### 2. Change How the Scene Is Witnessed
 
-<table>
-  <tr>
-    <td width="50%"><img src="docs/images/director-style-comparison/baseline.webp" alt="Historical no-director evidence-room baseline" width="100%"><br><strong>No-director baseline</strong><br>Investigative action</td>
-    <td width="50%"><img src="docs/images/director-style-comparison/wong-kar-wai.webp" alt="Historical strong Wong Kar-wai evidence-room interpretation" width="100%"><br><strong>Wong Kar-wai · historical strong mode</strong><br>Reflections, obstruction, and nocturnal relationships</td>
-  </tr>
-</table>
+The evidence-room baseline emphasizes the investigation. The Wong Kar-wai reference uses reflections and foreground obstruction to shape how we see the characters. [See the historical evidence-room comparison](#historical-director-comparison)
 
 v2.4 honors **subtle / clear / strong**; unspecified strength defaults to clear. Subtle uses selected compatible traits. Strong changes only open decisions. Locked action, camera, composition, and sources are not reselected to manufacture difference.
 
@@ -270,6 +262,8 @@ The repository root contains tutorials and work; `zy-cinematic-realism/` is the 
 
 <a id="community"></a>
 ## Build Dream Director Together
+
+Thanks to Jury for the workflow contributions, equipment research, structured photography references, and practical feedback. [Jury contributions and sources](docs/capture-design-credits.md)
 
 Thanks to everyone who tested, shared, and supported this project. The [complete Special Thanks list and community illustration](docs/community.md) remain available.
 
