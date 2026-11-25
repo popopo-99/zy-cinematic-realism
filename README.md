@@ -62,6 +62,42 @@
 
 同一个天文台场景编译成普通提示词和 Jury JSON + 15 色 HEX。公开案例提供两份原始输入和单次成像观察，两张回图保留在本地。每组仅一张，画面差异受多项变量影响。[查看原始提示词和观察](docs/v2.7-style-output-case.md) · [60 秒教程](docs/v2.7-video-tutorial.md)
 
+## 视觉对照图库 · 现有真实案例
+
+以下是仓库已归档的历史生成案例，**不是 v2.7 天文台 A/B 的回图**，也不是跨模型或导演效果的受控排名。图像与原始说明可点击查看。
+
+### 同一个 Scene Master，四种模型解释（v2.0.0 历史样张）
+
+<table>
+<tr>
+<td width="50%"><img src="docs/images/v2/model-compiler-gpt-image-2.webp" alt="GPT Image 2 对同一场景的历史解释" width="100%"><br><strong>GPT Image 2</strong></td>
+<td width="50%"><img src="docs/images/v2/model-compiler-midjourney.webp" alt="Midjourney 对同一场景的历史解释" width="100%"><br><strong>Midjourney</strong></td>
+</tr>
+<tr>
+<td><img src="docs/images/v2/model-compiler-seedream-5-pro.webp" alt="Seedream 5.0 Pro 对同一场景的历史解释" width="100%"><br><strong>Seedream 5.0 Pro</strong></td>
+<td><img src="docs/images/v2/model-compiler-nano-banana.webp" alt="Nano Banana 对同一场景的历史解释" width="100%"><br><strong>Nano Banana</strong></td>
+</tr>
+</table>
+
+[查看四模型原始对照说明](docs/model-comparison.md)
+
+### 同一证据室，六种导演视角（v1.2.0 历史样张）
+
+<table>
+<tr>
+<td width="33%"><img src="docs/images/director-style-comparison/baseline.webp" alt="无导演基准" width="100%"><br><strong>无导演基准</strong></td>
+<td width="33%"><img src="docs/images/director-style-comparison/wong-kar-wai.webp" alt="王家卫参考" width="100%"><br><strong>王家卫</strong></td>
+<td width="33%"><img src="docs/images/director-style-comparison/stanley-kubrick.webp" alt="斯坦利·库布里克参考" width="100%"><br><strong>库布里克</strong></td>
+</tr>
+<tr>
+<td><img src="docs/images/director-style-comparison/denis-villeneuve.webp" alt="丹尼斯·维伦纽瓦参考" width="100%"><br><strong>维伦纽瓦</strong></td>
+<td><img src="docs/images/director-style-comparison/david-fincher.webp" alt="大卫·芬奇参考" width="100%"><br><strong>芬奇</strong></td>
+<td><img src="docs/images/director-style-comparison/terrence-malick.webp" alt="泰伦斯·马力克参考" width="100%"><br><strong>马力克</strong></td>
+</tr>
+</table>
+
+[查看六组完整提示词、固定条件与历史说明](docs/director-style-comparison.md)
+
 <a id="core-workflows"></a>
 <a id="continuity"></a>
 <a id="prompt-doctor"></a>
@@ -110,6 +146,14 @@
 从生涩地跟随，到脱鞋后主动投入，再到桌边被接住后笑起来。先读人物变化，再开发共同的视觉世界，把动作和关系转成关键画面。
 
 [看实战过程与真实结果状态](docs/titanic-story-to-frame.md)：区分原文事实、剧情解读和新导演建议，串起参考解梦、外部生成与检查。案例展示 P01 的认可方向与用户确认可用的新 P02/P03，保留提供的提示词、实际回图和检查记录。
+
+<table>
+<tr>
+<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p01.webp" alt="P01 三等舱舞会视觉方向" width="100%"><br><strong>P01 · 初入舞会</strong></td>
+<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p02.webp" alt="P02 主动牵手前行" width="100%"><br><strong>P02 · 主动靠近</strong></td>
+<td width="33%"><img src="docs/images/titanic-story-to-frame/accepted-p03.webp" alt="P03 桌边相笑" width="100%"><br><strong>P03 · 关系变化</strong></td>
+</tr>
+</table>
 
 ### 原创短故事：美术概念与关系关键画面
 
